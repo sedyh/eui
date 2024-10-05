@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Container and Layouts - Ebiten UI</title>
+    <link>http://localhost:1313/basics/container-and-layouts/index.html</link>
+    <description>Any UI in this library consists of containers that are nested in each other.&#xA;Containers are located in widget package.&#xA;1import &#34;github.com/ebitenui/ebitenui/widget&#34; There is a single container type which can be created like this.&#xA;1c := widget.NewContainer() You can compose containers in each other. The order of addition does not matter.&#xA;1shirt := widget.NewContainer() 2shelf := widget.NewContainer() 3store := widget.NewContainer() 4 5shelf.AddChild(shirt) 6store.AddChild(shelf) The container have several options to setup.&#xA;1c.SetPadding(10) 2c.SetBorder(10) 3c.SetBorderRadius(10) 4c.SetBackgroundColor(&#34;#000000&#34;) 5c.SetBackgroundImage(&#34;https://www.google.com/images/branding/google</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/basics/container-and-layouts/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

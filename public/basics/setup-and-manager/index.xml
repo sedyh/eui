@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup and Manager - Ebiten UI</title>
+    <link>http://localhost:1313/basics/setup-and-manager/index.html</link>
+    <description>The library provides a rendering manager *ebitenui.UI in which you will place your entire UI. It is contains a reference to the root container and responsible for delivering events throughout the user interface.&#xA;Manager is located in ebitenui package.&#xA;1import &#34;github.com/ebitenui/ebitenui/widget&#34; Manager needs to get constantly updated and drawed.&#xA;1type Game struct { 2&#x9;ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6&#x9;return &amp;Game{ 7&#x9;ui: &amp;ebitenui.UI{}, 8&#x9;} 9} 10 11func (g *Game) Update() error { 12&#x9;g.ui.Update() 13&#x9;return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17&#x9;g.ui.Draw(screen) 18} Full example 1package main 2 3import ( 4&#x9;&#34;log&#34; 5&#x9;&#34;github.com/ebitenui/ebitenui&#34; 6&#x9;&#34;github.com/hajimehoshi/ebiten/v2&#34; 7) 8 9func main() { 10&#x9;ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 11&#x9;if err := ebiten.RunGame(NewGame()); err != nil { 12&#x9;log.Fatal(err) 13&#x9;} 14} 15 16type Game struct { 17&#x9;ui *ebitenui.UI 18} 19 20func NewGame() *Game { 21&#x9;return &amp;Game{ 22&#x9;ui: &amp;ebitenui.UI{}, 23&#x9;} 24} 25 26func (g *Game) Update() error { 27&#x9;g.ui.Update() 28&#x9;return nil 29} 30 31func (g *Game) Draw(screen *ebiten.Image) { 32&#x9;g.ui.Draw(screen) 33} 34 35func (g *Game) Layout(w, h int) (int, int) { 36&#x9;return w, h 37}</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/basics/setup-and-manager/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

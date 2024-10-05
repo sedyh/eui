@@ -1,0 +1,86 @@
+baseURL = 'https://eui.github.io'
+languageCode = 'en-us'
+canonifyURLs = true
+relativeURLs = true
+title = 'Ebiten UI'
+
+[module]
+  [[module.imports]]
+    path = 'github.com/McShelby/hugo-theme-relearn'
+
+[params]
+  additionalContentLanguage = ['en']
+  alwaysopen = ''
+  breadcrumbSeparator = '>'
+  collapsibleMenu = true
+  customMathJaxURL = ''
+  customMermaidURL = ''
+  customOpenapiURL = ''
+  disableAnchorCopy = false
+  disableAnchorScrolling = false
+  disableAssetsBusting = false
+  disableBreadcrumb = false
+  disableDefaultRelref = false
+  disableExplicitIndexURLs = false
+  disableGeneratorVersion = false
+  disableHoverBlockCopyToClipBoard = false
+  disableInlineCopyToClipBoard = true
+  disableLandingPageButton = false
+  disableLanguageSwitchingButton = false
+  disableMathJax = true
+  disableMermaid = true
+  disableNextPrev = false
+  disableOpenapi = true
+  disableRandomIds = false
+  disableRootBreadcrumb = true
+  disableSearch = false
+  disableSearchHiddenPages = false
+  disableSeoHiddenPages = true
+  disableShortcutsTitle = false
+  disableTagHiddenPages = false
+  disableTermBreadcrumbs = false
+  disableToc = false
+  editURL = 'https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/${FilePath}'
+  externalLinkTarget = '_self'
+  highlightWrap = false
+  images = ['images/hero.png']
+  mathJaxInitialize = '{}'
+  mermaidInitialize = '{ "securityLevel": "loose" }'
+  mermaidZoom = true
+  ordersectionsby = 'weight'
+  showVisitedLinks = true
+  titleSeparator = '-'
+
+  [params.author]
+    name = 'sedyh'
+
+  [params.image]
+    errorlevel = 'error'
+
+  [params.imageEffects]
+    border = true
+    lazy = true
+    lightbox = true
+    shadow = false
+
+  [params.include]
+    errorlevel = 'error'
+
+  [params.link]
+    errorlevel = 'error'
+
+  [params.openapi]
+    errorlevel = 'error'
+
+  [params.social]
+    facebook_admin = ''
+    twitter = ''
+
+  [[params.themeVariant]]
+    identifier = 'dark'
+
+[markup]
+  [markup.highlight]
+    lineNumbersInTable = false
+    lineNos = true
+    noClasses = false
