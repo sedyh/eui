@@ -57,7 +57,7 @@ title = 'Ebiten UI'
 
   [params.imageEffects]
     border = true
-    lazy = true
+    lazy = false
     lightbox = true
     shadow = false
 
