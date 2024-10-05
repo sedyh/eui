@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Basics - Ebiten UI</title>
-    <link>http://localhost:1313/basics/index.html</link>
+    <link>http://localhost:1313/eui/basics/index.html</link>
     <description>This guide will introduce you step by step to the basics of the library and teach you how to use all the main tools.&#xA;Requirements Go 1.19+ Ebitengine 2.7.8+</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Oct 2024 19:45:29 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/basics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/eui/basics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Container and layouts</title>
-      <link>http://localhost:1313/basics/container-layouts/index.html</link>
+      <link>http://localhost:1313/eui/basics/container-layouts/index.html</link>
       <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
-      <guid>http://localhost:1313/basics/container-layouts/index.html</guid>
+      <guid>http://localhost:1313/eui/basics/container-layouts/index.html</guid>
       <description>The library provides a rendering manager *ebitenui.UI in which you will place your entire UI.&#xA;Manager is located in ebitenui package.&#xA;1import &#34;github.com/ebitenui/ebitenui&#34; Manager needs to get constantly updated and drawed.&#xA;1type Game struct { 2&#x9;ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6&#x9;return &amp;Game{ 7&#x9;ui: &amp;ebitenui.UI{}, 8&#x9;} 9} 10 11func (g *Game) Update() error { 12&#x9;g.ui.Update() 13&#x9;return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17&#x9;g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other.</description>
     </item>
   </channel>

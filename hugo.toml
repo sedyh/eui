@@ -1,7 +1,5 @@
-baseURL = 'https://sedyh.github.io'
+baseURL = 'https://sedyh.github.io/eui/'
 languageCode = 'en-us'
-canonifyURLs = true
-relativeURLs = true
 title = 'Ebiten UI'
 
 [module]

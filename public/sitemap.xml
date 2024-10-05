@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/basics/container-layouts/index.html</loc>
+    <loc>http://localhost:1313/eui/basics/container-layouts/index.html</loc>
     <lastmod>2024-10-04T19:45:29+03:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/categories/index.html</loc>
+    <loc>http://localhost:1313/eui/categories/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
+    <loc>http://localhost:1313/eui/tags/index.html</loc>
   </url>
 </urlset>
