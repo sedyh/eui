@@ -30,18 +30,18 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
     <meta itemprop="wordCount" content="459">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Anchor layout - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1728157787" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1728157787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728157787" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1728157787" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1728157787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728157787" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1728157787" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1728157787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728157787" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1728157787" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1728157787" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1728157787" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1728157787" rel="stylesheet">
-    <link href="/eui/css/print.css?1728157787" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1728157787"></script>
+    <link href="/eui/images/favicon.png?1728163172" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1728163172" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728163172" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1728163172" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1728163172" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728163172" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1728163172" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1728163172" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728163172" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1728163172" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1728163172" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1728163172" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/variant.css?1728163172" rel="stylesheet">
+    <link href="/eui/css/print.css?1728163172" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1728163172"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -96,7 +96,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/index.html" title="Layouts (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/row/index.html" title="Row layout (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -119,15 +119,15 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h1 id="anchor-layout">Anchor layout</h1>
 
 <p>Anchor layout allows the child containers to be anchored to a specific constraint.</p>
-<p><a href="#R-image-0bbdc616d6cd71c9052f0aec7cb2c5f5" class="lightbox-link"><img alt="preview" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-preview.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0bbdc616d6cd71c9052f0aec7cb2c5f5"><img alt="preview" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-preview.png"></a></p>
+<p><a href="#R-image-41be557208597257a2e04555bceae611" class="lightbox-link"><img alt="preview" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-preview.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-41be557208597257a2e04555bceae611"><img alt="preview" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-preview.png"></a></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4373216713e92059e3c352e1a1343ca8" aria-controls="R-expandcontent-4373216713e92059e3c352e1a1343ca8">
-  <label class="expand-label" for="R-expand-4373216713e92059e3c352e1a1343ca8">
+  <input type="checkbox" id="R-expand-9a5f125a68a525ae72c12feadeb302b2" aria-controls="R-expandcontent-9a5f125a68a525ae72c12feadeb302b2">
+  <label class="expand-label" for="R-expand-9a5f125a68a525ae72c12feadeb302b2">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-4373216713e92059e3c352e1a1343ca8" class="expand-content">
+  <div id="R-expandcontent-9a5f125a68a525ae72c12feadeb302b2" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -232,34 +232,34 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-options">Layout options</h3>
 <h6 id="padding">Padding</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<div class="tab-panel" data-tab-group="58bcc01f6ada3cae66637f09f5f6c4c9">
+<div class="tab-panel" data-tab-group="e1c086a504e6c7ca7a1f4683a7321137">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('58bcc01f6ada3cae66637f09f5f6c4c9','left')"
+      onclick="switchTab('e1c086a504e6c7ca7a1f4683a7321137','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('58bcc01f6ada3cae66637f09f5f6c4c9','right')"
+      onclick="switchTab('e1c086a504e6c7ca7a1f4683a7321137','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('58bcc01f6ada3cae66637f09f5f6c4c9','top')"
+      onclick="switchTab('e1c086a504e6c7ca7a1f4683a7321137','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('58bcc01f6ada3cae66637f09f5f6c4c9','bottom')"
+      onclick="switchTab('e1c086a504e6c7ca7a1f4683a7321137','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -276,8 +276,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-f02ef3f5e5a1845b98b474b19f312d08" class="lightbox-link"><img alt="left" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-left.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f02ef3f5e5a1845b98b474b19f312d08"><img alt="left" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-left.png"></a></p>
+<p><a href="#R-image-eee3d8907f752e09311c7c8905389b45" class="lightbox-link"><img alt="left" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-left.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eee3d8907f752e09311c7c8905389b45"><img alt="left" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-left.png"></a></p>
       </div>
     </div>
     <div
@@ -291,8 +291,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-ed38bc2e7f512c9d6f2e430210f68cd0" class="lightbox-link"><img alt="right" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-right.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ed38bc2e7f512c9d6f2e430210f68cd0"><img alt="right" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-right.png"></a></p>
+<p><a href="#R-image-3ccae230fb18b79dc87c90d52b9f4458" class="lightbox-link"><img alt="right" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-right.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ccae230fb18b79dc87c90d52b9f4458"><img alt="right" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-right.png"></a></p>
       </div>
     </div>
     <div
@@ -306,8 +306,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-d6546414104c593cbe53a80e63d6ed4c" class="lightbox-link"><img alt="top" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-top.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d6546414104c593cbe53a80e63d6ed4c"><img alt="top" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-top.png"></a></p>
+<p><a href="#R-image-39220fcf8b58c1876f849090f0a41f1f" class="lightbox-link"><img alt="top" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-top.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-39220fcf8b58c1876f849090f0a41f1f"><img alt="top" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-top.png"></a></p>
       </div>
     </div>
     <div
@@ -321,8 +321,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-1938e41e3e8653e78d042cff65daee7d" class="lightbox-link"><img alt="bottom" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-bottom.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1938e41e3e8653e78d042cff65daee7d"><img alt="bottom" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-bottom.png"></a></p>
+<p><a href="#R-image-bbf0703d6eb26fc81cfc4bd8d6929306" class="lightbox-link"><img alt="bottom" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-bottom.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bbf0703d6eb26fc81cfc4bd8d6929306"><img alt="bottom" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-pad-bottom.png"></a></p>
       </div>
     </div>
   </div>
@@ -330,27 +330,27 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-data">Layout data</h3>
 <h6 id="horizontal-position">Horizontal position</h6>
 <p>Responsible for aligning the element along the horizontal axis.</p>
-<div class="tab-panel" data-tab-group="1fa79aea95b8fa7b708b6acf282126a6">
+<div class="tab-panel" data-tab-group="4b5d47e830811387822efb2716f75b6b">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('1fa79aea95b8fa7b708b6acf282126a6','center')"
+      onclick="switchTab('4b5d47e830811387822efb2716f75b6b','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1fa79aea95b8fa7b708b6acf282126a6','start')"
+      onclick="switchTab('4b5d47e830811387822efb2716f75b6b','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1fa79aea95b8fa7b708b6acf282126a6','end')"
+      onclick="switchTab('4b5d47e830811387822efb2716f75b6b','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -367,8 +367,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-abc97472bfd7e0313d5206f1c13c9f3f" class="lightbox-link"><img alt="center" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-center.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-abc97472bfd7e0313d5206f1c13c9f3f"><img alt="center" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-center.png"></a></p>
+<p><a href="#R-image-bc595892984bd1ae5cbd3cdea533bde0" class="lightbox-link"><img alt="center" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-center.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bc595892984bd1ae5cbd3cdea533bde0"><img alt="center" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-center.png"></a></p>
       </div>
     </div>
     <div
@@ -382,8 +382,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-61a7af28e58991b9f6ffe3c57bf119e7" class="lightbox-link"><img alt="start" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-start.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-61a7af28e58991b9f6ffe3c57bf119e7"><img alt="start" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-start.png"></a></p>
+<p><a href="#R-image-e93c6416918614e697e94ff8252e722b" class="lightbox-link"><img alt="start" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-start.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e93c6416918614e697e94ff8252e722b"><img alt="start" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-start.png"></a></p>
       </div>
     </div>
     <div
@@ -397,35 +397,35 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-9f06365d343daf9deb9c9646fcaaa4b0" class="lightbox-link"><img alt="end" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-end.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9f06365d343daf9deb9c9646fcaaa4b0"><img alt="end" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-end.png"></a></p>
+<p><a href="#R-image-32722e4ab45c8f6731a5c675e9993617" class="lightbox-link"><img alt="end" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-end.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-32722e4ab45c8f6731a5c675e9993617"><img alt="end" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-horz-end.png"></a></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="vertical-position">Vertical position</h6>
 <p>Responsible for aligning the element along the vertical axis.</p>
-<div class="tab-panel" data-tab-group="f8f6877bd1d2a24f2391b22ba4400bb3">
+<div class="tab-panel" data-tab-group="9bbb7fd03122f4ca9750e675f84c5612">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('f8f6877bd1d2a24f2391b22ba4400bb3','center')"
+      onclick="switchTab('9bbb7fd03122f4ca9750e675f84c5612','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('f8f6877bd1d2a24f2391b22ba4400bb3','start')"
+      onclick="switchTab('9bbb7fd03122f4ca9750e675f84c5612','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('f8f6877bd1d2a24f2391b22ba4400bb3','end')"
+      onclick="switchTab('9bbb7fd03122f4ca9750e675f84c5612','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -442,8 +442,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-2e6bd07cf2c1c9469317ab5ef29b54fd" class="lightbox-link"><img alt="center" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-center.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2e6bd07cf2c1c9469317ab5ef29b54fd"><img alt="center" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-center.png"></a></p>
+<p><a href="#R-image-777033092ab169221af8a7939112958a" class="lightbox-link"><img alt="center" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-center.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-777033092ab169221af8a7939112958a"><img alt="center" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-center.png"></a></p>
       </div>
     </div>
     <div
@@ -457,8 +457,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-2d172ca67df9e241dadaf329f9fc1305" class="lightbox-link"><img alt="start" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-start.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2d172ca67df9e241dadaf329f9fc1305"><img alt="start" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-start.png"></a></p>
+<p><a href="#R-image-5a3a38db267e8eed2e71135a24df3151" class="lightbox-link"><img alt="start" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-start.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5a3a38db267e8eed2e71135a24df3151"><img alt="start" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-start.png"></a></p>
       </div>
     </div>
     <div
@@ -472,8 +472,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-6bd8d288b30283a3b9f127945876f055" class="lightbox-link"><img alt="end" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-end.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6bd8d288b30283a3b9f127945876f055"><img alt="end" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-end.png"></a></p>
+<p><a href="#R-image-1374b3ef8d16ec86144294373bc1c27d" class="lightbox-link"><img alt="end" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-end.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1374b3ef8d16ec86144294373bc1c27d"><img alt="end" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/layouts/anchor/anchor-vert-end.png"></a></p>
       </div>
     </div>
   </div>
@@ -517,12 +517,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1728157787" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1728157787" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728157787" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1728157787" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1728157787" defer></script>
-        <script src="/eui/js/search.js?1728157787" defer></script>
+        <script src="/eui/js/auto-complete.js?1728163172" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1728163172" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728163172" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1728163172" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1728163172" defer></script>
+        <script src="/eui/js/search.js?1728163172" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -536,7 +536,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
           <li data-nav-id="/eui/basics/index.html" class=""><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html">Basics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
           <li data-nav-id="/eui/basics/container-layouts/index.html" class=""><a class="padding" href="/eui/basics/container-layouts/index.html">Container and layouts<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/eui/layouts/index.html" class="parent "><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html">Layouts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/layouts/anchor/index.html" class="active"><a class="padding" href="/eui/layouts/anchor/index.html">Anchor layout<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/eui/layouts/anchor/index.html" class="active"><a class="padding" href="/eui/layouts/anchor/index.html">Anchor layout<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/eui/layouts/row/index.html" class=""><a class="padding" href="/eui/layouts/row/index.html">Row layout<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -589,8 +590,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1728157787" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1728157787" defer></script>
-    <script src="/eui/js/theme.js?1728157787" defer></script>
+    <script src="/eui/js/clipboard.min.js?1728163172" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1728163172" defer></script>
+    <script src="/eui/js/theme.js?1728163172" defer></script>
   </body>
 </html>
