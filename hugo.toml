@@ -1,4 +1,4 @@
-baseURL = 'https://sedyh.github.io/eui'
+baseURL = 'https://sedyh.github.io'
 languageCode = 'en-us'
 canonifyURLs = true
 relativeURLs = true
@@ -40,7 +40,7 @@ title = 'Ebiten UI'
   disableTagHiddenPages = false
   disableTermBreadcrumbs = false
   disableToc = false
-  editURL = 'https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/${FilePath}'
+  editURL = 'https://github.com/sedyh/eui/edit/main/content/${FilePath}'
   externalLinkTarget = '_self'
   highlightWrap = false
   images = ['images/hero.png']
