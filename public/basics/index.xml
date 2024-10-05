@@ -3,7 +3,7 @@
   <channel>
     <title>Basics - Ebiten UI</title>
     <link>http://localhost:1313/eui/basics/index.html</link>
-    <description>This guide will introduce you step by step to the basics of the library and teach you how to use all the main tools.&#xA;Requirements Go 1.19+ Ebitengine 2.7.8+</description>
+    <description>This guide will introduce you step by step to the basics of the library and teach you how to use all the main tools.&#xA;Requirements Go 1.19+ Ebitengine 2.7.8+ Content Container and layouts</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Oct 2024 19:45:29 +0300</lastBuildDate>

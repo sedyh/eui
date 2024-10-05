@@ -35,21 +35,21 @@ Manager is located in ebitenui package.
 1type Game struct { 2	ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6	return &amp;Game{ 7	ui: &amp;ebitenui.UI{}, 8	} 9} 10 11func (g *Game) Update() error { 12	g.ui.Update() 13	return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17	g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="760">
+    <meta itemprop="wordCount" content="781">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Container and layouts - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1728143176" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1728143176" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728143176" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1728143176" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1728143176" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728143176" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1728143176" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1728143176" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728143176" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1728143176" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1728143176" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1728143176" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1728143176" rel="stylesheet">
-    <link href="/eui/css/print.css?1728143176" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1728143176"></script>
+    <link href="/eui/images/favicon.png?1728157787" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1728157787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728157787" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1728157787" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1728157787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728157787" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1728157787" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1728157787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728157787" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1728157787" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1728157787" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1728157787" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/variant.css?1728157787" rel="stylesheet">
+    <link href="/eui/css/print.css?1728157787" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1728157787"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -95,7 +95,7 @@ Manager is located in ebitenui package.
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/basics/index.html" title="Basics (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/index.html" title="Layouts (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -163,15 +163,15 @@ Let&rsquo;s pass our container there so we can interact with it.</p>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p>Lets run the app. We will see a single container that will take up all the free space.</p>
-<p><a href="#R-image-45ad47b2ebb85aafcd1b09087ce25511" class="lightbox-link"><img alt="image" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/basics/container-layouts/single-container.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-45ad47b2ebb85aafcd1b09087ce25511"><img alt="image" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/basics/container-layouts/single-container.png"></a></p>
+<p><a href="#R-image-66660c325ed15e7d2c465da853127024" class="lightbox-link"><img alt="image" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/basics/container-layouts/single-container.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-66660c325ed15e7d2c465da853127024"><img alt="image" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/basics/container-layouts/single-container.png"></a></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7a0e740fc08e299d600bcd460f5e9281" aria-controls="R-expandcontent-7a0e740fc08e299d600bcd460f5e9281">
-  <label class="expand-label" for="R-expand-7a0e740fc08e299d600bcd460f5e9281">
+  <input type="checkbox" id="R-expand-ace789be577f1fcba01bafd057cd8078" aria-controls="R-expandcontent-ace789be577f1fcba01bafd057cd8078">
+  <label class="expand-label" for="R-expand-ace789be577f1fcba01bafd057cd8078">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-7a0e740fc08e299d600bcd460f5e9281" class="expand-content">
+  <div id="R-expandcontent-ace789be577f1fcba01bafd057cd8078" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -286,15 +286,15 @@ Let&rsquo;s pass our container there so we can interact with it.</p>
 </span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="nx">store</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">shirt</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="nx">store</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">pants</span><span class="p">)</span></span></span></code></pre></div>
 <p>Let&rsquo;s launch the application. We will see two child containers with <code>different horizontal positions</code> that will <code>stretch vertically</code>.</p>
-<p><a href="#R-image-51172e37fdff92d7506e1882a8124d56" class="lightbox-link"><img alt="image" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/basics/container-layouts/multiple-containers.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-51172e37fdff92d7506e1882a8124d56"><img alt="image" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/basics/container-layouts/multiple-containers.png"></a></p>
+<p><a href="#R-image-d2634f18213053c0331fe15431f75188" class="lightbox-link"><img alt="image" class="border lazy lightbox noshadow figure-image" loading="lazy" src="/eui/basics/container-layouts/multiple-containers.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d2634f18213053c0331fe15431f75188"><img alt="image" class="border lazy lightbox noshadow lightbox-image" loading="lazy" src="/eui/basics/container-layouts/multiple-containers.png"></a></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4f7aa2c2e911f409151c746ff02fc90f" aria-controls="R-expandcontent-4f7aa2c2e911f409151c746ff02fc90f">
-  <label class="expand-label" for="R-expand-4f7aa2c2e911f409151c746ff02fc90f">
+  <input type="checkbox" id="R-expand-37a298bd16aa9ee35abea9bb4cb4f3a6" aria-controls="R-expandcontent-37a298bd16aa9ee35abea9bb4cb4f3a6">
+  <label class="expand-label" for="R-expand-37a298bd16aa9ee35abea9bb4cb4f3a6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-4f7aa2c2e911f409151c746ff02fc90f" class="expand-content">
+  <div id="R-expandcontent-37a298bd16aa9ee35abea9bb4cb4f3a6" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -370,6 +370,7 @@ Let&rsquo;s pass our container there so we can interact with it.</p>
 </span></span><span class="line"><span class="ln">73</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
+<p>The library has several different layouts for different situations, you can study each of them in detail on the next pages.</p>
 
             <footer class="footline">
             </footer>
@@ -409,12 +410,12 @@ Let&rsquo;s pass our container there so we can interact with it.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1728143176" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1728143176" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728143176" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1728143176" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1728143176" defer></script>
-        <script src="/eui/js/search.js?1728143176" defer></script>
+        <script src="/eui/js/auto-complete.js?1728157787" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1728157787" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728157787" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1728157787" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1728157787" defer></script>
+        <script src="/eui/js/search.js?1728157787" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -427,6 +428,8 @@ Let&rsquo;s pass our container there so we can interact with it.</p>
           <ul class="enlarge morespace collapsible-menu">
           <li data-nav-id="/eui/basics/index.html" class="parent "><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" checked><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html">Basics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
           <li data-nav-id="/eui/basics/container-layouts/index.html" class="active"><a class="padding" href="/eui/basics/container-layouts/index.html">Container and layouts<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/eui/layouts/index.html" class=""><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b"><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html">Layouts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
+          <li data-nav-id="/eui/layouts/anchor/index.html" class=""><a class="padding" href="/eui/layouts/anchor/index.html">Anchor layout<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -479,8 +482,8 @@ Let&rsquo;s pass our container there so we can interact with it.</p>
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1728143176" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1728143176" defer></script>
-    <script src="/eui/js/theme.js?1728143176" defer></script>
+    <script src="/eui/js/clipboard.min.js?1728157787" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1728157787" defer></script>
+    <script src="/eui/js/theme.js?1728157787" defer></script>
   </body>
 </html>

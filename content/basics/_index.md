@@ -10,3 +10,7 @@ This guide will introduce you step by step to the basics of the library and teac
 
 - Go 1.19+
 - Ebitengine 2.7.8+
+
+###### Content
+
+{{% children %}}

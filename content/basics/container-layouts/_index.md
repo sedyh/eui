@@ -4,7 +4,6 @@ date = 2024-10-04T19:45:29+03:00
 weight = 1
 +++
 
-
 The library provides a rendering manager `*ebitenui.UI` in 
 which you will place your entire UI.
 
@@ -296,3 +295,5 @@ func (g *Game) Layout(w, h int) (int, int) {
 }
 ```
 {{% /expand %}}
+
+The library has several different layouts for different situations, you can study each of them in detail on the next pages.
