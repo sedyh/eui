@@ -7,41 +7,41 @@
     <meta name="generator" content="Relearn 6.4.0+tip">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Little test A: Little test B: Little test C: Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta name="author" content="sedyh">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/eui/images/hero.png">
     <meta name="twitter:title" content="Row layout - Ebiten UI">
     <meta name="twitter:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Little test A: Little test B: Little test C: Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta property="og:url" content="http://localhost:1313/eui/layouts/row/index.html">
     <meta property="og:site_name" content="Ebiten UI">
     <meta property="og:title" content="Row layout - Ebiten UI">
     <meta property="og:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Little test A: Little test B: Little test C: Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/eui/images/hero.png">
     <meta itemprop="name" content="Row layout - Ebiten UI">
     <meta itemprop="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Little test A: Little test B: Little test C: Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="613">
+    <meta itemprop="wordCount" content="622">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Row layout - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1728163919" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1728163919" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728163919" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1728163919" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1728163919" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728163919" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1728163919" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1728163919" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728163919" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1728163919" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1728163919" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1728163919" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1728163919" rel="stylesheet">
-    <link href="/eui/css/print.css?1728163919" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1728163919"></script>
+    <link href="/eui/images/favicon.png?1728597581" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1728597581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728597581" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1728597581" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1728597581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728597581" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1728597581" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1728597581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728597581" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1728597581" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1728597581" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1728597581" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/variant.css?1728597581" rel="stylesheet">
+    <link href="/eui/css/print.css?1728597581" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1728597581"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -119,15 +119,21 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h1 id="row-layout">Row layout</h1>
 
 <p>Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.</p>
-<p><a href="#R-image-90cb1293f3e1bde8d98e724583d297c5" class="lightbox-link"><img alt="preview" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-preview.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-90cb1293f3e1bde8d98e724583d297c5"><img alt="preview" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-preview.png"></a></p>
+<p>Little test A:
+<img alt="r" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/images/hero.png" style=" height: auto; width: auto;"></p>
+<p>Little test B:
+
+<img src=/eui/images/hero.png alt="wooow">
+</p>
+<p>Little test C:
+<img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-preview.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-39c07ef10e25af17b7ee6d3095a57f62" aria-controls="R-expandcontent-39c07ef10e25af17b7ee6d3095a57f62">
-  <label class="expand-label" for="R-expand-39c07ef10e25af17b7ee6d3095a57f62">
+  <input type="checkbox" id="R-expand-db21a4cc1e73b815ad217fe46e3fffe9" aria-controls="R-expandcontent-db21a4cc1e73b815ad217fe46e3fffe9">
+  <label class="expand-label" for="R-expand-db21a4cc1e73b815ad217fe46e3fffe9">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-39c07ef10e25af17b7ee6d3095a57f62" class="expand-content">
+  <div id="R-expandcontent-db21a4cc1e73b815ad217fe46e3fffe9" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -232,20 +238,20 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-options">Layout options</h3>
 <h6 id="direction">Direction</h6>
 <p>Responsible for whether child containers will follow each other in rows or columns.</p>
-<div class="tab-panel" data-tab-group="98c8d142a7b14641634640b57bbd037b">
+<div class="tab-panel" data-tab-group="7d44d5e62e34e95ed3501efaed9279bd">
   <div class="tab-nav">
     <div class="tab-nav-title">Direction:</div>
     <button
       data-tab-item="horizontal"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('98c8d142a7b14641634640b57bbd037b','horizontal')"
+      onclick="switchTab('7d44d5e62e34e95ed3501efaed9279bd','horizontal')"
     >
       <span class="tab-nav-text">Horizontal</span>
     </button>
     <button
       data-tab-item="vertical"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('98c8d142a7b14641634640b57bbd037b','vertical')"
+      onclick="switchTab('7d44d5e62e34e95ed3501efaed9279bd','vertical')"
     >
       <span class="tab-nav-text">Vertical</span>
     </button>
@@ -262,8 +268,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-9bba93a5fbc11fa39603fc816c125358" class="lightbox-link"><img alt="horz" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-horz.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9bba93a5fbc11fa39603fc816c125358"><img alt="horz" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-horz.png"></a></p>
+<p><img alt="horz" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-horz.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -277,43 +282,42 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-2737199eca5dfdb481e98376a47c7527" class="lightbox-link"><img alt="vert" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-vert.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2737199eca5dfdb481e98376a47c7527"><img alt="vert" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-vert.png"></a></p>
+<p><img alt="vert" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-vert.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="padding">Padding</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<p>Please note that <code>Right</code> and <code>Bottom</code> padding works depending on the direction.</p>
-<div class="tab-panel" data-tab-group="a09f077e77bffd68efa0247f08b207f3">
+<p>Please note that its not possible to specify padding at the end.</p>
+<div class="tab-panel" data-tab-group="f509bf1a652643a6680203515da08572">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('a09f077e77bffd68efa0247f08b207f3','left')"
+      onclick="switchTab('f509bf1a652643a6680203515da08572','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('a09f077e77bffd68efa0247f08b207f3','right')"
+      onclick="switchTab('f509bf1a652643a6680203515da08572','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('a09f077e77bffd68efa0247f08b207f3','top')"
+      onclick="switchTab('f509bf1a652643a6680203515da08572','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('a09f077e77bffd68efa0247f08b207f3','bottom')"
+      onclick="switchTab('f509bf1a652643a6680203515da08572','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -330,10 +334,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-39bfccd8fcb00603707895e8a68c17d4" class="lightbox-link"><img alt="left" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-left.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-39bfccd8fcb00603707895e8a68c17d4"><img alt="left" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-horz-pad-left.png"></a>
-<a href="#R-image-e2ddb2e7d11c2d300f371f57ba9fed41" class="lightbox-link"><img alt="left" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-left.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e2ddb2e7d11c2d300f371f57ba9fed41"><img alt="left" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-vert-pad-left.png"></a></p>
+<p><img alt="left" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-left.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -347,10 +348,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-d71d832c32a4f495fe7ee1f6c75e2899" class="lightbox-link"><img alt="right" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-right.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d71d832c32a4f495fe7ee1f6c75e2899"><img alt="right" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-horz-pad-right.png"></a>
-<a href="#R-image-deea5df14648e1416ebcd6d93f128849" class="lightbox-link"><img alt="right" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-right.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-deea5df14648e1416ebcd6d93f128849"><img alt="right" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-vert-pad-right.png"></a></p>
+<p><img alt="right" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-right.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -364,10 +362,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-0d053e52e3ac8ff8becef2367b17ae5f" class="lightbox-link"><img alt="top" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-top.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d053e52e3ac8ff8becef2367b17ae5f"><img alt="top" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-horz-pad-top.png"></a>
-<a href="#R-image-5016b9e0f24edd7aeafd147f20f13414" class="lightbox-link"><img alt="top" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-top.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5016b9e0f24edd7aeafd147f20f13414"><img alt="top" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-vert-pad-top.png"></a></p>
+<p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-top.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -381,44 +376,41 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-7412ede491a5b3164ff9bd767e43002d" class="lightbox-link"><img alt="bottom" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-bottom.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7412ede491a5b3164ff9bd767e43002d"><img alt="bottom" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-horz-pad-bottom.png"></a>
-<a href="#R-image-7aab1b8a480e5d54eefde553347f644a" class="lightbox-link"><img alt="bottom" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-bottom.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7aab1b8a480e5d54eefde553347f644a"><img alt="bottom" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-vert-pad-bottom.png"></a></p>
+<p><img alt="bottom" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-bottom.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="spacing">Spacing</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<div class="tab-panel" data-tab-group="a285f000e07c7144dc80b883f6d0081c">
+<div class="tab-panel" data-tab-group="7bf0def4f82df6a123b86f4b6f6a2cd4">
   <div class="tab-nav">
     <div class="tab-nav-title">Spacing:</div>
     <button
       data-tab-item="75"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('a285f000e07c7144dc80b883f6d0081c','75')"
+      onclick="switchTab('7bf0def4f82df6a123b86f4b6f6a2cd4','75')"
     >
       <span class="tab-nav-text">75</span>
     </button>
     <button
       data-tab-item="50"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('a285f000e07c7144dc80b883f6d0081c','50')"
+      onclick="switchTab('7bf0def4f82df6a123b86f4b6f6a2cd4','50')"
     >
       <span class="tab-nav-text">50</span>
     </button>
     <button
       data-tab-item="25"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('a285f000e07c7144dc80b883f6d0081c','25')"
+      onclick="switchTab('7bf0def4f82df6a123b86f4b6f6a2cd4','25')"
     >
       <span class="tab-nav-text">25</span>
     </button>
     <button
       data-tab-item="0"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('a285f000e07c7144dc80b883f6d0081c','0')"
+      onclick="switchTab('7bf0def4f82df6a123b86f4b6f6a2cd4','0')"
     >
       <span class="tab-nav-text">0</span>
     </button>
@@ -433,8 +425,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">75</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-abf0d52d57c9978df2a3d8333ae1e4c2" class="lightbox-link"><img alt="75" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-75.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-abf0d52d57c9978df2a3d8333ae1e4c2"><img alt="75" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-spacing-75.png"></a></p>
+<p><img alt="75" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-75.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -446,8 +437,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-8da337dffcf4ef4bd059115e16463871" class="lightbox-link"><img alt="50" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-50.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8da337dffcf4ef4bd059115e16463871"><img alt="50" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-spacing-50.png"></a></p>
+<p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-50.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -459,8 +449,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-d5859100887632affba92dc971235509" class="lightbox-link"><img alt="25" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-25.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d5859100887632affba92dc971235509"><img alt="25" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-spacing-25.png"></a></p>
+<p><img alt="25" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-25.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -472,8 +461,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-5f1efd0855b8fd0c0f3ea2e82d2f7628" class="lightbox-link"><img alt="0" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-0.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5f1efd0855b8fd0c0f3ea2e82d2f7628"><img alt="0" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-spacing-0.png"></a></p>
+<p><img alt="0" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-0.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
@@ -481,20 +469,20 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-data">Layout data</h3>
 <h6 id="stretch">Stretch</h6>
 <p>Responsible for stretching the element along the entire length of the opposite axis.</p>
-<div class="tab-panel" data-tab-group="90716efa1e2aee4c347477f2629defbd">
+<div class="tab-panel" data-tab-group="a6c62d9696acfe59c131ac607ff38d61">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="true"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('90716efa1e2aee4c347477f2629defbd','true')"
+      onclick="switchTab('a6c62d9696acfe59c131ac607ff38d61','true')"
     >
       <span class="tab-nav-text">true</span>
     </button>
     <button
       data-tab-item="false"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('90716efa1e2aee4c347477f2629defbd','false')"
+      onclick="switchTab('a6c62d9696acfe59c131ac607ff38d61','false')"
     >
       <span class="tab-nav-text">false</span>
     </button>
@@ -511,8 +499,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-c475207a1fff16735b38497ba8a8bcb7" class="lightbox-link"><img alt="true" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-stretch-true.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c475207a1fff16735b38497ba8a8bcb7"><img alt="true" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-stretch-true.png"></a></p>
+<p><img alt="true" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-stretch-true.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -526,35 +513,34 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-3a32af9aea1eb639c9e3a651a1f61360" class="lightbox-link"><img alt="false" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-stretch-false.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a32af9aea1eb639c9e3a651a1f61360"><img alt="false" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-stretch-false.png"></a></p>
+<p><img alt="false" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-stretch-false.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="position">Position</h6>
 <p>Responsible for aligning the element along the opposite axis if it is not stretched.</p>
-<div class="tab-panel" data-tab-group="cb9debb5686de742e9bb3abca457a2ef">
+<div class="tab-panel" data-tab-group="dc9686c36fe2bd8f28ac3788daf9837d">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('cb9debb5686de742e9bb3abca457a2ef','center')"
+      onclick="switchTab('dc9686c36fe2bd8f28ac3788daf9837d','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('cb9debb5686de742e9bb3abca457a2ef','start')"
+      onclick="switchTab('dc9686c36fe2bd8f28ac3788daf9837d','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('cb9debb5686de742e9bb3abca457a2ef','end')"
+      onclick="switchTab('dc9686c36fe2bd8f28ac3788daf9837d','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -571,8 +557,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-35956d405d3b858381d97b21d7b5fbda" class="lightbox-link"><img alt="center" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-position-center.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-35956d405d3b858381d97b21d7b5fbda"><img alt="center" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-position-center.png"></a></p>
+<p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-position-center.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -586,8 +571,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-28583387642ca695c801390fec08e286" class="lightbox-link"><img alt="start" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-position-start.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-28583387642ca695c801390fec08e286"><img alt="start" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-position-start.png"></a></p>
+<p><img alt="start" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-position-start.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -601,28 +585,27 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-dd3c3888b0325d3823098befea1a1a23" class="lightbox-link"><img alt="end" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-position-end.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dd3c3888b0325d3823098befea1a1a23"><img alt="end" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-position-end.png"></a></p>
+<p><img alt="end" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-position-end.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="max-size">Max size</h6>
 <p>Responsible for the allowable size of the container.</p>
-<div class="tab-panel" data-tab-group="71999028df0d284e206094cec7ef0e8b">
+<div class="tab-panel" data-tab-group="bb771b73a4a57903791658a7117e47ce">
   <div class="tab-nav">
     <div class="tab-nav-title">Max:</div>
     <button
       data-tab-item="width"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('71999028df0d284e206094cec7ef0e8b','width')"
+      onclick="switchTab('bb771b73a4a57903791658a7117e47ce','width')"
     >
       <span class="tab-nav-text">Width</span>
     </button>
     <button
       data-tab-item="height"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('71999028df0d284e206094cec7ef0e8b','height')"
+      onclick="switchTab('bb771b73a4a57903791658a7117e47ce','height')"
     >
       <span class="tab-nav-text">Height</span>
     </button>
@@ -639,8 +622,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-0494cf29e03e69896160054349e4fa05" class="lightbox-link"><img alt="width" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-max-width.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0494cf29e03e69896160054349e4fa05"><img alt="width" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-max-width.png"></a></p>
+<p><img alt="width" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-max-width.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
@@ -654,8 +636,7 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-df8c5358f860eec3fae6dfac5682cbb2" class="lightbox-link"><img alt="height" class="border nolazy lightbox noshadow figure-image" src="/eui/layouts/row/row-max-height.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-df8c5358f860eec3fae6dfac5682cbb2"><img alt="height" class="border nolazy lightbox noshadow lightbox-image" src="/eui/layouts/row/row-max-height.png"></a></p>
+<p><img alt="height" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-max-height.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
@@ -699,12 +680,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1728163919" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1728163919" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728163919" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1728163919" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1728163919" defer></script>
-        <script src="/eui/js/search.js?1728163919" defer></script>
+        <script src="/eui/js/auto-complete.js?1728597581" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1728597581" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728597581" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1728597581" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1728597581" defer></script>
+        <script src="/eui/js/search.js?1728597581" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -772,8 +753,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1728163919" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1728163919" defer></script>
-    <script src="/eui/js/theme.js?1728163919" defer></script>
+    <script src="/eui/js/clipboard.min.js?1728597581" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1728597581" defer></script>
+    <script src="/eui/js/theme.js?1728597581" defer></script>
   </body>
 </html>

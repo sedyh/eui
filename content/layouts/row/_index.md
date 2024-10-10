@@ -6,6 +6,15 @@ weight = 2
 
 Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
 
+Little test A:
+![r](images/hero.png)
+
+Little test B:
+{{< raw >}}
+<img src=/eui/images/hero.png alt="wooow">
+{{< /raw >}}
+
+Little test C:
 ![preview](row-preview.png)
 
 {{% expand title="Full example" %}}
@@ -149,7 +158,7 @@ root := widget.NewContainer(
 
 Layout allows you to specify padding for all child elements but not the itself.
 
-Please note that `Right` and `Bottom` padding works depending on the direction.
+Please note that its not possible to specify padding at the end.
 
 {{< tabs title="Padding:" style="transparent" color="#131a22ff" >}}
 {{% tab title="Left" %}}
@@ -162,7 +171,6 @@ root := widget.NewContainer(
     )),
 )
 ```
-![left](row-horz-pad-left.png)
 ![left](row-vert-pad-left.png)
 {{% /tab %}}
 {{% tab title="Right" %}}
@@ -175,7 +183,6 @@ root := widget.NewContainer(
     )),
 )
 ```
-![right](row-horz-pad-right.png)
 ![right](row-vert-pad-right.png)
 {{% /tab %}}
 {{% tab title="Top" %}}
@@ -189,7 +196,6 @@ root := widget.NewContainer(
 )
 ```
 ![top](row-horz-pad-top.png)
-![top](row-vert-pad-top.png)
 {{% /tab %}}
 {{% tab title="Bottom" %}}
 ```go
@@ -202,7 +208,6 @@ root := widget.NewContainer(
 )
 ```
 ![bottom](row-horz-pad-bottom.png)
-![bottom](row-vert-pad-bottom.png)
 {{% /tab %}}
 {{< /tabs >}}
 

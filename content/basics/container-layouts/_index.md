@@ -54,7 +54,7 @@ func NewGame() *Game {
 }
 ```
 
-The standard library has a package with default colors like `Lightblue`, `Lightskyblue`, `Lightsteelblue`,  that will be useful to us.
+The standard library has a package with default colors like `Gainsboro`, `Indianred`, `Steelblue`,  that will be useful to us.
 
 ```go
 import "golang.org/x/image/colornames"
@@ -78,58 +78,17 @@ c := widget.NewContainer(
 
 Lets run the app. We will see a single container that will take up all the free space.
 
-![image](single-container.png)
+![image](examples/bas_con_sin.png)
 
+[w](examples/bas_con_sin.txt)
+w
 
 {{% expand title="Full example" %}}
-```go
-package main
-
-import (
-	"github.com/ebitenui/ebitenui"
-	"github.com/ebitenui/ebitenui/image"
-	"github.com/ebitenui/ebitenui/widget"
-	"github.com/hajimehoshi/ebiten/v2"
-	"golang.org/x/image/colornames"
-)
-
-func main() {
-	ebiten.SetWindowSize(480, 320)
-	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
-	if err := ebiten.RunGame(NewGame()); err != nil {
-		panic(err)
-	}
-}
-
-type Game struct {
-	ui *ebitenui.UI
-}
-
-func NewGame() *Game {
-	c := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightblue),
-		),
-	)
-	return &Game{
-		ui: &ebitenui.UI{Container: c},
-	}
-}
-
-func (g *Game) Update() error {
-	g.ui.Update()
-	return nil
-}
-
-func (g *Game) Draw(screen *ebiten.Image) {
-	g.ui.Draw(screen)
-}
-
-func (g *Game) Layout(w, h int) (int, int) {
-	return w, h
-}
-```
+s
+{{< code source="examples/bas_con_sin.txt" >}}
+s
 {{% /expand %}}
+w
 
 Containers can be composed into each other. The order adding child containers does not matter.
 
@@ -215,7 +174,7 @@ store.AddChild(pants)
 
 Let's launch the application. We will see two child containers with `different horizontal positions` that will `stretch vertically`.
 
-![image](multiple-containers.png)
+![image](examples/bas_con_mul.png)
 
 
 {{% expand title="Full example" %}}
