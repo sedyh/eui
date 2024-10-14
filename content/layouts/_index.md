@@ -1,7 +1,7 @@
 +++
 archetype = "chapter"
 title = "Layouts"
-menuPre = ' <i style="margin-left: 6px;" class="fa-solid fa-layer-group"></i> '
+menuPre = ' <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> '
 weight = 2
 +++
 

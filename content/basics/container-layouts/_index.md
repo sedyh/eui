@@ -75,7 +75,7 @@ Lets run the app. We will see a single container that will take up all the free 
 ![image](examples/bas_con_sin.png)
 
 {{< expand title="Full example" >}}
-{{< code lang="go" src="static/examples/bas_con_sin.txt" id="full">}}
+{{< code src="assets/examples/bas_con_sin.txt" lang="go" id="full">}}
 {{< /expand >}}
 
 

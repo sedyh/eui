@@ -1,12 +1,12 @@
-// START full
-package main
+package bas_con_sin
 
 import (
+	"uir/assets"
+
 	"github.com/ebitenui/ebitenui"
 	"github.com/ebitenui/ebitenui/image"
 	"github.com/ebitenui/ebitenui/widget"
 	"github.com/hajimehoshi/ebiten/v2"
-	"golang.org/x/image/colornames"
 )
 
 type Game struct {
@@ -16,7 +16,7 @@ type Game struct {
 func NewGame() *Game {
 	root := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Gainsboro),
+			image.NewNineSliceColor(assets.ColorL),
 		),
 	)
 
@@ -37,4 +37,3 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
-// END full

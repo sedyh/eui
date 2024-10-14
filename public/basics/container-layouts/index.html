@@ -31,21 +31,21 @@
 1type Game struct { 2	ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6	return &amp;Game{ 7	ui: &amp;ebitenui.UI{}, 8	} 9} 10 11func (g *Game) Update() error { 12	g.ui.Update() 13	return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17	g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other. Container is located in widget package.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="697">
+    <meta itemprop="wordCount" content="717">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Container and layouts - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1728874742" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1728874742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728874742" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1728874742" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1728874742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728874742" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1728874742" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1728874742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728874742" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1728874742" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1728874742" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1728874742" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1728874742" rel="stylesheet">
-    <link href="/eui/css/print.css?1728874742" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1728874742"></script>
+    <link href="/eui/images/favicon.png?1728916174" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1728916174" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728916174" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1728916174" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1728916174" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728916174" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1728916174" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1728916174" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728916174" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1728916174" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1728916174" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1728916174" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/variant.css?1728916174" rel="stylesheet">
+    <link href="/eui/css/print.css?1728916174" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1728916174"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -218,13 +218,22 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 <p>Lets run the app. We will see a single container that will take up all the free space.</p>
 <p><img alt="image" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/bas_con_sin.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-03e18a9e41c59e8192c01fd1a0c996ad" aria-controls="R-expandcontent-03e18a9e41c59e8192c01fd1a0c996ad">
-  <label class="expand-label" for="R-expand-03e18a9e41c59e8192c01fd1a0c996ad">
+  <input type="checkbox" id="R-expand-8970d41cb8349c6880dbfd5e10c5382d" aria-controls="R-expandcontent-8970d41cb8349c6880dbfd5e10c5382d">
+  <label class="expand-label" for="R-expand-8970d41cb8349c6880dbfd5e10c5382d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-03e18a9e41c59e8192c01fd1a0c996ad" class="expand-content">
-<p>No snippet found for id "full"</p>
+  <div id="R-expandcontent-8970d41cb8349c6880dbfd5e10c5382d" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
 <p>Containers can be composed into each other. The order adding child containers does not matter.</p>
@@ -295,12 +304,12 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 <p>Let&rsquo;s launch the application. We will see one <code>root container</code> in background and two <code>child containers</code> inside at different <code>position</code> that will <code>stretch</code> vertically.</p>
 <p><img alt="image" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/bas_con_mul.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-745833877c319359699a4c6f600659cb" aria-controls="R-expandcontent-745833877c319359699a4c6f600659cb">
-  <label class="expand-label" for="R-expand-745833877c319359699a4c6f600659cb">
+  <input type="checkbox" id="R-expand-d3cfddb280a300e1f2cb8555c1aa1134" aria-controls="R-expandcontent-d3cfddb280a300e1f2cb8555c1aa1134">
+  <label class="expand-label" for="R-expand-d3cfddb280a300e1f2cb8555c1aa1134">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-745833877c319359699a4c6f600659cb" class="expand-content">
+  <div id="R-expandcontent-d3cfddb280a300e1f2cb8555c1aa1134" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -416,12 +425,12 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1728874742" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1728874742" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728874742" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1728874742" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1728874742" defer></script>
-        <script src="/eui/js/search.js?1728874742" defer></script>
+        <script src="/eui/js/auto-complete.js?1728916174" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1728916174" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728916174" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1728916174" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1728916174" defer></script>
+        <script src="/eui/js/search.js?1728916174" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -432,9 +441,9 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/index.html" class="parent "><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" checked><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-graduation-cap"></i> Basics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
+          <li data-nav-id="/eui/basics/index.html" class="parent "><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" checked><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
           <li data-nav-id="/eui/basics/container-layouts/index.html" class="active"><a class="padding" href="/eui/basics/container-layouts/index.html">Container and layouts<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/eui/layouts/index.html" class=""><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b"><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 6px;" class="fa-solid fa-layer-group"></i> Layouts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
+          <li data-nav-id="/eui/layouts/index.html" class=""><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b"><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
           <li data-nav-id="/eui/layouts/anchor/index.html" class=""><a class="padding" href="/eui/layouts/anchor/index.html">Anchor layout<i class="fa-fw fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/eui/layouts/row/index.html" class=""><a class="padding" href="/eui/layouts/row/index.html">Row layout<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
@@ -489,8 +498,8 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1728874742" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1728874742" defer></script>
-    <script src="/eui/js/theme.js?1728874742" defer></script>
+    <script src="/eui/js/clipboard.min.js?1728916174" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1728916174" defer></script>
+    <script src="/eui/js/theme.js?1728916174" defer></script>
   </body>
 </html>
