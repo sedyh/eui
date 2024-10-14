@@ -90,3 +90,5 @@ title = 'Ebiten UI'
     noClasses = false
   [markup.goldmark.renderHooks.image]
     enableDefault = true
+  [markup.goldmark.renderer]
+      unsafe = true

@@ -1,6 +1,7 @@
 +++
 archetype = "chapter"
 title = "Basics"
+menuPre = ' <i style="margin-left: 5px;" class="fa-solid fa-graduation-cap"></i> '
 weight = 1
 +++
 

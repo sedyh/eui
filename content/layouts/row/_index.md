@@ -6,15 +6,6 @@ weight = 2
 
 Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
 
-Little test A:
-![r](images/hero.png)
-
-Little test B:
-{{< raw >}}
-<img src=/eui/images/hero.png alt="wooow">
-{{< /raw >}}
-
-Little test C:
 ![preview](row-preview.png)
 
 {{% expand title="Full example" %}}

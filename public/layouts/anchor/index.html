@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
-    <meta name="generator" content="Relearn 6.4.0+tip">
+    <meta name="generator" content="Relearn 6.4.1">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="Anchor layout allows the child containers to be anchored to a specific constraint.
 Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	left := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{ 30	HorizontalPosition: widget.AnchorLayoutPositionStart, 31	StretchVertical: true, 32	}), 33	widget.WidgetOpts.MinSize(50, 50), 34	), 35	) 36	right := widget.NewContainer( 37	widget.ContainerOpts.BackgroundImage( 38	image.NewNineSliceColor(colornames.Lightblue), 39	), 40	widget.ContainerOpts.WidgetOpts( 41	widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{ 42	HorizontalPosition: widget.AnchorLayoutPositionEnd, 43	StretchVertical: true, 44	}), 45	widget.WidgetOpts.MinSize(50, 50), 46	), 47	) 48	up := widget.NewContainer( 49	widget.ContainerOpts.BackgroundImage( 50	image.NewNineSliceColor(colornames.Lightcyan), 51	), 52	widget.ContainerOpts.WidgetOpts( 53	widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{ 54	VerticalPosition: widget.AnchorLayoutPositionStart, 55	StretchHorizontal: true, 56	}), 57	widget.WidgetOpts.MinSize(50, 50), 58	), 59	) 60	down := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Lightslategrey), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{ 66	VerticalPosition: widget.AnchorLayoutPositionEnd, 67	StretchHorizontal: true, 68	}), 69	widget.WidgetOpts.MinSize(50, 50), 70	), 71	) 72	root := widget.NewContainer( 73	widget.ContainerOpts.BackgroundImage( 74	image.NewNineSliceColor(colornames.Lightsteelblue), 75	), 76	widget.ContainerOpts.Layout(widget.NewAnchorLayout()), 77	) 78	root.AddChild(left) 79	root.AddChild(right) 80	root.AddChild(up) 81	root.AddChild(down) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Padding Layout allows you to specify padding for all child elements but not the itself.">
@@ -30,18 +30,18 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
     <meta itemprop="wordCount" content="459">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Anchor layout - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1728597581" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1728597581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728597581" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1728597581" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1728597581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728597581" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1728597581" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1728597581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728597581" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1728597581" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1728597581" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1728597581" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1728597581" rel="stylesheet">
-    <link href="/eui/css/print.css?1728597581" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1728597581"></script>
+    <link href="/eui/images/favicon.png?1728874742" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1728874742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728874742" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1728874742" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1728874742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728874742" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1728874742" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1728874742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728874742" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1728874742" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1728874742" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1728874742" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/variant.css?1728874742" rel="stylesheet">
+    <link href="/eui/css/print.css?1728874742" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1728874742"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -121,12 +121,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <p>Anchor layout allows the child containers to be anchored to a specific constraint.</p>
 <p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/anchor/anchor-preview.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3d610c4d547d1fae3aeba3fdf14ece9e" aria-controls="R-expandcontent-3d610c4d547d1fae3aeba3fdf14ece9e">
-  <label class="expand-label" for="R-expand-3d610c4d547d1fae3aeba3fdf14ece9e">
+  <input type="checkbox" id="R-expand-3804c5fff2bd2acc5a6e580acbafbe5d" aria-controls="R-expandcontent-3804c5fff2bd2acc5a6e580acbafbe5d">
+  <label class="expand-label" for="R-expand-3804c5fff2bd2acc5a6e580acbafbe5d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-3d610c4d547d1fae3aeba3fdf14ece9e" class="expand-content">
+  <div id="R-expandcontent-3804c5fff2bd2acc5a6e580acbafbe5d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -231,34 +231,34 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-options">Layout options</h3>
 <h6 id="padding">Padding</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<div class="tab-panel" data-tab-group="64c995b9a2be3db67cb5bcebc248b54c">
+<div class="tab-panel" data-tab-group="4eacbc6ecbf9022d4cd2e0338c23e365">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('64c995b9a2be3db67cb5bcebc248b54c','left')"
+      onclick="switchTab('4eacbc6ecbf9022d4cd2e0338c23e365','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('64c995b9a2be3db67cb5bcebc248b54c','right')"
+      onclick="switchTab('4eacbc6ecbf9022d4cd2e0338c23e365','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('64c995b9a2be3db67cb5bcebc248b54c','top')"
+      onclick="switchTab('4eacbc6ecbf9022d4cd2e0338c23e365','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('64c995b9a2be3db67cb5bcebc248b54c','bottom')"
+      onclick="switchTab('4eacbc6ecbf9022d4cd2e0338c23e365','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -325,27 +325,27 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-data">Layout data</h3>
 <h6 id="horizontal-position">Horizontal position</h6>
 <p>Responsible for aligning the element along the horizontal axis.</p>
-<div class="tab-panel" data-tab-group="b7f421c2fbe525a390d658bfd480f898">
+<div class="tab-panel" data-tab-group="4732d15a856667fe873398c31e5aa420">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('b7f421c2fbe525a390d658bfd480f898','center')"
+      onclick="switchTab('4732d15a856667fe873398c31e5aa420','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b7f421c2fbe525a390d658bfd480f898','start')"
+      onclick="switchTab('4732d15a856667fe873398c31e5aa420','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b7f421c2fbe525a390d658bfd480f898','end')"
+      onclick="switchTab('4732d15a856667fe873398c31e5aa420','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -397,27 +397,27 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </div>
 <h6 id="vertical-position">Vertical position</h6>
 <p>Responsible for aligning the element along the vertical axis.</p>
-<div class="tab-panel" data-tab-group="7d03d9b1b6178f81be96e566dfcbfdce">
+<div class="tab-panel" data-tab-group="928ac9232b300970ca8b7029e2bdcdbe">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('7d03d9b1b6178f81be96e566dfcbfdce','center')"
+      onclick="switchTab('928ac9232b300970ca8b7029e2bdcdbe','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('7d03d9b1b6178f81be96e566dfcbfdce','start')"
+      onclick="switchTab('928ac9232b300970ca8b7029e2bdcdbe','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('7d03d9b1b6178f81be96e566dfcbfdce','end')"
+      onclick="switchTab('928ac9232b300970ca8b7029e2bdcdbe','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -506,12 +506,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1728597581" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1728597581" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728597581" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1728597581" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1728597581" defer></script>
-        <script src="/eui/js/search.js?1728597581" defer></script>
+        <script src="/eui/js/auto-complete.js?1728874742" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1728874742" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728874742" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1728874742" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1728874742" defer></script>
+        <script src="/eui/js/search.js?1728874742" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -522,9 +522,9 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/index.html" class=""><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html">Basics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
+          <li data-nav-id="/eui/basics/index.html" class=""><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-graduation-cap"></i> Basics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
           <li data-nav-id="/eui/basics/container-layouts/index.html" class=""><a class="padding" href="/eui/basics/container-layouts/index.html">Container and layouts<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/eui/layouts/index.html" class="parent "><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html">Layouts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
+          <li data-nav-id="/eui/layouts/index.html" class="parent "><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 6px;" class="fa-solid fa-layer-group"></i> Layouts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
           <li data-nav-id="/eui/layouts/anchor/index.html" class="active"><a class="padding" href="/eui/layouts/anchor/index.html">Anchor layout<i class="fa-fw fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/eui/layouts/row/index.html" class=""><a class="padding" href="/eui/layouts/row/index.html">Row layout<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
@@ -579,8 +579,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1728597581" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1728597581" defer></script>
-    <script src="/eui/js/theme.js?1728597581" defer></script>
+    <script src="/eui/js/clipboard.min.js?1728874742" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1728874742" defer></script>
+    <script src="/eui/js/theme.js?1728874742" defer></script>
   </body>
 </html>

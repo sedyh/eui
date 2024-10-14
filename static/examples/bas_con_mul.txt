@@ -27,7 +27,7 @@ func NewGame() *Game {
 	)
 	right := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(assets.ColorB),
+			image.NewNineSliceColor(colornames.Steelblue),
 		),
 		widget.ContainerOpts.WidgetOpts(
 			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
