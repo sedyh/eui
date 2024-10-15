@@ -82,11 +82,11 @@ Layout allows you to specify padding for all child elements but not the itself.
 Responsible for stretching the element along the entire length of the opposite axis.
 
 {{< tabs title="Stretch:" style="transparent" color="#131a22ff" >}}
-{{% tab title="false" %}}
+{{% tab title="False" %}}
 {{< code src="assets/examples/lay_row_str_fal.txt" lang="go" id="str" >}}
 ![fal](examples/lay_row_str_fal.png)
 {{% /tab %}}
-{{% tab title="true" %}}
+{{% tab title="True" %}}
 {{< code src="assets/examples/lay_row_str_tru.txt" lang="go" id="str" >}}
 ![tru](examples/lay_row_str_tru.png)
 {{% /tab %}}
