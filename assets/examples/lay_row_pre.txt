@@ -1,3 +1,4 @@
+// START full
 package main
 
 import (
@@ -21,7 +22,7 @@ func NewGame() *Game {
 			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
 				Stretch: true,
 			}),
-			widget.WidgetOpts.MinSize(120, 51),
+			widget.WidgetOpts.MinSize(96, 50),
 		),
 	)
 	b := widget.NewContainer(
@@ -32,18 +33,18 @@ func NewGame() *Game {
 			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
 				Stretch: true,
 			}),
-			widget.WidgetOpts.MinSize(120, 51),
+			widget.WidgetOpts.MinSize(96, 50),
 		),
 	)
 	c := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(assets.ColorB),
+			image.NewNineSliceColor(colornames.Steelblue),
 		),
 		widget.ContainerOpts.WidgetOpts(
 			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
 				Stretch: true,
 			}),
-			widget.WidgetOpts.MinSize(120, 51),
+			widget.WidgetOpts.MinSize(96, 50),
 		),
 	)
 	d := widget.NewContainer(
@@ -54,7 +55,7 @@ func NewGame() *Game {
 			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
 				Stretch: true,
 			}),
-			widget.WidgetOpts.MinSize(120, 51),
+			widget.WidgetOpts.MinSize(96, 50),
 		),
 	)
 	e := widget.NewContainer(
@@ -65,10 +66,9 @@ func NewGame() *Game {
 			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
 				Stretch: true,
 			}),
-			widget.WidgetOpts.MinSize(120, 51),
+			widget.WidgetOpts.MinSize(96, 50),
 		),
 	)
-
 	root := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(colornames.Gainsboro),
@@ -77,7 +77,7 @@ func NewGame() *Game {
 			widget.RowLayoutOpts.Direction(
 				widget.DirectionVertical,
 			),
-			widget.RowLayoutOpts.Spacing(4),
+			widget.RowLayoutOpts.Spacing(5),
 			widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)),
 		)),
 	)
@@ -104,3 +104,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END full

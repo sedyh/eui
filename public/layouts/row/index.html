@@ -7,41 +7,41 @@
     <meta name="generator" content="Relearn 6.4.1">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta name="author" content="sedyh">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/eui/images/hero.png">
     <meta name="twitter:title" content="Row layout - Ebiten UI">
     <meta name="twitter:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta property="og:url" content="http://localhost:1313/eui/layouts/row/index.html">
     <meta property="og:site_name" content="Ebiten UI">
     <meta property="og:title" content="Row layout - Ebiten UI">
     <meta property="og:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/eui/images/hero.png">
     <meta itemprop="name" content="Row layout - Ebiten UI">
     <meta itemprop="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11func main() { 12	ebiten.SetWindowSize(480, 320) 13	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled) 14	if err := ebiten.RunGame(NewGame()); err != nil { 15	panic(err) 16	} 17} 18 19type Game struct { 20	ui *ebitenui.UI 21} 22 23func NewGame() *Game { 24	a := widget.NewContainer( 25	widget.ContainerOpts.BackgroundImage( 26	image.NewNineSliceColor(colornames.Lightskyblue), 27	), 28	widget.ContainerOpts.WidgetOpts( 29	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 30	Stretch: true, 31	}), 32	widget.WidgetOpts.MinSize(50, 80), 33	), 34	) 35	b := widget.NewContainer( 36	widget.ContainerOpts.BackgroundImage( 37	image.NewNineSliceColor(colornames.Lightblue), 38	), 39	widget.ContainerOpts.WidgetOpts( 40	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 41	Stretch: true, 42	}), 43	widget.WidgetOpts.MinSize(50, 80), 44	), 45	) 46	c := widget.NewContainer( 47	widget.ContainerOpts.BackgroundImage( 48	image.NewNineSliceColor(colornames.Lightcyan), 49	), 50	widget.ContainerOpts.WidgetOpts( 51	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 52	Stretch: true, 53	}), 54	widget.WidgetOpts.MinSize(50, 80), 55	), 56	) 57	d := widget.NewContainer( 58	widget.ContainerOpts.BackgroundImage( 59	image.NewNineSliceColor(colornames.Lightslategrey), 60	), 61	widget.ContainerOpts.WidgetOpts( 62	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 63	Stretch: true, 64	}), 65	widget.WidgetOpts.MinSize(50, 80), 66	), 67	) 68	root := widget.NewContainer( 69	widget.ContainerOpts.BackgroundImage( 70	image.NewNineSliceColor(colornames.Lightsteelblue), 71	), 72	widget.ContainerOpts.Layout(widget.NewRowLayout( 73	widget.RowLayoutOpts.Direction( 74	widget.DirectionVertical, 75	), 76	)), 77	) 78	root.AddChild(a) 79	root.AddChild(b) 80	root.AddChild(c) 81	root.AddChild(d) 82 83	return &amp;Game{ 84	ui: &amp;ebitenui.UI{Container: root}, 85	} 86} 87 88func (g *Game) Update() error { 89	g.ui.Update() 90	return nil 91} 92 93func (g *Game) Draw(screen *ebiten.Image) { 94	g.ui.Draw(screen) 95} 96 97func (g *Game) Layout(w, h int) (int, int) { 98	return w, h 99} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="613">
+    <meta itemprop="wordCount" content="799">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Row layout - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1728916094" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1728916094" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728916094" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1728916094" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1728916094" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728916094" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1728916094" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1728916094" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728916094" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1728916094" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1728916094" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1728916094" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1728916094" rel="stylesheet">
-    <link href="/eui/css/print.css?1728916094" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1728916094"></script>
+    <link href="/eui/images/favicon.png?1728954346" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1728954346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728954346" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1728954346" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1728954346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728954346" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1728954346" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1728954346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728954346" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1728954346" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1728954346" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1728954346" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/variant.css?1728954346" rel="stylesheet">
+    <link href="/eui/css/print.css?1728954346" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1728954346"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -60,7 +60,11 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
-    </script>
+    </script><style>
+    .highlight {
+        tab-size: 4;
+    }
+</style>4
   </head>
   <body class="mobile-support html disableInlineCopyToClipboard" data-url="/eui/layouts/row/index.html">
     <div id="R-body" class="default-animation">
@@ -119,198 +123,209 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h1 id="row-layout">Row layout</h1>
 
 <p>Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.</p>
-<p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-preview.png" style=" height: auto; width: auto;"></p>
+<p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-77088de34a4bc7d3d8e4cd647899ddf8" aria-controls="R-expandcontent-77088de34a4bc7d3d8e4cd647899ddf8">
-  <label class="expand-label" for="R-expand-77088de34a4bc7d3d8e4cd647899ddf8">
+  <input type="checkbox" id="R-expand-a500725c1682e0fd4ec35905cc4c5c24" aria-controls="R-expandcontent-a500725c1682e0fd4ec35905cc4c5c24">
+  <label class="expand-label" for="R-expand-a500725c1682e0fd4ec35905cc4c5c24">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-77088de34a4bc7d3d8e4cd647899ddf8" class="expand-content">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">
-</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">
-</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl">
-</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl">	<span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">25</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">26</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightskyblue</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">27</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">28</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">31</span><span class="cl">			<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">32</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">33</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">34</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">35</span><span class="cl">	<span class="nx">b</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">36</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">37</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightblue</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">38</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">39</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">40</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">41</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">42</span><span class="cl">			<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">43</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">44</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">45</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">46</span><span class="cl">	<span class="nx">c</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">47</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">48</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightcyan</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">49</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">50</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">52</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">53</span><span class="cl">			<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">54</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">55</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">57</span><span class="cl">	<span class="nx">d</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">58</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">59</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightslategrey</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">60</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">61</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">62</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">63</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">64</span><span class="cl">			<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">65</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">66</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">67</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">68</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">69</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">70</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightsteelblue</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">71</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">72</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">73</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">74</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">75</span><span class="cl">			<span class="p">),</span>
-</span></span><span class="line"><span class="ln">76</span><span class="cl">		<span class="p">)),</span>
-</span></span><span class="line"><span class="ln">77</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">78</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">79</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">80</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">81</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">82</span><span class="cl">
-</span></span><span class="line"><span class="ln">83</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">84</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
-</span></span><span class="line"><span class="ln">85</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">86</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">87</span><span class="cl">
-</span></span><span class="line"><span class="ln">88</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">89</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln">90</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
-</span></span><span class="line"><span class="ln">91</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">92</span><span class="cl">
-</span></span><span class="line"><span class="ln">93</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">94</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">95</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">96</span><span class="cl">
-</span></span><span class="line"><span class="ln">97</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">98</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">99</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div id="R-expandcontent-a500725c1682e0fd4ec35905cc4c5c24" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl">
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">	<span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">	<span class="nx">b</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Goldenrod</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">	<span class="nx">c</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Steelblue</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">	<span class="nx">d</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">	<span class="nx">e</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">				<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">			<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewInsetsSimple</span><span class="p">(</span><span class="mi">25</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">		<span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">102</span><span class="cl">
+</span></span><span class="line"><span class="ln">103</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">104</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln">105</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
 <h3 id="layout-options">Layout options</h3>
 <h6 id="direction">Direction</h6>
 <p>Responsible for whether child containers will follow each other in rows or columns.</p>
-<div class="tab-panel" data-tab-group="5de903976b5fcf5a6ec52c370fe51460">
+<div class="tab-panel" data-tab-group="74ecdd64ca16b3ef95e4919d852475ff">
   <div class="tab-nav">
     <div class="tab-nav-title">Direction:</div>
     <button
-      data-tab-item="horizontal"
-      class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('5de903976b5fcf5a6ec52c370fe51460','horizontal')"
-    >
-      <span class="tab-nav-text">Horizontal</span>
-    </button>
-    <button
       data-tab-item="vertical"
-      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('5de903976b5fcf5a6ec52c370fe51460','vertical')"
+      class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
+      onclick="switchTab('74ecdd64ca16b3ef95e4919d852475ff','vertical')"
     >
       <span class="tab-nav-text">Vertical</span>
+    </button>
+    <button
+      data-tab-item="horizontal"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('74ecdd64ca16b3ef95e4919d852475ff','horizontal')"
+    >
+      <span class="tab-nav-text">Horizontal</span>
     </button>
   </div>
   <div class="tab-content-container">
     <div
-      data-tab-item="horizontal"
+      data-tab-item="vertical"
       class="tab-content tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionHorizontal</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="horz" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-horz.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="vert" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_dir_ver.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
-      data-tab-item="vertical"
+      data-tab-item="horizontal"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="vert" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-vert.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionHorizontal</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="horz" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_dir_hor.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="padding">Padding</h6>
-<p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<p>Please note that its not possible to specify padding at the end.</p>
-<div class="tab-panel" data-tab-group="786aa5d331ecd180886c28aa5fa58b54">
+<p>Layout allows you to specify padding for all child elements but not the itself. Please note that its not possible to specify padding at the <em>end</em>, so the <em>direction</em> will changed accordingly.</p>
+<div class="tab-panel" data-tab-group="f29f0424b932e2ae6983e481ac6e0988">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('786aa5d331ecd180886c28aa5fa58b54','left')"
+      onclick="switchTab('f29f0424b932e2ae6983e481ac6e0988','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('786aa5d331ecd180886c28aa5fa58b54','right')"
+      onclick="switchTab('f29f0424b932e2ae6983e481ac6e0988','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('786aa5d331ecd180886c28aa5fa58b54','top')"
+      onclick="switchTab('f29f0424b932e2ae6983e481ac6e0988','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('786aa5d331ecd180886c28aa5fa58b54','bottom')"
+      onclick="switchTab('f29f0424b932e2ae6983e481ac6e0988','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -320,141 +335,189 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
       data-tab-item="left"
       class="tab-content tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Left</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="left" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-left.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">Left</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="lef" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_lef.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
       data-tab-item="right"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Right</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="right" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-vert-pad-right.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">Right</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="rig" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_rig.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
       data-tab-item="top"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Top</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-top.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionHorizontal</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">Top</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_top.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
       data-tab-item="bottom"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Bottom</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="bottom" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-horz-pad-bottom.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionHorizontal</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Insets</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">Bottom</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_bot.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="spacing">Spacing</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<div class="tab-panel" data-tab-group="951a7dfd87b69b0d0020a89939e14951">
+<div class="tab-panel" data-tab-group="474c68e443285a6e392088503d21e0b3">
   <div class="tab-nav">
     <div class="tab-nav-title">Spacing:</div>
     <button
-      data-tab-item="75"
+      data-tab-item="0"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('951a7dfd87b69b0d0020a89939e14951','75')"
+      onclick="switchTab('474c68e443285a6e392088503d21e0b3','0')"
     >
-      <span class="tab-nav-text">75</span>
-    </button>
-    <button
-      data-tab-item="50"
-      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('951a7dfd87b69b0d0020a89939e14951','50')"
-    >
-      <span class="tab-nav-text">50</span>
+      <span class="tab-nav-text">0</span>
     </button>
     <button
       data-tab-item="25"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('951a7dfd87b69b0d0020a89939e14951','25')"
+      onclick="switchTab('474c68e443285a6e392088503d21e0b3','25')"
     >
       <span class="tab-nav-text">25</span>
     </button>
     <button
-      data-tab-item="0"
+      data-tab-item="50"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('951a7dfd87b69b0d0020a89939e14951','0')"
+      onclick="switchTab('474c68e443285a6e392088503d21e0b3','50')"
     >
-      <span class="tab-nav-text">0</span>
+      <span class="tab-nav-text">50</span>
+    </button>
+    <button
+      data-tab-item="75"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('474c68e443285a6e392088503d21e0b3','75')"
+    >
+      <span class="tab-nav-text">75</span>
     </button>
   </div>
   <div class="tab-content-container">
     <div
-      data-tab-item="75"
+      data-tab-item="0"
       class="tab-content tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">75</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="75" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-75.png" style=" height: auto; width: auto;"></p>
-      </div>
-    </div>
-    <div
-      data-tab-item="50"
-      class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
-      <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-50.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="0" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_0.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
       data-tab-item="25"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="25" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-25.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="25" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_25.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
-      data-tab-item="0"
+      data-tab-item="50"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">)),</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="0" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-spacing-0.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_50.png" style=" height: auto; width: auto;"></p>
+      </div>
+    </div>
+    <div
+      data-tab-item="75"
+      class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
+      <div class="tab-content-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewRowLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Direction</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">DirectionVertical</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutOpts</span><span class="p">.</span><span class="nf">Spacing</span><span class="p">(</span><span class="mi">75</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="75" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_75.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
@@ -462,143 +525,163 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-data">Layout data</h3>
 <h6 id="stretch">Stretch</h6>
 <p>Responsible for stretching the element along the entire length of the opposite axis.</p>
-<div class="tab-panel" data-tab-group="b7d8118fa11f0e7a825a9713f260b03a">
+<div class="tab-panel" data-tab-group="cff44fd2d2579de2c9ab130085e8adaa">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
-      data-tab-item="true"
-      class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('b7d8118fa11f0e7a825a9713f260b03a','true')"
-    >
-      <span class="tab-nav-text">true</span>
-    </button>
-    <button
       data-tab-item="false"
-      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b7d8118fa11f0e7a825a9713f260b03a','false')"
+      class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
+      onclick="switchTab('cff44fd2d2579de2c9ab130085e8adaa','false')"
     >
       <span class="tab-nav-text">false</span>
+    </button>
+    <button
+      data-tab-item="true"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('cff44fd2d2579de2c9ab130085e8adaa','true')"
+    >
+      <span class="tab-nav-text">true</span>
     </button>
   </div>
   <div class="tab-content-container">
     <div
-      data-tab-item="true"
+      data-tab-item="false"
       class="tab-content tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="true" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-stretch-true.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="fal" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_str_fal.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
-      data-tab-item="false"
+      data-tab-item="true"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Stretch</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="false" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-stretch-false.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">Stretch</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="tru" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_str_tru.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="position">Position</h6>
 <p>Responsible for aligning the element along the opposite axis if it is not stretched.</p>
-<div class="tab-panel" data-tab-group="878f2c710200df78848389efa3619cbc">
+<div class="tab-panel" data-tab-group="ca1c76b80c1bc108394b16a26e29d99d">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
-      data-tab-item="center"
-      class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('878f2c710200df78848389efa3619cbc','center')"
-    >
-      <span class="tab-nav-text">Center</span>
-    </button>
-    <button
       data-tab-item="start"
-      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('878f2c710200df78848389efa3619cbc','start')"
+      class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
+      onclick="switchTab('ca1c76b80c1bc108394b16a26e29d99d','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
+      data-tab-item="center"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('ca1c76b80c1bc108394b16a26e29d99d','center')"
+    >
+      <span class="tab-nav-text">Center</span>
+    </button>
+    <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('878f2c710200df78848389efa3619cbc','end')"
+      onclick="switchTab('ca1c76b80c1bc108394b16a26e29d99d','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
   </div>
   <div class="tab-content-container">
     <div
-      data-tab-item="center"
+      data-tab-item="start"
       class="tab-content tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Position</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutPositionCenter</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-position-center.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">Position</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutPositionStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="sta" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pos_sta.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
-      data-tab-item="start"
+      data-tab-item="center"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Position</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutPositionStart</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="start" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-position-start.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">Position</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="sta" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pos_cen.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
       data-tab-item="end"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">Position</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutPositionEnd</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="end" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-position-end.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">Position</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="sta" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pos_end.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
 </div>
 <h6 id="max-size">Max size</h6>
 <p>Responsible for the allowable size of the container.</p>
-<div class="tab-panel" data-tab-group="1fd0f67005fc3182e37038656cb8f3db">
+<div class="tab-panel" data-tab-group="4ba24f5afcf365afbd9aed0065949e1c">
   <div class="tab-nav">
     <div class="tab-nav-title">Max:</div>
     <button
       data-tab-item="width"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('1fd0f67005fc3182e37038656cb8f3db','width')"
+      onclick="switchTab('4ba24f5afcf365afbd9aed0065949e1c','width')"
     >
       <span class="tab-nav-text">Width</span>
     </button>
     <button
       data-tab-item="height"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1fd0f67005fc3182e37038656cb8f3db','height')"
+      onclick="switchTab('4ba24f5afcf365afbd9aed0065949e1c','height')"
     >
       <span class="tab-nav-text">Height</span>
     </button>
@@ -608,28 +691,36 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
       data-tab-item="width"
       class="tab-content tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">MaxWidth</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="width" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-max-width.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_max_wid.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
     <div
       data-tab-item="height"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl">            <span class="nx">MaxHeight</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="p">}),</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">),</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="height" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/layouts/row/row-max-height.png" style=" height: auto; width: auto;"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">a</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">RowLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_max_hei.png" style=" height: auto; width: auto;"></p>
       </div>
     </div>
   </div>
@@ -673,12 +764,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1728916094" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1728916094" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728916094" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1728916094" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1728916094" defer></script>
-        <script src="/eui/js/search.js?1728916094" defer></script>
+        <script src="/eui/js/auto-complete.js?1728954346" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1728954346" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728954346" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1728954346" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1728954346" defer></script>
+        <script src="/eui/js/search.js?1728954346" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -746,8 +837,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1728916094" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1728916094" defer></script>
-    <script src="/eui/js/theme.js?1728916094" defer></script>
+    <script src="/eui/js/clipboard.min.js?1728954346" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1728954346" defer></script>
+    <script src="/eui/js/theme.js?1728954346" defer></script>
   </body>
 </html>

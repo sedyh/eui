@@ -1,3 +1,4 @@
+// START full
 package main
 
 import (
@@ -13,6 +14,7 @@ type Game struct {
 }
 
 func NewGame() *Game {
+	// START containers
 	left := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(colornames.Indianred),
@@ -27,7 +29,7 @@ func NewGame() *Game {
 	)
 	right := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Steelblue),
+			image.NewNineSliceColor(colornames.Mediumseagreen),
 		),
 		widget.ContainerOpts.WidgetOpts(
 			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
@@ -45,6 +47,7 @@ func NewGame() *Game {
 	)
 	root.AddChild(left)
 	root.AddChild(right)
+	// END containers
 
 	return &Game{
 		ui: &ebitenui.UI{Container: root},
@@ -63,3 +66,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END full

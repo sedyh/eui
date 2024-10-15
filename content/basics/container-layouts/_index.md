@@ -125,40 +125,7 @@ left := widget.NewContainer(
 
 Let's set similar options for other containers.
 
-```go
-left := widget.NewContainer(
-	widget.ContainerOpts.BackgroundImage(
-		image.NewNineSliceColor(colornames.Indianred),
-	),
-	widget.ContainerOpts.WidgetOpts(
-		widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
-			HorizontalPosition: widget.AnchorLayoutPositionStart,
-			StretchVertical:    true,
-		}),
-		widget.WidgetOpts.MinSize(50, 50),
-	),
-)
-right := widget.NewContainer(
-	widget.ContainerOpts.BackgroundImage(
-		image.NewNineSliceColor(assets.ColorB),
-	),
-	widget.ContainerOpts.WidgetOpts(
-		widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
-			HorizontalPosition: widget.AnchorLayoutPositionEnd,
-			StretchVertical:    true,
-		}),
-		widget.WidgetOpts.MinSize(50, 50),
-	),
-)
-root := widget.NewContainer(
-	widget.ContainerOpts.BackgroundImage(
-		image.NewNineSliceColor(colornames.Gainsboro),
-	),
-	widget.ContainerOpts.Layout(widget.NewAnchorLayout()),
-)
-root.AddChild(left)
-root.AddChild(right)
-```
+{{< code src="assets/examples/bas_con_mul.txt" lang="go" id="containers">}}
 
 Let's launch the application. We will see one `root container` in background and two `child containers` inside at different `position` that will `stretch` vertically.
 
@@ -166,81 +133,7 @@ Let's launch the application. We will see one `root container` in background and
 
 
 {{% expand title="Full example" %}}
-```go
-package main
-
-import (
-	"github.com/ebitenui/ebitenui"
-	"github.com/ebitenui/ebitenui/image"
-	"github.com/ebitenui/ebitenui/widget"
-	"github.com/hajimehoshi/ebiten/v2"
-	"golang.org/x/image/colornames"
-)
-
-func main() {
-	ebiten.SetWindowSize(480, 320)
-	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
-	if err := ebiten.RunGame(NewGame()); err != nil {
-		panic(err)
-	}
-}
-
-type Game struct {
-	ui *ebitenui.UI
-}
-
-func NewGame() *Game {
-	shirt := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightblue),
-		),
-		widget.ContainerOpts.WidgetOpts(
-			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
-				HorizontalPosition: widget.AnchorLayoutPositionEnd,
-				StretchVertical:    true,
-			}),
-			widget.WidgetOpts.MinSize(50, 50),
-		),
-	)
-	pants := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightskyblue),
-		),
-		widget.ContainerOpts.WidgetOpts(
-			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
-				HorizontalPosition: widget.AnchorLayoutPositionStart,
-				StretchVertical:    true,
-			}),
-			widget.WidgetOpts.MinSize(50, 50),
-		),
-	)
-	store := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightsteelblue),
-		),
-		widget.ContainerOpts.Layout(widget.NewAnchorLayout()),
-	)
-	store.AddChild(shirt)
-	store.AddChild(pants)
-
-	return &Game{
-		ui: &ebitenui.UI{Container: store},
-	}
-}
-
-func (g *Game) Update() error {
-	g.ui.Update()
-	return nil
-}
-
-func (g *Game) Draw(screen *ebiten.Image) {
-	g.ui.Draw(screen)
-}
-
-func (g *Game) Layout(w, h int) (int, int) {
-	return w, h
-}
-```
+{{< code src="assets/examples/bas_con_mul.txt" lang="go" id="full">}}
 {{% /expand %}}
 
 The library has several different layouts for different situations, you can study each of them in detail on the next pages.

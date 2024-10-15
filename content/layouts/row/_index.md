@@ -6,110 +6,10 @@ weight = 2
 
 Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
 
-![preview](row-preview.png)
+![preview](examples/lay_row_pre.png)
 
 {{% expand title="Full example" %}}
-```go
-package main
-
-import (
-	"github.com/ebitenui/ebitenui"
-	"github.com/ebitenui/ebitenui/image"
-	"github.com/ebitenui/ebitenui/widget"
-	"github.com/hajimehoshi/ebiten/v2"
-	"golang.org/x/image/colornames"
-)
-
-func main() {
-	ebiten.SetWindowSize(480, 320)
-	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
-	if err := ebiten.RunGame(NewGame()); err != nil {
-		panic(err)
-	}
-}
-
-type Game struct {
-	ui *ebitenui.UI
-}
-
-func NewGame() *Game {
-	a := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightskyblue),
-		),
-		widget.ContainerOpts.WidgetOpts(
-			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-				Stretch: true,
-			}),
-			widget.WidgetOpts.MinSize(50, 80),
-		),
-	)
-	b := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightblue),
-		),
-		widget.ContainerOpts.WidgetOpts(
-			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-				Stretch: true,
-			}),
-			widget.WidgetOpts.MinSize(50, 80),
-		),
-	)
-	c := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightcyan),
-		),
-		widget.ContainerOpts.WidgetOpts(
-			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-				Stretch: true,
-			}),
-			widget.WidgetOpts.MinSize(50, 80),
-		),
-	)
-	d := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightslategrey),
-		),
-		widget.ContainerOpts.WidgetOpts(
-			widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-				Stretch: true,
-			}),
-			widget.WidgetOpts.MinSize(50, 80),
-		),
-	)
-	root := widget.NewContainer(
-		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Lightsteelblue),
-		),
-		widget.ContainerOpts.Layout(widget.NewRowLayout(
-			widget.RowLayoutOpts.Direction(
-				widget.DirectionVertical,
-			),
-		)),
-	)
-	root.AddChild(a)
-	root.AddChild(b)
-	root.AddChild(c)
-	root.AddChild(d)
-
-	return &Game{
-		ui: &ebitenui.UI{Container: root},
-	}
-}
-
-func (g *Game) Update() error {
-	g.ui.Update()
-	return nil
-}
-
-func (g *Game) Draw(screen *ebiten.Image) {
-	g.ui.Draw(screen)
-}
-
-func (g *Game) Layout(w, h int) (int, int) {
-	return w, h
-}
-```
+{{< code src="assets/examples/lay_row_pre.txt" lang="go" id="full" >}}
 {{% /expand %}}
 
 ### Layout options
@@ -119,86 +19,36 @@ func (g *Game) Layout(w, h int) (int, int) {
 Responsible for whether child containers will follow each other in rows or columns.
 
 {{< tabs title="Direction:" style="transparent" color="#131a22ff" >}}
-{{% tab title="Horizontal" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Direction(
-            widget.DirectionHorizontal,
-        ),
-    )),
-)
-```
-![horz](row-horz.png)
-{{% /tab %}}
 {{% tab title="Vertical" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Direction(
-            widget.DirectionVertical,
-        ),
-    )),
-)
-```
-![vert](row-vert.png)
+{{< code src="assets/examples/lay_row_dir_ver.txt" lang="go" id="dir" >}}
+![vert](examples/lay_row_dir_ver.png)
+{{% /tab %}}
+{{% tab title="Horizontal" %}}
+{{< code src="assets/examples/lay_row_dir_hor.txt" lang="go" id="dir" >}}
+![horz](examples/lay_row_dir_hor.png)
 {{% /tab %}}
 {{< /tabs >}}
 
 ###### Padding
 
-Layout allows you to specify padding for all child elements but not the itself.
-
-Please note that its not possible to specify padding at the end.
+Layout allows you to specify padding for all child elements but not the itself. Please note that its not possible to specify padding at the *end*, so the *direction* will changed accordingly.
 
 {{< tabs title="Padding:" style="transparent" color="#131a22ff" >}}
 {{% tab title="Left" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Padding(widget.Insets{
-            Left: 50,
-        }),
-    )),
-)
-```
-![left](row-vert-pad-left.png)
+{{< code src="assets/examples/lay_row_pad_lef.txt" lang="go" id="pad" >}}
+![lef](examples/lay_row_pad_lef.png)
 {{% /tab %}}
 {{% tab title="Right" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Padding(widget.Insets{
-            Right: 50,
-        }),
-    )),
-)
-```
-![right](row-vert-pad-right.png)
+{{< code src="assets/examples/lay_row_pad_rig.txt" lang="go" id="pad" >}}
+![rig](examples/lay_row_pad_rig.png)
 {{% /tab %}}
 {{% tab title="Top" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Padding(widget.Insets{
-            Top: 50,
-        }),
-    )),
-)
-```
-![top](row-horz-pad-top.png)
+{{< code src="assets/examples/lay_row_pad_top.txt" lang="go" id="pad" >}}
+![top](examples/lay_row_pad_top.png)
 {{% /tab %}}
 {{% tab title="Bottom" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Padding(widget.Insets{
-            Bottom: 50,
-        }),
-    )),
-)
-```
-![bottom](row-horz-pad-bottom.png)
+{{< code src="assets/examples/lay_row_pad_bot.txt" lang="go" id="pad" >}}
+![top](examples/lay_row_pad_bot.png)
 {{% /tab %}}
 {{< /tabs >}}
 
@@ -207,45 +57,21 @@ root := widget.NewContainer(
 Layout allows you to specify padding for all child elements but not the itself.
 
 {{< tabs title="Spacing:" style="transparent" color="#131a22ff" >}}
-{{% tab title="75" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Spacing(75),
-    )),
-)
-```
-![75](row-spacing-75.png)
-{{% /tab %}}
-{{% tab title="50" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Spacing(50),
-    )),
-)
-```
-![50](row-spacing-50.png)
+{{% tab title="0" %}}
+{{< code src="assets/examples/lay_row_spa_0.txt" lang="go" id="spa" >}}
+![0](examples/lay_row_spa_0.png)
 {{% /tab %}}
 {{% tab title="25" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Spacing(25),
-    )),
-)
-```
-![25](row-spacing-25.png)
+{{< code src="assets/examples/lay_row_spa_25.txt" lang="go" id="spa" >}}
+![25](examples/lay_row_spa_25.png)
 {{% /tab %}}
-{{% tab title="0" %}}
-```go
-root := widget.NewContainer(
-    widget.ContainerOpts.Layout(widget.NewRowLayout(
-        widget.RowLayoutOpts.Spacing(0),
-    )),
-)
-```
-![0](row-spacing-0.png)
+{{% tab title="50" %}}
+{{< code src="assets/examples/lay_row_spa_50.txt" lang="go" id="spa" >}}
+![50](examples/lay_row_spa_50.png)
+{{% /tab %}}
+{{% tab title="75" %}}
+{{< code src="assets/examples/lay_row_spa_75.txt" lang="go" id="spa" >}}
+![75](examples/lay_row_spa_75.png)
 {{% /tab %}}
 {{< /tabs >}}
 
@@ -256,29 +82,13 @@ root := widget.NewContainer(
 Responsible for stretching the element along the entire length of the opposite axis.
 
 {{< tabs title="Stretch:" style="transparent" color="#131a22ff" >}}
-{{% tab title="true" %}}
-```go
-child := widget.NewContainer(
-    widget.ContainerOpts.WidgetOpts(
-        widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-            Stretch: true,
-        }),
-    ),
-)
-```
-![true](row-stretch-true.png)
-{{% /tab %}}
 {{% tab title="false" %}}
-```go
-child := widget.NewContainer(
-    widget.ContainerOpts.WidgetOpts(
-        widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-            Stretch: false,
-        }),
-    ),
-)
-```
-![false](row-stretch-false.png)
+{{< code src="assets/examples/lay_row_str_fal.txt" lang="go" id="str" >}}
+![fal](examples/lay_row_str_fal.png)
+{{% /tab %}}
+{{% tab title="true" %}}
+{{< code src="assets/examples/lay_row_str_tru.txt" lang="go" id="str" >}}
+![tru](examples/lay_row_str_tru.png)
 {{% /tab %}}
 {{< /tabs >}}
 
@@ -287,41 +97,17 @@ child := widget.NewContainer(
 Responsible for aligning the element along the opposite axis if it is not stretched.
 
 {{< tabs title="Position:" style="transparent" color="#131a22ff" >}}
-{{% tab title="Center" %}}
-```go
-child := widget.NewContainer(
-    widget.ContainerOpts.WidgetOpts(
-        widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-            Position: widget.RowLayoutPositionCenter,
-        }),
-    ),
-)
-```
-![center](row-position-center.png)
-{{% /tab %}}
 {{% tab title="Start" %}}
-```go
-child := widget.NewContainer(
-    widget.ContainerOpts.WidgetOpts(
-        widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-            Position: widget.RowLayoutPositionStart,
-        }),
-    ),
-)
-```
-![start](row-position-start.png)
+{{< code src="assets/examples/lay_row_pos_sta.txt" lang="go" id="pos" >}}
+![sta](examples/lay_row_pos_sta.png)
+{{% /tab %}}
+{{% tab title="Center" %}}
+{{< code src="assets/examples/lay_row_pos_cen.txt" lang="go" id="pos" >}}
+![sta](examples/lay_row_pos_cen.png)
 {{% /tab %}}
 {{% tab title="End" %}}
-```go
-child := widget.NewContainer(
-    widget.ContainerOpts.WidgetOpts(
-        widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-            Position: widget.RowLayoutPositionEnd,
-        }),
-    ),
-)
-```
-![end](row-position-end.png)
+{{< code src="assets/examples/lay_row_pos_end.txt" lang="go" id="pos" >}}
+![sta](examples/lay_row_pos_end.png)
 {{% /tab %}}
 {{< /tabs >}}
 
@@ -332,27 +118,11 @@ Responsible for the allowable size of the container.
 
 {{< tabs title="Max:" style="transparent" color="#131a22ff" >}}
 {{% tab title="Width" %}}
-```go
-child := widget.NewContainer(
-    widget.ContainerOpts.WidgetOpts(
-        widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-            MaxWidth: 20,
-        }),
-    ),
-)
-```
-![width](row-max-width.png)
+{{< code src="assets/examples/lay_row_max_wid.txt" lang="go" id="max" >}}
+![wid](examples/lay_row_max_wid.png)
 {{% /tab %}}
 {{% tab title="Height" %}}
-```go
-child := widget.NewContainer(
-    widget.ContainerOpts.WidgetOpts(
-        widget.WidgetOpts.LayoutData(widget.RowLayoutData{
-            MaxHeight: 20,
-        }),
-    ),
-)
-```
-![height](row-max-height.png)
+{{< code src="assets/examples/lay_row_max_hei.txt" lang="go" id="max" >}}
+![hei](examples/lay_row_max_hei.png)
 {{% /tab %}}
 {{< /tabs >}}

@@ -31,21 +31,21 @@
 1type Game struct { 2	ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6	return &amp;Game{ 7	ui: &amp;ebitenui.UI{}, 8	} 9} 10 11func (g *Game) Update() error { 12	g.ui.Update() 13	return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17	g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other. Container is located in widget package.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="717">
+    <meta itemprop="wordCount" content="759">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Container and layouts - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1728916174" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1728916174" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728916174" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1728916174" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1728916174" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728916174" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1728916174" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1728916174" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728916174" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1728916174" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1728916174" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1728916174" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1728916174" rel="stylesheet">
-    <link href="/eui/css/print.css?1728916174" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1728916174"></script>
+    <link href="/eui/images/favicon.png?1728954276" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1728954276" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1728954276" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1728954276" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1728954276" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1728954276" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1728954276" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1728954276" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1728954276" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1728954276" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1728954276" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1728954276" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/variant.css?1728954276" rel="stylesheet">
+    <link href="/eui/css/print.css?1728954276" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1728954276"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -64,7 +64,11 @@
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
-    </script>
+    </script><style>
+    .highlight {
+        tab-size: 4;
+    }
+</style>4
   </head>
   <body class="mobile-support html disableInlineCopyToClipboard" data-url="/eui/basics/container-layouts/index.html">
     <div id="R-body" class="default-animation">
@@ -218,22 +222,50 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 <p>Lets run the app. We will see a single container that will take up all the free space.</p>
 <p><img alt="image" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/bas_con_sin.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8970d41cb8349c6880dbfd5e10c5382d" aria-controls="R-expandcontent-8970d41cb8349c6880dbfd5e10c5382d">
-  <label class="expand-label" for="R-expand-8970d41cb8349c6880dbfd5e10c5382d">
+  <input type="checkbox" id="R-expand-482291e6139413fcb621407bc7f99ecc" aria-controls="R-expandcontent-482291e6139413fcb621407bc7f99ecc">
+  <label class="expand-label" for="R-expand-482291e6139413fcb621407bc7f99ecc">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-8970d41cb8349c6880dbfd5e10c5382d" class="expand-content">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div id="R-expandcontent-482291e6139413fcb621407bc7f99ecc" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
 <p>Containers can be composed into each other. The order adding child containers does not matter.</p>
@@ -269,6 +301,31 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 </span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="p">),</span>
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p>Let&rsquo;s set similar options for other containers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">left</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
@@ -283,7 +340,7 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nx">right</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">assets</span><span class="p">.</span><span class="nx">ColorB</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl">	<span class="p">),</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
 </span></span><span class="line"><span class="ln">18</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
@@ -301,15 +358,18 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 </span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">left</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">right</span><span class="p">)</span></span></span></code></pre></div>
+
+
+
 <p>Let&rsquo;s launch the application. We will see one <code>root container</code> in background and two <code>child containers</code> inside at different <code>position</code> that will <code>stretch</code> vertically.</p>
 <p><img alt="image" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/bas_con_mul.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d3cfddb280a300e1f2cb8555c1aa1134" aria-controls="R-expandcontent-d3cfddb280a300e1f2cb8555c1aa1134">
-  <label class="expand-label" for="R-expand-d3cfddb280a300e1f2cb8555c1aa1134">
+  <input type="checkbox" id="R-expand-0e57c6a4cfabb717713d7f6a8aaf576e" aria-controls="R-expandcontent-0e57c6a4cfabb717713d7f6a8aaf576e">
+  <label class="expand-label" for="R-expand-0e57c6a4cfabb717713d7f6a8aaf576e">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-d3cfddb280a300e1f2cb8555c1aa1134" class="expand-content">
+  <div id="R-expandcontent-0e57c6a4cfabb717713d7f6a8aaf576e" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -320,69 +380,61 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl">
-</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">
-</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl">
-</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl">	<span class="nx">shirt</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">25</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">26</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightblue</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">27</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">28</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionEnd</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">31</span><span class="cl">				<span class="nx">StretchVertical</span><span class="p">:</span>    <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">32</span><span class="cl">			<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">33</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">34</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">35</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">36</span><span class="cl">	<span class="nx">pants</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">37</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">38</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightskyblue</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">39</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">40</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">41</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">42</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionStart</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">43</span><span class="cl">				<span class="nx">StretchVertical</span><span class="p">:</span>    <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">44</span><span class="cl">			<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">45</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">46</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">47</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">48</span><span class="cl">	<span class="nx">store</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">49</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">50</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Lightsteelblue</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">52</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
-</span></span><span class="line"><span class="ln">53</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="nx">store</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">shirt</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">store</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">pants</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">56</span><span class="cl">
-</span></span><span class="line"><span class="ln">57</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">58</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">store</span><span class="p">},</span>
-</span></span><span class="line"><span class="ln">59</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">60</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">61</span><span class="cl">
-</span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">63</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln">64</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
-</span></span><span class="line"><span class="ln">65</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">66</span><span class="cl">
-</span></span><span class="line"><span class="ln">67</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">68</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">69</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">70</span><span class="cl">
-</span></span><span class="line"><span class="ln">71</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">72</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">73</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">	<span class="nx">left</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">				<span class="nx">StretchVertical</span><span class="p">:</span>    <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">	<span class="nx">right</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">				<span class="nx">StretchVertical</span><span class="p">:</span>    <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">left</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">right</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">
+</span></span><span class="line"><span class="ln">49</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">
+</span></span><span class="line"><span class="ln">54</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl">
+</span></span><span class="line"><span class="ln">63</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">64</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
 <p>The library has several different layouts for different situations, you can study each of them in detail on the next pages.</p>
@@ -425,12 +477,12 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1728916174" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1728916174" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728916174" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1728916174" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1728916174" defer></script>
-        <script src="/eui/js/search.js?1728916174" defer></script>
+        <script src="/eui/js/auto-complete.js?1728954276" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1728954276" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1728954276" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1728954276" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1728954276" defer></script>
+        <script src="/eui/js/search.js?1728954276" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -498,8 +550,8 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1728916174" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1728916174" defer></script>
-    <script src="/eui/js/theme.js?1728916174" defer></script>
+    <script src="/eui/js/clipboard.min.js?1728954276" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1728954276" defer></script>
+    <script src="/eui/js/theme.js?1728954276" defer></script>
   </body>
 </html>
