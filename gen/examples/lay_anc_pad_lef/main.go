@@ -1,3 +1,4 @@
+// START root
 package lay_anc_pad_lef
 
 import (
@@ -76,7 +77,7 @@ func NewGame() *Game {
 			widget.WidgetOpts.MinSize(50, 50),
 		),
 	)
-	// START pad
+	// START this
 	root := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(assets.ColorL),
@@ -87,7 +88,7 @@ func NewGame() *Game {
 			}),
 		)),
 	)
-	// END pad
+	// END this
 	root.AddChild(center)
 	root.AddChild(left)
 	root.AddChild(right)
@@ -111,3 +112,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END root

@@ -1,3 +1,4 @@
+// START root
 package lay_row_pos_sta
 
 import (
@@ -14,7 +15,7 @@ type Game struct {
 }
 
 func NewGame() *Game {
-	// START pos
+	// START this
 	a := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(assets.ColorR),
@@ -26,7 +27,7 @@ func NewGame() *Game {
 			widget.WidgetOpts.MinSize(96, 64),
 		),
 	)
-	// END pos
+	// END this
 	b := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(assets.ColorY),
@@ -92,3 +93,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END root

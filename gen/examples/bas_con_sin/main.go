@@ -1,4 +1,4 @@
-// START full
+// START root
 package bas_con_sin
 
 import (
@@ -39,4 +39,6 @@ func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
 
-// END full
+// END root
+
+// END root

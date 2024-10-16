@@ -1,3 +1,4 @@
+// START root
 package main
 
 import (
@@ -13,7 +14,7 @@ type Game struct {
 }
 
 func NewGame() *Game {
-	// START max
+	// START this
 	a := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(colornames.Indianred),
@@ -25,7 +26,7 @@ func NewGame() *Game {
 			widget.WidgetOpts.MinSize(96, 64),
 		),
 	)
-	// END max
+	// END this
 	b := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(colornames.Goldenrod),
@@ -91,3 +92,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END root

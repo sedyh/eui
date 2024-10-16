@@ -1,4 +1,5 @@
 // START full
+// START root
 package lay_row_pre
 
 import (
@@ -105,5 +106,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END root
 
 // END full

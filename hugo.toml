@@ -46,7 +46,7 @@ title = 'Ebiten UI'
   mermaidInitialize = '{ "securityLevel": "loose" }'
   mermaidZoom = true
   ordersectionsby = 'weight'
-  showVisitedLinks = true
+  showVisitedLinks = false
   titleSeparator = '-'
 
   [params.author]
@@ -85,4 +85,4 @@ title = 'Ebiten UI'
   [markup.goldmark.renderHooks.image]
     enableDefault = true
   [markup.goldmark.renderer]
-      unsafe = true
+    unsafe = true

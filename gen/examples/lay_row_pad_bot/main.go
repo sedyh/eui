@@ -1,3 +1,4 @@
+// START root
 package lay_row_pad_bot
 
 import (
@@ -69,7 +70,7 @@ func NewGame() *Game {
 			widget.WidgetOpts.MinSize(96, 64),
 		),
 	)
-	// START pad
+	// START this
 	root := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(assets.ColorL),
@@ -83,7 +84,7 @@ func NewGame() *Game {
 			}),
 		)),
 	)
-	// END pad
+	// END this
 	root.AddChild(a)
 	root.AddChild(b)
 	root.AddChild(c)
@@ -107,3 +108,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END root

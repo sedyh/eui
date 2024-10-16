@@ -1,6 +1,7 @@
 +++
-title = 'Container and layouts'
+title = 'Container & layouts'
 date = 2024-10-04T19:45:29+03:00
+menuPre = '<i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> '
 weight = 1
 +++
 
@@ -75,7 +76,7 @@ Lets run the app. We will see a single container that will take up all the free 
 ![image](examples/bas_con_sin.png)
 
 {{< expand title="Full example" >}}
-{{< code src="assets/examples/bas_con_sin.txt" lang="go" id="full">}}
+{{< code src="assets/examples/bas_con_sin.txt" lang="go" id="root">}}
 {{< /expand >}}
 
 
@@ -125,7 +126,7 @@ left := widget.NewContainer(
 
 Let's set similar options for other containers.
 
-{{< code src="assets/examples/bas_con_mul.txt" lang="go" id="containers">}}
+{{< code src="assets/examples/bas_con_mul.txt" lang="go" id="this">}}
 
 Let's launch the application. We will see one `root container` in background and two `child containers` inside at different `position` that will `stretch` vertically.
 
@@ -133,7 +134,7 @@ Let's launch the application. We will see one `root container` in background and
 
 
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/bas_con_mul.txt" lang="go" id="full">}}
+{{< code src="assets/examples/bas_con_mul.txt" lang="go" id="root">}}
 {{% /expand %}}
 
 The library has several different layouts for different situations, you can study each of them in detail on the next pages.

@@ -1,4 +1,4 @@
-// START full
+// START root
 package main
 
 import (
@@ -38,4 +38,6 @@ func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
 
-// END full
+// END root
+
+// END root

@@ -17,9 +17,52 @@ import (
 	"gen/examples/lay_anc_ver_pos_cen"
 	"gen/examples/lay_anc_ver_pos_end"
 	"gen/examples/lay_anc_ver_pos_sta"
+	"gen/examples/lay_gri_col_1"
+	"gen/examples/lay_gri_col_2"
+	"gen/examples/lay_gri_col_3"
+	"gen/examples/lay_gri_col_4"
+	"gen/examples/lay_gri_col_5"
+	"gen/examples/lay_gri_dtr_fal_fal"
+	"gen/examples/lay_gri_dtr_fal_tru"
+	"gen/examples/lay_gri_dtr_tru_fal"
+	"gen/examples/lay_gri_dtr_tru_tru"
+	"gen/examples/lay_gri_max_all"
+	"gen/examples/lay_gri_max_hei"
+	"gen/examples/lay_gri_max_off"
+	"gen/examples/lay_gri_max_wid"
+	"gen/examples/lay_gri_pad_bot"
+	"gen/examples/lay_gri_pad_lef"
+	"gen/examples/lay_gri_pad_rig"
+	"gen/examples/lay_gri_pad_top"
+	"gen/examples/lay_gri_pos_cenxcen"
+	"gen/examples/lay_gri_pos_cenxsta"
+	"gen/examples/lay_gri_pos_endxend"
+	"gen/examples/lay_gri_pos_endxsta"
+	"gen/examples/lay_gri_pos_staxcen"
+	"gen/examples/lay_gri_pos_staxend"
+	"gen/examples/lay_gri_pos_staxsta"
+	"gen/examples/lay_gri_pre"
+	"gen/examples/lay_gri_spa_0x0"
+	"gen/examples/lay_gri_spa_0x25"
+	"gen/examples/lay_gri_spa_25x0"
+	"gen/examples/lay_gri_spa_25x25"
+	"gen/examples/lay_gri_str_1x1"
+	"gen/examples/lay_gri_str_234x234"
+	"gen/examples/lay_gri_str_234x3"
+	"gen/examples/lay_gri_str_3x234"
+	"gen/examples/lay_gri_str_3x3"
+	"gen/examples/lay_gri_str_3xall"
+	"gen/examples/lay_gri_str_5x5"
+	"gen/examples/lay_gri_str_allx3"
+	"gen/examples/lay_gri_str_allxall"
+	"gen/examples/lay_gri_str_allxoff"
+	"gen/examples/lay_gri_str_offxall"
+	"gen/examples/lay_gri_str_offxoff"
 	"gen/examples/lay_row_dir_hor"
 	"gen/examples/lay_row_dir_ver"
+	"gen/examples/lay_row_max_all"
 	"gen/examples/lay_row_max_hei"
+	"gen/examples/lay_row_max_off"
 	"gen/examples/lay_row_max_wid"
 	"gen/examples/lay_row_pad_bot"
 	"gen/examples/lay_row_pad_lef"
@@ -115,8 +158,51 @@ func NewGame() *Game {
 			lay_row_pos_sta.NewGame(),
 			lay_row_pos_cen.NewGame(),
 			lay_row_pos_end.NewGame(),
+			lay_row_max_off.NewGame(),
 			lay_row_max_wid.NewGame(),
 			lay_row_max_hei.NewGame(),
+			lay_row_max_all.NewGame(),
+			lay_gri_pre.NewGame(),
+			lay_gri_col_1.NewGame(),
+			lay_gri_col_2.NewGame(),
+			lay_gri_col_3.NewGame(),
+			lay_gri_col_4.NewGame(),
+			lay_gri_col_5.NewGame(),
+			lay_gri_str_allxall.NewGame(),
+			lay_gri_str_allx3.NewGame(),
+			lay_gri_str_3xall.NewGame(),
+			lay_gri_str_1x1.NewGame(),
+			lay_gri_str_3x3.NewGame(),
+			lay_gri_str_5x5.NewGame(),
+			lay_gri_str_234x3.NewGame(),
+			lay_gri_str_3x234.NewGame(),
+			lay_gri_str_234x234.NewGame(),
+			lay_gri_str_allxoff.NewGame(),
+			lay_gri_str_offxall.NewGame(),
+			lay_gri_str_offxoff.NewGame(),
+			lay_gri_dtr_tru_tru.NewGame(),
+			lay_gri_dtr_tru_fal.NewGame(),
+			lay_gri_dtr_fal_tru.NewGame(),
+			lay_gri_dtr_fal_fal.NewGame(),
+			lay_gri_pad_lef.NewGame(),
+			lay_gri_pad_rig.NewGame(),
+			lay_gri_pad_top.NewGame(),
+			lay_gri_pad_bot.NewGame(),
+			lay_gri_spa_0x0.NewGame(),
+			lay_gri_spa_0x25.NewGame(),
+			lay_gri_spa_25x0.NewGame(),
+			lay_gri_spa_25x25.NewGame(),
+			lay_gri_max_all.NewGame(),
+			lay_gri_max_wid.NewGame(),
+			lay_gri_max_hei.NewGame(),
+			lay_gri_max_off.NewGame(),
+			lay_gri_pos_staxsta.NewGame(),
+			lay_gri_pos_cenxcen.NewGame(),
+			lay_gri_pos_endxend.NewGame(),
+			lay_gri_pos_staxcen.NewGame(),
+			lay_gri_pos_staxend.NewGame(),
+			lay_gri_pos_cenxsta.NewGame(),
+			lay_gri_pos_endxsta.NewGame(),
 		},
 		offscreen: ebiten.NewImage(
 			assets.Frame.Bounds().Dx(),
@@ -164,6 +250,8 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END root
 
 func (g *Game) SaveImage(screen *ebiten.Image) {
 	op := &ebiten.DrawImageOptions{}

@@ -1,4 +1,4 @@
-// START full
+// START root
 package bas_con_mul
 
 import (
@@ -15,7 +15,7 @@ type Game struct {
 }
 
 func NewGame() *Game {
-	// START containers
+	// START this
 	left := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(assets.ColorR),
@@ -48,7 +48,7 @@ func NewGame() *Game {
 	)
 	root.AddChild(left)
 	root.AddChild(right)
-	// END containers
+	// END this
 
 	return &Game{
 		ui: &ebitenui.UI{Container: root},
@@ -68,4 +68,6 @@ func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
 
-// END full
+// END root
+
+// END root

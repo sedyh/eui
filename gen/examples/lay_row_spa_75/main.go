@@ -1,3 +1,4 @@
+// START root
 package lay_row_spa_75
 
 import (
@@ -69,7 +70,7 @@ func NewGame() *Game {
 			widget.WidgetOpts.MinSize(96, 64),
 		),
 	)
-	// START spa
+	// START this
 	root := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(assets.ColorL),
@@ -81,7 +82,7 @@ func NewGame() *Game {
 			widget.RowLayoutOpts.Spacing(75),
 		)),
 	)
-	// END spa
+	// END this
 	root.AddChild(a)
 	root.AddChild(b)
 	root.AddChild(c)
@@ -105,3 +106,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
+
+// END root
