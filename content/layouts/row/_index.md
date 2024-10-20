@@ -1,11 +1,13 @@
 +++
-title = "Row layout"
+title = "Row"
 date = 2024-10-04T19:45:29+03:00
 menuPre = '<i class="fa-solid fa-fw fa-sm fa-bars"></i> '
 weight = 2
 +++
 
 Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
+
+<!--more-->
 
 ![preview](examples/lay_row_pre.png)
 

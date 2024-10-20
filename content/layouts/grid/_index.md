@@ -1,11 +1,13 @@
 +++
-title = "Grid layout"
+title = "Grid"
 date = 2024-10-04T19:45:29+03:00
 menuPre = '<i class="fa-solid fa-fw fa-sm fa-table-cells"></i> '
 weight = 3
 +++
 
-The grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.
+Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.
+
+<!--more-->
 
 ![preview](examples/lay_gri_pre.png)
 

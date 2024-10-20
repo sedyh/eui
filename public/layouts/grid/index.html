@@ -3,45 +3,40 @@
   <head><script src="/eui/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=eui/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
-    <meta name="generator" content="Relearn 6.4.1">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="The grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.
-Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com/ebitenui/ebitenui&#34; 6	&#34;github.com/ebitenui/ebitenui/image&#34; 7	&#34;github.com/ebitenui/ebitenui/widget&#34; 8	&#34;github.com/hajimehoshi/ebiten/v2&#34; 9	&#34;golang.org/x/image/colornames&#34; 10	&#34;golang.org/x/image/colornames&#34; 11) 12 13type Game struct { 14	ui *ebitenui.UI 15} 16 17func NewGame() *Game { 18	root := widget.NewContainer( 19	widget.ContainerOpts.BackgroundImage( 20	image.NewNineSliceColor(colornames.Gainsboro), 21	), 22	widget.ContainerOpts.Layout(widget.NewGridLayout( 23	widget.GridLayoutOpts.Columns(5), 24	widget.GridLayoutOpts.DefaultStretch(true, true), 25	widget.GridLayoutOpts.Padding(widget.NewInsetsSimple(25)), 26	widget.GridLayoutOpts.Spacing(5, 5), 27	)), 28	) 29	colors := []color.Color{ 30	colornames.Indianred, 31	colornames.Goldenrod, 32	colornames.Steelblue, 33	colornames.Mediumseagreen, 34	colornames.Darkslategray, 35	} 36	for y := 0; y &lt; 5; y&#43;&#43; { 37	for x := 0; x &lt; 5; x&#43;&#43; { 38	child := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colors[(x&#43;y)%len(colors)]), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.GridLayoutData{}), 44	widget.WidgetOpts.MinSize(16, 16), 45	), 46	widget.ContainerOpts.Layout(widget.NewAnchorLayout()), 47	) 48	root.AddChild(child) 49	} 50	} 51 52	return &amp;Game{ 53	ui: &amp;ebitenui.UI{Container: root}, 54	} 55} 56 57func (g *Game) Update() error { 58	g.ui.Update() 59	return nil 60} 61 62func (g *Game) Draw(screen *ebiten.Image) { 63	g.ui.Draw(screen) 64} 65 66func (g *Game) Layout(w, h int) (int, int) { 67	return w, h 68} Layout options Columns Responsible for wrapping cells beyond a given number.">
+    <meta name="generator" content="Hugo 0.136.2">
+    <meta name="generator" content="Relearn 7.0.1">
+    <meta name="description" content="Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.">
     <meta name="author" content="sedyh">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/eui/images/hero.png">
-    <meta name="twitter:title" content="Grid layout - Ebiten UI">
-    <meta name="twitter:description" content="The grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.
-Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com/ebitenui/ebitenui&#34; 6	&#34;github.com/ebitenui/ebitenui/image&#34; 7	&#34;github.com/ebitenui/ebitenui/widget&#34; 8	&#34;github.com/hajimehoshi/ebiten/v2&#34; 9	&#34;golang.org/x/image/colornames&#34; 10	&#34;golang.org/x/image/colornames&#34; 11) 12 13type Game struct { 14	ui *ebitenui.UI 15} 16 17func NewGame() *Game { 18	root := widget.NewContainer( 19	widget.ContainerOpts.BackgroundImage( 20	image.NewNineSliceColor(colornames.Gainsboro), 21	), 22	widget.ContainerOpts.Layout(widget.NewGridLayout( 23	widget.GridLayoutOpts.Columns(5), 24	widget.GridLayoutOpts.DefaultStretch(true, true), 25	widget.GridLayoutOpts.Padding(widget.NewInsetsSimple(25)), 26	widget.GridLayoutOpts.Spacing(5, 5), 27	)), 28	) 29	colors := []color.Color{ 30	colornames.Indianred, 31	colornames.Goldenrod, 32	colornames.Steelblue, 33	colornames.Mediumseagreen, 34	colornames.Darkslategray, 35	} 36	for y := 0; y &lt; 5; y&#43;&#43; { 37	for x := 0; x &lt; 5; x&#43;&#43; { 38	child := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colors[(x&#43;y)%len(colors)]), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.GridLayoutData{}), 44	widget.WidgetOpts.MinSize(16, 16), 45	), 46	widget.ContainerOpts.Layout(widget.NewAnchorLayout()), 47	) 48	root.AddChild(child) 49	} 50	} 51 52	return &amp;Game{ 53	ui: &amp;ebitenui.UI{Container: root}, 54	} 55} 56 57func (g *Game) Update() error { 58	g.ui.Update() 59	return nil 60} 61 62func (g *Game) Draw(screen *ebiten.Image) { 63	g.ui.Draw(screen) 64} 65 66func (g *Game) Layout(w, h int) (int, int) { 67	return w, h 68} Layout options Columns Responsible for wrapping cells beyond a given number.">
+    <meta name="twitter:title" content="Grid - Ebiten UI">
+    <meta name="twitter:description" content="Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.">
     <meta property="og:url" content="http://localhost:1313/eui/layouts/grid/index.html">
     <meta property="og:site_name" content="Ebiten UI">
-    <meta property="og:title" content="Grid layout - Ebiten UI">
-    <meta property="og:description" content="The grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.
-Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com/ebitenui/ebitenui&#34; 6	&#34;github.com/ebitenui/ebitenui/image&#34; 7	&#34;github.com/ebitenui/ebitenui/widget&#34; 8	&#34;github.com/hajimehoshi/ebiten/v2&#34; 9	&#34;golang.org/x/image/colornames&#34; 10	&#34;golang.org/x/image/colornames&#34; 11) 12 13type Game struct { 14	ui *ebitenui.UI 15} 16 17func NewGame() *Game { 18	root := widget.NewContainer( 19	widget.ContainerOpts.BackgroundImage( 20	image.NewNineSliceColor(colornames.Gainsboro), 21	), 22	widget.ContainerOpts.Layout(widget.NewGridLayout( 23	widget.GridLayoutOpts.Columns(5), 24	widget.GridLayoutOpts.DefaultStretch(true, true), 25	widget.GridLayoutOpts.Padding(widget.NewInsetsSimple(25)), 26	widget.GridLayoutOpts.Spacing(5, 5), 27	)), 28	) 29	colors := []color.Color{ 30	colornames.Indianred, 31	colornames.Goldenrod, 32	colornames.Steelblue, 33	colornames.Mediumseagreen, 34	colornames.Darkslategray, 35	} 36	for y := 0; y &lt; 5; y&#43;&#43; { 37	for x := 0; x &lt; 5; x&#43;&#43; { 38	child := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colors[(x&#43;y)%len(colors)]), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.GridLayoutData{}), 44	widget.WidgetOpts.MinSize(16, 16), 45	), 46	widget.ContainerOpts.Layout(widget.NewAnchorLayout()), 47	) 48	root.AddChild(child) 49	} 50	} 51 52	return &amp;Game{ 53	ui: &amp;ebitenui.UI{Container: root}, 54	} 55} 56 57func (g *Game) Update() error { 58	g.ui.Update() 59	return nil 60} 61 62func (g *Game) Draw(screen *ebiten.Image) { 63	g.ui.Draw(screen) 64} 65 66func (g *Game) Layout(w, h int) (int, int) { 67	return w, h 68} Layout options Columns Responsible for wrapping cells beyond a given number.">
+    <meta property="og:title" content="Grid - Ebiten UI">
+    <meta property="og:description" content="Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/eui/images/hero.png">
-    <meta itemprop="name" content="Grid layout - Ebiten UI">
-    <meta itemprop="description" content="The grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.
-Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com/ebitenui/ebitenui&#34; 6	&#34;github.com/ebitenui/ebitenui/image&#34; 7	&#34;github.com/ebitenui/ebitenui/widget&#34; 8	&#34;github.com/hajimehoshi/ebiten/v2&#34; 9	&#34;golang.org/x/image/colornames&#34; 10	&#34;golang.org/x/image/colornames&#34; 11) 12 13type Game struct { 14	ui *ebitenui.UI 15} 16 17func NewGame() *Game { 18	root := widget.NewContainer( 19	widget.ContainerOpts.BackgroundImage( 20	image.NewNineSliceColor(colornames.Gainsboro), 21	), 22	widget.ContainerOpts.Layout(widget.NewGridLayout( 23	widget.GridLayoutOpts.Columns(5), 24	widget.GridLayoutOpts.DefaultStretch(true, true), 25	widget.GridLayoutOpts.Padding(widget.NewInsetsSimple(25)), 26	widget.GridLayoutOpts.Spacing(5, 5), 27	)), 28	) 29	colors := []color.Color{ 30	colornames.Indianred, 31	colornames.Goldenrod, 32	colornames.Steelblue, 33	colornames.Mediumseagreen, 34	colornames.Darkslategray, 35	} 36	for y := 0; y &lt; 5; y&#43;&#43; { 37	for x := 0; x &lt; 5; x&#43;&#43; { 38	child := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colors[(x&#43;y)%len(colors)]), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.GridLayoutData{}), 44	widget.WidgetOpts.MinSize(16, 16), 45	), 46	widget.ContainerOpts.Layout(widget.NewAnchorLayout()), 47	) 48	root.AddChild(child) 49	} 50	} 51 52	return &amp;Game{ 53	ui: &amp;ebitenui.UI{Container: root}, 54	} 55} 56 57func (g *Game) Update() error { 58	g.ui.Update() 59	return nil 60} 61 62func (g *Game) Draw(screen *ebiten.Image) { 63	g.ui.Draw(screen) 64} 65 66func (g *Game) Layout(w, h int) (int, int) { 67	return w, h 68} Layout options Columns Responsible for wrapping cells beyond a given number.">
+    <meta itemprop="name" content="Grid - Ebiten UI">
+    <meta itemprop="description" content="Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="8451">
+    <meta itemprop="wordCount" content="8450">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
-    <title>Grid layout - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1729103955" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1729103955" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1729103955" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/print.css?1729103955" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1729103955"></script>
+    <title>Grid - Ebiten UI</title>
+    <link href="/eui/layouts/grid/index.xml" rel="alternate" type="application/rss+xml" title="Grid - Ebiten UI">
+    <link href="/eui/images/favicon.png?1729418370" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1729418370" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1729418370" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/print.css?1729418370" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1729418370"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -77,7 +72,8 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -93,14 +89,14 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/eui/layouts/index.html"><span itemprop="name">Layouts</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Grid layout</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Grid</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/sedyh/eui/edit/main/content/layouts/grid/_index.md" target="_self" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/row/index.html" title="Row layout (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/row/index.html" title="Row (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/widgets/index.html" title="Widgets (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -114,23 +110,23 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+      <main id="R-body-inner" class="highlightable layouts" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
+<article class="default">
+  <header class="headline">
+  </header>
 
-<h1 id="grid-layout">Grid layout</h1>
+<h1 id="grid">Grid</h1>
 
-<p>The grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.</p>
+<p>Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.</p>
 <p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-a01872e2902b011b8111a7deb2aa162e" aria-controls="R-expandcontent-a01872e2902b011b8111a7deb2aa162e">
-  <label class="expand-label" for="R-expand-a01872e2902b011b8111a7deb2aa162e">
+  <input type="checkbox" id="R-expand-e1cacac433ed2b13b3e185ea6c0b1e46" aria-controls="R-expandcontent-e1cacac433ed2b13b3e185ea6c0b1e46">
+  <label class="expand-label" for="R-expand-e1cacac433ed2b13b3e185ea6c0b1e46">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-a01872e2902b011b8111a7deb2aa162e" class="expand-content">
+  <div id="R-expandcontent-e1cacac433ed2b13b3e185ea6c0b1e46" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -204,41 +200,41 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 <h3 id="layout-options">Layout options</h3>
 <h6 id="columns">Columns</h6>
 <p>Responsible for wrapping cells beyond a given number.</p>
-<div class="tab-panel" data-tab-group="4031d2a8b52201cd31c6ab63f26327d9">
+<div class="tab-panel" data-tab-group="db6d7be47eff86e8e328591940f88864">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="1"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('4031d2a8b52201cd31c6ab63f26327d9','1')"
+      onclick="switchTab('db6d7be47eff86e8e328591940f88864','1')"
     >
       <span class="tab-nav-text">1</span>
     </button>
     <button
       data-tab-item="2"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('4031d2a8b52201cd31c6ab63f26327d9','2')"
+      onclick="switchTab('db6d7be47eff86e8e328591940f88864','2')"
     >
       <span class="tab-nav-text">2</span>
     </button>
     <button
       data-tab-item="3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('4031d2a8b52201cd31c6ab63f26327d9','3')"
+      onclick="switchTab('db6d7be47eff86e8e328591940f88864','3')"
     >
       <span class="tab-nav-text">3</span>
     </button>
     <button
       data-tab-item="4"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('4031d2a8b52201cd31c6ab63f26327d9','4')"
+      onclick="switchTab('db6d7be47eff86e8e328591940f88864','4')"
     >
       <span class="tab-nav-text">4</span>
     </button>
     <button
       data-tab-item="5"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('4031d2a8b52201cd31c6ab63f26327d9','5')"
+      onclick="switchTab('db6d7be47eff86e8e328591940f88864','5')"
     >
       <span class="tab-nav-text">5</span>
     </button>
@@ -258,12 +254,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_1.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-bcab97a4aa68bb5662111c8319c5f1a2" aria-controls="R-expandcontent-bcab97a4aa68bb5662111c8319c5f1a2">
-  <label class="expand-label" for="R-expand-bcab97a4aa68bb5662111c8319c5f1a2">
+  <input type="checkbox" id="R-expand-37d6ea1838bfbd631e4f0852b5bf7b4d" aria-controls="R-expandcontent-37d6ea1838bfbd631e4f0852b5bf7b4d">
+  <label class="expand-label" for="R-expand-37d6ea1838bfbd631e4f0852b5bf7b4d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-bcab97a4aa68bb5662111c8319c5f1a2" class="expand-content">
+  <div id="R-expandcontent-37d6ea1838bfbd631e4f0852b5bf7b4d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -344,12 +340,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_2.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-786ccc4c16647f178d6ab514014e84b3" aria-controls="R-expandcontent-786ccc4c16647f178d6ab514014e84b3">
-  <label class="expand-label" for="R-expand-786ccc4c16647f178d6ab514014e84b3">
+  <input type="checkbox" id="R-expand-5a6594094c5d7dd1bddc1c0186bce1cb" aria-controls="R-expandcontent-5a6594094c5d7dd1bddc1c0186bce1cb">
+  <label class="expand-label" for="R-expand-5a6594094c5d7dd1bddc1c0186bce1cb">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-786ccc4c16647f178d6ab514014e84b3" class="expand-content">
+  <div id="R-expandcontent-5a6594094c5d7dd1bddc1c0186bce1cb" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -430,12 +426,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-025517b1d3fa0c02118b3551d5adb87d" aria-controls="R-expandcontent-025517b1d3fa0c02118b3551d5adb87d">
-  <label class="expand-label" for="R-expand-025517b1d3fa0c02118b3551d5adb87d">
+  <input type="checkbox" id="R-expand-11974b7ab6538570f46766a8f632032f" aria-controls="R-expandcontent-11974b7ab6538570f46766a8f632032f">
+  <label class="expand-label" for="R-expand-11974b7ab6538570f46766a8f632032f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-025517b1d3fa0c02118b3551d5adb87d" class="expand-content">
+  <div id="R-expandcontent-11974b7ab6538570f46766a8f632032f" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -516,12 +512,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_4.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e90eb1e60ba27c2def4c7bf82f93f2d7" aria-controls="R-expandcontent-e90eb1e60ba27c2def4c7bf82f93f2d7">
-  <label class="expand-label" for="R-expand-e90eb1e60ba27c2def4c7bf82f93f2d7">
+  <input type="checkbox" id="R-expand-1bc5f59214d3005e327a9156250c01ad" aria-controls="R-expandcontent-1bc5f59214d3005e327a9156250c01ad">
+  <label class="expand-label" for="R-expand-1bc5f59214d3005e327a9156250c01ad">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-e90eb1e60ba27c2def4c7bf82f93f2d7" class="expand-content">
+  <div id="R-expandcontent-1bc5f59214d3005e327a9156250c01ad" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -602,12 +598,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_5.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-84ae88e78ac9639ec939ac42d4270e2f" aria-controls="R-expandcontent-84ae88e78ac9639ec939ac42d4270e2f">
-  <label class="expand-label" for="R-expand-84ae88e78ac9639ec939ac42d4270e2f">
+  <input type="checkbox" id="R-expand-cf6ffac882311ccb91f061b6ee521628" aria-controls="R-expandcontent-cf6ffac882311ccb91f061b6ee521628">
+  <label class="expand-label" for="R-expand-cf6ffac882311ccb91f061b6ee521628">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-84ae88e78ac9639ec939ac42d4270e2f" class="expand-content">
+  <div id="R-expandcontent-cf6ffac882311ccb91f061b6ee521628" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -678,90 +674,90 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </div>
 <h6 id="stretch">Stretch</h6>
 <p>Responsible for choosing cell coordinates across each axis that will <em>evenly occupy</em> the remaining space.</p>
-<div class="tab-panel" data-tab-group="826381c5b6f5e25d92ec90698d6bf807">
+<div class="tab-panel" data-tab-group="fccb523496ef4dd3c960de92f948d36f">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="allxall"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','allxall')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','allxall')"
     >
       <span class="tab-nav-text">AllxAll</span>
     </button>
     <button
       data-tab-item="allx3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','allx3')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','allx3')"
     >
       <span class="tab-nav-text">Allx3</span>
     </button>
     <button
       data-tab-item="3xall"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','3xall')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','3xall')"
     >
       <span class="tab-nav-text">3xAll</span>
     </button>
     <button
       data-tab-item="1x1"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','1x1')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','1x1')"
     >
       <span class="tab-nav-text">1x1</span>
     </button>
     <button
       data-tab-item="3x3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','3x3')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','3x3')"
     >
       <span class="tab-nav-text">3x3</span>
     </button>
     <button
       data-tab-item="5x5"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','5x5')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','5x5')"
     >
       <span class="tab-nav-text">5x5</span>
     </button>
     <button
       data-tab-item="234x3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','234x3')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','234x3')"
     >
       <span class="tab-nav-text">2,3,4x3</span>
     </button>
     <button
       data-tab-item="3x234"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','3x234')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','3x234')"
     >
       <span class="tab-nav-text">3x2,3,4</span>
     </button>
     <button
       data-tab-item="234x234"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','234x234')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','234x234')"
     >
       <span class="tab-nav-text">2,3,4x2,3,4</span>
     </button>
     <button
       data-tab-item="allxoff"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','allxoff')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','allxoff')"
     >
       <span class="tab-nav-text">AllxOff</span>
     </button>
     <button
       data-tab-item="offxall"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','offxall')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','offxall')"
     >
       <span class="tab-nav-text">OffxAll</span>
     </button>
     <button
       data-tab-item="offxoff"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('826381c5b6f5e25d92ec90698d6bf807','offxoff')"
+      onclick="switchTab('fccb523496ef4dd3c960de92f948d36f','offxoff')"
     >
       <span class="tab-nav-text">OffxOff</span>
     </button>
@@ -785,12 +781,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_allxall.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7065e64231ff984614ce6b5bae2feb8d" aria-controls="R-expandcontent-7065e64231ff984614ce6b5bae2feb8d">
-  <label class="expand-label" for="R-expand-7065e64231ff984614ce6b5bae2feb8d">
+  <input type="checkbox" id="R-expand-c9d5fd1476fbb47b5b21563cc7e4988b" aria-controls="R-expandcontent-c9d5fd1476fbb47b5b21563cc7e4988b">
+  <label class="expand-label" for="R-expand-c9d5fd1476fbb47b5b21563cc7e4988b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-7065e64231ff984614ce6b5bae2feb8d" class="expand-content">
+  <div id="R-expandcontent-c9d5fd1476fbb47b5b21563cc7e4988b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -881,12 +877,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="row" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_allx3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c7cdc252c59120396ac0a97dd8b087c4" aria-controls="R-expandcontent-c7cdc252c59120396ac0a97dd8b087c4">
-  <label class="expand-label" for="R-expand-c7cdc252c59120396ac0a97dd8b087c4">
+  <input type="checkbox" id="R-expand-252e0ebe969af5e34cf6a7df405e0315" aria-controls="R-expandcontent-252e0ebe969af5e34cf6a7df405e0315">
+  <label class="expand-label" for="R-expand-252e0ebe969af5e34cf6a7df405e0315">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-c7cdc252c59120396ac0a97dd8b087c4" class="expand-content">
+  <div id="R-expandcontent-252e0ebe969af5e34cf6a7df405e0315" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -977,12 +973,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="col" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_3xall.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-24a2d30a26f310533c0a3d03933cbda6" aria-controls="R-expandcontent-24a2d30a26f310533c0a3d03933cbda6">
-  <label class="expand-label" for="R-expand-24a2d30a26f310533c0a3d03933cbda6">
+  <input type="checkbox" id="R-expand-1a60e323333f1cf23d587371f45b243a" aria-controls="R-expandcontent-1a60e323333f1cf23d587371f45b243a">
+  <label class="expand-label" for="R-expand-1a60e323333f1cf23d587371f45b243a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-24a2d30a26f310533c0a3d03933cbda6" class="expand-content">
+  <div id="R-expandcontent-1a60e323333f1cf23d587371f45b243a" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1073,12 +1069,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="1x1" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_1x1.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-31cb178f5d132f1f679015a538c44648" aria-controls="R-expandcontent-31cb178f5d132f1f679015a538c44648">
-  <label class="expand-label" for="R-expand-31cb178f5d132f1f679015a538c44648">
+  <input type="checkbox" id="R-expand-b8a7804f15de089fe310e6c031d86c47" aria-controls="R-expandcontent-b8a7804f15de089fe310e6c031d86c47">
+  <label class="expand-label" for="R-expand-b8a7804f15de089fe310e6c031d86c47">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-31cb178f5d132f1f679015a538c44648" class="expand-content">
+  <div id="R-expandcontent-b8a7804f15de089fe310e6c031d86c47" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1169,12 +1165,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="3x3" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_3x3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ef8395803c9414cbb2d5e2b32254b681" aria-controls="R-expandcontent-ef8395803c9414cbb2d5e2b32254b681">
-  <label class="expand-label" for="R-expand-ef8395803c9414cbb2d5e2b32254b681">
+  <input type="checkbox" id="R-expand-3e7bfdba32ebc643dbcdc00e65d0a3ff" aria-controls="R-expandcontent-3e7bfdba32ebc643dbcdc00e65d0a3ff">
+  <label class="expand-label" for="R-expand-3e7bfdba32ebc643dbcdc00e65d0a3ff">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-ef8395803c9414cbb2d5e2b32254b681" class="expand-content">
+  <div id="R-expandcontent-3e7bfdba32ebc643dbcdc00e65d0a3ff" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1265,12 +1261,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="5x5" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_5x5.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4a56a6546cc432cb79a9be00b2a8ffa3" aria-controls="R-expandcontent-4a56a6546cc432cb79a9be00b2a8ffa3">
-  <label class="expand-label" for="R-expand-4a56a6546cc432cb79a9be00b2a8ffa3">
+  <input type="checkbox" id="R-expand-1f7126b1051e51a5d0ac16982ee6e2b0" aria-controls="R-expandcontent-1f7126b1051e51a5d0ac16982ee6e2b0">
+  <label class="expand-label" for="R-expand-1f7126b1051e51a5d0ac16982ee6e2b0">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-4a56a6546cc432cb79a9be00b2a8ffa3" class="expand-content">
+  <div id="R-expandcontent-1f7126b1051e51a5d0ac16982ee6e2b0" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1361,12 +1357,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="234x3" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_234x3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7419f9359c1dbc9f8c24b47efda8997d" aria-controls="R-expandcontent-7419f9359c1dbc9f8c24b47efda8997d">
-  <label class="expand-label" for="R-expand-7419f9359c1dbc9f8c24b47efda8997d">
+  <input type="checkbox" id="R-expand-a78dfc43f6fc371dcf01d9a053227366" aria-controls="R-expandcontent-a78dfc43f6fc371dcf01d9a053227366">
+  <label class="expand-label" for="R-expand-a78dfc43f6fc371dcf01d9a053227366">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-7419f9359c1dbc9f8c24b47efda8997d" class="expand-content">
+  <div id="R-expandcontent-a78dfc43f6fc371dcf01d9a053227366" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1457,12 +1453,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="3x234" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_3x234.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-501a8c90c4a3922d49164653959a1090" aria-controls="R-expandcontent-501a8c90c4a3922d49164653959a1090">
-  <label class="expand-label" for="R-expand-501a8c90c4a3922d49164653959a1090">
+  <input type="checkbox" id="R-expand-d77b6ed362193b8c563244fecbae1f6f" aria-controls="R-expandcontent-d77b6ed362193b8c563244fecbae1f6f">
+  <label class="expand-label" for="R-expand-d77b6ed362193b8c563244fecbae1f6f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-501a8c90c4a3922d49164653959a1090" class="expand-content">
+  <div id="R-expandcontent-d77b6ed362193b8c563244fecbae1f6f" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1553,12 +1549,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="234x234" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_234x234.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-32bf77fba5201f274d20d4f755e00942" aria-controls="R-expandcontent-32bf77fba5201f274d20d4f755e00942">
-  <label class="expand-label" for="R-expand-32bf77fba5201f274d20d4f755e00942">
+  <input type="checkbox" id="R-expand-e091b78f52b19ad4c33af856ad5fb2e0" aria-controls="R-expandcontent-e091b78f52b19ad4c33af856ad5fb2e0">
+  <label class="expand-label" for="R-expand-e091b78f52b19ad4c33af856ad5fb2e0">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-32bf77fba5201f274d20d4f755e00942" class="expand-content">
+  <div id="R-expandcontent-e091b78f52b19ad4c33af856ad5fb2e0" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1649,12 +1645,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_allxoff.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3f5aecee94051d602796943cb8c2552f" aria-controls="R-expandcontent-3f5aecee94051d602796943cb8c2552f">
-  <label class="expand-label" for="R-expand-3f5aecee94051d602796943cb8c2552f">
+  <input type="checkbox" id="R-expand-accef27d172b6cb0c71fdc29b713237d" aria-controls="R-expandcontent-accef27d172b6cb0c71fdc29b713237d">
+  <label class="expand-label" for="R-expand-accef27d172b6cb0c71fdc29b713237d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-3f5aecee94051d602796943cb8c2552f" class="expand-content">
+  <div id="R-expandcontent-accef27d172b6cb0c71fdc29b713237d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1745,12 +1741,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_offxall.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-cb08b550e238bd20bc33e570d670f1f1" aria-controls="R-expandcontent-cb08b550e238bd20bc33e570d670f1f1">
-  <label class="expand-label" for="R-expand-cb08b550e238bd20bc33e570d670f1f1">
+  <input type="checkbox" id="R-expand-d819557cd9f1c14a057fd33f9313bcb1" aria-controls="R-expandcontent-d819557cd9f1c14a057fd33f9313bcb1">
+  <label class="expand-label" for="R-expand-d819557cd9f1c14a057fd33f9313bcb1">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-cb08b550e238bd20bc33e570d670f1f1" class="expand-content">
+  <div id="R-expandcontent-d819557cd9f1c14a057fd33f9313bcb1" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1841,12 +1837,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_offxoff.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-77b797da6c48a5fd7ae7710dbe260a08" aria-controls="R-expandcontent-77b797da6c48a5fd7ae7710dbe260a08">
-  <label class="expand-label" for="R-expand-77b797da6c48a5fd7ae7710dbe260a08">
+  <input type="checkbox" id="R-expand-a8523bf69895cde8e74dd06f02403255" aria-controls="R-expandcontent-a8523bf69895cde8e74dd06f02403255">
+  <label class="expand-label" for="R-expand-a8523bf69895cde8e74dd06f02403255">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-77b797da6c48a5fd7ae7710dbe260a08" class="expand-content">
+  <div id="R-expandcontent-a8523bf69895cde8e74dd06f02403255" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1923,34 +1919,34 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </div>
 <h6 id="default-stretch">Default stretch</h6>
 <p>Responsible for selecting all cells along each axis. Can be used instead of the previous option to avoid listing all cells. It can also be overridden by a regular property.</p>
-<div class="tab-panel" data-tab-group="5dbd76bf59583cd03405d5e48edb231c">
+<div class="tab-panel" data-tab-group="bc09d3951053f8c0cdf589125d7c0324">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="truextrue"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('5dbd76bf59583cd03405d5e48edb231c','truextrue')"
+      onclick="switchTab('bc09d3951053f8c0cdf589125d7c0324','truextrue')"
     >
       <span class="tab-nav-text">TruexTrue</span>
     </button>
     <button
       data-tab-item="truexfalse"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('5dbd76bf59583cd03405d5e48edb231c','truexfalse')"
+      onclick="switchTab('bc09d3951053f8c0cdf589125d7c0324','truexfalse')"
     >
       <span class="tab-nav-text">TruexFalse</span>
     </button>
     <button
       data-tab-item="falsextrue"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('5dbd76bf59583cd03405d5e48edb231c','falsextrue')"
+      onclick="switchTab('bc09d3951053f8c0cdf589125d7c0324','falsextrue')"
     >
       <span class="tab-nav-text">FalsexTrue</span>
     </button>
     <button
       data-tab-item="falsexfalse"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('5dbd76bf59583cd03405d5e48edb231c','falsexfalse')"
+      onclick="switchTab('bc09d3951053f8c0cdf589125d7c0324','falsexfalse')"
     >
       <span class="tab-nav-text">FalsexFalse</span>
     </button>
@@ -1971,12 +1967,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_tru_tru.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2ffc335f0c5fd7def03fd692722b189a" aria-controls="R-expandcontent-2ffc335f0c5fd7def03fd692722b189a">
-  <label class="expand-label" for="R-expand-2ffc335f0c5fd7def03fd692722b189a">
+  <input type="checkbox" id="R-expand-6402a914c07f82712a1c64149e6f0889" aria-controls="R-expandcontent-6402a914c07f82712a1c64149e6f0889">
+  <label class="expand-label" for="R-expand-6402a914c07f82712a1c64149e6f0889">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2ffc335f0c5fd7def03fd692722b189a" class="expand-content">
+  <div id="R-expandcontent-6402a914c07f82712a1c64149e6f0889" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2061,12 +2057,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_tru_fal.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-772dbd567953b596622bb805413d8919" aria-controls="R-expandcontent-772dbd567953b596622bb805413d8919">
-  <label class="expand-label" for="R-expand-772dbd567953b596622bb805413d8919">
+  <input type="checkbox" id="R-expand-8332f65f4ca94448692099b90712687e" aria-controls="R-expandcontent-8332f65f4ca94448692099b90712687e">
+  <label class="expand-label" for="R-expand-8332f65f4ca94448692099b90712687e">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-772dbd567953b596622bb805413d8919" class="expand-content">
+  <div id="R-expandcontent-8332f65f4ca94448692099b90712687e" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2151,12 +2147,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_fal_tru.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-a36dc67ac5506d20116d564134d180f1" aria-controls="R-expandcontent-a36dc67ac5506d20116d564134d180f1">
-  <label class="expand-label" for="R-expand-a36dc67ac5506d20116d564134d180f1">
+  <input type="checkbox" id="R-expand-6a7d5dac5fca29e3a6a825911902176c" aria-controls="R-expandcontent-6a7d5dac5fca29e3a6a825911902176c">
+  <label class="expand-label" for="R-expand-6a7d5dac5fca29e3a6a825911902176c">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-a36dc67ac5506d20116d564134d180f1" class="expand-content">
+  <div id="R-expandcontent-6a7d5dac5fca29e3a6a825911902176c" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2241,12 +2237,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_fal_fal.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-6f5a68abb5cab0f9803f512acabbf178" aria-controls="R-expandcontent-6f5a68abb5cab0f9803f512acabbf178">
-  <label class="expand-label" for="R-expand-6f5a68abb5cab0f9803f512acabbf178">
+  <input type="checkbox" id="R-expand-0d12090ab12466f4303b6bd42b7f6c0b" aria-controls="R-expandcontent-0d12090ab12466f4303b6bd42b7f6c0b">
+  <label class="expand-label" for="R-expand-0d12090ab12466f4303b6bd42b7f6c0b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-6f5a68abb5cab0f9803f512acabbf178" class="expand-content">
+  <div id="R-expandcontent-0d12090ab12466f4303b6bd42b7f6c0b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2320,34 +2316,34 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </div>
 <h6 id="padding">Padding</h6>
 <p>Responsible for the offset of the parent container.</p>
-<div class="tab-panel" data-tab-group="8f8949ddc0523362ba9554bae2a8485a">
+<div class="tab-panel" data-tab-group="fe08b5f1493528511284ee0511174fda">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('8f8949ddc0523362ba9554bae2a8485a','left')"
+      onclick="switchTab('fe08b5f1493528511284ee0511174fda','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('8f8949ddc0523362ba9554bae2a8485a','right')"
+      onclick="switchTab('fe08b5f1493528511284ee0511174fda','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('8f8949ddc0523362ba9554bae2a8485a','top')"
+      onclick="switchTab('fe08b5f1493528511284ee0511174fda','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('8f8949ddc0523362ba9554bae2a8485a','bottom')"
+      onclick="switchTab('fe08b5f1493528511284ee0511174fda','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -2371,12 +2367,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="lef" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_lef.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-1795205cbde86307df6b19b18980753a" aria-controls="R-expandcontent-1795205cbde86307df6b19b18980753a">
-  <label class="expand-label" for="R-expand-1795205cbde86307df6b19b18980753a">
+  <input type="checkbox" id="R-expand-11411ae2cb53f4775af161aa69c3b451" aria-controls="R-expandcontent-11411ae2cb53f4775af161aa69c3b451">
+  <label class="expand-label" for="R-expand-11411ae2cb53f4775af161aa69c3b451">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-1795205cbde86307df6b19b18980753a" class="expand-content">
+  <div id="R-expandcontent-11411ae2cb53f4775af161aa69c3b451" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2467,12 +2463,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="rig" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_rig.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7b2efeac61bb1fc4c669fcf2e759a9a9" aria-controls="R-expandcontent-7b2efeac61bb1fc4c669fcf2e759a9a9">
-  <label class="expand-label" for="R-expand-7b2efeac61bb1fc4c669fcf2e759a9a9">
+  <input type="checkbox" id="R-expand-5948dc222f7fee5cae4d88e916b9392d" aria-controls="R-expandcontent-5948dc222f7fee5cae4d88e916b9392d">
+  <label class="expand-label" for="R-expand-5948dc222f7fee5cae4d88e916b9392d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-7b2efeac61bb1fc4c669fcf2e759a9a9" class="expand-content">
+  <div id="R-expandcontent-5948dc222f7fee5cae4d88e916b9392d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2563,12 +2559,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_top.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8712054655423856b1fcd29a1e32c465" aria-controls="R-expandcontent-8712054655423856b1fcd29a1e32c465">
-  <label class="expand-label" for="R-expand-8712054655423856b1fcd29a1e32c465">
+  <input type="checkbox" id="R-expand-a4c0499b2ac78d7b04e27400de3e1dd6" aria-controls="R-expandcontent-a4c0499b2ac78d7b04e27400de3e1dd6">
+  <label class="expand-label" for="R-expand-a4c0499b2ac78d7b04e27400de3e1dd6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-8712054655423856b1fcd29a1e32c465" class="expand-content">
+  <div id="R-expandcontent-a4c0499b2ac78d7b04e27400de3e1dd6" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2659,12 +2655,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_bot.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3fd1178daf63100f23c2d60da2adf9e4" aria-controls="R-expandcontent-3fd1178daf63100f23c2d60da2adf9e4">
-  <label class="expand-label" for="R-expand-3fd1178daf63100f23c2d60da2adf9e4">
+  <input type="checkbox" id="R-expand-83aeed1aedd8b971ae27c157216fcd74" aria-controls="R-expandcontent-83aeed1aedd8b971ae27c157216fcd74">
+  <label class="expand-label" for="R-expand-83aeed1aedd8b971ae27c157216fcd74">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-3fd1178daf63100f23c2d60da2adf9e4" class="expand-content">
+  <div id="R-expandcontent-83aeed1aedd8b971ae27c157216fcd74" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2741,34 +2737,34 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </div>
 <h6 id="spacing">Spacing</h6>
 <p>Responsible for the offset between child elements.</p>
-<div class="tab-panel" data-tab-group="2af3ec3d47a508efbe54e5b490c42e36">
+<div class="tab-panel" data-tab-group="d4969671a2d9ac4e80f556bfa47fc371">
   <div class="tab-nav">
     <div class="tab-nav-title">Spacing:</div>
     <button
       data-tab-item="0x0"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('2af3ec3d47a508efbe54e5b490c42e36','0x0')"
+      onclick="switchTab('d4969671a2d9ac4e80f556bfa47fc371','0x0')"
     >
       <span class="tab-nav-text">0x0</span>
     </button>
     <button
       data-tab-item="0x25"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('2af3ec3d47a508efbe54e5b490c42e36','0x25')"
+      onclick="switchTab('d4969671a2d9ac4e80f556bfa47fc371','0x25')"
     >
       <span class="tab-nav-text">0x25</span>
     </button>
     <button
       data-tab-item="25x0"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('2af3ec3d47a508efbe54e5b490c42e36','25x0')"
+      onclick="switchTab('d4969671a2d9ac4e80f556bfa47fc371','25x0')"
     >
       <span class="tab-nav-text">25x0</span>
     </button>
     <button
       data-tab-item="25x25"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('2af3ec3d47a508efbe54e5b490c42e36','25x25')"
+      onclick="switchTab('d4969671a2d9ac4e80f556bfa47fc371','25x25')"
     >
       <span class="tab-nav-text">25x25</span>
     </button>
@@ -2790,12 +2786,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="0" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_0x0.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-813d353c5f23a4f050f7a9bd2830fa25" aria-controls="R-expandcontent-813d353c5f23a4f050f7a9bd2830fa25">
-  <label class="expand-label" for="R-expand-813d353c5f23a4f050f7a9bd2830fa25">
+  <input type="checkbox" id="R-expand-4256e81aae1498dd37bfc24eef8ab0aa" aria-controls="R-expandcontent-4256e81aae1498dd37bfc24eef8ab0aa">
+  <label class="expand-label" for="R-expand-4256e81aae1498dd37bfc24eef8ab0aa">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-813d353c5f23a4f050f7a9bd2830fa25" class="expand-content">
+  <div id="R-expandcontent-4256e81aae1498dd37bfc24eef8ab0aa" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2882,12 +2878,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="25" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_0x25.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2b94d17102d476c1c877b4f2f46e7879" aria-controls="R-expandcontent-2b94d17102d476c1c877b4f2f46e7879">
-  <label class="expand-label" for="R-expand-2b94d17102d476c1c877b4f2f46e7879">
+  <input type="checkbox" id="R-expand-caf1079ee4c1ff76491e35cad2b47b56" aria-controls="R-expandcontent-caf1079ee4c1ff76491e35cad2b47b56">
+  <label class="expand-label" for="R-expand-caf1079ee4c1ff76491e35cad2b47b56">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2b94d17102d476c1c877b4f2f46e7879" class="expand-content">
+  <div id="R-expandcontent-caf1079ee4c1ff76491e35cad2b47b56" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2974,12 +2970,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_25x0.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ea626f1388743552236aadd2dfd956e3" aria-controls="R-expandcontent-ea626f1388743552236aadd2dfd956e3">
-  <label class="expand-label" for="R-expand-ea626f1388743552236aadd2dfd956e3">
+  <input type="checkbox" id="R-expand-e9090635bfb697e66b5ff3bf553e66bb" aria-controls="R-expandcontent-e9090635bfb697e66b5ff3bf553e66bb">
+  <label class="expand-label" for="R-expand-e9090635bfb697e66b5ff3bf553e66bb">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-ea626f1388743552236aadd2dfd956e3" class="expand-content">
+  <div id="R-expandcontent-e9090635bfb697e66b5ff3bf553e66bb" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3066,12 +3062,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_25x25.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f4deaf190b42b78f185f9251c7b54439" aria-controls="R-expandcontent-f4deaf190b42b78f185f9251c7b54439">
-  <label class="expand-label" for="R-expand-f4deaf190b42b78f185f9251c7b54439">
+  <input type="checkbox" id="R-expand-d58e2dbfe87129027f007c26fc16a006" aria-controls="R-expandcontent-d58e2dbfe87129027f007c26fc16a006">
+  <label class="expand-label" for="R-expand-d58e2dbfe87129027f007c26fc16a006">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-f4deaf190b42b78f185f9251c7b54439" class="expand-content">
+  <div id="R-expandcontent-d58e2dbfe87129027f007c26fc16a006" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3147,34 +3143,34 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 <h3 id="layout-data">Layout data</h3>
 <h6 id="max-size">Max size</h6>
 <p>Responsible for the allowable size of the child containers.</p>
-<div class="tab-panel" data-tab-group="f5e70570d8287756ef0c4846b18e6c5f">
+<div class="tab-panel" data-tab-group="b0fbf9e998eac2affc648a39b5188ee0">
   <div class="tab-nav">
     <div class="tab-nav-title">Max:</div>
     <button
       data-tab-item="none"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('f5e70570d8287756ef0c4846b18e6c5f','none')"
+      onclick="switchTab('b0fbf9e998eac2affc648a39b5188ee0','none')"
     >
       <span class="tab-nav-text">None</span>
     </button>
     <button
       data-tab-item="width"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('f5e70570d8287756ef0c4846b18e6c5f','width')"
+      onclick="switchTab('b0fbf9e998eac2affc648a39b5188ee0','width')"
     >
       <span class="tab-nav-text">Width</span>
     </button>
     <button
       data-tab-item="height"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('f5e70570d8287756ef0c4846b18e6c5f','height')"
+      onclick="switchTab('b0fbf9e998eac2affc648a39b5188ee0','height')"
     >
       <span class="tab-nav-text">Height</span>
     </button>
     <button
       data-tab-item="both"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('f5e70570d8287756ef0c4846b18e6c5f','both')"
+      onclick="switchTab('b0fbf9e998eac2affc648a39b5188ee0','both')"
     >
       <span class="tab-nav-text">Both</span>
     </button>
@@ -3196,12 +3192,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_off.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8e7b1b1c658e1f7d4c411f1ba6498e5b" aria-controls="R-expandcontent-8e7b1b1c658e1f7d4c411f1ba6498e5b">
-  <label class="expand-label" for="R-expand-8e7b1b1c658e1f7d4c411f1ba6498e5b">
+  <input type="checkbox" id="R-expand-cf591db3a7b33f50b5afcf9ac3dd3235" aria-controls="R-expandcontent-cf591db3a7b33f50b5afcf9ac3dd3235">
+  <label class="expand-label" for="R-expand-cf591db3a7b33f50b5afcf9ac3dd3235">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-8e7b1b1c658e1f7d4c411f1ba6498e5b" class="expand-content">
+  <div id="R-expandcontent-cf591db3a7b33f50b5afcf9ac3dd3235" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3289,12 +3285,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_wid.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-444281b144e9e7faea8c108863578f03" aria-controls="R-expandcontent-444281b144e9e7faea8c108863578f03">
-  <label class="expand-label" for="R-expand-444281b144e9e7faea8c108863578f03">
+  <input type="checkbox" id="R-expand-f9dcd5a6cdcf70b700af4ce2e031f732" aria-controls="R-expandcontent-f9dcd5a6cdcf70b700af4ce2e031f732">
+  <label class="expand-label" for="R-expand-f9dcd5a6cdcf70b700af4ce2e031f732">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-444281b144e9e7faea8c108863578f03" class="expand-content">
+  <div id="R-expandcontent-f9dcd5a6cdcf70b700af4ce2e031f732" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3384,12 +3380,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_hei.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-828a1d3b5a833e2758001cc5e2649a04" aria-controls="R-expandcontent-828a1d3b5a833e2758001cc5e2649a04">
-  <label class="expand-label" for="R-expand-828a1d3b5a833e2758001cc5e2649a04">
+  <input type="checkbox" id="R-expand-44ba06a1dbdef62d6979fcf0391f8b1b" aria-controls="R-expandcontent-44ba06a1dbdef62d6979fcf0391f8b1b">
+  <label class="expand-label" for="R-expand-44ba06a1dbdef62d6979fcf0391f8b1b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-828a1d3b5a833e2758001cc5e2649a04" class="expand-content">
+  <div id="R-expandcontent-44ba06a1dbdef62d6979fcf0391f8b1b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3480,12 +3476,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_all.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-af904bf196b95edff331945ec7730ccb" aria-controls="R-expandcontent-af904bf196b95edff331945ec7730ccb">
-  <label class="expand-label" for="R-expand-af904bf196b95edff331945ec7730ccb">
+  <input type="checkbox" id="R-expand-f4ceb7a507f0de4a75086eca7d295932" aria-controls="R-expandcontent-f4ceb7a507f0de4a75086eca7d295932">
+  <label class="expand-label" for="R-expand-f4ceb7a507f0de4a75086eca7d295932">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-af904bf196b95edff331945ec7730ccb" class="expand-content">
+  <div id="R-expandcontent-f4ceb7a507f0de4a75086eca7d295932" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3562,55 +3558,55 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </div>
 <h6 id="position">Position</h6>
 <p>Responsible for the allowable size of the child containers. It works when the size of the cells is so limited by the maximum size that it is smaller than the size of the stretched cells that there is free space between them.</p>
-<div class="tab-panel" data-tab-group="b409c3823bf22d718013431a03c9957c">
+<div class="tab-panel" data-tab-group="aa19effc9c7e68ce0b7b0df85996a575">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="startxstart"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('b409c3823bf22d718013431a03c9957c','startxstart')"
+      onclick="switchTab('aa19effc9c7e68ce0b7b0df85996a575','startxstart')"
     >
       <span class="tab-nav-text">StartxStart</span>
     </button>
     <button
       data-tab-item="centerxcenter"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b409c3823bf22d718013431a03c9957c','centerxcenter')"
+      onclick="switchTab('aa19effc9c7e68ce0b7b0df85996a575','centerxcenter')"
     >
       <span class="tab-nav-text">CenterxCenter</span>
     </button>
     <button
       data-tab-item="endxend"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b409c3823bf22d718013431a03c9957c','endxend')"
+      onclick="switchTab('aa19effc9c7e68ce0b7b0df85996a575','endxend')"
     >
       <span class="tab-nav-text">EndxEnd</span>
     </button>
     <button
       data-tab-item="centerxstart"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b409c3823bf22d718013431a03c9957c','centerxstart')"
+      onclick="switchTab('aa19effc9c7e68ce0b7b0df85996a575','centerxstart')"
     >
       <span class="tab-nav-text">CenterxStart</span>
     </button>
     <button
       data-tab-item="startxcenter"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b409c3823bf22d718013431a03c9957c','startxcenter')"
+      onclick="switchTab('aa19effc9c7e68ce0b7b0df85996a575','startxcenter')"
     >
       <span class="tab-nav-text">StartxCenter</span>
     </button>
     <button
       data-tab-item="endxstart"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b409c3823bf22d718013431a03c9957c','endxstart')"
+      onclick="switchTab('aa19effc9c7e68ce0b7b0df85996a575','endxstart')"
     >
       <span class="tab-nav-text">EndxStart</span>
     </button>
     <button
       data-tab-item="startxend"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b409c3823bf22d718013431a03c9957c','startxend')"
+      onclick="switchTab('aa19effc9c7e68ce0b7b0df85996a575','startxend')"
     >
       <span class="tab-nav-text">StartxEnd</span>
     </button>
@@ -3637,12 +3633,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_staxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f39a8f0e08822358a808033d0c257ffb" aria-controls="R-expandcontent-f39a8f0e08822358a808033d0c257ffb">
-  <label class="expand-label" for="R-expand-f39a8f0e08822358a808033d0c257ffb">
+  <input type="checkbox" id="R-expand-0c580bb8b0502a5888d3bee69bf2249c" aria-controls="R-expandcontent-0c580bb8b0502a5888d3bee69bf2249c">
+  <label class="expand-label" for="R-expand-0c580bb8b0502a5888d3bee69bf2249c">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-f39a8f0e08822358a808033d0c257ffb" class="expand-content">
+  <div id="R-expandcontent-0c580bb8b0502a5888d3bee69bf2249c" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3738,12 +3734,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_cenxcen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-aa9dafa22462dc300cebc8f8b3efa30b" aria-controls="R-expandcontent-aa9dafa22462dc300cebc8f8b3efa30b">
-  <label class="expand-label" for="R-expand-aa9dafa22462dc300cebc8f8b3efa30b">
+  <input type="checkbox" id="R-expand-4cf12620feef311e01b9218fb08af920" aria-controls="R-expandcontent-4cf12620feef311e01b9218fb08af920">
+  <label class="expand-label" for="R-expand-4cf12620feef311e01b9218fb08af920">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-aa9dafa22462dc300cebc8f8b3efa30b" class="expand-content">
+  <div id="R-expandcontent-4cf12620feef311e01b9218fb08af920" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3839,12 +3835,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_endxend.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-52d9e2ffd22ebdfa697c1c1bb0e1e2bb" aria-controls="R-expandcontent-52d9e2ffd22ebdfa697c1c1bb0e1e2bb">
-  <label class="expand-label" for="R-expand-52d9e2ffd22ebdfa697c1c1bb0e1e2bb">
+  <input type="checkbox" id="R-expand-a27b2e46179f72a135b77d233a02b596" aria-controls="R-expandcontent-a27b2e46179f72a135b77d233a02b596">
+  <label class="expand-label" for="R-expand-a27b2e46179f72a135b77d233a02b596">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-52d9e2ffd22ebdfa697c1c1bb0e1e2bb" class="expand-content">
+  <div id="R-expandcontent-a27b2e46179f72a135b77d233a02b596" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3940,12 +3936,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_cenxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d7226303c32a7c58099c510efe652e3a" aria-controls="R-expandcontent-d7226303c32a7c58099c510efe652e3a">
-  <label class="expand-label" for="R-expand-d7226303c32a7c58099c510efe652e3a">
+  <input type="checkbox" id="R-expand-c445a66e4f85e54ae2b22aa77041f790" aria-controls="R-expandcontent-c445a66e4f85e54ae2b22aa77041f790">
+  <label class="expand-label" for="R-expand-c445a66e4f85e54ae2b22aa77041f790">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-d7226303c32a7c58099c510efe652e3a" class="expand-content">
+  <div id="R-expandcontent-c445a66e4f85e54ae2b22aa77041f790" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4041,12 +4037,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_staxcen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-0a11e5bc3c7066807d3d2e2af9824aeb" aria-controls="R-expandcontent-0a11e5bc3c7066807d3d2e2af9824aeb">
-  <label class="expand-label" for="R-expand-0a11e5bc3c7066807d3d2e2af9824aeb">
+  <input type="checkbox" id="R-expand-1dcf574af5f988cdcbeb5e646fba1307" aria-controls="R-expandcontent-1dcf574af5f988cdcbeb5e646fba1307">
+  <label class="expand-label" for="R-expand-1dcf574af5f988cdcbeb5e646fba1307">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-0a11e5bc3c7066807d3d2e2af9824aeb" class="expand-content">
+  <div id="R-expandcontent-1dcf574af5f988cdcbeb5e646fba1307" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4142,12 +4138,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_endxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-10ce5e193f8db1542f9f9f6d1369a813" aria-controls="R-expandcontent-10ce5e193f8db1542f9f9f6d1369a813">
-  <label class="expand-label" for="R-expand-10ce5e193f8db1542f9f9f6d1369a813">
+  <input type="checkbox" id="R-expand-9f59babe350483ccc7935c6ea26f1a32" aria-controls="R-expandcontent-9f59babe350483ccc7935c6ea26f1a32">
+  <label class="expand-label" for="R-expand-9f59babe350483ccc7935c6ea26f1a32">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-10ce5e193f8db1542f9f9f6d1369a813" class="expand-content">
+  <div id="R-expandcontent-9f59babe350483ccc7935c6ea26f1a32" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4243,12 +4239,12 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_staxend.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-1c86fc3f410012e520ecb13d409a03f2" aria-controls="R-expandcontent-1c86fc3f410012e520ecb13d409a03f2">
-  <label class="expand-label" for="R-expand-1c86fc3f410012e520ecb13d409a03f2">
+  <input type="checkbox" id="R-expand-93411183e9c073705ad6f005d1babeda" aria-controls="R-expandcontent-93411183e9c073705ad6f005d1babeda">
+  <label class="expand-label" for="R-expand-93411183e9c073705ad6f005d1babeda">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-1c86fc3f410012e520ecb13d409a03f2" class="expand-content">
+  <div id="R-expandcontent-93411183e9c073705ad6f005d1babeda" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4325,10 +4321,9 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
     </div>
   </div>
 </div>
-
-            <footer class="footline">
-            </footer>
-          </article>
+  <footer class="footline">
+  </footer>
+</article>
         </div>
       </main>
     </div>
@@ -4352,24 +4347,26 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
     </g>
 </svg>
         </div>
-
-        <search>
+        <script>
+          window.index_js_url="/eui/searchindex.js?1729418370";
+        </script>
+        <search><form action="/eui/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
             <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
           </div>
-        </search>
+        </form></search>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1729103955" defer></script>
-        <script src="/eui/js/search.js?1729103955" defer></script>
+        <script src="/eui/js/auto-complete.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1729418370" defer></script>
+        <script src="/eui/js/search.js?1729418370" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -4380,12 +4377,15 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/index.html" class=""><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/container-layouts/index.html" class=""><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
-          <li data-nav-id="/eui/layouts/index.html" class="parent "><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/layouts/anchor/index.html" class=""><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor layout</a></li>
-          <li data-nav-id="/eui/layouts/row/index.html" class=""><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row layout</a></li>
-          <li data-nav-id="/eui/layouts/grid/index.html" class="active"><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid layout</a></li></ul></li>
+            <li class="" data-nav-id="/eui/basics/index.html"><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/basics/container-layouts/index.html"><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
+            <li class="parent " data-nav-id="/eui/layouts/index.html"><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/layouts/anchor/index.html"><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor</a></li>
+            <li class="" data-nav-id="/eui/layouts/row/index.html"><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row</a></li>
+            <li class="active " data-nav-id="/eui/layouts/grid/index.html"><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid</a></li></ul></li>
+            <li class="" data-nav-id="/eui/widgets/index.html"><input type="checkbox" id="R-section-3a2d0cc92226a59334aedb713168a582" aria-controls="R-subsections-3a2d0cc92226a59334aedb713168a582"><label for="R-section-3a2d0cc92226a59334aedb713168a582"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Widgets</span></label><a class="padding" href="/eui/widgets/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-puzzle-piece"></i> Widgets</a><ul id="R-subsections-3a2d0cc92226a59334aedb713168a582" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/widgets/button/index.html"><a class="padding" href="/eui/widgets/button/index.html"><i class="fa-solid fa-fw fa-sm fa-audio-description"></i> Button</a></li>
+            <li class="" data-nav-id="/eui/widgets/toggle/index.html"><a class="padding" href="/eui/widgets/toggle/index.html"><i class="fa-solid fa-fw fa-sm fa-toggle-on"></i> Toggle</a></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -4433,13 +4433,13 @@ Full example 1package main 2 3import ( 4	&#34;image/color&#34; 5	&#34;github.com
             </ul>
           </div>
           <div id="R-footer" class="footerFooter showFooter">
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
           </div>
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1729103955" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1729103955" defer></script>
-    <script src="/eui/js/theme.js?1729103955" defer></script>
+    <script src="/eui/js/clipboard.min.js?1729418370" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1729418370" defer></script>
+    <script src="/eui/js/theme.js?1729418370" defer></script>
   </body>
 </html>

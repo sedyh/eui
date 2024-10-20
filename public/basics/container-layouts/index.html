@@ -3,49 +3,40 @@
   <head><script src="/eui/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=eui/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
-    <meta name="generator" content="Relearn 6.4.1">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="The library provides a rendering manager in which you will place your entire UI. The manager is located in ebitenui package.
-1import &#34;github.com/ebitenui/ebitenui&#34; Manager needs to get constantly updated and drawed.
-1type Game struct { 2	ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6	return &amp;Game{ 7	ui: &amp;ebitenui.UI{}, 8	} 9} 10 11func (g *Game) Update() error { 12	g.ui.Update() 13	return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17	g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other. Container is located in widget package.">
+    <meta name="generator" content="Hugo 0.136.2">
+    <meta name="generator" content="Relearn 7.0.1">
+    <meta name="description" content="The most basic way to present the user interface in an application is to break it up into nested containers with different layouts, inside which widgets are located for interaction.">
     <meta name="author" content="sedyh">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/eui/images/hero.png">
     <meta name="twitter:title" content="Container & layouts - Ebiten UI">
-    <meta name="twitter:description" content="The library provides a rendering manager in which you will place your entire UI. The manager is located in ebitenui package.
-1import &#34;github.com/ebitenui/ebitenui&#34; Manager needs to get constantly updated and drawed.
-1type Game struct { 2	ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6	return &amp;Game{ 7	ui: &amp;ebitenui.UI{}, 8	} 9} 10 11func (g *Game) Update() error { 12	g.ui.Update() 13	return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17	g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other. Container is located in widget package.">
+    <meta name="twitter:description" content="The most basic way to present the user interface in an application is to break it up into nested containers with different layouts, inside which widgets are located for interaction.">
     <meta property="og:url" content="http://localhost:1313/eui/basics/container-layouts/index.html">
     <meta property="og:site_name" content="Ebiten UI">
     <meta property="og:title" content="Container & layouts - Ebiten UI">
-    <meta property="og:description" content="The library provides a rendering manager in which you will place your entire UI. The manager is located in ebitenui package.
-1import &#34;github.com/ebitenui/ebitenui&#34; Manager needs to get constantly updated and drawed.
-1type Game struct { 2	ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6	return &amp;Game{ 7	ui: &amp;ebitenui.UI{}, 8	} 9} 10 11func (g *Game) Update() error { 12	g.ui.Update() 13	return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17	g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other. Container is located in widget package.">
+    <meta property="og:description" content="The most basic way to present the user interface in an application is to break it up into nested containers with different layouts, inside which widgets are located for interaction.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/eui/images/hero.png">
     <meta itemprop="name" content="Container & layouts - Ebiten UI">
-    <meta itemprop="description" content="The library provides a rendering manager in which you will place your entire UI. The manager is located in ebitenui package.
-1import &#34;github.com/ebitenui/ebitenui&#34; Manager needs to get constantly updated and drawed.
-1type Game struct { 2	ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6	return &amp;Game{ 7	ui: &amp;ebitenui.UI{}, 8	} 9} 10 11func (g *Game) Update() error { 12	g.ui.Update() 13	return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17	g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other. Container is located in widget package.">
+    <meta itemprop="description" content="The most basic way to present the user interface in an application is to break it up into nested containers with different layouts, inside which widgets are located for interaction.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="759">
+    <meta itemprop="wordCount" content="789">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Container &amp; layouts - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1729103955" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1729103955" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1729103955" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/print.css?1729103955" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1729103955"></script>
+    <link href="/eui/basics/container-layouts/index.xml" rel="alternate" type="application/rss+xml" title="Container &amp; layouts - Ebiten UI">
+    <link href="/eui/images/favicon.png?1729418370" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1729418370" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1729418370" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/print.css?1729418370" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1729418370"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -109,14 +100,15 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+      <main id="R-body-inner" class="highlightable basics" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
+<article class="default">
+  <header class="headline">
+  </header>
 
 <h1 id="container--layouts">Container &amp; layouts</h1>
 
+<p>The most basic way to present the user interface in an application is to break it up into nested containers with different layouts, inside which widgets are located for interaction.</p>
 <p>The library provides a rendering manager in
 which you will place your entire UI. The manager is located in <code>ebitenui</code> package.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">import</span> <span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span></span></span></code></pre></div>
@@ -222,12 +214,12 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 <p>Lets run the app. We will see a single container that will take up all the free space.</p>
 <p><img alt="image" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/bas_con_sin.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-6c862a93769852f00f04c08283a18dcc" aria-controls="R-expandcontent-6c862a93769852f00f04c08283a18dcc">
-  <label class="expand-label" for="R-expand-6c862a93769852f00f04c08283a18dcc">
+  <input type="checkbox" id="R-expand-b4598f70e3915176c133b0a5a838c974" aria-controls="R-expandcontent-b4598f70e3915176c133b0a5a838c974">
+  <label class="expand-label" for="R-expand-b4598f70e3915176c133b0a5a838c974">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-6c862a93769852f00f04c08283a18dcc" class="expand-content">
+  <div id="R-expandcontent-b4598f70e3915176c133b0a5a838c974" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -364,12 +356,12 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
 <p>Let&rsquo;s launch the application. We will see one <code>root container</code> in background and two <code>child containers</code> inside at different <code>position</code> that will <code>stretch</code> vertically.</p>
 <p><img alt="image" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/bas_con_mul.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8639781dc750835f1d5d051b8084d3d6" aria-controls="R-expandcontent-8639781dc750835f1d5d051b8084d3d6">
-  <label class="expand-label" for="R-expand-8639781dc750835f1d5d051b8084d3d6">
+  <input type="checkbox" id="R-expand-20d10d20240b13cb34abdcf2a9b51473" aria-controls="R-expandcontent-20d10d20240b13cb34abdcf2a9b51473">
+  <label class="expand-label" for="R-expand-20d10d20240b13cb34abdcf2a9b51473">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-8639781dc750835f1d5d051b8084d3d6" class="expand-content">
+  <div id="R-expandcontent-20d10d20240b13cb34abdcf2a9b51473" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -438,10 +430,9 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
   </div>
 </div>
 <p>The library has several different layouts for different situations, you can study each of them in detail on the next pages.</p>
-
-            <footer class="footline">
-            </footer>
-          </article>
+  <footer class="footline">
+  </footer>
+</article>
         </div>
       </main>
     </div>
@@ -465,24 +456,26 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
     </g>
 </svg>
         </div>
-
-        <search>
+        <script>
+          window.index_js_url="/eui/searchindex.js?1729418370";
+        </script>
+        <search><form action="/eui/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
             <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
           </div>
-        </search>
+        </form></search>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1729103955" defer></script>
-        <script src="/eui/js/search.js?1729103955" defer></script>
+        <script src="/eui/js/auto-complete.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1729418370" defer></script>
+        <script src="/eui/js/search.js?1729418370" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -493,12 +486,15 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/index.html" class="parent "><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" checked><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/container-layouts/index.html" class="active"><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
-          <li data-nav-id="/eui/layouts/index.html" class=""><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b"><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/layouts/anchor/index.html" class=""><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor layout</a></li>
-          <li data-nav-id="/eui/layouts/row/index.html" class=""><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row layout</a></li>
-          <li data-nav-id="/eui/layouts/grid/index.html" class=""><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid layout</a></li></ul></li>
+            <li class="parent " data-nav-id="/eui/basics/index.html"><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" checked><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="collapsible-menu">
+            <li class="active " data-nav-id="/eui/basics/container-layouts/index.html"><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
+            <li class="" data-nav-id="/eui/layouts/index.html"><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b"><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/layouts/anchor/index.html"><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor</a></li>
+            <li class="" data-nav-id="/eui/layouts/row/index.html"><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row</a></li>
+            <li class="" data-nav-id="/eui/layouts/grid/index.html"><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid</a></li></ul></li>
+            <li class="" data-nav-id="/eui/widgets/index.html"><input type="checkbox" id="R-section-3a2d0cc92226a59334aedb713168a582" aria-controls="R-subsections-3a2d0cc92226a59334aedb713168a582"><label for="R-section-3a2d0cc92226a59334aedb713168a582"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Widgets</span></label><a class="padding" href="/eui/widgets/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-puzzle-piece"></i> Widgets</a><ul id="R-subsections-3a2d0cc92226a59334aedb713168a582" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/widgets/button/index.html"><a class="padding" href="/eui/widgets/button/index.html"><i class="fa-solid fa-fw fa-sm fa-audio-description"></i> Button</a></li>
+            <li class="" data-nav-id="/eui/widgets/toggle/index.html"><a class="padding" href="/eui/widgets/toggle/index.html"><i class="fa-solid fa-fw fa-sm fa-toggle-on"></i> Toggle</a></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -546,13 +542,13 @@ Let&rsquo;s pass our container there so we can interact with it. There is <code>
             </ul>
           </div>
           <div id="R-footer" class="footerFooter showFooter">
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
           </div>
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1729103955" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1729103955" defer></script>
-    <script src="/eui/js/theme.js?1729103955" defer></script>
+    <script src="/eui/js/clipboard.min.js?1729418370" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1729418370" defer></script>
+    <script src="/eui/js/theme.js?1729418370" defer></script>
   </body>
 </html>

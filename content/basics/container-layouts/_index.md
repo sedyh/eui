@@ -5,6 +5,10 @@ menuPre = '<i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> '
 weight = 1
 +++
 
+The most basic way to present the user interface in an application is to break it up into nested containers with different layouts, inside which widgets are located for interaction.
+
+<!--more-->
+
 The library provides a rendering manager in 
 which you will place your entire UI. The manager is located in `ebitenui` package.
 ```go

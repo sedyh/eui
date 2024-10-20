@@ -9,17 +9,16 @@
     <meta name="author" content="sedyh">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/eui/images/hero.png">
-    <meta name="twitter:title" content="Categories - Ebiten UI">
-    <meta property="og:url" content="http://localhost:1313/eui/categories/index.html">
+    <meta name="twitter:title" content="Search - Ebiten UI">
+    <meta property="og:url" content="http://localhost:1313/eui/search/index.html">
     <meta property="og:site_name" content="Ebiten UI">
-    <meta property="og:title" content="Categories - Ebiten UI">
+    <meta property="og:title" content="Search - Ebiten UI">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/eui/images/hero.png">
-    <meta itemprop="name" content="Categories - Ebiten UI">
+    <meta itemprop="name" content="Search - Ebiten UI">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
-    <title>Categories - Ebiten UI</title>
-    <link href="/eui/categories/index.xml" rel="alternate" type="application/rss+xml" title="Categories - Ebiten UI">
+    <title>Search - Ebiten UI</title>
     <link href="/eui/images/favicon.png?1729418370" rel="icon" type="image/png">
     <link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet"></noscript>
     <link href="/eui/css/nucleus.css?1729418370" rel="stylesheet">
@@ -55,7 +54,7 @@
     }
 </style>4
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/eui/categories/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/eui/search/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -71,8 +70,7 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Categories</span><meta itemprop="position" content="1"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/index.html" title="Ebiten UI (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -91,14 +89,27 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable categories" tabindex="-1">
+      <main id="R-body-inner" class="highlightable _relearn_searchform" tabindex="-1">
         <div class="flex-block-wrapper">
-<article>
+<article class="default">
   <header class="headline">
   </header>
-<h1 id="categories">Categories</h1>
 
+<h1 id="search">Search</h1>
 
+<search>
+  <form action="javascript:triggerSearch()">
+    <div class="searchform">
+      <label class="a11y-only" for="R-search-by-detail">Search</label>
+      <input data-search-input id="R-search-by-detail" class="search-by" name="search-by" type="search" placeholder="Search..."><span class="btn cstyle interactive secondary"><button onclick="" type="submit"><i class="fa-fw fas fa-search"></i> <span class="title">Search</span></button></span>
+    </div>
+  </form>
+</search>
+<div class="searchhint">
+</div>
+<hr>
+<div id="R-searchresults">
+</div>
   <footer class="footline">
   </footer>
 </article>
@@ -178,7 +189,7 @@
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/eui/categories/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/eui/search/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>

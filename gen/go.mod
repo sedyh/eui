@@ -2,16 +2,14 @@ module gen
 
 go 1.22.7
 
-replace github.com/ebitenui/ebitenui => ../../ebitenui
-
 require (
-	github.com/ebitenui/ebitenui v0.6.1-0.20241010000355-a0b49d1f9b55
+	github.com/ebitenui/ebitenui v0.6.1-0.20241016183330-5eb25c89e3a7
 	github.com/hajimehoshi/ebiten/v2 v2.8.1
 	golang.org/x/image v0.21.0
 )
 
 require (
-	github.com/ebitengine/gomobile v0.0.0-20241001034212-22433622d8a5 // indirect
+	github.com/ebitengine/gomobile v0.0.0-20241016134836-cc2e38a7c0ee // indirect
 	github.com/ebitengine/hideconsole v1.0.0 // indirect
 	github.com/ebitengine/purego v0.8.0 // indirect
 	github.com/go-text/typesetting v0.2.0 // indirect

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Widgets - Ebiten UI</title>
+    <link>http://localhost:1313/eui/widgets/index.html</link>
+    <description>The library provides many ways to interact with your composite layout, and this chapter will tell you about each of them.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Oct 2024 19:45:29 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/eui/widgets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Button</title>
+      <link>http://localhost:1313/eui/widgets/button/index.html</link>
+      <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
+      <guid>http://localhost:1313/eui/widgets/button/index.html</guid>
+      <description>Here be dragons.</description>
+    </item>
+    <item>
+      <title>Toggle</title>
+      <link>http://localhost:1313/eui/widgets/toggle/index.html</link>
+      <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
+      <guid>http://localhost:1313/eui/widgets/toggle/index.html</guid>
+      <description>Here be dragons.</description>
+    </item>
+  </channel>
+</rss>

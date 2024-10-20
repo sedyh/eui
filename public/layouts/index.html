@@ -3,45 +3,40 @@
   <head><script src="/eui/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=eui/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
-    <meta name="generator" content="Relearn 6.4.1">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.
-Content Anchor layout Row layout Grid layout">
+    <meta name="generator" content="Hugo 0.136.2">
+    <meta name="generator" content="Relearn 7.0.1">
+    <meta name="description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.">
     <meta name="author" content="sedyh">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/eui/images/hero.png">
     <meta name="twitter:title" content="Layouts - Ebiten UI">
-    <meta name="twitter:description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.
-Content Anchor layout Row layout Grid layout">
+    <meta name="twitter:description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.">
     <meta property="og:url" content="http://localhost:1313/eui/layouts/index.html">
     <meta property="og:site_name" content="Ebiten UI">
     <meta property="og:title" content="Layouts - Ebiten UI">
-    <meta property="og:description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.
-Content Anchor layout Row layout Grid layout">
+    <meta property="og:description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/eui/images/hero.png">
     <meta itemprop="name" content="Layouts - Ebiten UI">
-    <meta itemprop="description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.
-Content Anchor layout Row layout Grid layout">
+    <meta itemprop="description" content="The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="28">
+    <meta itemprop="wordCount" content="25">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Layouts - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1729103955" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1729103955" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1729103955" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/print.css?1729103955" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1729103955"></script>
+    <link href="/eui/layouts/index.xml" rel="alternate" type="application/rss+xml" title="Layouts - Ebiten UI">
+    <link href="/eui/images/favicon.png?1729418370" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1729418370" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1729418370" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/print.css?1729418370" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1729418370"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -90,7 +85,7 @@ Content Anchor layout Row layout Grid layout">
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/basics/container-layouts/index.html" title="Container &amp; layouts (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/anchor/index.html" title="Anchor layout (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/anchor/index.html" title="Anchor (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -104,26 +99,24 @@ Content Anchor layout Row layout Grid layout">
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+      <main id="R-body-inner" class="highlightable layouts" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="chapter">
-            <header class="headline">
-            </header>
-<div class="article-subheading">Chapter 2</div>
+<article class="default">
+  <header class="headline">
+  </header>
 
 <h1 id="layouts">Layouts</h1>
 
 <p>The library allows you to compose containers in many different ways, and this chapter will tell you about each of them.</p>
 <h6 id="content">Content</h6>
 <ul class="children children-li children-sort-">
-  <li><a href="/eui/layouts/anchor/index.html">Anchor layout</a></li>
-  <li><a href="/eui/layouts/row/index.html">Row layout</a></li>
-  <li><a href="/eui/layouts/grid/index.html">Grid layout</a></li>
+  <li><a href="/eui/layouts/anchor/index.html">Anchor</a></li>
+  <li><a href="/eui/layouts/row/index.html">Row</a></li>
+  <li><a href="/eui/layouts/grid/index.html">Grid</a></li>
 </ul>
-
-            <footer class="footline">
-            </footer>
-          </article>
+  <footer class="footline">
+  </footer>
+</article>
         </div>
       </main>
     </div>
@@ -147,24 +140,26 @@ Content Anchor layout Row layout Grid layout">
     </g>
 </svg>
         </div>
-
-        <search>
+        <script>
+          window.index_js_url="/eui/searchindex.js?1729418370";
+        </script>
+        <search><form action="/eui/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
             <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
           </div>
-        </search>
+        </form></search>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1729103955" defer></script>
-        <script src="/eui/js/search.js?1729103955" defer></script>
+        <script src="/eui/js/auto-complete.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1729418370" defer></script>
+        <script src="/eui/js/search.js?1729418370" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -175,12 +170,15 @@ Content Anchor layout Row layout Grid layout">
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/index.html" class=""><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/container-layouts/index.html" class=""><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
-          <li data-nav-id="/eui/layouts/index.html" class="active parent "><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/layouts/anchor/index.html" class=""><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor layout</a></li>
-          <li data-nav-id="/eui/layouts/row/index.html" class=""><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row layout</a></li>
-          <li data-nav-id="/eui/layouts/grid/index.html" class=""><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid layout</a></li></ul></li>
+            <li class="" data-nav-id="/eui/basics/index.html"><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/basics/container-layouts/index.html"><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
+            <li class="active parent " data-nav-id="/eui/layouts/index.html"><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/layouts/anchor/index.html"><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor</a></li>
+            <li class="" data-nav-id="/eui/layouts/row/index.html"><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row</a></li>
+            <li class="" data-nav-id="/eui/layouts/grid/index.html"><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid</a></li></ul></li>
+            <li class="" data-nav-id="/eui/widgets/index.html"><input type="checkbox" id="R-section-3a2d0cc92226a59334aedb713168a582" aria-controls="R-subsections-3a2d0cc92226a59334aedb713168a582"><label for="R-section-3a2d0cc92226a59334aedb713168a582"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Widgets</span></label><a class="padding" href="/eui/widgets/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-puzzle-piece"></i> Widgets</a><ul id="R-subsections-3a2d0cc92226a59334aedb713168a582" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/widgets/button/index.html"><a class="padding" href="/eui/widgets/button/index.html"><i class="fa-solid fa-fw fa-sm fa-audio-description"></i> Button</a></li>
+            <li class="" data-nav-id="/eui/widgets/toggle/index.html"><a class="padding" href="/eui/widgets/toggle/index.html"><i class="fa-solid fa-fw fa-sm fa-toggle-on"></i> Toggle</a></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -228,13 +226,13 @@ Content Anchor layout Row layout Grid layout">
             </ul>
           </div>
           <div id="R-footer" class="footerFooter showFooter">
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
           </div>
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1729103955" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1729103955" defer></script>
-    <script src="/eui/js/theme.js?1729103955" defer></script>
+    <script src="/eui/js/clipboard.min.js?1729418370" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1729418370" defer></script>
+    <script src="/eui/js/theme.js?1729418370" defer></script>
   </body>
 </html>

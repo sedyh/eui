@@ -3,7 +3,7 @@
   <channel>
     <title>Container &amp; layouts - Ebiten UI</title>
     <link>http://localhost:1313/eui/basics/container-layouts/index.html</link>
-    <description>The library provides a rendering manager in which you will place your entire UI. The manager is located in ebitenui package.&#xA;1import &#34;github.com/ebitenui/ebitenui&#34; Manager needs to get constantly updated and drawed.&#xA;1type Game struct { 2&#x9;ui *ebitenui.UI 3} 4 5func NewGame() *Game { 6&#x9;return &amp;Game{ 7&#x9;ui: &amp;ebitenui.UI{}, 8&#x9;} 9} 10 11func (g *Game) Update() error { 12&#x9;g.ui.Update() 13&#x9;return nil 14} 15 16func (g *Game) Draw(screen *ebiten.Image) { 17&#x9;g.ui.Draw(screen) 18} Any UI in this library consists of containers that are nested in each other. Container is located in widget package.</description>
+    <description>The most basic way to present the user interface in an application is to break it up into nested containers with different layouts, inside which widgets are located for interaction.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

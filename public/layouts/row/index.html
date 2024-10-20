@@ -3,45 +3,40 @@
   <head><script src="/eui/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=eui/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
-    <meta name="generator" content="Relearn 6.4.1">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+    <meta name="generator" content="Hugo 0.136.2">
+    <meta name="generator" content="Relearn 7.0.1">
+    <meta name="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.">
     <meta name="author" content="sedyh">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/eui/images/hero.png">
-    <meta name="twitter:title" content="Row layout - Ebiten UI">
-    <meta name="twitter:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+    <meta name="twitter:title" content="Row - Ebiten UI">
+    <meta name="twitter:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.">
     <meta property="og:url" content="http://localhost:1313/eui/layouts/row/index.html">
     <meta property="og:site_name" content="Ebiten UI">
-    <meta property="og:title" content="Row layout - Ebiten UI">
-    <meta property="og:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+    <meta property="og:title" content="Row - Ebiten UI">
+    <meta property="og:description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/eui/images/hero.png">
-    <meta itemprop="name" content="Row layout - Ebiten UI">
-    <meta itemprop="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.
-Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 5	&#34;github.com/ebitenui/ebitenui/image&#34; 6	&#34;github.com/ebitenui/ebitenui/widget&#34; 7	&#34;github.com/hajimehoshi/ebiten/v2&#34; 8	&#34;golang.org/x/image/colornames&#34; 9) 10 11type Game struct { 12	ui *ebitenui.UI 13} 14 15func NewGame() *Game { 16	a := widget.NewContainer( 17	widget.ContainerOpts.BackgroundImage( 18	image.NewNineSliceColor(colornames.Indianred), 19	), 20	widget.ContainerOpts.WidgetOpts( 21	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 22	Stretch: true, 23	}), 24	widget.WidgetOpts.MinSize(96, 50), 25	), 26	) 27	b := widget.NewContainer( 28	widget.ContainerOpts.BackgroundImage( 29	image.NewNineSliceColor(colornames.Goldenrod), 30	), 31	widget.ContainerOpts.WidgetOpts( 32	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 33	Stretch: true, 34	}), 35	widget.WidgetOpts.MinSize(96, 50), 36	), 37	) 38	c := widget.NewContainer( 39	widget.ContainerOpts.BackgroundImage( 40	image.NewNineSliceColor(colornames.Steelblue), 41	), 42	widget.ContainerOpts.WidgetOpts( 43	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 44	Stretch: true, 45	}), 46	widget.WidgetOpts.MinSize(96, 50), 47	), 48	) 49	d := widget.NewContainer( 50	widget.ContainerOpts.BackgroundImage( 51	image.NewNineSliceColor(colornames.Mediumseagreen), 52	), 53	widget.ContainerOpts.WidgetOpts( 54	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 55	Stretch: true, 56	}), 57	widget.WidgetOpts.MinSize(96, 50), 58	), 59	) 60	e := widget.NewContainer( 61	widget.ContainerOpts.BackgroundImage( 62	image.NewNineSliceColor(colornames.Darkslategray), 63	), 64	widget.ContainerOpts.WidgetOpts( 65	widget.WidgetOpts.LayoutData(widget.RowLayoutData{ 66	Stretch: true, 67	}), 68	widget.WidgetOpts.MinSize(96, 50), 69	), 70	) 71	root := widget.NewContainer( 72	widget.ContainerOpts.BackgroundImage( 73	image.NewNineSliceColor(colornames.Gainsboro), 74	), 75	widget.ContainerOpts.Layout(widget.NewRowLayout( 76	widget.RowLayoutOpts.Direction( 77	widget.DirectionVertical, 78	), 79	widget.RowLayoutOpts.Spacing(5), 80	widget.RowLayoutOpts.Padding(widget.NewInsetsSimple(25)), 81	)), 82	) 83	root.AddChild(a) 84	root.AddChild(b) 85	root.AddChild(c) 86	root.AddChild(d) 87	root.AddChild(e) 88 89	return &amp;Game{ 90	ui: &amp;ebitenui.UI{Container: root}, 91	} 92} 93 94func (g *Game) Update() error { 95	g.ui.Update() 96	return nil 97} 98 99func (g *Game) Draw(screen *ebiten.Image) { 100	g.ui.Draw(screen) 101} 102 103func (g *Game) Layout(w, h int) (int, int) { 104	return w, h 105} Layout options Direction Responsible for whether child containers will follow each other in rows or columns.">
+    <meta itemprop="name" content="Row - Ebiten UI">
+    <meta itemprop="description" content="Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="wordCount" content="5302">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
-    <title>Row layout - Ebiten UI</title>
-    <link href="/eui/images/favicon.png?1729103955" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1729103955" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729103955" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1729103955" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1729103955" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/variant.css?1729103955" rel="stylesheet">
-    <link href="/eui/css/print.css?1729103955" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1729103955"></script>
+    <title>Row - Ebiten UI</title>
+    <link href="/eui/layouts/row/index.xml" rel="alternate" type="application/rss+xml" title="Row - Ebiten UI">
+    <link href="/eui/images/favicon.png?1729418370" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729418370" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1729418370" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1729418370" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1729418370" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/print.css?1729418370" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1729418370"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -77,7 +72,8 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -93,14 +89,14 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/eui/layouts/index.html"><span itemprop="name">Layouts</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Row layout</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Row</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/sedyh/eui/edit/main/content/layouts/row/_index.md" target="_self" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/anchor/index.html" title="Anchor layout (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/anchor/index.html" title="Anchor (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/grid/index.html" title="Grid layout (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/eui/layouts/grid/index.html" title="Grid (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -114,23 +110,23 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+      <main id="R-body-inner" class="highlightable layouts" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
+<article class="default">
+  <header class="headline">
+  </header>
 
-<h1 id="row-layout">Row layout</h1>
+<h1 id="row">Row</h1>
 
 <p>Row layout places all child containers in one row or column. It can be useful for creating lists of widgets.</p>
 <p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2bac83962298d8e087d110f9129c1214" aria-controls="R-expandcontent-2bac83962298d8e087d110f9129c1214">
-  <label class="expand-label" for="R-expand-2bac83962298d8e087d110f9129c1214">
+  <input type="checkbox" id="R-expand-46ad85865c72802480d593570091106b" aria-controls="R-expandcontent-46ad85865c72802480d593570091106b">
+  <label class="expand-label" for="R-expand-46ad85865c72802480d593570091106b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2bac83962298d8e087d110f9129c1214" class="expand-content">
+  <div id="R-expandcontent-46ad85865c72802480d593570091106b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -241,20 +237,20 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-options">Layout options</h3>
 <h6 id="direction">Direction</h6>
 <p>Responsible for whether child containers will follow each other in rows or columns.</p>
-<div class="tab-panel" data-tab-group="d8dbd5d6b07b9849b165a593fc778b7a">
+<div class="tab-panel" data-tab-group="03cd91c15d4bec2ab68817a77030ab62">
   <div class="tab-nav">
     <div class="tab-nav-title">Direction:</div>
     <button
       data-tab-item="vertical"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('d8dbd5d6b07b9849b165a593fc778b7a','vertical')"
+      onclick="switchTab('03cd91c15d4bec2ab68817a77030ab62','vertical')"
     >
       <span class="tab-nav-text">Vertical</span>
     </button>
     <button
       data-tab-item="horizontal"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('d8dbd5d6b07b9849b165a593fc778b7a','horizontal')"
+      onclick="switchTab('03cd91c15d4bec2ab68817a77030ab62','horizontal')"
     >
       <span class="tab-nav-text">Horizontal</span>
     </button>
@@ -276,12 +272,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="vert" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_dir_ver.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-bd8c869e334e731c69f2463e9be7fce3" aria-controls="R-expandcontent-bd8c869e334e731c69f2463e9be7fce3">
-  <label class="expand-label" for="R-expand-bd8c869e334e731c69f2463e9be7fce3">
+  <input type="checkbox" id="R-expand-7d0e00f43faa9091e69fe6f3255bfd0c" aria-controls="R-expandcontent-7d0e00f43faa9091e69fe6f3255bfd0c">
+  <label class="expand-label" for="R-expand-7d0e00f43faa9091e69fe6f3255bfd0c">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-bd8c869e334e731c69f2463e9be7fce3" class="expand-content">
+  <div id="R-expandcontent-7d0e00f43faa9091e69fe6f3255bfd0c" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -405,12 +401,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="horz" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_dir_hor.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-84b47c76d0cdc299848a299b0e959fe7" aria-controls="R-expandcontent-84b47c76d0cdc299848a299b0e959fe7">
-  <label class="expand-label" for="R-expand-84b47c76d0cdc299848a299b0e959fe7">
+  <input type="checkbox" id="R-expand-77d9fb0ec75ecf32822999d65d30f725" aria-controls="R-expandcontent-77d9fb0ec75ecf32822999d65d30f725">
+  <label class="expand-label" for="R-expand-77d9fb0ec75ecf32822999d65d30f725">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-84b47c76d0cdc299848a299b0e959fe7" class="expand-content">
+  <div id="R-expandcontent-77d9fb0ec75ecf32822999d65d30f725" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -522,34 +518,34 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </div>
 <h6 id="padding">Padding</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself. Please note that its not possible to specify padding at the <em>end</em>, so the <em>direction</em> will changed accordingly.</p>
-<div class="tab-panel" data-tab-group="13729b1748661a7aa950c538b6b92050">
+<div class="tab-panel" data-tab-group="876e72e1b07a260ac4a87f6622293151">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('13729b1748661a7aa950c538b6b92050','left')"
+      onclick="switchTab('876e72e1b07a260ac4a87f6622293151','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('13729b1748661a7aa950c538b6b92050','right')"
+      onclick="switchTab('876e72e1b07a260ac4a87f6622293151','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('13729b1748661a7aa950c538b6b92050','top')"
+      onclick="switchTab('876e72e1b07a260ac4a87f6622293151','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('13729b1748661a7aa950c538b6b92050','bottom')"
+      onclick="switchTab('876e72e1b07a260ac4a87f6622293151','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -574,12 +570,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="lef" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_lef.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3ae6ba7ffa30891bbf8a0ad67744dbb3" aria-controls="R-expandcontent-3ae6ba7ffa30891bbf8a0ad67744dbb3">
-  <label class="expand-label" for="R-expand-3ae6ba7ffa30891bbf8a0ad67744dbb3">
+  <input type="checkbox" id="R-expand-72748ac2ec710dbeb93f58b6c941a6fb" aria-controls="R-expandcontent-72748ac2ec710dbeb93f58b6c941a6fb">
+  <label class="expand-label" for="R-expand-72748ac2ec710dbeb93f58b6c941a6fb">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-3ae6ba7ffa30891bbf8a0ad67744dbb3" class="expand-content">
+  <div id="R-expandcontent-72748ac2ec710dbeb93f58b6c941a6fb" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -709,12 +705,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="rig" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_rig.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-cbd53715af2c951c405d53225bbcb086" aria-controls="R-expandcontent-cbd53715af2c951c405d53225bbcb086">
-  <label class="expand-label" for="R-expand-cbd53715af2c951c405d53225bbcb086">
+  <input type="checkbox" id="R-expand-3afda6d6eb43728173750a950c1830fb" aria-controls="R-expandcontent-3afda6d6eb43728173750a950c1830fb">
+  <label class="expand-label" for="R-expand-3afda6d6eb43728173750a950c1830fb">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-cbd53715af2c951c405d53225bbcb086" class="expand-content">
+  <div id="R-expandcontent-3afda6d6eb43728173750a950c1830fb" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -844,12 +840,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_top.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-a77c39ead6d9618338806054c06a5dbd" aria-controls="R-expandcontent-a77c39ead6d9618338806054c06a5dbd">
-  <label class="expand-label" for="R-expand-a77c39ead6d9618338806054c06a5dbd">
+  <input type="checkbox" id="R-expand-fb39d113e3c4a1d68121abb25e41af35" aria-controls="R-expandcontent-fb39d113e3c4a1d68121abb25e41af35">
+  <label class="expand-label" for="R-expand-fb39d113e3c4a1d68121abb25e41af35">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-a77c39ead6d9618338806054c06a5dbd" class="expand-content">
+  <div id="R-expandcontent-fb39d113e3c4a1d68121abb25e41af35" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -979,12 +975,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pad_bot.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b8457063a1ecd8d839e7a46b31e87a84" aria-controls="R-expandcontent-b8457063a1ecd8d839e7a46b31e87a84">
-  <label class="expand-label" for="R-expand-b8457063a1ecd8d839e7a46b31e87a84">
+  <input type="checkbox" id="R-expand-9c780817f8d9f6311fae274ed90c8f40" aria-controls="R-expandcontent-9c780817f8d9f6311fae274ed90c8f40">
+  <label class="expand-label" for="R-expand-9c780817f8d9f6311fae274ed90c8f40">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b8457063a1ecd8d839e7a46b31e87a84" class="expand-content">
+  <div id="R-expandcontent-9c780817f8d9f6311fae274ed90c8f40" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1099,34 +1095,34 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </div>
 <h6 id="spacing">Spacing</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<div class="tab-panel" data-tab-group="9c7b0fd6e4be87da7e81205029b67b15">
+<div class="tab-panel" data-tab-group="9f242e0f12324754e84ebc942056e6be">
   <div class="tab-nav">
     <div class="tab-nav-title">Spacing:</div>
     <button
       data-tab-item="0"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('9c7b0fd6e4be87da7e81205029b67b15','0')"
+      onclick="switchTab('9f242e0f12324754e84ebc942056e6be','0')"
     >
       <span class="tab-nav-text">0</span>
     </button>
     <button
       data-tab-item="25"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('9c7b0fd6e4be87da7e81205029b67b15','25')"
+      onclick="switchTab('9f242e0f12324754e84ebc942056e6be','25')"
     >
       <span class="tab-nav-text">25</span>
     </button>
     <button
       data-tab-item="50"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('9c7b0fd6e4be87da7e81205029b67b15','50')"
+      onclick="switchTab('9f242e0f12324754e84ebc942056e6be','50')"
     >
       <span class="tab-nav-text">50</span>
     </button>
     <button
       data-tab-item="75"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('9c7b0fd6e4be87da7e81205029b67b15','75')"
+      onclick="switchTab('9f242e0f12324754e84ebc942056e6be','75')"
     >
       <span class="tab-nav-text">75</span>
     </button>
@@ -1149,12 +1145,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="0" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_0.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-db7f16e74a8d9462dc3a335543cb5b62" aria-controls="R-expandcontent-db7f16e74a8d9462dc3a335543cb5b62">
-  <label class="expand-label" for="R-expand-db7f16e74a8d9462dc3a335543cb5b62">
+  <input type="checkbox" id="R-expand-3757fe7ee7a99f9b6f40d7ab37bd41d4" aria-controls="R-expandcontent-3757fe7ee7a99f9b6f40d7ab37bd41d4">
+  <label class="expand-label" for="R-expand-3757fe7ee7a99f9b6f40d7ab37bd41d4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-db7f16e74a8d9462dc3a335543cb5b62" class="expand-content">
+  <div id="R-expandcontent-3757fe7ee7a99f9b6f40d7ab37bd41d4" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1280,12 +1276,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="25" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_25.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f01ef17468f9d8774ff030223c73daec" aria-controls="R-expandcontent-f01ef17468f9d8774ff030223c73daec">
-  <label class="expand-label" for="R-expand-f01ef17468f9d8774ff030223c73daec">
+  <input type="checkbox" id="R-expand-6fef5a9be02451b246b74117e5577c7d" aria-controls="R-expandcontent-6fef5a9be02451b246b74117e5577c7d">
+  <label class="expand-label" for="R-expand-6fef5a9be02451b246b74117e5577c7d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-f01ef17468f9d8774ff030223c73daec" class="expand-content">
+  <div id="R-expandcontent-6fef5a9be02451b246b74117e5577c7d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1411,12 +1407,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_50.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-9be0dc924651fd8bd0fb665756be9780" aria-controls="R-expandcontent-9be0dc924651fd8bd0fb665756be9780">
-  <label class="expand-label" for="R-expand-9be0dc924651fd8bd0fb665756be9780">
+  <input type="checkbox" id="R-expand-da3fdc5207aabfa94a9115be6f014e6e" aria-controls="R-expandcontent-da3fdc5207aabfa94a9115be6f014e6e">
+  <label class="expand-label" for="R-expand-da3fdc5207aabfa94a9115be6f014e6e">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-9be0dc924651fd8bd0fb665756be9780" class="expand-content">
+  <div id="R-expandcontent-da3fdc5207aabfa94a9115be6f014e6e" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1542,12 +1538,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="75" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_spa_75.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b7e8f3687997e598996756a3e7fe110d" aria-controls="R-expandcontent-b7e8f3687997e598996756a3e7fe110d">
-  <label class="expand-label" for="R-expand-b7e8f3687997e598996756a3e7fe110d">
+  <input type="checkbox" id="R-expand-a54d619c1193e984d9aa9e87f15f7aae" aria-controls="R-expandcontent-a54d619c1193e984d9aa9e87f15f7aae">
+  <label class="expand-label" for="R-expand-a54d619c1193e984d9aa9e87f15f7aae">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b7e8f3687997e598996756a3e7fe110d" class="expand-content">
+  <div id="R-expandcontent-a54d619c1193e984d9aa9e87f15f7aae" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1661,20 +1657,20 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 <h3 id="layout-data">Layout data</h3>
 <h6 id="stretch">Stretch</h6>
 <p>Responsible for stretching the element along the entire length of the opposite axis.</p>
-<div class="tab-panel" data-tab-group="c557602bc5c9eb7056e8e8944cea8669">
+<div class="tab-panel" data-tab-group="1388c13ba39be50aa23f4e8e15f30472">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="false"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('c557602bc5c9eb7056e8e8944cea8669','false')"
+      onclick="switchTab('1388c13ba39be50aa23f4e8e15f30472','false')"
     >
       <span class="tab-nav-text">False</span>
     </button>
     <button
       data-tab-item="true"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('c557602bc5c9eb7056e8e8944cea8669','true')"
+      onclick="switchTab('1388c13ba39be50aa23f4e8e15f30472','true')"
     >
       <span class="tab-nav-text">True</span>
     </button>
@@ -1697,12 +1693,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="fal" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_str_fal.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b720269537eec7d4611896b81f68f3fb" aria-controls="R-expandcontent-b720269537eec7d4611896b81f68f3fb">
-  <label class="expand-label" for="R-expand-b720269537eec7d4611896b81f68f3fb">
+  <input type="checkbox" id="R-expand-13e40dc4c04e7bfb2cfe2abe2b72a014" aria-controls="R-expandcontent-13e40dc4c04e7bfb2cfe2abe2b72a014">
+  <label class="expand-label" for="R-expand-13e40dc4c04e7bfb2cfe2abe2b72a014">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b720269537eec7d4611896b81f68f3fb" class="expand-content">
+  <div id="R-expandcontent-13e40dc4c04e7bfb2cfe2abe2b72a014" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1827,12 +1823,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="tru" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_str_tru.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-6f3c45a80dcde61ede1a25a14e332730" aria-controls="R-expandcontent-6f3c45a80dcde61ede1a25a14e332730">
-  <label class="expand-label" for="R-expand-6f3c45a80dcde61ede1a25a14e332730">
+  <input type="checkbox" id="R-expand-8a71aff18432c66c3bb2ea316552759d" aria-controls="R-expandcontent-8a71aff18432c66c3bb2ea316552759d">
+  <label class="expand-label" for="R-expand-8a71aff18432c66c3bb2ea316552759d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-6f3c45a80dcde61ede1a25a14e332730" class="expand-content">
+  <div id="R-expandcontent-8a71aff18432c66c3bb2ea316552759d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1944,27 +1940,27 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </div>
 <h6 id="position">Position</h6>
 <p>Responsible for aligning the element along the opposite axis if it is not stretched.</p>
-<div class="tab-panel" data-tab-group="13bd0e1f56eac81ad402eb20e09a8d3f">
+<div class="tab-panel" data-tab-group="6586f82b3b9de63a7138228df4742c51">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('13bd0e1f56eac81ad402eb20e09a8d3f','start')"
+      onclick="switchTab('6586f82b3b9de63a7138228df4742c51','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('13bd0e1f56eac81ad402eb20e09a8d3f','center')"
+      onclick="switchTab('6586f82b3b9de63a7138228df4742c51','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('13bd0e1f56eac81ad402eb20e09a8d3f','end')"
+      onclick="switchTab('6586f82b3b9de63a7138228df4742c51','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -1987,12 +1983,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="sta" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pos_sta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f9c169cb53efda1030b72bea4a5c1574" aria-controls="R-expandcontent-f9c169cb53efda1030b72bea4a5c1574">
-  <label class="expand-label" for="R-expand-f9c169cb53efda1030b72bea4a5c1574">
+  <input type="checkbox" id="R-expand-36099184035ebe430ac3d786ebff45d7" aria-controls="R-expandcontent-36099184035ebe430ac3d786ebff45d7">
+  <label class="expand-label" for="R-expand-36099184035ebe430ac3d786ebff45d7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-f9c169cb53efda1030b72bea4a5c1574" class="expand-content">
+  <div id="R-expandcontent-36099184035ebe430ac3d786ebff45d7" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2105,12 +2101,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="sta" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pos_cen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-87da2288b77f97e7105d6a3c2dfbfacd" aria-controls="R-expandcontent-87da2288b77f97e7105d6a3c2dfbfacd">
-  <label class="expand-label" for="R-expand-87da2288b77f97e7105d6a3c2dfbfacd">
+  <input type="checkbox" id="R-expand-75121a2f07ae439c18cd0de766a3eceb" aria-controls="R-expandcontent-75121a2f07ae439c18cd0de766a3eceb">
+  <label class="expand-label" for="R-expand-75121a2f07ae439c18cd0de766a3eceb">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-87da2288b77f97e7105d6a3c2dfbfacd" class="expand-content">
+  <div id="R-expandcontent-75121a2f07ae439c18cd0de766a3eceb" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2223,12 +2219,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="sta" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_pos_end.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4279acded8fa4c5d830351f9d535e678" aria-controls="R-expandcontent-4279acded8fa4c5d830351f9d535e678">
-  <label class="expand-label" for="R-expand-4279acded8fa4c5d830351f9d535e678">
+  <input type="checkbox" id="R-expand-8dfb9f0b9fe27479b640d7ff64f1dd76" aria-controls="R-expandcontent-8dfb9f0b9fe27479b640d7ff64f1dd76">
+  <label class="expand-label" for="R-expand-8dfb9f0b9fe27479b640d7ff64f1dd76">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-4279acded8fa4c5d830351f9d535e678" class="expand-content">
+  <div id="R-expandcontent-8dfb9f0b9fe27479b640d7ff64f1dd76" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2328,34 +2324,34 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </div>
 <h6 id="max-size">Max size</h6>
 <p>Responsible for the allowable size of the container.</p>
-<div class="tab-panel" data-tab-group="4970b312021b3a9eba5d9fc4969e2fa8">
+<div class="tab-panel" data-tab-group="a2f3d716af9b491f4b389cbc66b0ea40">
   <div class="tab-nav">
     <div class="tab-nav-title">Max:</div>
     <button
       data-tab-item="none"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('4970b312021b3a9eba5d9fc4969e2fa8','none')"
+      onclick="switchTab('a2f3d716af9b491f4b389cbc66b0ea40','none')"
     >
       <span class="tab-nav-text">None</span>
     </button>
     <button
       data-tab-item="width"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('4970b312021b3a9eba5d9fc4969e2fa8','width')"
+      onclick="switchTab('a2f3d716af9b491f4b389cbc66b0ea40','width')"
     >
       <span class="tab-nav-text">Width</span>
     </button>
     <button
       data-tab-item="height"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('4970b312021b3a9eba5d9fc4969e2fa8','height')"
+      onclick="switchTab('a2f3d716af9b491f4b389cbc66b0ea40','height')"
     >
       <span class="tab-nav-text">Height</span>
     </button>
     <button
       data-tab-item="both"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('4970b312021b3a9eba5d9fc4969e2fa8','both')"
+      onclick="switchTab('a2f3d716af9b491f4b389cbc66b0ea40','both')"
     >
       <span class="tab-nav-text">Both</span>
     </button>
@@ -2376,12 +2372,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_max_off.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b492fd70056699f8080a1cdce7d29535" aria-controls="R-expandcontent-b492fd70056699f8080a1cdce7d29535">
-  <label class="expand-label" for="R-expand-b492fd70056699f8080a1cdce7d29535">
+  <input type="checkbox" id="R-expand-7c30b098799520438500064008da63b2" aria-controls="R-expandcontent-7c30b098799520438500064008da63b2">
+  <label class="expand-label" for="R-expand-7c30b098799520438500064008da63b2">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b492fd70056699f8080a1cdce7d29535" class="expand-content">
+  <div id="R-expandcontent-7c30b098799520438500064008da63b2" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2492,12 +2488,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_max_wid.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-40e5b2dd762cc2f782e9710935827f8c" aria-controls="R-expandcontent-40e5b2dd762cc2f782e9710935827f8c">
-  <label class="expand-label" for="R-expand-40e5b2dd762cc2f782e9710935827f8c">
+  <input type="checkbox" id="R-expand-3222fb3e85be7409c9131ee658d89233" aria-controls="R-expandcontent-3222fb3e85be7409c9131ee658d89233">
+  <label class="expand-label" for="R-expand-3222fb3e85be7409c9131ee658d89233">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-40e5b2dd762cc2f782e9710935827f8c" class="expand-content">
+  <div id="R-expandcontent-3222fb3e85be7409c9131ee658d89233" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2610,12 +2606,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_max_hei.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-56a5c09033ebfc1d34b29f0da533d5ae" aria-controls="R-expandcontent-56a5c09033ebfc1d34b29f0da533d5ae">
-  <label class="expand-label" for="R-expand-56a5c09033ebfc1d34b29f0da533d5ae">
+  <input type="checkbox" id="R-expand-c4b62c7b0362a2573f646b88ec89569e" aria-controls="R-expandcontent-c4b62c7b0362a2573f646b88ec89569e">
+  <label class="expand-label" for="R-expand-c4b62c7b0362a2573f646b88ec89569e">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-56a5c09033ebfc1d34b29f0da533d5ae" class="expand-content">
+  <div id="R-expandcontent-c4b62c7b0362a2573f646b88ec89569e" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2729,12 +2725,12 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_row_max_all.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2a25440bf1078877f086d63f3b667126" aria-controls="R-expandcontent-2a25440bf1078877f086d63f3b667126">
-  <label class="expand-label" for="R-expand-2a25440bf1078877f086d63f3b667126">
+  <input type="checkbox" id="R-expand-fa75891e99afc4ee8cddee8036c327fd" aria-controls="R-expandcontent-fa75891e99afc4ee8cddee8036c327fd">
+  <label class="expand-label" for="R-expand-fa75891e99afc4ee8cddee8036c327fd">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2a25440bf1078877f086d63f3b667126" class="expand-content">
+  <div id="R-expandcontent-fa75891e99afc4ee8cddee8036c327fd" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2833,10 +2829,9 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
     </div>
   </div>
 </div>
-
-            <footer class="footline">
-            </footer>
-          </article>
+  <footer class="footline">
+  </footer>
+</article>
         </div>
       </main>
     </div>
@@ -2860,24 +2855,26 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
     </g>
 </svg>
         </div>
-
-        <search>
+        <script>
+          window.index_js_url="/eui/searchindex.js?1729418370";
+        </script>
+        <search><form action="/eui/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
             <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
           </div>
-        </search>
+        </form></search>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1729103955" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1729103955" defer></script>
-        <script src="/eui/js/search.js?1729103955" defer></script>
+        <script src="/eui/js/auto-complete.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1729418370" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1729418370" defer></script>
+        <script src="/eui/js/search.js?1729418370" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -2888,12 +2885,15 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/index.html" class=""><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/basics/container-layouts/index.html" class=""><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
-          <li data-nav-id="/eui/layouts/index.html" class="parent "><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="morespace collapsible-menu">
-          <li data-nav-id="/eui/layouts/anchor/index.html" class=""><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor layout</a></li>
-          <li data-nav-id="/eui/layouts/row/index.html" class="active"><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row layout</a></li>
-          <li data-nav-id="/eui/layouts/grid/index.html" class=""><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid layout</a></li></ul></li>
+            <li class="" data-nav-id="/eui/basics/index.html"><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/basics/container-layouts/index.html"><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
+            <li class="parent " data-nav-id="/eui/layouts/index.html"><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/layouts/anchor/index.html"><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor</a></li>
+            <li class="active " data-nav-id="/eui/layouts/row/index.html"><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row</a></li>
+            <li class="" data-nav-id="/eui/layouts/grid/index.html"><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid</a></li></ul></li>
+            <li class="" data-nav-id="/eui/widgets/index.html"><input type="checkbox" id="R-section-3a2d0cc92226a59334aedb713168a582" aria-controls="R-subsections-3a2d0cc92226a59334aedb713168a582"><label for="R-section-3a2d0cc92226a59334aedb713168a582"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Widgets</span></label><a class="padding" href="/eui/widgets/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-puzzle-piece"></i> Widgets</a><ul id="R-subsections-3a2d0cc92226a59334aedb713168a582" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/widgets/button/index.html"><a class="padding" href="/eui/widgets/button/index.html"><i class="fa-solid fa-fw fa-sm fa-audio-description"></i> Button</a></li>
+            <li class="" data-nav-id="/eui/widgets/toggle/index.html"><a class="padding" href="/eui/widgets/toggle/index.html"><i class="fa-solid fa-fw fa-sm fa-toggle-on"></i> Toggle</a></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -2941,13 +2941,13 @@ Full example 1package main 2 3import ( 4	&#34;github.com/ebitenui/ebitenui&#34; 
             </ul>
           </div>
           <div id="R-footer" class="footerFooter showFooter">
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
           </div>
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1729103955" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1729103955" defer></script>
-    <script src="/eui/js/theme.js?1729103955" defer></script>
+    <script src="/eui/js/clipboard.min.js?1729418370" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1729418370" defer></script>
+    <script src="/eui/js/theme.js?1729418370" defer></script>
   </body>
 </html>

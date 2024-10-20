@@ -7,6 +7,8 @@ weight = 1
 
 This guide will introduce you step by step to the basics of the library and teach you how to use all the main tools.
 
+<!--more-->
+
 ###### Requirements
 
 - Go 1.19+
