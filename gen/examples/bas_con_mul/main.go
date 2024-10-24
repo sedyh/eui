@@ -69,5 +69,3 @@ func (g *Game) Layout(w, h int) (int, int) {
 }
 
 // END root
-
-// END root

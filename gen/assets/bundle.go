@@ -2,6 +2,7 @@ package assets
 
 import (
 	"embed"
+	"fmt"
 	"image"
 	"io/fs"
 	"regexp"
@@ -40,6 +41,16 @@ var (
 	RegImports   = regexp.MustCompile(`import \(([\s\S]*?)\n\)`)
 	RegNewline   = regexp.MustCompile(`\n+`)
 	RegColor     = regexp.MustCompile(`\b(assets.Color[RYBGDL])\b`)
+	RegComment   = regexp.MustCompile(`(?s)//.*?$`)
+	PartMain     = fmt.Sprintf(`
+	func main() {
+		ebiten.SetWindowSize(%d, %d)
+		ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
+		if err := ebiten.RunGame(NewGame()); err != nil {
+			panic(err)
+		}
+	}
+	`, Width, Height)
 )
 
 func load(fs fs.FS, path string) *ebiten.Image {

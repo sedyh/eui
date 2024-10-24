@@ -291,6 +291,13 @@ func (g *Game) SaveCode() {
 	source = assets.RegColor.ReplaceAllStringFunc(source, func(match string) string {
 		return assets.ColorMap[match]
 	})
+	matches := assets.RegComment.FindAllStringIndex(source, -1)
+	if len(matches) > 0 {
+		lastCommentPos := matches[len(matches)-1][1]
+		source = source[:lastCommentPos] + "\n" + assets.PartMain + source[lastCommentPos:]
+	} else {
+		source += assets.PartMain
+	}
 
 	out := filepath.Base(name)
 	out = filepath.Join(assets.Output, out+".txt")
@@ -345,7 +352,7 @@ func WriteSource(source, path string) error {
 }
 
 func RemoveRoot(path string) string {
-	sep := string(filepath.Separator)
+	sep := "/"
 	slash := filepath.ToSlash(path)
 	parts := strings.Split(slash, sep)
 	if len(parts) > 1 && parts[0] == "" {
