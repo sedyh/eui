@@ -78,6 +78,7 @@ import (
 	"gen/examples/lay_row_spa_75"
 	"gen/examples/lay_row_str_fal"
 	"gen/examples/lay_row_str_tru"
+	"gen/examples/wid_but_pre"
 	"image/png"
 	"io"
 	"io/fs"
@@ -203,6 +204,7 @@ func NewGame() *Game {
 			lay_gri_pos_staxend.NewGame(),
 			lay_gri_pos_cenxsta.NewGame(),
 			lay_gri_pos_endxsta.NewGame(),
+			wid_but_pre.NewGame(),
 		},
 		offscreen: ebiten.NewImage(
 			assets.Frame.Bounds().Dx(),
@@ -293,10 +295,8 @@ func (g *Game) SaveCode() {
 	})
 	matches := assets.RegComment.FindAllStringIndex(source, -1)
 	if len(matches) > 0 {
-		lastCommentPos := matches[len(matches)-1][1]
-		source = source[:lastCommentPos] + "\n" + assets.PartMain + source[lastCommentPos:]
-	} else {
-		source += assets.PartMain
+		last := matches[len(matches)-1][0]
+		source = source[:last] + assets.PartMain + source[last:]
 	}
 
 	out := filepath.Base(name)
@@ -306,7 +306,7 @@ func (g *Game) SaveCode() {
 		log.Fatal(err)
 	}
 
-	log.Println("saved", name)
+	log.Println("saved", out)
 }
 
 func FindPackage(i any) string {

@@ -9,17 +9,31 @@
     <lastBuildDate>Fri, 04 Oct 2024 19:45:29 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/eui/widgets/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Button</title>
-      <link>http://localhost:1313/eui/widgets/button/index.html</link>
-      <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
-      <guid>http://localhost:1313/eui/widgets/button/index.html</guid>
-      <description>Here be dragons.</description>
-    </item>
-    <item>
-      <title>Toggle</title>
+      <title>Toggle WIP</title>
       <link>http://localhost:1313/eui/widgets/toggle/index.html</link>
       <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
       <guid>http://localhost:1313/eui/widgets/toggle/index.html</guid>
+      <description>Here be dragons.</description>
+    </item>
+    <item>
+      <title>Tooltip WIP</title>
+      <link>http://localhost:1313/eui/widgets/tooltip/index.html</link>
+      <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
+      <guid>http://localhost:1313/eui/widgets/tooltip/index.html</guid>
+      <description>Here be dragons.</description>
+    </item>
+    <item>
+      <title>Input WIP</title>
+      <link>http://localhost:1313/eui/widgets/input/index.html</link>
+      <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
+      <guid>http://localhost:1313/eui/widgets/input/index.html</guid>
+      <description>Here be dragons.</description>
+    </item>
+    <item>
+      <title>Progress WIP</title>
+      <link>http://localhost:1313/eui/widgets/progress/index.html</link>
+      <pubDate>Fri, 04 Oct 2024 19:45:29 +0300</pubDate>
+      <guid>http://localhost:1313/eui/widgets/progress/index.html</guid>
       <description>Here be dragons.</description>
     </item>
   </channel>

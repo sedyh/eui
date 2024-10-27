@@ -1,7 +1,7 @@
 +++
 title = "Row"
 date = 2024-10-04T19:45:29+03:00
-menuPre = '<i class="fa-solid fa-fw fa-sm fa-bars"></i> '
+menuPre = '<i class="icon-row"></i> '
 weight = 2
 +++
 
@@ -12,7 +12,7 @@ Row layout places all child containers in one row or column. It can be useful fo
 ![preview](examples/lay_row_pre.png)
 
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_row_pre.txt" lang="go" id="full" >}}
+{{< code src="assets/examples/lay_row_pre.txt" lang="go" id="root" >}}
 {{% /expand %}}
 
 ### Layout options

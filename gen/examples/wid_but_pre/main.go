@@ -19,8 +19,11 @@ type Game struct {
 }
 
 func NewGame() *Game {
+	face := DefaultFont()
 	button := widget.NewButton(
-		widget.ButtonOpts.Text("Button", DefaultFont(), &widget.ButtonTextColor{
+		widget.ButtonOpts.TextLabel("Button"),
+		widget.ButtonOpts.TextFace(face),
+		widget.ButtonOpts.TextColor(&widget.ButtonTextColor{
 			Idle:    colornames.White,
 			Hover:   colornames.Gainsboro,
 			Pressed: colornames.White,

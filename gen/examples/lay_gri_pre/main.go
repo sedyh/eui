@@ -1,4 +1,3 @@
-// START full
 // START root
 package lay_gri_pre
 
@@ -71,5 +70,3 @@ func (g *Game) Layout(w, h int) (int, int) {
 }
 
 // END root
-
-// END full

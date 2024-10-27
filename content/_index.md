@@ -28,8 +28,12 @@ title = ""
 </a>
 
 </div>
+{{< expand title="Live demo" >}}
+{{< frame >}}
+{{< demo src="wasm/demo.wasm" >}}
+{{< /frame >}}
+{{< /expand >}}
 {{< /raw >}}
-<br>
 
 Ebiten UI is an extension to Ebitengine that provides the ability to render a complete user interface,
 with widgets such as buttons, lists, combo boxes, and so on. It uses the retained mode model.

@@ -1,5 +1,4 @@
 // START root
-// START root
 package main
 
 import (
@@ -111,6 +110,11 @@ func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
 
-// END root
-
+func main() {
+	ebiten.SetWindowSize(480, 320)
+	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
+	if err := ebiten.RunGame(NewGame()); err != nil {
+		panic(err)
+	}
+}
 // END root

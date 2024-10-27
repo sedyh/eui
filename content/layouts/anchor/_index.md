@@ -1,7 +1,7 @@
 +++
 title = "Anchor"
 date = 2024-10-04T19:45:29+03:00
-menuPre = '<i class="fa-solid fa-fw fa-sm fa-anchor"></i> '
+menuPre = '<i class="icon-anchor"></i> '
 weight = 1
 +++
 
@@ -12,7 +12,7 @@ Anchor layout allows the child containers to be anchored to a specific constrain
 ![preview](examples/lay_anc_pre.png)
 
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_anc_pre.txt" lang="go" id="full" >}}
+{{< code src="assets/examples/lay_anc_pre.txt" lang="go" id="root" >}}
 {{% /expand %}}
 
 ### Layout options

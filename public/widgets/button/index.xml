@@ -3,7 +3,7 @@
   <channel>
     <title>Button - Ebiten UI</title>
     <link>http://localhost:1313/eui/widgets/button/index.html</link>
-    <description>Here be dragons.</description>
+    <description>A simple button with text that can be set to a background color or image for each state and a callback to react to events.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

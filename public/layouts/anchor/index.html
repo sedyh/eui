@@ -3,7 +3,7 @@
   <head><script src="/eui/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=eui/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.136.2">
+    <meta name="generator" content="Hugo 0.136.5">
     <meta name="generator" content="Relearn 7.0.1">
     <meta name="description" content="Anchor layout allows the child containers to be anchored to a specific constraint.">
     <meta name="author" content="sedyh">
@@ -22,21 +22,21 @@
     <meta itemprop="description" content="Anchor layout allows the child containers to be anchored to a specific constraint.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="2101">
+    <meta itemprop="wordCount" content="2606">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Anchor - Ebiten UI</title>
     <link href="/eui/layouts/anchor/index.xml" rel="alternate" type="application/rss+xml" title="Anchor - Ebiten UI">
-    <link href="/eui/images/favicon.png?1729418370" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729418370" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1729418370" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729418370" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1729418370" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1729418370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729418370" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1729418370" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1729418370" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1729418370" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/print.css?1729418370" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1729418370"></script>
+    <link href="/eui/images/favicon.png?1729967502" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1729967502" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729967502" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1729967502" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1729967502" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729967502" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1729967502" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1729967502" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729967502" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1729967502" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1729967502" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1729967502" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/print.css?1729967502" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1729967502"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -55,11 +55,7 @@
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
-    </script><style>
-    .highlight {
-        tab-size: 4;
-    }
-</style>4
+    </script><link rel="stylesheet" href="http://localhost:1313/eui/css/custom.css" />
   </head>
   <body class="mobile-support html disableInlineCopyToClipboard" data-url="/eui/layouts/anchor/index.html">
     <div id="R-body" class="default-animation">
@@ -121,46 +117,161 @@
 <p>Anchor layout allows the child containers to be anchored to a specific constraint.</p>
 <p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_pre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ff59c15ff2232587ceae18b283007045" aria-controls="R-expandcontent-ff59c15ff2232587ceae18b283007045">
-  <label class="expand-label" for="R-expand-ff59c15ff2232587ceae18b283007045">
+  <input type="checkbox" id="R-expand-b94f7f9f3b5e661400c770b68870fa6d" aria-controls="R-expandcontent-b94f7f9f3b5e661400c770b68870fa6d">
+  <label class="expand-label" for="R-expand-b94f7f9f3b5e661400c770b68870fa6d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-ff59c15ff2232587ceae18b283007045" class="expand-content">
-<p>No snippet found for id "full"</p>
+  <div id="R-expandcontent-b94f7f9f3b5e661400c770b68870fa6d" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl">
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">	<span class="nx">left</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">				<span class="nx">StretchVertical</span><span class="p">:</span>    <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">	<span class="nx">right</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">				<span class="nx">StretchVertical</span><span class="p">:</span>    <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">	<span class="nx">up</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Goldenrod</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">				<span class="nx">VerticalPosition</span><span class="p">:</span>  <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">				<span class="nx">StretchHorizontal</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">	<span class="nx">down</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Steelblue</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">				<span class="nx">VerticalPosition</span><span class="p">:</span>  <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">				<span class="nx">StretchHorizontal</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">	<span class="nx">center</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">				<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">				<span class="nx">StretchHorizontal</span><span class="p">:</span>  <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">				<span class="nx">StretchVertical</span><span class="p">:</span>    <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutOpts</span><span class="p">.</span><span class="nf">Padding</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewInsetsSimple</span><span class="p">(</span><span class="mi">50</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">		<span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">center</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">left</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">right</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">up</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">down</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl">
+</span></span><span class="line"><span class="ln">102</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">103</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">104</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">105</span><span class="cl">
+</span></span><span class="line"><span class="ln">106</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">107</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln">108</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">109</span><span class="cl">
+</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">112</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
 <h3 id="layout-options">Layout options</h3>
 <h6 id="padding">Padding</h6>
 <p>Layout allows you to specify padding for all child elements but not the itself.</p>
-<div class="tab-panel" data-tab-group="350a638d88c8c798fbb82885e2c5144d">
+<div class="tab-panel" data-tab-group="7302bd06debda064c51a3e222d0643a5">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('350a638d88c8c798fbb82885e2c5144d','left')"
+      onclick="switchTab('7302bd06debda064c51a3e222d0643a5','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('350a638d88c8c798fbb82885e2c5144d','right')"
+      onclick="switchTab('7302bd06debda064c51a3e222d0643a5','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('350a638d88c8c798fbb82885e2c5144d','top')"
+      onclick="switchTab('7302bd06debda064c51a3e222d0643a5','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('350a638d88c8c798fbb82885e2c5144d','bottom')"
+      onclick="switchTab('7302bd06debda064c51a3e222d0643a5','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -182,12 +293,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="left" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_pad_lef.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-10c3b4690012d716fbdd82b3fa715b9a" aria-controls="R-expandcontent-10c3b4690012d716fbdd82b3fa715b9a">
-  <label class="expand-label" for="R-expand-10c3b4690012d716fbdd82b3fa715b9a">
+  <input type="checkbox" id="R-expand-273bd68b3aa1c41ec792e4beff6024cb" aria-controls="R-expandcontent-273bd68b3aa1c41ec792e4beff6024cb">
+  <label class="expand-label" for="R-expand-273bd68b3aa1c41ec792e4beff6024cb">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-10c3b4690012d716fbdd82b3fa715b9a" class="expand-content">
+  <div id="R-expandcontent-273bd68b3aa1c41ec792e4beff6024cb" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -297,7 +408,15 @@
 </span></span><span class="line"><span class="ln">107</span><span class="cl">
 </span></span><span class="line"><span class="ln">108</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">109</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl">
+</span></span><span class="line"><span class="ln">112</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">118</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -318,12 +437,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="left" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_pad_rig.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-333ef52448dc77675ffcde0303f10533" aria-controls="R-expandcontent-333ef52448dc77675ffcde0303f10533">
-  <label class="expand-label" for="R-expand-333ef52448dc77675ffcde0303f10533">
+  <input type="checkbox" id="R-expand-f4ee1d0c75de64cabd48a5d7f5b2b26b" aria-controls="R-expandcontent-f4ee1d0c75de64cabd48a5d7f5b2b26b">
+  <label class="expand-label" for="R-expand-f4ee1d0c75de64cabd48a5d7f5b2b26b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-333ef52448dc77675ffcde0303f10533" class="expand-content">
+  <div id="R-expandcontent-f4ee1d0c75de64cabd48a5d7f5b2b26b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -433,7 +552,15 @@
 </span></span><span class="line"><span class="ln">107</span><span class="cl">
 </span></span><span class="line"><span class="ln">108</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">109</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl">
+</span></span><span class="line"><span class="ln">112</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">118</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -454,12 +581,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="left" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_pad_top.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-62459ee10b0675c0b2f698e541a0178c" aria-controls="R-expandcontent-62459ee10b0675c0b2f698e541a0178c">
-  <label class="expand-label" for="R-expand-62459ee10b0675c0b2f698e541a0178c">
+  <input type="checkbox" id="R-expand-14d6a845f7e51936061a2c4c135f9846" aria-controls="R-expandcontent-14d6a845f7e51936061a2c4c135f9846">
+  <label class="expand-label" for="R-expand-14d6a845f7e51936061a2c4c135f9846">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-62459ee10b0675c0b2f698e541a0178c" class="expand-content">
+  <div id="R-expandcontent-14d6a845f7e51936061a2c4c135f9846" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -569,7 +696,15 @@
 </span></span><span class="line"><span class="ln">107</span><span class="cl">
 </span></span><span class="line"><span class="ln">108</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">109</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl">
+</span></span><span class="line"><span class="ln">112</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">118</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -590,12 +725,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="left" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_pad_bot.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8238e8326057372f51573c3b11c3ad0d" aria-controls="R-expandcontent-8238e8326057372f51573c3b11c3ad0d">
-  <label class="expand-label" for="R-expand-8238e8326057372f51573c3b11c3ad0d">
+  <input type="checkbox" id="R-expand-1194d34f473757f551f37bf8493e9efe" aria-controls="R-expandcontent-1194d34f473757f551f37bf8493e9efe">
+  <label class="expand-label" for="R-expand-1194d34f473757f551f37bf8493e9efe">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-8238e8326057372f51573c3b11c3ad0d" class="expand-content">
+  <div id="R-expandcontent-1194d34f473757f551f37bf8493e9efe" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -705,7 +840,15 @@
 </span></span><span class="line"><span class="ln">107</span><span class="cl">
 </span></span><span class="line"><span class="ln">108</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">109</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">110</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl">
+</span></span><span class="line"><span class="ln">112</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">118</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -715,27 +858,27 @@
 <h3 id="layout-data">Layout data</h3>
 <h6 id="horizontal-position">Horizontal position</h6>
 <p>Responsible for aligning the element along the horizontal axis.</p>
-<div class="tab-panel" data-tab-group="dd2bf9f5b838dd6a9c675c4d9b78f46c">
+<div class="tab-panel" data-tab-group="c8b7d0ab417ce88f78f03407da01f38f">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('dd2bf9f5b838dd6a9c675c4d9b78f46c','start')"
+      onclick="switchTab('c8b7d0ab417ce88f78f03407da01f38f','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('dd2bf9f5b838dd6a9c675c4d9b78f46c','center')"
+      onclick="switchTab('c8b7d0ab417ce88f78f03407da01f38f','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('dd2bf9f5b838dd6a9c675c4d9b78f46c','end')"
+      onclick="switchTab('c8b7d0ab417ce88f78f03407da01f38f','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -758,12 +901,12 @@
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_hor_pos_sta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-30738a1261c0a714012ebfb86856a078" aria-controls="R-expandcontent-30738a1261c0a714012ebfb86856a078">
-  <label class="expand-label" for="R-expand-30738a1261c0a714012ebfb86856a078">
+  <input type="checkbox" id="R-expand-77c0c32ea54710062701523237e7cf50" aria-controls="R-expandcontent-77c0c32ea54710062701523237e7cf50">
+  <label class="expand-label" for="R-expand-77c0c32ea54710062701523237e7cf50">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-30738a1261c0a714012ebfb86856a078" class="expand-content">
+  <div id="R-expandcontent-77c0c32ea54710062701523237e7cf50" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -814,7 +957,15 @@
 </span></span><span class="line"><span class="ln">48</span><span class="cl">
 </span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">50</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">
+</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -836,12 +987,12 @@
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_hor_pos_cen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-780fc883596c04d4f712388b93eae285" aria-controls="R-expandcontent-780fc883596c04d4f712388b93eae285">
-  <label class="expand-label" for="R-expand-780fc883596c04d4f712388b93eae285">
+  <input type="checkbox" id="R-expand-94bfd962b23948de6970bca1fd40240f" aria-controls="R-expandcontent-94bfd962b23948de6970bca1fd40240f">
+  <label class="expand-label" for="R-expand-94bfd962b23948de6970bca1fd40240f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-780fc883596c04d4f712388b93eae285" class="expand-content">
+  <div id="R-expandcontent-94bfd962b23948de6970bca1fd40240f" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -892,7 +1043,15 @@
 </span></span><span class="line"><span class="ln">48</span><span class="cl">
 </span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">50</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">
+</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -914,12 +1073,12 @@
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_hor_pos_end.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ce14a229c951aba70f4dcb6951cc47d0" aria-controls="R-expandcontent-ce14a229c951aba70f4dcb6951cc47d0">
-  <label class="expand-label" for="R-expand-ce14a229c951aba70f4dcb6951cc47d0">
+  <input type="checkbox" id="R-expand-4fd831c11a436ccbfb8e57c732ad3b40" aria-controls="R-expandcontent-4fd831c11a436ccbfb8e57c732ad3b40">
+  <label class="expand-label" for="R-expand-4fd831c11a436ccbfb8e57c732ad3b40">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-ce14a229c951aba70f4dcb6951cc47d0" class="expand-content">
+  <div id="R-expandcontent-4fd831c11a436ccbfb8e57c732ad3b40" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -970,7 +1129,15 @@
 </span></span><span class="line"><span class="ln">48</span><span class="cl">
 </span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">50</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">
+</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -979,27 +1146,27 @@
 </div>
 <h6 id="vertical-position">Vertical position</h6>
 <p>Responsible for aligning the element along the vertical axis.</p>
-<div class="tab-panel" data-tab-group="06da8cbad8f3fa524676059b6f5f90bf">
+<div class="tab-panel" data-tab-group="62ec35780988b2be1b2f33585438a05e">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="start"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('06da8cbad8f3fa524676059b6f5f90bf','start')"
+      onclick="switchTab('62ec35780988b2be1b2f33585438a05e','start')"
     >
       <span class="tab-nav-text">Start</span>
     </button>
     <button
       data-tab-item="center"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('06da8cbad8f3fa524676059b6f5f90bf','center')"
+      onclick="switchTab('62ec35780988b2be1b2f33585438a05e','center')"
     >
       <span class="tab-nav-text">Center</span>
     </button>
     <button
       data-tab-item="end"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('06da8cbad8f3fa524676059b6f5f90bf','end')"
+      onclick="switchTab('62ec35780988b2be1b2f33585438a05e','end')"
     >
       <span class="tab-nav-text">End</span>
     </button>
@@ -1022,12 +1189,12 @@
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_ver_pos_sta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5def3a10a95586cba63d5c26ad5e98b3" aria-controls="R-expandcontent-5def3a10a95586cba63d5c26ad5e98b3">
-  <label class="expand-label" for="R-expand-5def3a10a95586cba63d5c26ad5e98b3">
+  <input type="checkbox" id="R-expand-3c58b92a38ecf715143ae9df5b6a3e90" aria-controls="R-expandcontent-3c58b92a38ecf715143ae9df5b6a3e90">
+  <label class="expand-label" for="R-expand-3c58b92a38ecf715143ae9df5b6a3e90">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-5def3a10a95586cba63d5c26ad5e98b3" class="expand-content">
+  <div id="R-expandcontent-3c58b92a38ecf715143ae9df5b6a3e90" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1078,7 +1245,15 @@
 </span></span><span class="line"><span class="ln">48</span><span class="cl">
 </span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">50</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">
+</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -1100,12 +1275,12 @@
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_ver_pos_cen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5ea710c370d5f085487dca39dac88036" aria-controls="R-expandcontent-5ea710c370d5f085487dca39dac88036">
-  <label class="expand-label" for="R-expand-5ea710c370d5f085487dca39dac88036">
+  <input type="checkbox" id="R-expand-678cbf51683f6e6da6c3edd8fc2a3367" aria-controls="R-expandcontent-678cbf51683f6e6da6c3edd8fc2a3367">
+  <label class="expand-label" for="R-expand-678cbf51683f6e6da6c3edd8fc2a3367">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-5ea710c370d5f085487dca39dac88036" class="expand-content">
+  <div id="R-expandcontent-678cbf51683f6e6da6c3edd8fc2a3367" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1156,7 +1331,15 @@
 </span></span><span class="line"><span class="ln">48</span><span class="cl">
 </span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">50</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">
+</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -1178,12 +1361,12 @@
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="center" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_anc_ver_pos_end.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4433b3616ea4fcdca6c2e8d57186c807" aria-controls="R-expandcontent-4433b3616ea4fcdca6c2e8d57186c807">
-  <label class="expand-label" for="R-expand-4433b3616ea4fcdca6c2e8d57186c807">
+  <input type="checkbox" id="R-expand-8df4c0e7e97a43c2b056e78969d44a61" aria-controls="R-expandcontent-8df4c0e7e97a43c2b056e78969d44a61">
+  <label class="expand-label" for="R-expand-8df4c0e7e97a43c2b056e78969d44a61">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-4433b3616ea4fcdca6c2e8d57186c807" class="expand-content">
+  <div id="R-expandcontent-8df4c0e7e97a43c2b056e78969d44a61" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1234,7 +1417,15 @@
 </span></span><span class="line"><span class="ln">48</span><span class="cl">
 </span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">50</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">
+</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
       </div>
@@ -1268,7 +1459,7 @@
 </svg>
         </div>
         <script>
-          window.index_js_url="/eui/searchindex.js?1729418370";
+          window.index_js_url="/eui/searchindex.js?1729967502";
         </script>
         <search><form action="/eui/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -1281,12 +1472,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1729418370" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1729418370" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729418370" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1729418370" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1729418370" defer></script>
-        <script src="/eui/js/search.js?1729418370" defer></script>
+        <script src="/eui/js/auto-complete.js?1729967502" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1729967502" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729967502" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1729967502" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1729967502" defer></script>
+        <script src="/eui/js/search.js?1729967502" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -1297,15 +1488,17 @@
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/eui/basics/index.html"><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-graduation-cap"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="collapsible-menu">
-            <li class="" data-nav-id="/eui/basics/container-layouts/index.html"><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="fa-solid fa-fw fa-sm fa-window-maximize"></i> Container &amp; layouts</a></li></ul></li>
-            <li class="parent " data-nav-id="/eui/layouts/index.html"><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-layer-group"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="collapsible-menu">
-            <li class="active " data-nav-id="/eui/layouts/anchor/index.html"><a class="padding" href="/eui/layouts/anchor/index.html"><i class="fa-solid fa-fw fa-sm fa-anchor"></i> Anchor</a></li>
-            <li class="" data-nav-id="/eui/layouts/row/index.html"><a class="padding" href="/eui/layouts/row/index.html"><i class="fa-solid fa-fw fa-sm fa-bars"></i> Row</a></li>
-            <li class="" data-nav-id="/eui/layouts/grid/index.html"><a class="padding" href="/eui/layouts/grid/index.html"><i class="fa-solid fa-fw fa-sm fa-table-cells"></i> Grid</a></li></ul></li>
-            <li class="" data-nav-id="/eui/widgets/index.html"><input type="checkbox" id="R-section-3a2d0cc92226a59334aedb713168a582" aria-controls="R-subsections-3a2d0cc92226a59334aedb713168a582"><label for="R-section-3a2d0cc92226a59334aedb713168a582"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Widgets</span></label><a class="padding" href="/eui/widgets/index.html"> <i style="margin-left: 5px;" class="fa-solid fa-sm fa-puzzle-piece"></i> Widgets</a><ul id="R-subsections-3a2d0cc92226a59334aedb713168a582" class="collapsible-menu">
-            <li class="" data-nav-id="/eui/widgets/button/index.html"><a class="padding" href="/eui/widgets/button/index.html"><i class="fa-solid fa-fw fa-sm fa-audio-description"></i> Button</a></li>
-            <li class="" data-nav-id="/eui/widgets/toggle/index.html"><a class="padding" href="/eui/widgets/toggle/index.html"><i class="fa-solid fa-fw fa-sm fa-toggle-on"></i> Toggle</a></li></ul></li>
+            <li class="" data-nav-id="/eui/basics/index.html"><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics</span></label><a class="padding" href="/eui/basics/index.html"><i class="icon-school"></i> Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/basics/container-layouts/index.html"><a class="padding" href="/eui/basics/container-layouts/index.html"><i class="icon-card"></i> Container &amp; layouts</a></li></ul></li>
+            <li class="parent " data-nav-id="/eui/layouts/index.html"><input type="checkbox" id="R-section-dad5745ae88244dff85aab3403c9a60b" aria-controls="R-subsections-dad5745ae88244dff85aab3403c9a60b" checked><label for="R-section-dad5745ae88244dff85aab3403c9a60b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Layouts</span></label><a class="padding" href="/eui/layouts/index.html"> <i class="icon-stack"></i> Layouts</a><ul id="R-subsections-dad5745ae88244dff85aab3403c9a60b" class="collapsible-menu">
+            <li class="active " data-nav-id="/eui/layouts/anchor/index.html"><a class="padding" href="/eui/layouts/anchor/index.html"><i class="icon-anchor"></i> Anchor</a></li>
+            <li class="" data-nav-id="/eui/layouts/row/index.html"><a class="padding" href="/eui/layouts/row/index.html"><i class="icon-row"></i> Row</a></li>
+            <li class="" data-nav-id="/eui/layouts/grid/index.html"><a class="padding" href="/eui/layouts/grid/index.html"><i class="icon-grid"></i> Grid</a></li></ul></li>
+            <li class="" data-nav-id="/eui/widgets/index.html"><input type="checkbox" id="R-section-3a2d0cc92226a59334aedb713168a582" aria-controls="R-subsections-3a2d0cc92226a59334aedb713168a582"><label for="R-section-3a2d0cc92226a59334aedb713168a582"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Widgets</span></label><a class="padding" href="/eui/widgets/index.html"><i class="icon-widgets"></i> Widgets</a><ul id="R-subsections-3a2d0cc92226a59334aedb713168a582" class="collapsible-menu">
+            <li class="" data-nav-id="/eui/widgets/toggle/index.html"><a class="padding" href="/eui/widgets/toggle/index.html"><i class="icon-toggle-on"></i> Toggle WIP</a></li>
+            <li class="" data-nav-id="/eui/widgets/tooltip/index.html"><a class="padding" href="/eui/widgets/tooltip/index.html"><i class="icon-message"></i> Tooltip WIP</a></li>
+            <li class="" data-nav-id="/eui/widgets/input/index.html"><a class="padding" href="/eui/widgets/input/index.html"><i class="icon-progress-empty"></i> Input WIP</a></li>
+            <li class="" data-nav-id="/eui/widgets/progress/index.html"><a class="padding" href="/eui/widgets/progress/index.html"><i class="icon-progress-two"></i> Progress WIP</a></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -1358,8 +1551,8 @@
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1729418370" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1729418370" defer></script>
-    <script src="/eui/js/theme.js?1729418370" defer></script>
+    <script src="/eui/js/clipboard.min.js?1729967502" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1729967502" defer></script>
+    <script src="/eui/js/theme.js?1729967502" defer></script>
   </body>
 </html>

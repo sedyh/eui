@@ -1,7 +1,7 @@
 +++
 title = "Grid"
 date = 2024-10-04T19:45:29+03:00
-menuPre = '<i class="fa-solid fa-fw fa-sm fa-table-cells"></i> '
+menuPre = '<i class="icon-grid"></i> '
 weight = 3
 +++
 
@@ -12,7 +12,7 @@ Grid layout puts all child containers in an even grid, wrapping each row based o
 ![preview](examples/lay_gri_pre.png)
 
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_gri_pre.txt" lang="go" id="full" >}}
+{{< code src="assets/examples/lay_gri_pre.txt" lang="go" id="root" >}}
 {{% /expand %}}
 
 ### Layout options

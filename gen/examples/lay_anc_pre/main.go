@@ -1,5 +1,4 @@
 // START root
-// START root
 package lay_anc_pre
 
 import (
@@ -111,7 +110,5 @@ func (g *Game) Draw(screen *ebiten.Image) {
 func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
-
-// END root
 
 // END root

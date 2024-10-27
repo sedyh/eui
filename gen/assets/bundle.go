@@ -6,6 +6,7 @@ import (
 	"image"
 	"io/fs"
 	"regexp"
+	"strings"
 
 	"github.com/hajimehoshi/ebiten/v2"
 	"golang.org/x/image/colornames"
@@ -35,22 +36,24 @@ var (
 		"assets.ColorD": "colornames.Darkslategray",
 		"assets.ColorL": "colornames.Gainsboro",
 	}
-	ColorPackage = `"golang.org/x/image/colornames"`
-	RegPackage   = regexp.MustCompile(`package .+`)
-	RegAssets    = regexp.MustCompile(`(?m)^\s*"\S*assets\S*"\s*\n`)
-	RegImports   = regexp.MustCompile(`import \(([\s\S]*?)\n\)`)
-	RegNewline   = regexp.MustCompile(`\n+`)
-	RegColor     = regexp.MustCompile(`\b(assets.Color[RYBGDL])\b`)
-	RegComment   = regexp.MustCompile(`(?s)//.*?$`)
-	PartMain     = fmt.Sprintf(`
-	func main() {
-		ebiten.SetWindowSize(%d, %d)
-		ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
-		if err := ebiten.RunGame(NewGame()); err != nil {
-			panic(err)
+	ColorPackage         = `"golang.org/x/image/colornames"`
+	RegPackage           = regexp.MustCompile(`package .+`)
+	RegAssets            = regexp.MustCompile(`(?m)^\s*"\S*assets\S*"\s*\n`)
+	RegImports           = regexp.MustCompile(`import \(([\s\S]*?)\n\)`)
+	RegNewline           = regexp.MustCompile(`\n+`)
+	RegColor             = regexp.MustCompile(`\b(assets.Color[RYBGDL])\b`)
+	RegComment           = regexp.MustCompile(`//.*?`)
+	RegWhitespaceOnly    = regexp.MustCompile("(?m)^[ \t]+$")
+	RegLeadingWhitespace = regexp.MustCompile("(?m)(^[ \t]*)(?:[^ \t\n])")
+	PartMain             = dedent(fmt.Sprintf(`
+		func main() {
+			ebiten.SetWindowSize(%d, %d)
+			ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
+			if err := ebiten.RunGame(NewGame()); err != nil {
+				panic(err)
+			}
 		}
-	}
-	`, Width, Height)
+	`, Width, Height))
 )
 
 func load(fs fs.FS, path string) *ebiten.Image {
@@ -63,4 +66,27 @@ func load(fs fs.FS, path string) *ebiten.Image {
 		panic(err)
 	}
 	return ebiten.NewImageFromImage(img)
+}
+
+func dedent(text string) string {
+	var margin string
+	text = RegWhitespaceOnly.ReplaceAllString(text, "")
+	indents := RegLeadingWhitespace.FindAllStringSubmatch(text, -1)
+	for i, indent := range indents {
+		if i == 0 {
+			margin = indent[1]
+		} else if strings.HasPrefix(indent[1], margin) {
+			continue
+		} else if strings.HasPrefix(margin, indent[1]) {
+			margin = indent[1]
+		} else {
+			margin = ""
+			break
+		}
+	}
+	if margin != "" {
+		text = regexp.MustCompile("(?m)^"+margin).ReplaceAllString(text, "")
+	}
+	text = strings.TrimPrefix(text, "\n")
+	return text
 }
