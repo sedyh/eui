@@ -6,17 +6,20 @@ import (
 	"gen/assets"
 	"gen/examples/bas_con_mul"
 	"gen/examples/bas_con_sin"
-	"gen/examples/lay_anc_hor_pos_cen"
-	"gen/examples/lay_anc_hor_pos_end"
-	"gen/examples/lay_anc_hor_pos_sta"
 	"gen/examples/lay_anc_pad_bot"
 	"gen/examples/lay_anc_pad_lef"
 	"gen/examples/lay_anc_pad_rig"
 	"gen/examples/lay_anc_pad_top"
+	"gen/examples/lay_anc_pos_cenxcen"
+	"gen/examples/lay_anc_pos_cenxend"
+	"gen/examples/lay_anc_pos_cenxsta"
+	"gen/examples/lay_anc_pos_endxcen"
+	"gen/examples/lay_anc_pos_endxend"
+	"gen/examples/lay_anc_pos_endxsta"
+	"gen/examples/lay_anc_pos_staxcen"
+	"gen/examples/lay_anc_pos_staxend"
+	"gen/examples/lay_anc_pos_staxsta"
 	"gen/examples/lay_anc_pre"
-	"gen/examples/lay_anc_ver_pos_cen"
-	"gen/examples/lay_anc_ver_pos_end"
-	"gen/examples/lay_anc_ver_pos_sta"
 	"gen/examples/lay_gri_col_1"
 	"gen/examples/lay_gri_col_2"
 	"gen/examples/lay_gri_col_3"
@@ -35,7 +38,9 @@ import (
 	"gen/examples/lay_gri_pad_rig"
 	"gen/examples/lay_gri_pad_top"
 	"gen/examples/lay_gri_pos_cenxcen"
+	"gen/examples/lay_gri_pos_cenxend"
 	"gen/examples/lay_gri_pos_cenxsta"
+	"gen/examples/lay_gri_pos_endxcen"
 	"gen/examples/lay_gri_pos_endxend"
 	"gen/examples/lay_gri_pos_endxsta"
 	"gen/examples/lay_gri_pos_staxcen"
@@ -137,12 +142,15 @@ func NewGame() *Game {
 			lay_anc_pad_rig.NewGame(),
 			lay_anc_pad_top.NewGame(),
 			lay_anc_pad_bot.NewGame(),
-			lay_anc_hor_pos_sta.NewGame(),
-			lay_anc_hor_pos_cen.NewGame(),
-			lay_anc_hor_pos_end.NewGame(),
-			lay_anc_ver_pos_sta.NewGame(),
-			lay_anc_ver_pos_cen.NewGame(),
-			lay_anc_ver_pos_end.NewGame(),
+			lay_anc_pos_staxsta.NewGame(),
+			lay_anc_pos_cenxsta.NewGame(),
+			lay_anc_pos_endxsta.NewGame(),
+			lay_anc_pos_staxcen.NewGame(),
+			lay_anc_pos_cenxcen.NewGame(),
+			lay_anc_pos_endxcen.NewGame(),
+			lay_anc_pos_staxend.NewGame(),
+			lay_anc_pos_cenxend.NewGame(),
+			lay_anc_pos_endxend.NewGame(),
 			lay_row_pre.NewGame(),
 			lay_row_dir_hor.NewGame(),
 			lay_row_dir_ver.NewGame(),
@@ -198,12 +206,14 @@ func NewGame() *Game {
 			lay_gri_max_hei.NewGame(),
 			lay_gri_max_off.NewGame(),
 			lay_gri_pos_staxsta.NewGame(),
-			lay_gri_pos_cenxcen.NewGame(),
-			lay_gri_pos_endxend.NewGame(),
-			lay_gri_pos_staxcen.NewGame(),
-			lay_gri_pos_staxend.NewGame(),
 			lay_gri_pos_cenxsta.NewGame(),
 			lay_gri_pos_endxsta.NewGame(),
+			lay_gri_pos_staxcen.NewGame(),
+			lay_gri_pos_cenxcen.NewGame(),
+			lay_gri_pos_endxcen.NewGame(),
+			lay_gri_pos_staxend.NewGame(),
+			lay_gri_pos_cenxend.NewGame(),
+			lay_gri_pos_endxend.NewGame(),
 			wid_but_pre.NewGame(),
 		},
 		offscreen: ebiten.NewImage(

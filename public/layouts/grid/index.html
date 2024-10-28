@@ -22,21 +22,21 @@
     <meta itemprop="description" content="Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="9393">
+    <meta itemprop="wordCount" content="9877">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Grid - Ebiten UI</title>
     <link href="/eui/layouts/grid/index.xml" rel="alternate" type="application/rss+xml" title="Grid - Ebiten UI">
-    <link href="/eui/images/favicon.png?1729967502" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1729967502" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1729967502" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1729967502" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1729967502" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1729967502" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1729967502" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1729967502" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1729967502" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1729967502" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1729967502" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1729967502" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/print.css?1729967502" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1729967502"></script>
+    <link href="/eui/images/favicon.png?1730074758" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1730074758" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1730074758" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1730074758" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1730074758" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1730074758" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1730074758" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1730074758" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1730074758" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1730074758" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1730074758" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1730074758" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/print.css?1730074758" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1730074758"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -117,12 +117,12 @@
 <p>Grid layout puts all child containers in an even grid, wrapping each row based on the number of columns.</p>
 <p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-48f2537e7ac1fe9c366e4807f54fa9e7" aria-controls="R-expandcontent-48f2537e7ac1fe9c366e4807f54fa9e7">
-  <label class="expand-label" for="R-expand-48f2537e7ac1fe9c366e4807f54fa9e7">
+  <input type="checkbox" id="R-expand-89f2b26b7eea21686a42675279c4930b" aria-controls="R-expandcontent-89f2b26b7eea21686a42675279c4930b">
+  <label class="expand-label" for="R-expand-89f2b26b7eea21686a42675279c4930b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-48f2537e7ac1fe9c366e4807f54fa9e7" class="expand-content">
+  <div id="R-expandcontent-89f2b26b7eea21686a42675279c4930b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -204,41 +204,41 @@
 <h3 id="layout-options">Layout options</h3>
 <h6 id="columns">Columns</h6>
 <p>Responsible for wrapping cells beyond a given number.</p>
-<div class="tab-panel" data-tab-group="bedf28690ddf78d9a7c4aaed68d1dcf8">
+<div class="tab-panel" data-tab-group="3b111f95a3906c75a1069761b6ba22c4">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="1"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('bedf28690ddf78d9a7c4aaed68d1dcf8','1')"
+      onclick="switchTab('3b111f95a3906c75a1069761b6ba22c4','1')"
     >
       <span class="tab-nav-text">1</span>
     </button>
     <button
       data-tab-item="2"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('bedf28690ddf78d9a7c4aaed68d1dcf8','2')"
+      onclick="switchTab('3b111f95a3906c75a1069761b6ba22c4','2')"
     >
       <span class="tab-nav-text">2</span>
     </button>
     <button
       data-tab-item="3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('bedf28690ddf78d9a7c4aaed68d1dcf8','3')"
+      onclick="switchTab('3b111f95a3906c75a1069761b6ba22c4','3')"
     >
       <span class="tab-nav-text">3</span>
     </button>
     <button
       data-tab-item="4"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('bedf28690ddf78d9a7c4aaed68d1dcf8','4')"
+      onclick="switchTab('3b111f95a3906c75a1069761b6ba22c4','4')"
     >
       <span class="tab-nav-text">4</span>
     </button>
     <button
       data-tab-item="5"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('bedf28690ddf78d9a7c4aaed68d1dcf8','5')"
+      onclick="switchTab('3b111f95a3906c75a1069761b6ba22c4','5')"
     >
       <span class="tab-nav-text">5</span>
     </button>
@@ -258,12 +258,12 @@
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_1.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ac63c502d78df27653d30c60737ca068" aria-controls="R-expandcontent-ac63c502d78df27653d30c60737ca068">
-  <label class="expand-label" for="R-expand-ac63c502d78df27653d30c60737ca068">
+  <input type="checkbox" id="R-expand-26da7d8965d2ecb52bee75f6b8a91ca0" aria-controls="R-expandcontent-26da7d8965d2ecb52bee75f6b8a91ca0">
+  <label class="expand-label" for="R-expand-26da7d8965d2ecb52bee75f6b8a91ca0">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-ac63c502d78df27653d30c60737ca068" class="expand-content">
+  <div id="R-expandcontent-26da7d8965d2ecb52bee75f6b8a91ca0" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -352,12 +352,12 @@
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_2.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ba59eeac9b007735e14dbb803a13408e" aria-controls="R-expandcontent-ba59eeac9b007735e14dbb803a13408e">
-  <label class="expand-label" for="R-expand-ba59eeac9b007735e14dbb803a13408e">
+  <input type="checkbox" id="R-expand-05333e6fceed50b2fb3163e318341b02" aria-controls="R-expandcontent-05333e6fceed50b2fb3163e318341b02">
+  <label class="expand-label" for="R-expand-05333e6fceed50b2fb3163e318341b02">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-ba59eeac9b007735e14dbb803a13408e" class="expand-content">
+  <div id="R-expandcontent-05333e6fceed50b2fb3163e318341b02" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -446,12 +446,12 @@
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e548f1d719fd4ea9699f764863599ece" aria-controls="R-expandcontent-e548f1d719fd4ea9699f764863599ece">
-  <label class="expand-label" for="R-expand-e548f1d719fd4ea9699f764863599ece">
+  <input type="checkbox" id="R-expand-b13f27b1efadf3a8b933962d9fc7226d" aria-controls="R-expandcontent-b13f27b1efadf3a8b933962d9fc7226d">
+  <label class="expand-label" for="R-expand-b13f27b1efadf3a8b933962d9fc7226d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-e548f1d719fd4ea9699f764863599ece" class="expand-content">
+  <div id="R-expandcontent-b13f27b1efadf3a8b933962d9fc7226d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -540,12 +540,12 @@
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_4.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-1b3f61b22d9f7fb6fde10ef5b457a362" aria-controls="R-expandcontent-1b3f61b22d9f7fb6fde10ef5b457a362">
-  <label class="expand-label" for="R-expand-1b3f61b22d9f7fb6fde10ef5b457a362">
+  <input type="checkbox" id="R-expand-1404b729c6252035ea07387908c04758" aria-controls="R-expandcontent-1404b729c6252035ea07387908c04758">
+  <label class="expand-label" for="R-expand-1404b729c6252035ea07387908c04758">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-1b3f61b22d9f7fb6fde10ef5b457a362" class="expand-content">
+  <div id="R-expandcontent-1404b729c6252035ea07387908c04758" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -634,12 +634,12 @@
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_col_5.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-54705227e9636c5b3820a00f3a18ed50" aria-controls="R-expandcontent-54705227e9636c5b3820a00f3a18ed50">
-  <label class="expand-label" for="R-expand-54705227e9636c5b3820a00f3a18ed50">
+  <input type="checkbox" id="R-expand-504a1154df1b8d4b2ac385cf8a6382d3" aria-controls="R-expandcontent-504a1154df1b8d4b2ac385cf8a6382d3">
+  <label class="expand-label" for="R-expand-504a1154df1b8d4b2ac385cf8a6382d3">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-54705227e9636c5b3820a00f3a18ed50" class="expand-content">
+  <div id="R-expandcontent-504a1154df1b8d4b2ac385cf8a6382d3" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -718,90 +718,90 @@
 </div>
 <h6 id="stretch">Stretch</h6>
 <p>Responsible for choosing cell coordinates across each axis that will <em>evenly occupy</em> the remaining space.</p>
-<div class="tab-panel" data-tab-group="ad99006d6764dbd0b8f94256c8e356c0">
+<div class="tab-panel" data-tab-group="ffb16a8b8a4052826a0ded46716d5a1c">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="allxall"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','allxall')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','allxall')"
     >
       <span class="tab-nav-text">AllxAll</span>
     </button>
     <button
       data-tab-item="allx3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','allx3')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','allx3')"
     >
       <span class="tab-nav-text">Allx3</span>
     </button>
     <button
       data-tab-item="3xall"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','3xall')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','3xall')"
     >
       <span class="tab-nav-text">3xAll</span>
     </button>
     <button
       data-tab-item="1x1"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','1x1')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','1x1')"
     >
       <span class="tab-nav-text">1x1</span>
     </button>
     <button
       data-tab-item="3x3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','3x3')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','3x3')"
     >
       <span class="tab-nav-text">3x3</span>
     </button>
     <button
       data-tab-item="5x5"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','5x5')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','5x5')"
     >
       <span class="tab-nav-text">5x5</span>
     </button>
     <button
       data-tab-item="234x3"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','234x3')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','234x3')"
     >
       <span class="tab-nav-text">2,3,4x3</span>
     </button>
     <button
       data-tab-item="3x234"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','3x234')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','3x234')"
     >
       <span class="tab-nav-text">3x2,3,4</span>
     </button>
     <button
       data-tab-item="234x234"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','234x234')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','234x234')"
     >
       <span class="tab-nav-text">2,3,4x2,3,4</span>
     </button>
     <button
       data-tab-item="allxoff"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','allxoff')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','allxoff')"
     >
       <span class="tab-nav-text">AllxOff</span>
     </button>
     <button
       data-tab-item="offxall"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','offxall')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','offxall')"
     >
       <span class="tab-nav-text">OffxAll</span>
     </button>
     <button
       data-tab-item="offxoff"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('ad99006d6764dbd0b8f94256c8e356c0','offxoff')"
+      onclick="switchTab('ffb16a8b8a4052826a0ded46716d5a1c','offxoff')"
     >
       <span class="tab-nav-text">OffxOff</span>
     </button>
@@ -825,12 +825,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_allxall.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-0f026aba1447819d428391a005c16155" aria-controls="R-expandcontent-0f026aba1447819d428391a005c16155">
-  <label class="expand-label" for="R-expand-0f026aba1447819d428391a005c16155">
+  <input type="checkbox" id="R-expand-5570109fa6bdd0b0445ebabb7c2df38a" aria-controls="R-expandcontent-5570109fa6bdd0b0445ebabb7c2df38a">
+  <label class="expand-label" for="R-expand-5570109fa6bdd0b0445ebabb7c2df38a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-0f026aba1447819d428391a005c16155" class="expand-content">
+  <div id="R-expandcontent-5570109fa6bdd0b0445ebabb7c2df38a" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -929,12 +929,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="row" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_allx3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5da2ca7b0dcb451d4cc82bf181f2dfe3" aria-controls="R-expandcontent-5da2ca7b0dcb451d4cc82bf181f2dfe3">
-  <label class="expand-label" for="R-expand-5da2ca7b0dcb451d4cc82bf181f2dfe3">
+  <input type="checkbox" id="R-expand-53d7e1122f21b9ffbd088c8e7e68179b" aria-controls="R-expandcontent-53d7e1122f21b9ffbd088c8e7e68179b">
+  <label class="expand-label" for="R-expand-53d7e1122f21b9ffbd088c8e7e68179b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-5da2ca7b0dcb451d4cc82bf181f2dfe3" class="expand-content">
+  <div id="R-expandcontent-53d7e1122f21b9ffbd088c8e7e68179b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1033,12 +1033,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="col" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_3xall.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-9db6495137f3b68567fd26dccb4bfb04" aria-controls="R-expandcontent-9db6495137f3b68567fd26dccb4bfb04">
-  <label class="expand-label" for="R-expand-9db6495137f3b68567fd26dccb4bfb04">
+  <input type="checkbox" id="R-expand-0a99b830841a224c83cff5bd990d6094" aria-controls="R-expandcontent-0a99b830841a224c83cff5bd990d6094">
+  <label class="expand-label" for="R-expand-0a99b830841a224c83cff5bd990d6094">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-9db6495137f3b68567fd26dccb4bfb04" class="expand-content">
+  <div id="R-expandcontent-0a99b830841a224c83cff5bd990d6094" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1137,12 +1137,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="1x1" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_1x1.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b8359d1f49a8f43bc07cde15fd8de506" aria-controls="R-expandcontent-b8359d1f49a8f43bc07cde15fd8de506">
-  <label class="expand-label" for="R-expand-b8359d1f49a8f43bc07cde15fd8de506">
+  <input type="checkbox" id="R-expand-4dc1c684712c332be12d06933d368337" aria-controls="R-expandcontent-4dc1c684712c332be12d06933d368337">
+  <label class="expand-label" for="R-expand-4dc1c684712c332be12d06933d368337">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b8359d1f49a8f43bc07cde15fd8de506" class="expand-content">
+  <div id="R-expandcontent-4dc1c684712c332be12d06933d368337" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1241,12 +1241,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="3x3" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_3x3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c9c58324ed1d85a46397140b1fccde78" aria-controls="R-expandcontent-c9c58324ed1d85a46397140b1fccde78">
-  <label class="expand-label" for="R-expand-c9c58324ed1d85a46397140b1fccde78">
+  <input type="checkbox" id="R-expand-a92e168eef40e02dc61fa8c5dc884ea7" aria-controls="R-expandcontent-a92e168eef40e02dc61fa8c5dc884ea7">
+  <label class="expand-label" for="R-expand-a92e168eef40e02dc61fa8c5dc884ea7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-c9c58324ed1d85a46397140b1fccde78" class="expand-content">
+  <div id="R-expandcontent-a92e168eef40e02dc61fa8c5dc884ea7" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1345,12 +1345,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="5x5" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_5x5.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-98860b1fa6e95cd2ec84e3b2db34e8aa" aria-controls="R-expandcontent-98860b1fa6e95cd2ec84e3b2db34e8aa">
-  <label class="expand-label" for="R-expand-98860b1fa6e95cd2ec84e3b2db34e8aa">
+  <input type="checkbox" id="R-expand-572bdc736bbc42b57a2c6a05ea851c7e" aria-controls="R-expandcontent-572bdc736bbc42b57a2c6a05ea851c7e">
+  <label class="expand-label" for="R-expand-572bdc736bbc42b57a2c6a05ea851c7e">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-98860b1fa6e95cd2ec84e3b2db34e8aa" class="expand-content">
+  <div id="R-expandcontent-572bdc736bbc42b57a2c6a05ea851c7e" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1449,12 +1449,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="234x3" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_234x3.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-57a8cb912dd9748bf2032533bcd25903" aria-controls="R-expandcontent-57a8cb912dd9748bf2032533bcd25903">
-  <label class="expand-label" for="R-expand-57a8cb912dd9748bf2032533bcd25903">
+  <input type="checkbox" id="R-expand-5d35042ee444b7c8a42a027203fec390" aria-controls="R-expandcontent-5d35042ee444b7c8a42a027203fec390">
+  <label class="expand-label" for="R-expand-5d35042ee444b7c8a42a027203fec390">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-57a8cb912dd9748bf2032533bcd25903" class="expand-content">
+  <div id="R-expandcontent-5d35042ee444b7c8a42a027203fec390" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1553,12 +1553,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="3x234" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_3x234.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-35e63c73b521b311e89d84b8a5786028" aria-controls="R-expandcontent-35e63c73b521b311e89d84b8a5786028">
-  <label class="expand-label" for="R-expand-35e63c73b521b311e89d84b8a5786028">
+  <input type="checkbox" id="R-expand-bebd5679b9ab07de2093e1f440442fdd" aria-controls="R-expandcontent-bebd5679b9ab07de2093e1f440442fdd">
+  <label class="expand-label" for="R-expand-bebd5679b9ab07de2093e1f440442fdd">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-35e63c73b521b311e89d84b8a5786028" class="expand-content">
+  <div id="R-expandcontent-bebd5679b9ab07de2093e1f440442fdd" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1657,12 +1657,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="234x234" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_234x234.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-aa2c602d3e80cde35188eedc7ae08c42" aria-controls="R-expandcontent-aa2c602d3e80cde35188eedc7ae08c42">
-  <label class="expand-label" for="R-expand-aa2c602d3e80cde35188eedc7ae08c42">
+  <input type="checkbox" id="R-expand-faa353e33ca33a5c5372e6507a2025a6" aria-controls="R-expandcontent-faa353e33ca33a5c5372e6507a2025a6">
+  <label class="expand-label" for="R-expand-faa353e33ca33a5c5372e6507a2025a6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-aa2c602d3e80cde35188eedc7ae08c42" class="expand-content">
+  <div id="R-expandcontent-faa353e33ca33a5c5372e6507a2025a6" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1761,12 +1761,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_allxoff.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b01bd56bf754d10beff2a760345f1231" aria-controls="R-expandcontent-b01bd56bf754d10beff2a760345f1231">
-  <label class="expand-label" for="R-expand-b01bd56bf754d10beff2a760345f1231">
+  <input type="checkbox" id="R-expand-1657c2215489a6aa11df455a435d362d" aria-controls="R-expandcontent-1657c2215489a6aa11df455a435d362d">
+  <label class="expand-label" for="R-expand-1657c2215489a6aa11df455a435d362d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b01bd56bf754d10beff2a760345f1231" class="expand-content">
+  <div id="R-expandcontent-1657c2215489a6aa11df455a435d362d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1865,12 +1865,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_offxall.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-97099f835eba66de444427bd4866361b" aria-controls="R-expandcontent-97099f835eba66de444427bd4866361b">
-  <label class="expand-label" for="R-expand-97099f835eba66de444427bd4866361b">
+  <input type="checkbox" id="R-expand-75d8405884b5a3c16fa315ff4ffbdcc2" aria-controls="R-expandcontent-75d8405884b5a3c16fa315ff4ffbdcc2">
+  <label class="expand-label" for="R-expand-75d8405884b5a3c16fa315ff4ffbdcc2">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-97099f835eba66de444427bd4866361b" class="expand-content">
+  <div id="R-expandcontent-75d8405884b5a3c16fa315ff4ffbdcc2" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1969,12 +1969,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_str_offxoff.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-554f2e735286601d098b40a58d5d67d1" aria-controls="R-expandcontent-554f2e735286601d098b40a58d5d67d1">
-  <label class="expand-label" for="R-expand-554f2e735286601d098b40a58d5d67d1">
+  <input type="checkbox" id="R-expand-760236113e38b76188f209a7db918991" aria-controls="R-expandcontent-760236113e38b76188f209a7db918991">
+  <label class="expand-label" for="R-expand-760236113e38b76188f209a7db918991">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-554f2e735286601d098b40a58d5d67d1" class="expand-content">
+  <div id="R-expandcontent-760236113e38b76188f209a7db918991" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2059,34 +2059,34 @@
 </div>
 <h6 id="default-stretch">Default stretch</h6>
 <p>Responsible for selecting all cells along each axis. Can be used instead of the previous option to avoid listing all cells. It can also be overridden by a regular property.</p>
-<div class="tab-panel" data-tab-group="751ef0fefe7fa13a38892427f26188b0">
+<div class="tab-panel" data-tab-group="55e3703146ddbaa138f7a1c0141475b3">
   <div class="tab-nav">
     <div class="tab-nav-title">Stretch:</div>
     <button
       data-tab-item="truextrue"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('751ef0fefe7fa13a38892427f26188b0','truextrue')"
+      onclick="switchTab('55e3703146ddbaa138f7a1c0141475b3','truextrue')"
     >
       <span class="tab-nav-text">TruexTrue</span>
     </button>
     <button
       data-tab-item="truexfalse"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('751ef0fefe7fa13a38892427f26188b0','truexfalse')"
+      onclick="switchTab('55e3703146ddbaa138f7a1c0141475b3','truexfalse')"
     >
       <span class="tab-nav-text">TruexFalse</span>
     </button>
     <button
       data-tab-item="falsextrue"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('751ef0fefe7fa13a38892427f26188b0','falsextrue')"
+      onclick="switchTab('55e3703146ddbaa138f7a1c0141475b3','falsextrue')"
     >
       <span class="tab-nav-text">FalsexTrue</span>
     </button>
     <button
       data-tab-item="falsexfalse"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('751ef0fefe7fa13a38892427f26188b0','falsexfalse')"
+      onclick="switchTab('55e3703146ddbaa138f7a1c0141475b3','falsexfalse')"
     >
       <span class="tab-nav-text">FalsexFalse</span>
     </button>
@@ -2107,12 +2107,12 @@
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_tru_tru.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-76c0e183e33cc499e6fbd97ce085f7ff" aria-controls="R-expandcontent-76c0e183e33cc499e6fbd97ce085f7ff">
-  <label class="expand-label" for="R-expand-76c0e183e33cc499e6fbd97ce085f7ff">
+  <input type="checkbox" id="R-expand-1cafa053c5e263ac8bbde8cc3c9d4cf4" aria-controls="R-expandcontent-1cafa053c5e263ac8bbde8cc3c9d4cf4">
+  <label class="expand-label" for="R-expand-1cafa053c5e263ac8bbde8cc3c9d4cf4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-76c0e183e33cc499e6fbd97ce085f7ff" class="expand-content">
+  <div id="R-expandcontent-1cafa053c5e263ac8bbde8cc3c9d4cf4" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2205,12 +2205,12 @@
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_tru_fal.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d31ecdc4a11989332ee2e7c818d0a010" aria-controls="R-expandcontent-d31ecdc4a11989332ee2e7c818d0a010">
-  <label class="expand-label" for="R-expand-d31ecdc4a11989332ee2e7c818d0a010">
+  <input type="checkbox" id="R-expand-4c74a3aacde649d491b289defd5cef68" aria-controls="R-expandcontent-4c74a3aacde649d491b289defd5cef68">
+  <label class="expand-label" for="R-expand-4c74a3aacde649d491b289defd5cef68">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-d31ecdc4a11989332ee2e7c818d0a010" class="expand-content">
+  <div id="R-expandcontent-4c74a3aacde649d491b289defd5cef68" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2303,12 +2303,12 @@
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_fal_tru.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-200ebcf3c2cae432f87327690e507f59" aria-controls="R-expandcontent-200ebcf3c2cae432f87327690e507f59">
-  <label class="expand-label" for="R-expand-200ebcf3c2cae432f87327690e507f59">
+  <input type="checkbox" id="R-expand-05a4e132dc2b9b03db799d3deefa3972" aria-controls="R-expandcontent-05a4e132dc2b9b03db799d3deefa3972">
+  <label class="expand-label" for="R-expand-05a4e132dc2b9b03db799d3deefa3972">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-200ebcf3c2cae432f87327690e507f59" class="expand-content">
+  <div id="R-expandcontent-05a4e132dc2b9b03db799d3deefa3972" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2401,12 +2401,12 @@
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="all" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_dtr_fal_fal.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b0d23c7a749053eda2b24a2b395d33b7" aria-controls="R-expandcontent-b0d23c7a749053eda2b24a2b395d33b7">
-  <label class="expand-label" for="R-expand-b0d23c7a749053eda2b24a2b395d33b7">
+  <input type="checkbox" id="R-expand-5292f67a7f4e5f8cad50bdab04961347" aria-controls="R-expandcontent-5292f67a7f4e5f8cad50bdab04961347">
+  <label class="expand-label" for="R-expand-5292f67a7f4e5f8cad50bdab04961347">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b0d23c7a749053eda2b24a2b395d33b7" class="expand-content">
+  <div id="R-expandcontent-5292f67a7f4e5f8cad50bdab04961347" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2488,34 +2488,34 @@
 </div>
 <h6 id="padding">Padding</h6>
 <p>Responsible for the offset of the parent container.</p>
-<div class="tab-panel" data-tab-group="9efec6b699121dd03de7344107980663">
+<div class="tab-panel" data-tab-group="4a3ae7d5f07817f1279f100c37577598">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('9efec6b699121dd03de7344107980663','left')"
+      onclick="switchTab('4a3ae7d5f07817f1279f100c37577598','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('9efec6b699121dd03de7344107980663','right')"
+      onclick="switchTab('4a3ae7d5f07817f1279f100c37577598','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('9efec6b699121dd03de7344107980663','top')"
+      onclick="switchTab('4a3ae7d5f07817f1279f100c37577598','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('9efec6b699121dd03de7344107980663','bottom')"
+      onclick="switchTab('4a3ae7d5f07817f1279f100c37577598','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -2539,12 +2539,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="lef" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_lef.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5831277bc0645fce6c74222d36b61c03" aria-controls="R-expandcontent-5831277bc0645fce6c74222d36b61c03">
-  <label class="expand-label" for="R-expand-5831277bc0645fce6c74222d36b61c03">
+  <input type="checkbox" id="R-expand-0774220cecf90247e1d4a194a0f64686" aria-controls="R-expandcontent-0774220cecf90247e1d4a194a0f64686">
+  <label class="expand-label" for="R-expand-0774220cecf90247e1d4a194a0f64686">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-5831277bc0645fce6c74222d36b61c03" class="expand-content">
+  <div id="R-expandcontent-0774220cecf90247e1d4a194a0f64686" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2643,12 +2643,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="rig" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_rig.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-48954c4284d9f9127477e3169601be2d" aria-controls="R-expandcontent-48954c4284d9f9127477e3169601be2d">
-  <label class="expand-label" for="R-expand-48954c4284d9f9127477e3169601be2d">
+  <input type="checkbox" id="R-expand-f40c71612b9dcab8a95e596d062afe47" aria-controls="R-expandcontent-f40c71612b9dcab8a95e596d062afe47">
+  <label class="expand-label" for="R-expand-f40c71612b9dcab8a95e596d062afe47">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-48954c4284d9f9127477e3169601be2d" class="expand-content">
+  <div id="R-expandcontent-f40c71612b9dcab8a95e596d062afe47" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2747,12 +2747,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_top.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-1586fb37d4aff805d02c87bcee5d40df" aria-controls="R-expandcontent-1586fb37d4aff805d02c87bcee5d40df">
-  <label class="expand-label" for="R-expand-1586fb37d4aff805d02c87bcee5d40df">
+  <input type="checkbox" id="R-expand-f8fe690585387abeb326bf44354339ed" aria-controls="R-expandcontent-f8fe690585387abeb326bf44354339ed">
+  <label class="expand-label" for="R-expand-f8fe690585387abeb326bf44354339ed">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-1586fb37d4aff805d02c87bcee5d40df" class="expand-content">
+  <div id="R-expandcontent-f8fe690585387abeb326bf44354339ed" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2851,12 +2851,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pad_bot.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c8c818a817b966333c64bbadffd32885" aria-controls="R-expandcontent-c8c818a817b966333c64bbadffd32885">
-  <label class="expand-label" for="R-expand-c8c818a817b966333c64bbadffd32885">
+  <input type="checkbox" id="R-expand-c8426b6edd8c005e569500a5f7b1dbe1" aria-controls="R-expandcontent-c8426b6edd8c005e569500a5f7b1dbe1">
+  <label class="expand-label" for="R-expand-c8426b6edd8c005e569500a5f7b1dbe1">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-c8c818a817b966333c64bbadffd32885" class="expand-content">
+  <div id="R-expandcontent-c8426b6edd8c005e569500a5f7b1dbe1" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2941,34 +2941,34 @@
 </div>
 <h6 id="spacing">Spacing</h6>
 <p>Responsible for the offset between child elements.</p>
-<div class="tab-panel" data-tab-group="d4de0be66c2af444555b09e66f8b9bea">
+<div class="tab-panel" data-tab-group="24e9fefb2d5ab2510d7e003773301eb5">
   <div class="tab-nav">
     <div class="tab-nav-title">Spacing:</div>
     <button
       data-tab-item="0x0"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('d4de0be66c2af444555b09e66f8b9bea','0x0')"
+      onclick="switchTab('24e9fefb2d5ab2510d7e003773301eb5','0x0')"
     >
       <span class="tab-nav-text">0x0</span>
     </button>
     <button
       data-tab-item="0x25"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('d4de0be66c2af444555b09e66f8b9bea','0x25')"
+      onclick="switchTab('24e9fefb2d5ab2510d7e003773301eb5','0x25')"
     >
       <span class="tab-nav-text">0x25</span>
     </button>
     <button
       data-tab-item="25x0"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('d4de0be66c2af444555b09e66f8b9bea','25x0')"
+      onclick="switchTab('24e9fefb2d5ab2510d7e003773301eb5','25x0')"
     >
       <span class="tab-nav-text">25x0</span>
     </button>
     <button
       data-tab-item="25x25"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('d4de0be66c2af444555b09e66f8b9bea','25x25')"
+      onclick="switchTab('24e9fefb2d5ab2510d7e003773301eb5','25x25')"
     >
       <span class="tab-nav-text">25x25</span>
     </button>
@@ -2990,12 +2990,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="0" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_0x0.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-585c654ee416145684365e9d5f77d5e2" aria-controls="R-expandcontent-585c654ee416145684365e9d5f77d5e2">
-  <label class="expand-label" for="R-expand-585c654ee416145684365e9d5f77d5e2">
+  <input type="checkbox" id="R-expand-e6e865289b4626941bcac374ccd3035b" aria-controls="R-expandcontent-e6e865289b4626941bcac374ccd3035b">
+  <label class="expand-label" for="R-expand-e6e865289b4626941bcac374ccd3035b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-585c654ee416145684365e9d5f77d5e2" class="expand-content">
+  <div id="R-expandcontent-e6e865289b4626941bcac374ccd3035b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3090,12 +3090,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="25" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_0x25.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3f19aedd7b27236c964341d79f6595a4" aria-controls="R-expandcontent-3f19aedd7b27236c964341d79f6595a4">
-  <label class="expand-label" for="R-expand-3f19aedd7b27236c964341d79f6595a4">
+  <input type="checkbox" id="R-expand-55a659c1ae46dd57806b1f65c6b52378" aria-controls="R-expandcontent-55a659c1ae46dd57806b1f65c6b52378">
+  <label class="expand-label" for="R-expand-55a659c1ae46dd57806b1f65c6b52378">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-3f19aedd7b27236c964341d79f6595a4" class="expand-content">
+  <div id="R-expandcontent-55a659c1ae46dd57806b1f65c6b52378" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3190,12 +3190,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_25x0.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-efb9b0599f9bde9c31a7651b4486ee49" aria-controls="R-expandcontent-efb9b0599f9bde9c31a7651b4486ee49">
-  <label class="expand-label" for="R-expand-efb9b0599f9bde9c31a7651b4486ee49">
+  <input type="checkbox" id="R-expand-d9755bb3940c6d42e78f73b5621bf962" aria-controls="R-expandcontent-d9755bb3940c6d42e78f73b5621bf962">
+  <label class="expand-label" for="R-expand-d9755bb3940c6d42e78f73b5621bf962">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-efb9b0599f9bde9c31a7651b4486ee49" class="expand-content">
+  <div id="R-expandcontent-d9755bb3940c6d42e78f73b5621bf962" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3290,12 +3290,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="50" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_spa_25x25.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-875e9db4190f22597af0afb9951e6861" aria-controls="R-expandcontent-875e9db4190f22597af0afb9951e6861">
-  <label class="expand-label" for="R-expand-875e9db4190f22597af0afb9951e6861">
+  <input type="checkbox" id="R-expand-fe1759d046538883df15059a106a9d04" aria-controls="R-expandcontent-fe1759d046538883df15059a106a9d04">
+  <label class="expand-label" for="R-expand-fe1759d046538883df15059a106a9d04">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-875e9db4190f22597af0afb9951e6861" class="expand-content">
+  <div id="R-expandcontent-fe1759d046538883df15059a106a9d04" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3379,34 +3379,34 @@
 <h3 id="layout-data">Layout data</h3>
 <h6 id="max-size">Max size</h6>
 <p>Responsible for the allowable size of the child containers.</p>
-<div class="tab-panel" data-tab-group="88312463cccec592862abfaa436192b7">
+<div class="tab-panel" data-tab-group="772c8bf760ab324a4925bcc2034dac16">
   <div class="tab-nav">
     <div class="tab-nav-title">Max:</div>
     <button
       data-tab-item="none"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('88312463cccec592862abfaa436192b7','none')"
+      onclick="switchTab('772c8bf760ab324a4925bcc2034dac16','none')"
     >
       <span class="tab-nav-text">None</span>
     </button>
     <button
       data-tab-item="width"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('88312463cccec592862abfaa436192b7','width')"
+      onclick="switchTab('772c8bf760ab324a4925bcc2034dac16','width')"
     >
       <span class="tab-nav-text">Width</span>
     </button>
     <button
       data-tab-item="height"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('88312463cccec592862abfaa436192b7','height')"
+      onclick="switchTab('772c8bf760ab324a4925bcc2034dac16','height')"
     >
       <span class="tab-nav-text">Height</span>
     </button>
     <button
       data-tab-item="both"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('88312463cccec592862abfaa436192b7','both')"
+      onclick="switchTab('772c8bf760ab324a4925bcc2034dac16','both')"
     >
       <span class="tab-nav-text">Both</span>
     </button>
@@ -3428,12 +3428,12 @@
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_off.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-dfbdf4cb80d3dc985a9387714ff1ce6a" aria-controls="R-expandcontent-dfbdf4cb80d3dc985a9387714ff1ce6a">
-  <label class="expand-label" for="R-expand-dfbdf4cb80d3dc985a9387714ff1ce6a">
+  <input type="checkbox" id="R-expand-ec6e5a1a4970cb38195facf1a12785ae" aria-controls="R-expandcontent-ec6e5a1a4970cb38195facf1a12785ae">
+  <label class="expand-label" for="R-expand-ec6e5a1a4970cb38195facf1a12785ae">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-dfbdf4cb80d3dc985a9387714ff1ce6a" class="expand-content">
+  <div id="R-expandcontent-ec6e5a1a4970cb38195facf1a12785ae" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3529,12 +3529,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_wid.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7845a9aa4f7276e43e65d506690dc84a" aria-controls="R-expandcontent-7845a9aa4f7276e43e65d506690dc84a">
-  <label class="expand-label" for="R-expand-7845a9aa4f7276e43e65d506690dc84a">
+  <input type="checkbox" id="R-expand-4e0b3b462c110603d78db77d227b339a" aria-controls="R-expandcontent-4e0b3b462c110603d78db77d227b339a">
+  <label class="expand-label" for="R-expand-4e0b3b462c110603d78db77d227b339a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-7845a9aa4f7276e43e65d506690dc84a" class="expand-content">
+  <div id="R-expandcontent-4e0b3b462c110603d78db77d227b339a" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3632,12 +3632,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_hei.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-feafbed7e1a7f55cb1b85f228b41c362" aria-controls="R-expandcontent-feafbed7e1a7f55cb1b85f228b41c362">
-  <label class="expand-label" for="R-expand-feafbed7e1a7f55cb1b85f228b41c362">
+  <input type="checkbox" id="R-expand-368ca7adfbc4c43d2f81f2a08c016fef" aria-controls="R-expandcontent-368ca7adfbc4c43d2f81f2a08c016fef">
+  <label class="expand-label" for="R-expand-368ca7adfbc4c43d2f81f2a08c016fef">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-feafbed7e1a7f55cb1b85f228b41c362" class="expand-content">
+  <div id="R-expandcontent-368ca7adfbc4c43d2f81f2a08c016fef" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3736,12 +3736,12 @@
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_max_all.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7460b9d4d1d0d48269c9aa3353f60b99" aria-controls="R-expandcontent-7460b9d4d1d0d48269c9aa3353f60b99">
-  <label class="expand-label" for="R-expand-7460b9d4d1d0d48269c9aa3353f60b99">
+  <input type="checkbox" id="R-expand-1c93a44bcee0e517b66a4d8637a67c62" aria-controls="R-expandcontent-1c93a44bcee0e517b66a4d8637a67c62">
+  <label class="expand-label" for="R-expand-1c93a44bcee0e517b66a4d8637a67c62">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-7460b9d4d1d0d48269c9aa3353f60b99" class="expand-content">
+  <div id="R-expandcontent-1c93a44bcee0e517b66a4d8637a67c62" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3826,57 +3826,71 @@
 </div>
 <h6 id="position">Position</h6>
 <p>Responsible for the allowable size of the child containers. It works when the size of the cells is so limited by the maximum size that it is smaller than the size of the stretched cells that there is free space between them.</p>
-<div class="tab-panel" data-tab-group="abb2c9fd4de17634eb0d6a6dbb94d3bc">
+<div class="tab-panel" data-tab-group="7b7861f7c457332c9d8ccf5baeb3adb8">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="startxstart"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('abb2c9fd4de17634eb0d6a6dbb94d3bc','startxstart')"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','startxstart')"
     >
       <span class="tab-nav-text">StartxStart</span>
     </button>
     <button
-      data-tab-item="centerxcenter"
-      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('abb2c9fd4de17634eb0d6a6dbb94d3bc','centerxcenter')"
-    >
-      <span class="tab-nav-text">CenterxCenter</span>
-    </button>
-    <button
-      data-tab-item="endxend"
-      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('abb2c9fd4de17634eb0d6a6dbb94d3bc','endxend')"
-    >
-      <span class="tab-nav-text">EndxEnd</span>
-    </button>
-    <button
       data-tab-item="centerxstart"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('abb2c9fd4de17634eb0d6a6dbb94d3bc','centerxstart')"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','centerxstart')"
     >
       <span class="tab-nav-text">CenterxStart</span>
     </button>
     <button
-      data-tab-item="startxcenter"
-      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('abb2c9fd4de17634eb0d6a6dbb94d3bc','startxcenter')"
-    >
-      <span class="tab-nav-text">StartxCenter</span>
-    </button>
-    <button
       data-tab-item="endxstart"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('abb2c9fd4de17634eb0d6a6dbb94d3bc','endxstart')"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','endxstart')"
     >
       <span class="tab-nav-text">EndxStart</span>
     </button>
     <button
+      data-tab-item="startxcenter"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','startxcenter')"
+    >
+      <span class="tab-nav-text">StartxCenter</span>
+    </button>
+    <button
+      data-tab-item="centerxcenter"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','centerxcenter')"
+    >
+      <span class="tab-nav-text">CenterxCenter</span>
+    </button>
+    <button
+      data-tab-item="endxcenter"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','endxcenter')"
+    >
+      <span class="tab-nav-text">EndxCenter</span>
+    </button>
+    <button
       data-tab-item="startxend"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('abb2c9fd4de17634eb0d6a6dbb94d3bc','startxend')"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','startxend')"
     >
       <span class="tab-nav-text">StartxEnd</span>
+    </button>
+    <button
+      data-tab-item="centerxend"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','centerxend')"
+    >
+      <span class="tab-nav-text">CenterxEnd</span>
+    </button>
+    <button
+      data-tab-item="endxend"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('7b7861f7c457332c9d8ccf5baeb3adb8','endxend')"
+    >
+      <span class="tab-nav-text">EndxEnd</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -3901,12 +3915,12 @@
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_staxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-33d5bd662d6d1a747dedeea945f56cf3" aria-controls="R-expandcontent-33d5bd662d6d1a747dedeea945f56cf3">
-  <label class="expand-label" for="R-expand-33d5bd662d6d1a747dedeea945f56cf3">
+  <input type="checkbox" id="R-expand-1bd7f9be01bd5a93f60190c5989203f7" aria-controls="R-expandcontent-1bd7f9be01bd5a93f60190c5989203f7">
+  <label class="expand-label" for="R-expand-1bd7f9be01bd5a93f60190c5989203f7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-33d5bd662d6d1a747dedeea945f56cf3" class="expand-content">
+  <div id="R-expandcontent-1bd7f9be01bd5a93f60190c5989203f7" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3990,7 +4004,7 @@
       </div>
     </div>
     <div
-      data-tab-item="centerxcenter"
+      data-tab-item="centerxstart"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
@@ -4002,20 +4016,20 @@
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">			<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
 </span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="p">),</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_cenxcen.png" style=" height: auto; width: auto;"></p>
+<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_cenxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b86a1d3ea89e50fc60270701d20f1ec9" aria-controls="R-expandcontent-b86a1d3ea89e50fc60270701d20f1ec9">
-  <label class="expand-label" for="R-expand-b86a1d3ea89e50fc60270701d20f1ec9">
+  <input type="checkbox" id="R-expand-4498eaf7c9e7d7f61d6df9ba401257db" aria-controls="R-expandcontent-4498eaf7c9e7d7f61d6df9ba401257db">
+  <label class="expand-label" for="R-expand-4498eaf7c9e7d7f61d6df9ba401257db">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b86a1d3ea89e50fc60270701d20f1ec9" class="expand-content">
+  <div id="R-expandcontent-4498eaf7c9e7d7f61d6df9ba401257db" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4059,7 +4073,7 @@
 </span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
 </span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">47</span><span class="cl">				<span class="p">),</span>
@@ -4099,7 +4113,7 @@
       </div>
     </div>
     <div
-      data-tab-item="endxend"
+      data-tab-item="endxstart"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
@@ -4111,20 +4125,20 @@
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">			<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
 </span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="p">),</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_endxend.png" style=" height: auto; width: auto;"></p>
+<p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_endxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d5679d983340fc74eb1e68cf1527313d" aria-controls="R-expandcontent-d5679d983340fc74eb1e68cf1527313d">
-  <label class="expand-label" for="R-expand-d5679d983340fc74eb1e68cf1527313d">
+  <input type="checkbox" id="R-expand-f33670f83b196712df9b4517ee28893d" aria-controls="R-expandcontent-f33670f83b196712df9b4517ee28893d">
+  <label class="expand-label" for="R-expand-f33670f83b196712df9b4517ee28893d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-d5679d983340fc74eb1e68cf1527313d" class="expand-content">
+  <div id="R-expandcontent-f33670f83b196712df9b4517ee28893d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4168,115 +4182,6 @@
 </span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">47</span><span class="cl">				<span class="p">),</span>
-</span></span><span class="line"><span class="ln">48</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
-</span></span><span class="line"><span class="ln">49</span><span class="cl">			<span class="p">)</span>
-</span></span><span class="line"><span class="ln">50</span><span class="cl">			<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">51</span><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="ln">52</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">53</span><span class="cl">
-</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">55</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
-</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">58</span><span class="cl">
-</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">60</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln">61</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
-</span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">63</span><span class="cl">
-</span></span><span class="line"><span class="ln">64</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">65</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">66</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">67</span><span class="cl">
-</span></span><span class="line"><span class="ln">68</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">69</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
-</span></span><span class="line"><span class="ln">70</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">71</span><span class="cl">
-</span></span><span class="line"><span class="ln">72</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">73</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">74</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">75</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">76</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">77</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">78</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div>
-</div>
-      </div>
-    </div>
-    <div
-      data-tab-item="centerxstart"
-      class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
-      <div class="tab-content-text">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">			<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="p">),</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_cenxsta.png" style=" height: auto; width: auto;"></p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-ccfa20cf85933ff03584eed63114cdb8" aria-controls="R-expandcontent-ccfa20cf85933ff03584eed63114cdb8">
-  <label class="expand-label" for="R-expand-ccfa20cf85933ff03584eed63114cdb8">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
-  </label>
-  <div id="R-expandcontent-ccfa20cf85933ff03584eed63114cdb8" class="expand-content">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;image/color&#34;</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">
-</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">
-</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">19</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">		<span class="p">),</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewGridLayout</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">Columns</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">23</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">DefaultStretch</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl">		<span class="p">)),</span>
-</span></span><span class="line"><span class="ln">25</span><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="ln">26</span><span class="cl">	<span class="nx">colors</span> <span class="o">:=</span> <span class="p">[]</span><span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">27</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">28</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Goldenrod</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Steelblue</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">31</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">32</span><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="ln">33</span><span class="cl">	<span class="k">for</span> <span class="nx">y</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">y</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">y</span><span class="o">++</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">34</span><span class="cl">		<span class="k">for</span> <span class="nx">x</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">35</span><span class="cl">			<span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">36</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">37</span><span class="cl">					<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
-</span></span><span class="line"><span class="ln">38</span><span class="cl">				<span class="p">),</span>
-</span></span><span class="line"><span class="ln">39</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
-</span></span><span class="line"><span class="ln">40</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
-</span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
 </span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
@@ -4337,12 +4242,12 @@
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_staxcen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-fc2391ef45314d50e9c6be3fb7c92a43" aria-controls="R-expandcontent-fc2391ef45314d50e9c6be3fb7c92a43">
-  <label class="expand-label" for="R-expand-fc2391ef45314d50e9c6be3fb7c92a43">
+  <input type="checkbox" id="R-expand-25e3550be456201cd8b6b2376f749455" aria-controls="R-expandcontent-25e3550be456201cd8b6b2376f749455">
+  <label class="expand-label" for="R-expand-25e3550be456201cd8b6b2376f749455">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-fc2391ef45314d50e9c6be3fb7c92a43" class="expand-content">
+  <div id="R-expandcontent-25e3550be456201cd8b6b2376f749455" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4426,7 +4331,116 @@
       </div>
     </div>
     <div
-      data-tab-item="endxstart"
+      data-tab-item="centerxcenter"
+      class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
+      <div class="tab-content-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">			<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_cenxcen.png" style=" height: auto; width: auto;"></p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-b72b31fc44360c436f3acdb407431e24" aria-controls="R-expandcontent-b72b31fc44360c436f3acdb407431e24">
+  <label class="expand-label" for="R-expand-b72b31fc44360c436f3acdb407431e24">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
+  </label>
+  <div id="R-expandcontent-b72b31fc44360c436f3acdb407431e24" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;image/color&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewGridLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">Columns</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">DefaultStretch</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">		<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">	<span class="nx">colors</span> <span class="o">:=</span> <span class="p">[]</span><span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Goldenrod</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Steelblue</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">	<span class="k">for</span> <span class="nx">y</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">y</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">y</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">		<span class="k">for</span> <span class="nx">x</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">			<span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">					<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">				<span class="p">),</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">				<span class="p">),</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">			<span class="p">)</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">			<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">
+</span></span><span class="line"><span class="ln">64</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">67</span><span class="cl">
+</span></span><span class="line"><span class="ln">68</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">69</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln">70</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">71</span><span class="cl">
+</span></span><span class="line"><span class="ln">72</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">73</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">74</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">75</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">76</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">77</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">78</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div
+      data-tab-item="endxcenter"
       class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
       <div class="tab-content-text">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
@@ -4438,20 +4452,20 @@
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">			<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
 </span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="p">),</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
-<p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_endxsta.png" style=" height: auto; width: auto;"></p>
+<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_endxcen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-fe147c4258c5219145871c05c3ec516d" aria-controls="R-expandcontent-fe147c4258c5219145871c05c3ec516d">
-  <label class="expand-label" for="R-expand-fe147c4258c5219145871c05c3ec516d">
+  <input type="checkbox" id="R-expand-ed0e1dad76953abbbe6836166990e687" aria-controls="R-expandcontent-ed0e1dad76953abbbe6836166990e687">
+  <label class="expand-label" for="R-expand-ed0e1dad76953abbbe6836166990e687">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-fe147c4258c5219145871c05c3ec516d" class="expand-content">
+  <div id="R-expandcontent-ed0e1dad76953abbbe6836166990e687" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4495,7 +4509,7 @@
 </span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
 </span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
 </span></span><span class="line"><span class="ln">47</span><span class="cl">				<span class="p">),</span>
@@ -4555,12 +4569,12 @@
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_staxend.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e920922ed75ff563e4636d68415d4850" aria-controls="R-expandcontent-e920922ed75ff563e4636d68415d4850">
-  <label class="expand-label" for="R-expand-e920922ed75ff563e4636d68415d4850">
+  <input type="checkbox" id="R-expand-e7395ddeb8e4eaea8e642d6e5259add4" aria-controls="R-expandcontent-e7395ddeb8e4eaea8e642d6e5259add4">
+  <label class="expand-label" for="R-expand-e7395ddeb8e4eaea8e642d6e5259add4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-e920922ed75ff563e4636d68415d4850" class="expand-content">
+  <div id="R-expandcontent-e7395ddeb8e4eaea8e642d6e5259add4" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4604,6 +4618,224 @@
 </span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">				<span class="p">),</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">			<span class="p">)</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">			<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">
+</span></span><span class="line"><span class="ln">64</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">67</span><span class="cl">
+</span></span><span class="line"><span class="ln">68</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">69</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln">70</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">71</span><span class="cl">
+</span></span><span class="line"><span class="ln">72</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">73</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">74</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">75</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">76</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">77</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">78</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div
+      data-tab-item="centerxend"
+      class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
+      <div class="tab-content-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">			<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_cenxend.png" style=" height: auto; width: auto;"></p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-d8900c12e4874e9cdcf9acd206e995e0" aria-controls="R-expandcontent-d8900c12e4874e9cdcf9acd206e995e0">
+  <label class="expand-label" for="R-expand-d8900c12e4874e9cdcf9acd206e995e0">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
+  </label>
+  <div id="R-expandcontent-d8900c12e4874e9cdcf9acd206e995e0" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;image/color&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewGridLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">Columns</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">DefaultStretch</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">		<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">	<span class="nx">colors</span> <span class="o">:=</span> <span class="p">[]</span><span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Goldenrod</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Steelblue</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">	<span class="k">for</span> <span class="nx">y</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">y</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">y</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">		<span class="k">for</span> <span class="nx">x</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">			<span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">					<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">				<span class="p">),</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">				<span class="p">),</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">			<span class="p">)</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">			<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">
+</span></span><span class="line"><span class="ln">64</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">67</span><span class="cl">
+</span></span><span class="line"><span class="ln">68</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">69</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln">70</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">71</span><span class="cl">
+</span></span><span class="line"><span class="ln">72</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">73</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">74</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">75</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">76</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">77</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">78</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div
+      data-tab-item="endxend"
+      class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
+      <div class="tab-content-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">		<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">			<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">			<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/lay_gri_pos_endxend.png" style=" height: auto; width: auto;"></p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-02bccc91c3b28f2c84732c47b94d942a" aria-controls="R-expandcontent-02bccc91c3b28f2c84732c47b94d942a">
+  <label class="expand-label" for="R-expand-02bccc91c3b28f2c84732c47b94d942a">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
+  </label>
+  <div id="R-expandcontent-02bccc91c3b28f2c84732c47b94d942a" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;image/color&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewGridLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">Columns</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutOpts</span><span class="p">.</span><span class="nf">DefaultStretch</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">		<span class="p">)),</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">	<span class="nx">colors</span> <span class="o">:=</span> <span class="p">[]</span><span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Indianred</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Goldenrod</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Steelblue</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">		<span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">	<span class="k">for</span> <span class="nx">y</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">y</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">y</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">		<span class="k">for</span> <span class="nx">x</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">			<span class="nx">child</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">					<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colors</span><span class="p">[(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="nx">colors</span><span class="p">)]),</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">				<span class="p">),</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">				<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">						<span class="nx">MaxWidth</span><span class="p">:</span>           <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">						<span class="nx">MaxHeight</span><span class="p">:</span>          <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">						<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">44</span><span class="cl">						<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">GridLayoutPositionEnd</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln">45</span><span class="cl">					<span class="p">}),</span>
 </span></span><span class="line"><span class="ln">46</span><span class="cl">					<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
@@ -4672,7 +4904,7 @@
 </svg>
         </div>
         <script>
-          window.index_js_url="/eui/searchindex.js?1729967502";
+          window.index_js_url="/eui/searchindex.js?1730074758";
         </script>
         <search><form action="/eui/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -4685,12 +4917,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1729967502" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1729967502" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1729967502" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1729967502" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1729967502" defer></script>
-        <script src="/eui/js/search.js?1729967502" defer></script>
+        <script src="/eui/js/auto-complete.js?1730074758" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1730074758" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1730074758" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1730074758" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1730074758" defer></script>
+        <script src="/eui/js/search.js?1730074758" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -4764,8 +4996,8 @@
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1729967502" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1729967502" defer></script>
-    <script src="/eui/js/theme.js?1729967502" defer></script>
+    <script src="/eui/js/clipboard.min.js?1730074758" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1730074758" defer></script>
+    <script src="/eui/js/theme.js?1730074758" defer></script>
   </body>
 </html>

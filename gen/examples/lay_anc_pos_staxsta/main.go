@@ -1,12 +1,13 @@
 // START root
-package main
+package lay_anc_pos_staxsta
 
 import (
+	"gen/assets"
+
 	"github.com/ebitenui/ebitenui"
 	"github.com/ebitenui/ebitenui/image"
 	"github.com/ebitenui/ebitenui/widget"
 	"github.com/hajimehoshi/ebiten/v2"
-	"golang.org/x/image/colornames"
 )
 
 type Game struct {
@@ -17,11 +18,12 @@ func NewGame() *Game {
 	// START this
 	center := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Darkslategray),
+			image.NewNineSliceColor(assets.ColorD),
 		),
 		widget.ContainerOpts.WidgetOpts(
 			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
-				HorizontalPosition: widget.AnchorLayoutPositionCenter,
+				HorizontalPosition: widget.AnchorLayoutPositionStart,
+				VerticalPosition:   widget.AnchorLayoutPositionStart,
 			}),
 			widget.WidgetOpts.MinSize(50, 50),
 		),
@@ -29,7 +31,7 @@ func NewGame() *Game {
 	// END this
 	root := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
-			image.NewNineSliceColor(colornames.Gainsboro),
+			image.NewNineSliceColor(assets.ColorL),
 		),
 		widget.ContainerOpts.Layout(widget.NewAnchorLayout()),
 	)
@@ -53,11 +55,4 @@ func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
 
-func main() {
-	ebiten.SetWindowSize(480, 320)
-	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
-	if err := ebiten.RunGame(NewGame()); err != nil {
-		panic(err)
-	}
-}
 // END root

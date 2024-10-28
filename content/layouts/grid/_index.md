@@ -345,35 +345,11 @@ Responsible for the allowable size of the child containers. It works when the si
 {{% /expand %}}
 {{% /tab %}}
 
-{{% tab title="CenterxCenter" %}}
-{{< code src="assets/examples/lay_gri_pos_cenxcen.txt" lang="go" id="this" >}}
-![wid](examples/lay_gri_pos_cenxcen.png)
-{{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_gri_pos_cenxcen.txt" lang="go" id="root" >}}
-{{% /expand %}}
-{{% /tab %}}
-
-{{% tab title="EndxEnd" %}}
-{{< code src="assets/examples/lay_gri_pos_endxend.txt" lang="go" id="this" >}}
-![wid](examples/lay_gri_pos_endxend.png)
-{{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_gri_pos_endxend.txt" lang="go" id="root" >}}
-{{% /expand %}}
-{{% /tab %}}
-
 {{% tab title="CenterxStart" %}}
 {{< code src="assets/examples/lay_gri_pos_cenxsta.txt" lang="go" id="this" >}}
 ![wid](examples/lay_gri_pos_cenxsta.png)
 {{% expand title="Full example" %}}
 {{< code src="assets/examples/lay_gri_pos_cenxsta.txt" lang="go" id="root" >}}
-{{% /expand %}}
-{{% /tab %}}
-
-{{% tab title="StartxCenter" %}}
-{{< code src="assets/examples/lay_gri_pos_staxcen.txt" lang="go" id="this" >}}
-![wid](examples/lay_gri_pos_staxcen.png)
-{{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_gri_pos_staxcen.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 
@@ -385,11 +361,51 @@ Responsible for the allowable size of the child containers. It works when the si
 {{% /expand %}}
 {{% /tab %}}
 
+{{% tab title="StartxCenter" %}}
+{{< code src="assets/examples/lay_gri_pos_staxcen.txt" lang="go" id="this" >}}
+![wid](examples/lay_gri_pos_staxcen.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_gri_pos_staxcen.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="CenterxCenter" %}}
+{{< code src="assets/examples/lay_gri_pos_cenxcen.txt" lang="go" id="this" >}}
+![wid](examples/lay_gri_pos_cenxcen.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_gri_pos_cenxcen.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="EndxCenter" %}}
+{{< code src="assets/examples/lay_gri_pos_endxcen.txt" lang="go" id="this" >}}
+![wid](examples/lay_gri_pos_endxcen.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_gri_pos_endxcen.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
 {{% tab title="StartxEnd" %}}
 {{< code src="assets/examples/lay_gri_pos_staxend.txt" lang="go" id="this" >}}
 ![wid](examples/lay_gri_pos_staxend.png)
 {{% expand title="Full example" %}}
 {{< code src="assets/examples/lay_gri_pos_staxend.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="CenterxEnd" %}}
+{{< code src="assets/examples/lay_gri_pos_cenxend.txt" lang="go" id="this" >}}
+![wid](examples/lay_gri_pos_cenxend.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_gri_pos_cenxend.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="EndxEnd" %}}
+{{< code src="assets/examples/lay_gri_pos_endxend.txt" lang="go" id="this" >}}
+![wid](examples/lay_gri_pos_endxend.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_gri_pos_endxend.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 

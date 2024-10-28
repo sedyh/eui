@@ -59,65 +59,81 @@ Layout allows you to specify padding for all child elements but not the itself.
 
 ### Layout data
 
-###### Horizontal position
+###### Position
 
-Responsible for aligning the element along the horizontal axis.
-
-{{< tabs title="Position:" style="transparent" color="#131a22ff" >}}
-
-{{% tab title="Start" %}}
-{{< code src="assets/examples/lay_anc_hor_pos_sta.txt" lang="go" id="this" >}}
-![center](examples/lay_anc_hor_pos_sta.png)
-{{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_anc_hor_pos_sta.txt" lang="go" id="root" >}}
-{{% /expand %}}
-{{% /tab %}}
-
-{{% tab title="Center" %}}
-{{< code src="assets/examples/lay_anc_hor_pos_cen.txt" lang="go" id="this" >}}
-![center](examples/lay_anc_hor_pos_cen.png)
-{{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_anc_hor_pos_cen.txt" lang="go" id="root" >}}
-{{% /expand %}}
-{{% /tab %}}
-
-{{% tab title="End" %}}
-{{< code src="assets/examples/lay_anc_hor_pos_end.txt" lang="go" id="this" >}}
-![center](examples/lay_anc_hor_pos_end.png)
-{{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_anc_hor_pos_end.txt" lang="go" id="root" >}}
-{{% /expand %}}
-{{% /tab %}}
-
-{{< /tabs >}}
-
-###### Vertical position
-
-Responsible for aligning the element along the vertical axis.
+Responsible for aligning the child container along the horizontal and vertical axes.
 
 {{< tabs title="Position:" style="transparent" color="#131a22ff" >}}
 
-{{% tab title="Start" %}}
-{{< code src="assets/examples/lay_anc_ver_pos_sta.txt" lang="go" id="this" >}}
-![center](examples/lay_anc_ver_pos_sta.png)
+{{% tab title="StartxStart" %}}
+{{< code src="assets/examples/lay_anc_pos_staxsta.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_staxsta.png)
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_anc_ver_pos_sta.txt" lang="go" id="root" >}}
+{{< code src="assets/examples/lay_anc_pos_staxsta.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 
-{{% tab title="Center" %}}
-{{< code src="assets/examples/lay_anc_ver_pos_cen.txt" lang="go" id="this" >}}
-![center](examples/lay_anc_ver_pos_cen.png)
+{{% tab title="CenterxStart" %}}
+{{< code src="assets/examples/lay_anc_pos_cenxsta.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_cenxsta.png)
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_anc_ver_pos_cen.txt" lang="go" id="root" >}}
+{{< code src="assets/examples/lay_anc_pos_cenxsta.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 
-{{% tab title="End" %}}
-{{< code src="assets/examples/lay_anc_ver_pos_end.txt" lang="go" id="this" >}}
-![center](examples/lay_anc_ver_pos_end.png)
+{{% tab title="EndxStart" %}}
+{{< code src="assets/examples/lay_anc_pos_endxsta.txt" lang="go" id="this" >}}
+![hei](examples/lay_anc_pos_endxsta.png)
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/lay_anc_ver_pos_end.txt" lang="go" id="root" >}}
+{{< code src="assets/examples/lay_anc_pos_endxsta.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="StartxCenter" %}}
+{{< code src="assets/examples/lay_anc_pos_staxcen.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_staxcen.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_anc_pos_staxcen.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="CenterxCenter" %}}
+{{< code src="assets/examples/lay_anc_pos_cenxcen.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_cenxcen.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_anc_pos_cenxcen.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="EndxCenter" %}}
+{{< code src="assets/examples/lay_anc_pos_endxcen.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_endxcen.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_anc_pos_endxcen.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="StartxEnd" %}}
+{{< code src="assets/examples/lay_anc_pos_staxend.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_staxend.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_anc_pos_staxend.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="CenterxEnd" %}}
+{{< code src="assets/examples/lay_anc_pos_cenxend.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_cenxend.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_anc_pos_cenxend.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="EndxEnd" %}}
+{{< code src="assets/examples/lay_anc_pos_endxend.txt" lang="go" id="this" >}}
+![wid](examples/lay_anc_pos_endxend.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/lay_anc_pos_endxend.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 

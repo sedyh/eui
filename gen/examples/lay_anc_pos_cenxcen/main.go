@@ -1,5 +1,5 @@
 // START root
-package lay_anc_ver_pos_cen
+package lay_anc_pos_cenxcen
 
 import (
 	"gen/assets"
@@ -22,7 +22,8 @@ func NewGame() *Game {
 		),
 		widget.ContainerOpts.WidgetOpts(
 			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
-				VerticalPosition: widget.AnchorLayoutPositionCenter,
+				HorizontalPosition: widget.AnchorLayoutPositionCenter,
+				VerticalPosition:   widget.AnchorLayoutPositionCenter,
 			}),
 			widget.WidgetOpts.MinSize(50, 50),
 		),

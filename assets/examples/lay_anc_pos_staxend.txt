@@ -21,7 +21,8 @@ func NewGame() *Game {
 		),
 		widget.ContainerOpts.WidgetOpts(
 			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
-				HorizontalPosition: widget.AnchorLayoutPositionEnd,
+				HorizontalPosition: widget.AnchorLayoutPositionStart,
+				VerticalPosition:   widget.AnchorLayoutPositionEnd,
 			}),
 			widget.WidgetOpts.MinSize(50, 50),
 		),
