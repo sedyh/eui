@@ -21,8 +21,8 @@ type Game struct {
 	ui *ebitenui.UI
 }
 
-func NewGame() *Game {
-	return &Game{
+ func NewGame() *Game {
+    return &Game{
 		ui: &ebitenui.UI{},
 	}
 }

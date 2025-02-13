@@ -83,7 +83,28 @@ import (
 	"gen/examples/lay_row_spa_75"
 	"gen/examples/lay_row_str_fal"
 	"gen/examples/lay_row_str_tru"
+	"gen/examples/wid_but_col_1"
+	"gen/examples/wid_but_col_2"
+	"gen/examples/wid_but_fon_b13"
+	"gen/examples/wid_but_fon_i16"
+	"gen/examples/wid_but_img_col"
+	"gen/examples/wid_but_img_til"
+	"gen/examples/wid_but_lab_log"
+	"gen/examples/wid_but_lab_sig"
 	"gen/examples/wid_but_pre"
+	"gen/examples/wid_but_tex_pad_bot"
+	"gen/examples/wid_but_tex_pad_lef"
+	"gen/examples/wid_but_tex_pad_rig"
+	"gen/examples/wid_but_tex_pad_top"
+	"gen/examples/wid_but_tex_pos_cenxcen"
+	"gen/examples/wid_but_tex_pos_cenxend"
+	"gen/examples/wid_but_tex_pos_cenxsta"
+	"gen/examples/wid_but_tex_pos_endxcen"
+	"gen/examples/wid_but_tex_pos_endxend"
+	"gen/examples/wid_but_tex_pos_endxsta"
+	"gen/examples/wid_but_tex_pos_staxcen"
+	"gen/examples/wid_but_tex_pos_staxend"
+	"gen/examples/wid_but_tex_pos_staxsta"
 	"image/png"
 	"io"
 	"io/fs"
@@ -215,6 +236,27 @@ func NewGame() *Game {
 			lay_gri_pos_cenxend.NewGame(),
 			lay_gri_pos_endxend.NewGame(),
 			wid_but_pre.NewGame(),
+			wid_but_tex_pad_lef.NewGame(),
+			wid_but_tex_pad_rig.NewGame(),
+			wid_but_tex_pad_top.NewGame(),
+			wid_but_tex_pad_bot.NewGame(),
+			wid_but_tex_pos_staxsta.NewGame(),
+			wid_but_tex_pos_cenxcen.NewGame(),
+			wid_but_tex_pos_endxend.NewGame(),
+			wid_but_tex_pos_cenxsta.NewGame(),
+			wid_but_tex_pos_staxcen.NewGame(),
+			wid_but_tex_pos_endxsta.NewGame(),
+			wid_but_tex_pos_staxend.NewGame(),
+			wid_but_tex_pos_cenxend.NewGame(),
+			wid_but_tex_pos_endxcen.NewGame(),
+			wid_but_lab_sig.NewGame(),
+			wid_but_lab_log.NewGame(),
+			wid_but_fon_b13.NewGame(),
+			wid_but_fon_i16.NewGame(),
+			wid_but_col_1.NewGame(),
+			wid_but_col_2.NewGame(),
+			wid_but_img_col.NewGame(),
+			wid_but_img_til.NewGame(),
 		},
 		offscreen: ebiten.NewImage(
 			assets.Frame.Bounds().Dx(),
@@ -263,8 +305,6 @@ func (g *Game) Layout(w, h int) (int, int) {
 	return w, h
 }
 
-// END root
-
 func (g *Game) SaveImage(screen *ebiten.Image) {
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Translate(0, assets.Pivot)
@@ -292,6 +332,7 @@ func (g *Game) SaveCode() {
 		log.Fatal(err)
 	}
 
+	source = strings.ReplaceAll(source, "\r\n", "\n")
 	source = assets.RegPackage.ReplaceAllString(source, "package main")
 	source = assets.RegAssets.ReplaceAllString(source, "")
 	source = assets.RegImports.ReplaceAllStringFunc(source, func(s string) string {

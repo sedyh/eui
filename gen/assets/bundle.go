@@ -28,6 +28,7 @@ var (
 	ColorG   = colornames.Mediumseagreen
 	ColorD   = colornames.Darkslategray
 	ColorL   = colornames.Gainsboro
+	ColorN   = colornames.Black
 	ColorMap = map[string]string{
 		"assets.ColorR": "colornames.Indianred",
 		"assets.ColorY": "colornames.Goldenrod",
@@ -35,13 +36,14 @@ var (
 		"assets.ColorG": "colornames.Mediumseagreen",
 		"assets.ColorD": "colornames.Darkslategray",
 		"assets.ColorL": "colornames.Gainsboro",
+		"assets.ColorN": "colornames.Black",
 	}
 	ColorPackage         = `"golang.org/x/image/colornames"`
 	RegPackage           = regexp.MustCompile(`package .+`)
 	RegAssets            = regexp.MustCompile(`(?m)^\s*"\S*assets\S*"\s*\n`)
 	RegImports           = regexp.MustCompile(`import \(([\s\S]*?)\n\)`)
 	RegNewline           = regexp.MustCompile(`\n+`)
-	RegColor             = regexp.MustCompile(`\b(assets.Color[RYBGDL])\b`)
+	RegColor             = regexp.MustCompile(`\b(assets.Color[RYBGDLN])\b`)
 	RegComment           = regexp.MustCompile(`//.*?`)
 	RegWhitespaceOnly    = regexp.MustCompile("(?m)^[ \t]+$")
 	RegLeadingWhitespace = regexp.MustCompile("(?m)(^[ \t]*)(?:[^ \t\n])")
