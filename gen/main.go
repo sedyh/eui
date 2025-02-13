@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"flag"
 	"fmt"
 	"gen/assets"
 	"gen/examples/bas_con_mul"
@@ -123,6 +124,126 @@ type Scene interface {
 	Draw(screen *ebiten.Image)
 }
 
+var Scenes = []Scene{
+	bas_con_sin.NewGame(),
+	bas_con_mul.NewGame(),
+	lay_anc_pre.NewGame(),
+	lay_anc_pad_lef.NewGame(),
+	lay_anc_pad_rig.NewGame(),
+	lay_anc_pad_top.NewGame(),
+	lay_anc_pad_bot.NewGame(),
+	lay_anc_pos_staxsta.NewGame(),
+	lay_anc_pos_cenxsta.NewGame(),
+	lay_anc_pos_endxsta.NewGame(),
+	lay_anc_pos_staxcen.NewGame(),
+	lay_anc_pos_cenxcen.NewGame(),
+	lay_anc_pos_endxcen.NewGame(),
+	lay_anc_pos_staxend.NewGame(),
+	lay_anc_pos_cenxend.NewGame(),
+	lay_anc_pos_endxend.NewGame(),
+	lay_row_pre.NewGame(),
+	lay_row_dir_hor.NewGame(),
+	lay_row_dir_ver.NewGame(),
+	lay_row_pad_lef.NewGame(),
+	lay_row_pad_rig.NewGame(),
+	lay_row_pad_top.NewGame(),
+	lay_row_pad_bot.NewGame(),
+	lay_row_spa_75.NewGame(),
+	lay_row_spa_25.NewGame(),
+	lay_row_spa_50.NewGame(),
+	lay_row_spa_0.NewGame(),
+	lay_row_str_fal.NewGame(),
+	lay_row_str_tru.NewGame(),
+	lay_row_pos_sta.NewGame(),
+	lay_row_pos_cen.NewGame(),
+	lay_row_pos_end.NewGame(),
+	lay_row_max_off.NewGame(),
+	lay_row_max_wid.NewGame(),
+	lay_row_max_hei.NewGame(),
+	lay_row_max_all.NewGame(),
+	lay_gri_pre.NewGame(),
+	lay_gri_col_1.NewGame(),
+	lay_gri_col_2.NewGame(),
+	lay_gri_col_3.NewGame(),
+	lay_gri_col_4.NewGame(),
+	lay_gri_col_5.NewGame(),
+	lay_gri_str_allxall.NewGame(),
+	lay_gri_str_allx3.NewGame(),
+	lay_gri_str_3xall.NewGame(),
+	lay_gri_str_1x1.NewGame(),
+	lay_gri_str_3x3.NewGame(),
+	lay_gri_str_5x5.NewGame(),
+	lay_gri_str_234x3.NewGame(),
+	lay_gri_str_3x234.NewGame(),
+	lay_gri_str_234x234.NewGame(),
+	lay_gri_str_allxoff.NewGame(),
+	lay_gri_str_offxall.NewGame(),
+	lay_gri_str_offxoff.NewGame(),
+	lay_gri_dtr_tru_tru.NewGame(),
+	lay_gri_dtr_tru_fal.NewGame(),
+	lay_gri_dtr_fal_tru.NewGame(),
+	lay_gri_dtr_fal_fal.NewGame(),
+	lay_gri_pad_lef.NewGame(),
+	lay_gri_pad_rig.NewGame(),
+	lay_gri_pad_top.NewGame(),
+	lay_gri_pad_bot.NewGame(),
+	lay_gri_spa_0x0.NewGame(),
+	lay_gri_spa_0x25.NewGame(),
+	lay_gri_spa_25x0.NewGame(),
+	lay_gri_spa_25x25.NewGame(),
+	lay_gri_max_all.NewGame(),
+	lay_gri_max_wid.NewGame(),
+	lay_gri_max_hei.NewGame(),
+	lay_gri_max_off.NewGame(),
+	lay_gri_pos_staxsta.NewGame(),
+	lay_gri_pos_cenxsta.NewGame(),
+	lay_gri_pos_endxsta.NewGame(),
+	lay_gri_pos_staxcen.NewGame(),
+	lay_gri_pos_cenxcen.NewGame(),
+	lay_gri_pos_endxcen.NewGame(),
+	lay_gri_pos_staxend.NewGame(),
+	lay_gri_pos_cenxend.NewGame(),
+	lay_gri_pos_endxend.NewGame(),
+	wid_but_pre.NewGame(),
+	wid_but_tex_pad_lef.NewGame(),
+	wid_but_tex_pad_rig.NewGame(),
+	wid_but_tex_pad_top.NewGame(),
+	wid_but_tex_pad_bot.NewGame(),
+	wid_but_tex_pos_staxsta.NewGame(),
+	wid_but_tex_pos_cenxcen.NewGame(),
+	wid_but_tex_pos_endxend.NewGame(),
+	wid_but_tex_pos_cenxsta.NewGame(),
+	wid_but_tex_pos_staxcen.NewGame(),
+	wid_but_tex_pos_endxsta.NewGame(),
+	wid_but_tex_pos_staxend.NewGame(),
+	wid_but_tex_pos_cenxend.NewGame(),
+	wid_but_tex_pos_endxcen.NewGame(),
+	wid_but_lab_sig.NewGame(),
+	wid_but_lab_log.NewGame(),
+	wid_but_fon_b13.NewGame(),
+	wid_but_fon_i16.NewGame(),
+	wid_but_col_1.NewGame(),
+	wid_but_col_2.NewGame(),
+	wid_but_img_col.NewGame(),
+	wid_but_img_til.NewGame(),
+}
+
+type Tester struct {
+	scene Scene
+}
+
+func (t *Tester) Update() error {
+	return t.scene.Update()
+}
+
+func (t *Tester) Draw(screen *ebiten.Image) {
+	t.scene.Draw(screen)
+}
+
+func (t *Tester) Layout(w, h int) (int, int) {
+	return w, h
+}
+
 type State int
 
 const (
@@ -138,7 +259,19 @@ type Game struct {
 	offscreen *ebiten.Image
 }
 
-func NewGame() *Game {
+func NewGame() ebiten.Game {
+	var example string
+	flag.StringVar(&example, "e", "", "run specific example by package name like wid_but_pre")
+	flag.Parse()
+	if example != "" {
+		for _, scene := range Scenes {
+			if reflect.TypeOf(scene).String() == "*"+example+".Game" {
+				return &Tester{scene: scene}
+			}
+		}
+		log.Fatalf("example %s was not found", example)
+	}
+
 	root := assets.Output
 	filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
@@ -155,109 +288,7 @@ func NewGame() *Game {
 	})
 
 	return &Game{
-		scenes: []Scene{
-			bas_con_sin.NewGame(),
-			bas_con_mul.NewGame(),
-			lay_anc_pre.NewGame(),
-			lay_anc_pad_lef.NewGame(),
-			lay_anc_pad_rig.NewGame(),
-			lay_anc_pad_top.NewGame(),
-			lay_anc_pad_bot.NewGame(),
-			lay_anc_pos_staxsta.NewGame(),
-			lay_anc_pos_cenxsta.NewGame(),
-			lay_anc_pos_endxsta.NewGame(),
-			lay_anc_pos_staxcen.NewGame(),
-			lay_anc_pos_cenxcen.NewGame(),
-			lay_anc_pos_endxcen.NewGame(),
-			lay_anc_pos_staxend.NewGame(),
-			lay_anc_pos_cenxend.NewGame(),
-			lay_anc_pos_endxend.NewGame(),
-			lay_row_pre.NewGame(),
-			lay_row_dir_hor.NewGame(),
-			lay_row_dir_ver.NewGame(),
-			lay_row_pad_lef.NewGame(),
-			lay_row_pad_rig.NewGame(),
-			lay_row_pad_top.NewGame(),
-			lay_row_pad_bot.NewGame(),
-			lay_row_spa_75.NewGame(),
-			lay_row_spa_25.NewGame(),
-			lay_row_spa_50.NewGame(),
-			lay_row_spa_0.NewGame(),
-			lay_row_str_fal.NewGame(),
-			lay_row_str_tru.NewGame(),
-			lay_row_pos_sta.NewGame(),
-			lay_row_pos_cen.NewGame(),
-			lay_row_pos_end.NewGame(),
-			lay_row_max_off.NewGame(),
-			lay_row_max_wid.NewGame(),
-			lay_row_max_hei.NewGame(),
-			lay_row_max_all.NewGame(),
-			lay_gri_pre.NewGame(),
-			lay_gri_col_1.NewGame(),
-			lay_gri_col_2.NewGame(),
-			lay_gri_col_3.NewGame(),
-			lay_gri_col_4.NewGame(),
-			lay_gri_col_5.NewGame(),
-			lay_gri_str_allxall.NewGame(),
-			lay_gri_str_allx3.NewGame(),
-			lay_gri_str_3xall.NewGame(),
-			lay_gri_str_1x1.NewGame(),
-			lay_gri_str_3x3.NewGame(),
-			lay_gri_str_5x5.NewGame(),
-			lay_gri_str_234x3.NewGame(),
-			lay_gri_str_3x234.NewGame(),
-			lay_gri_str_234x234.NewGame(),
-			lay_gri_str_allxoff.NewGame(),
-			lay_gri_str_offxall.NewGame(),
-			lay_gri_str_offxoff.NewGame(),
-			lay_gri_dtr_tru_tru.NewGame(),
-			lay_gri_dtr_tru_fal.NewGame(),
-			lay_gri_dtr_fal_tru.NewGame(),
-			lay_gri_dtr_fal_fal.NewGame(),
-			lay_gri_pad_lef.NewGame(),
-			lay_gri_pad_rig.NewGame(),
-			lay_gri_pad_top.NewGame(),
-			lay_gri_pad_bot.NewGame(),
-			lay_gri_spa_0x0.NewGame(),
-			lay_gri_spa_0x25.NewGame(),
-			lay_gri_spa_25x0.NewGame(),
-			lay_gri_spa_25x25.NewGame(),
-			lay_gri_max_all.NewGame(),
-			lay_gri_max_wid.NewGame(),
-			lay_gri_max_hei.NewGame(),
-			lay_gri_max_off.NewGame(),
-			lay_gri_pos_staxsta.NewGame(),
-			lay_gri_pos_cenxsta.NewGame(),
-			lay_gri_pos_endxsta.NewGame(),
-			lay_gri_pos_staxcen.NewGame(),
-			lay_gri_pos_cenxcen.NewGame(),
-			lay_gri_pos_endxcen.NewGame(),
-			lay_gri_pos_staxend.NewGame(),
-			lay_gri_pos_cenxend.NewGame(),
-			lay_gri_pos_endxend.NewGame(),
-			wid_but_pre.NewGame(),
-			wid_but_tex_pad_lef.NewGame(),
-			wid_but_tex_pad_rig.NewGame(),
-			wid_but_tex_pad_top.NewGame(),
-			wid_but_tex_pad_bot.NewGame(),
-			wid_but_tex_pos_staxsta.NewGame(),
-			wid_but_tex_pos_cenxcen.NewGame(),
-			wid_but_tex_pos_endxend.NewGame(),
-			wid_but_tex_pos_cenxsta.NewGame(),
-			wid_but_tex_pos_staxcen.NewGame(),
-			wid_but_tex_pos_endxsta.NewGame(),
-			wid_but_tex_pos_staxend.NewGame(),
-			wid_but_tex_pos_cenxend.NewGame(),
-			wid_but_tex_pos_endxcen.NewGame(),
-			wid_but_lab_sig.NewGame(),
-			wid_but_lab_log.NewGame(),
-			wid_but_fon_b13.NewGame(),
-			wid_but_fon_i16.NewGame(),
-			wid_but_col_1.NewGame(),
-			wid_but_col_2.NewGame(),
-			wid_but_img_col.NewGame(),
-			wid_but_img_til.NewGame(),
-		},
+		scenes: Scenes,
 		offscreen: ebiten.NewImage(
 			assets.Frame.Bounds().Dx(),
 			assets.Frame.Bounds().Dy(),
