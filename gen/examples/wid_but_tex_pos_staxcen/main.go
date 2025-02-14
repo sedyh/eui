@@ -21,7 +21,9 @@ type Game struct {
 }
 
 func NewGame() *Game {
+	// START this
 	button := widget.NewButton(
+		// SKIP-START this
 		widget.ButtonOpts.TextLabel("Button"),
 		widget.ButtonOpts.TextFace(DefaultFont()),
 		widget.ButtonOpts.TextColor(&widget.ButtonTextColor{
@@ -36,12 +38,12 @@ func NewGame() *Game {
 			Pressed:      PressedNineSlice(Mix(assets.ColorD, assets.ColorN, 0.4)),
 			PressedHover: PressedNineSlice(Mix(assets.ColorD, assets.ColorN, 0.4)),
 		}),
-		// START this
+		// SKIP-END this
 		widget.ButtonOpts.TextPosition(
 			widget.TextPositionStart,
 			widget.TextPositionCenter,
 		),
-		// END this
+		// SKIP-START this
 		widget.ButtonOpts.WidgetOpts(
 			widget.WidgetOpts.LayoutData(widget.AnchorLayoutData{
 				VerticalPosition:   widget.AnchorLayoutPositionCenter,
@@ -49,7 +51,9 @@ func NewGame() *Game {
 			}),
 			widget.WidgetOpts.MinSize(180, 48),
 		),
+		// SKIP-END this
 	)
+	// END this
 	root := widget.NewContainer(
 		widget.ContainerOpts.BackgroundImage(
 			image.NewNineSliceColor(assets.ColorL),

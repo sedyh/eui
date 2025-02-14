@@ -84,15 +84,24 @@ import (
 	"gen/examples/lay_row_spa_75"
 	"gen/examples/lay_row_str_fal"
 	"gen/examples/lay_row_str_tru"
-	"gen/examples/wid_but_col_1"
-	"gen/examples/wid_but_col_2"
 	"gen/examples/wid_but_fon_b13"
 	"gen/examples/wid_but_fon_i16"
-	"gen/examples/wid_but_img_col"
-	"gen/examples/wid_but_img_til"
+	"gen/examples/wid_but_gra_tes"
+	"gen/examples/wid_but_img_colxhov"
+	"gen/examples/wid_but_img_colxidl"
+	"gen/examples/wid_but_img_colxpre"
+	"gen/examples/wid_but_img_gemxhov"
+	"gen/examples/wid_but_img_gemxidl"
+	"gen/examples/wid_but_img_gemxpre"
+	"gen/examples/wid_but_img_pillxhov"
+	"gen/examples/wid_but_img_pillxidl"
+	"gen/examples/wid_but_img_pillxpre"
 	"gen/examples/wid_but_lab_log"
 	"gen/examples/wid_but_lab_sig"
 	"gen/examples/wid_but_pre"
+	"gen/examples/wid_but_tex_col_hov"
+	"gen/examples/wid_but_tex_col_idl"
+	"gen/examples/wid_but_tex_col_pre"
 	"gen/examples/wid_but_tex_pad_bot"
 	"gen/examples/wid_but_tex_pad_lef"
 	"gen/examples/wid_but_tex_pad_rig"
@@ -222,10 +231,19 @@ var Scenes = []Scene{
 	wid_but_lab_log.NewGame(),
 	wid_but_fon_b13.NewGame(),
 	wid_but_fon_i16.NewGame(),
-	wid_but_col_1.NewGame(),
-	wid_but_col_2.NewGame(),
-	wid_but_img_col.NewGame(),
-	wid_but_img_til.NewGame(),
+	wid_but_tex_col_idl.NewGame(),
+	wid_but_tex_col_hov.NewGame(),
+	wid_but_tex_col_pre.NewGame(),
+	wid_but_img_pillxidl.NewGame(),
+	wid_but_img_pillxpre.NewGame(),
+	wid_but_img_pillxhov.NewGame(),
+	wid_but_img_gemxidl.NewGame(),
+	wid_but_img_gemxhov.NewGame(),
+	wid_but_img_gemxpre.NewGame(),
+	wid_but_img_colxidl.NewGame(),
+	wid_but_img_colxhov.NewGame(),
+	wid_but_img_colxpre.NewGame(),
+	wid_but_gra_tes.NewGame(),
 }
 
 type Tester struct {

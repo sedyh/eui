@@ -193,19 +193,27 @@ Responsible for setting the text color.
 
 {{< tabs title="Color:" style="transparent" color="#131a22ff" >}}
 
-{{% tab title="Steelblue" %}}
-{{< code src="assets/examples/wid_but_col_1.txt" lang="go" id="this" >}}
-![g64](examples/wid_but_col_1.png)
+{{% tab title="Idle" %}}
+{{< code src="assets/examples/wid_but_tex_col_idl.txt" lang="go" id="this" >}}
+![idle](examples/wid_but_tex_col_idl.png)
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/wid_but_col_1.txt" lang="go" id="root" >}}
+{{< code src="assets/examples/wid_but_tex_col_idl.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 
-{{% tab title="Goldenrod" %}}
-{{< code src="assets/examples/wid_but_col_2.txt" lang="go" id="this" >}}
-![horz](examples/wid_but_col_2.png)
+{{% tab title="Hover" %}}
+{{< code src="assets/examples/wid_but_tex_col_hov.txt" lang="go" id="this" >}}
+![hover](examples/wid_but_tex_col_hov.png)
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/wid_but_col_2.txt" lang="go" id="root" >}}
+{{< code src="assets/examples/wid_but_tex_col_hov.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="Pressed" %}}
+{{< code src="assets/examples/wid_but_tex_col_pre.txt" lang="go" id="this" >}}
+![pressed](examples/wid_but_tex_col_pre.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_tex_col_pre.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 
@@ -217,19 +225,75 @@ Responsible for the background of the button; it can be filled with color or ima
 
 {{< tabs title="Image:" style="transparent" color="#131a22ff" >}}
 
-{{% tab title="Color" %}}
-{{< code src="assets/examples/wid_but_img_col.txt" lang="go" id="this" >}}
-![col](examples/wid_but_img_col.png)
+{{% tab title="PillxIdle" %}}
+{{< code src="assets/examples/wid_but_img_pillxidl.txt" lang="go" id="this" >}}
+![pillxidl](examples/wid_but_img_pillxidl.png)
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/wid_but_img_col.txt" lang="go" id="root" >}}
+{{< code src="assets/examples/wid_but_img_pillxidl.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 
-{{% tab title="Tiles" %}}
-{{< code src="assets/examples/wid_but_img_til.txt" lang="go" id="this" >}}
-![horz](examples/wid_but_img_til.png)
+{{% tab title="PillxHover" %}}
+{{< code src="assets/examples/wid_but_img_pillxhov.txt" lang="go" id="this" >}}
+![pillxhov](examples/wid_but_img_pillxhov.png)
 {{% expand title="Full example" %}}
-{{< code src="assets/examples/wid_but_img_til.txt" lang="go" id="root" >}}
+{{< code src="assets/examples/wid_but_img_pillxhov.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="PillxPressed" %}}
+{{< code src="assets/examples/wid_but_img_pillxpre.txt" lang="go" id="this" >}}
+![pillxpre](examples/wid_but_img_pillxpre.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_img_pillxpre.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="GemxIdle" %}}
+{{< code src="assets/examples/wid_but_img_gemxidl.txt" lang="go" id="this" >}}
+![gemxidl](examples/wid_but_img_gemxidl.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_img_gemxidl.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="GemxHover" %}}
+{{< code src="assets/examples/wid_but_img_gemxhov.txt" lang="go" id="this" >}}
+![gemxhov](examples/wid_but_img_gemxhov.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_img_gemxhov.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="GemxPressed" %}}
+{{< code src="assets/examples/wid_but_img_gemxpre.txt" lang="go" id="this" >}}
+![gemxpre](examples/wid_but_img_gemxpre.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_img_gemxpre.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="ColxIdle" %}}
+{{< code src="assets/examples/wid_but_img_colxidl.txt" lang="go" id="this" >}}
+![colxidl](examples/wid_but_img_colxidl.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_img_colxidl.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="ColxHover" %}}
+{{< code src="assets/examples/wid_but_img_colxhov.txt" lang="go" id="this" >}}
+![colxhov](examples/wid_but_img_colxhov.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_img_colxhov.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="ColxPressed" %}}
+{{< code src="assets/examples/wid_but_img_colxpre.txt" lang="go" id="this" >}}
+![colxpre](examples/wid_but_img_colxpre.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_img_colxpre.txt" lang="go" id="root" >}}
 {{% /expand %}}
 {{% /tab %}}
 
