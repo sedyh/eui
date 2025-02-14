@@ -163,6 +163,32 @@ Responsible for setting multiline text on a button.
 
 {{< /tabs >}}
 
+###### Text Process BBCode
+
+Responsible for processing text with BBCode. 
+
+The only tag currently supported is `[color=FFFFFF][/color]` (without the `#`).
+
+{{< tabs title="Enabled:" style="transparent" color="#131a22ff" >}}
+
+{{% tab title="True" %}}
+{{< code src="assets/examples/wid_but_tex_bbc_on.txt" lang="go" id="this" >}}
+![on](examples/wid_but_tex_bbc_on.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_tex_bbc_on.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="False" %}}
+{{< code src="assets/examples/wid_but_tex_bbc_off.txt" lang="go" id="this" >}}
+![off](examples/wid_but_tex_bbc_off.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_tex_bbc_off.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{< /tabs >}}
+
 ###### Text Face
 
 Responsible for setting the font family and font size.

@@ -86,7 +86,6 @@ import (
 	"gen/examples/lay_row_str_tru"
 	"gen/examples/wid_but_fon_b13"
 	"gen/examples/wid_but_fon_i16"
-	"gen/examples/wid_but_gra_tes"
 	"gen/examples/wid_but_img_colxhov"
 	"gen/examples/wid_but_img_colxidl"
 	"gen/examples/wid_but_img_colxpre"
@@ -99,6 +98,8 @@ import (
 	"gen/examples/wid_but_lab_log"
 	"gen/examples/wid_but_lab_sig"
 	"gen/examples/wid_but_pre"
+	"gen/examples/wid_but_tex_bbc_off"
+	"gen/examples/wid_but_tex_bbc_on"
 	"gen/examples/wid_but_tex_col_hov"
 	"gen/examples/wid_but_tex_col_idl"
 	"gen/examples/wid_but_tex_col_pre"
@@ -243,7 +244,8 @@ var Scenes = []Scene{
 	wid_but_img_colxidl.NewGame(),
 	wid_but_img_colxhov.NewGame(),
 	wid_but_img_colxpre.NewGame(),
-	wid_but_gra_tes.NewGame(),
+	wid_but_tex_bbc_on.NewGame(),
+	wid_but_tex_bbc_off.NewGame(),
 }
 
 type Tester struct {
