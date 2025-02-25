@@ -12,8 +12,9 @@ This guide will introduce you step by step to the basics of the library and teac
 
 ###### Requirements
 
-- Go 1.19+
-- Ebitengine 2.7.8+
+- Go >= `1.23`
+- Ebitengine >= `1e6c461`
+- Ebitenui >= `b696e24`
 
 ###### Content
 

@@ -167,7 +167,7 @@ Responsible for setting multiline text on a button.
 
 Responsible for processing text with BBCode. 
 
-The only tag currently supported is `[color=FFFFFF][/color]` (without the `#`).
+The only tag currently supported is `[color=][/color]` (without the `#`).
 
 {{< tabs title="Enabled:" style="transparent" color="#131a22ff" >}}
 
@@ -324,3 +324,153 @@ Responsible for the background of the button; it can be filled with color or ima
 {{% /tab %}}
 
 {{< /tabs >}} 
+
+###### Ignore Transparent Pixels
+
+Responsible for ignoring transparent pixels when the button is clicked.
+
+{{< tabs title="Enabled:" style="transparent" color="#131a22ff" >}}
+
+{{% tab title="True" %}}
+{{< code src="assets/examples/wid_but_ign_pix_on.txt" lang="go" id="this" >}}
+![on](examples/wid_but_ign_pix_on.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_ign_pix_on.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{% tab title="False" %}}
+{{< code src="assets/examples/wid_but_ign_pix_off.txt" lang="go" id="this" >}}
+![off](examples/wid_but_ign_pix_off.png)
+{{% expand title="Full example" %}}
+{{< code src="assets/examples/wid_but_ign_pix_off.txt" lang="go" id="root" >}}
+{{% /expand %}}
+{{% /tab %}}
+
+{{< /tabs >}}
+
+### Widget handlers
+
+###### Clicked Handler
+
+Triggered when a release is performed anywhere after a press, its the default in most cases.
+
+```go
+button := widget.NewButton(
+    widget.ButtonOpts.ClickedHandler(
+        func(args *widget.ButtonClickedEventArgs) {
+            var b strings.Builder
+            fmt.Fprintf(&b, "Button Clicked\n")
+            fmt.Fprintf(&b, "> Offset: %d, %d\n", args.OffsetX, args.OffsetY)
+            fmt.Print(b.String())
+        },
+    ),
+)
+```
+
+###### Pressed Handler
+
+Triggered when a press is performed inside a widget, useful for long presses with different timings.
+
+```go
+button := widget.NewButton(
+    widget.ButtonOpts.PressedHandler(
+        func(args *widget.ButtonPressedEventArgs) {
+            var b strings.Builder
+            fmt.Fprintf(&b, "Button Pressed\n")
+            fmt.Fprintf(&b, "> Offset: %d, %d\n", args.OffsetX, args.OffsetY)
+            fmt.Print(b.String())
+        },
+    ),
+)
+```
+
+###### Released Handler
+
+Triggered when a release is performed inside a widget, useful for drag-n-drop things from one widget to another.
+
+```go
+button := widget.NewButton(
+    widget.ButtonOpts.ReleasedHandler(
+        func(args *widget.ButtonReleasedEventArgs) {
+            var b strings.Builder
+            fmt.Fprintf(&b, "Button Released\n")
+            fmt.Fprintf(&b, "> Inside: %v\n", args.Inside)
+            fmt.Fprintf(&b, "> Offset: %d, %d\n", args.OffsetX, args.OffsetY)
+            fmt.Print(b.String())
+        },
+    ),
+)
+```
+
+###### Cursor Entered Handler
+
+Triggered when the cursor enters the button area.
+
+```go
+button := widget.NewButton(
+    widget.ButtonOpts.CursorEnteredHandler(
+        func(args *widget.ButtonHoverEventArgs) {
+            var b strings.Builder
+            fmt.Fprintf(&b, "Cursor Entered\n")
+            fmt.Fprintf(&b, "> Offset: %d, %d\n", args.OffsetX, args.OffsetY)
+            fmt.Fprintf(&b, "> Diff: %d, %d\n", args.DiffX, args.DiffY)
+            fmt.Print(b.String())
+        },
+    ),
+)
+```
+
+###### Cursor Moved Handler
+
+Triggered when the cursor moves within the button area between entered and exited events.
+
+```go
+button := widget.NewButton(
+    widget.ButtonOpts.CursorMovedHandler(
+        func(args *widget.ButtonHoverEventArgs) {
+            var b strings.Builder
+            fmt.Fprintf(&b, "Cursor Moved\n")
+            fmt.Fprintf(&b, "> Offset: %d, %d\n", args.OffsetX, args.OffsetY)
+            fmt.Fprintf(&b, "> Diff: %d, %d\n", args.DiffX, args.DiffY)
+            fmt.Print(b.String())
+        },
+    ),
+)
+```
+
+###### Cursor Exited Handler
+
+Triggered when the cursor exits the button area.
+
+```go
+button := widget.NewButton(
+    widget.ButtonOpts.CursorExitedHandler(
+        func(args *widget.ButtonHoverEventArgs) {
+            var b strings.Builder
+            fmt.Fprintf(&b, "Cursor Exited\n")
+            fmt.Fprintf(&b, "> Offset: %d, %d\n", args.OffsetX, args.OffsetY)
+            fmt.Fprintf(&b, "> Diff: %d, %d\n", args.DiffX, args.DiffY)
+            fmt.Print(b.String())
+        },
+    ),
+)
+```
+
+###### State Changed Handler
+
+Triggered when the button's state changes like disabled, hovered, pressed, etc.
+
+```go
+button := widget.NewButton(
+    widget.ButtonOpts.StateChangedHandler(
+        func(args *widget.ButtonChangedEventArgs) {
+            var b strings.Builder
+            fmt.Fprintf(&b, "Button State Changed\n")
+            fmt.Fprintf(&b, "> State: %v\n", args.State)
+            fmt.Fprintf(&b, "> Offset: %d, %d\n", args.OffsetX, args.OffsetY)
+            fmt.Print(b.String())
+        },
+    ),
+)
+```

@@ -22,21 +22,21 @@
     <meta itemprop="description" content="A simple button with text that can be set to a background color or image for each state and a callback to react to events.">
     <meta itemprop="datePublished" content="2024-10-04T19:45:29+03:00">
     <meta itemprop="dateModified" content="2024-10-04T19:45:29+03:00">
-    <meta itemprop="wordCount" content="17748">
+    <meta itemprop="wordCount" content="19422">
     <meta itemprop="image" content="http://localhost:1313/eui/images/hero.png">
     <title>Button - Ebiten UI</title>
     <link href="/eui/widgets/button/index.xml" rel="alternate" type="application/rss+xml" title="Button - Ebiten UI">
-    <link href="/eui/images/favicon.png?1739494540" rel="icon" type="image/png">
-    <link href="/eui/css/fontawesome-all.min.css?1739494540" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1739494540" rel="stylesheet"></noscript>
-    <link href="/eui/css/nucleus.css?1739494540" rel="stylesheet">
-    <link href="/eui/css/auto-complete.css?1739494540" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1739494540" rel="stylesheet"></noscript>
-    <link href="/eui/css/perfect-scrollbar.min.css?1739494540" rel="stylesheet">
-    <link href="/eui/css/fonts.css?1739494540" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1739494540" rel="stylesheet"></noscript>
-    <link href="/eui/css/theme.css?1739494540" rel="stylesheet">
-    <link href="/eui/css/theme-dark.css?1739494540" rel="stylesheet" id="R-variant-style">
-    <link href="/eui/css/chroma-code.css?1739494540" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/eui/css/print.css?1739494540" rel="stylesheet" media="print">
-    <script src="/eui/js/variant.js?1739494540"></script>
+    <link href="/eui/images/favicon.png?1740487000" rel="icon" type="image/png">
+    <link href="/eui/css/fontawesome-all.min.css?1740487000" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fontawesome-all.min.css?1740487000" rel="stylesheet"></noscript>
+    <link href="/eui/css/nucleus.css?1740487000" rel="stylesheet">
+    <link href="/eui/css/auto-complete.css?1740487000" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/auto-complete.css?1740487000" rel="stylesheet"></noscript>
+    <link href="/eui/css/perfect-scrollbar.min.css?1740487000" rel="stylesheet">
+    <link href="/eui/css/fonts.css?1740487000" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/eui/css/fonts.css?1740487000" rel="stylesheet"></noscript>
+    <link href="/eui/css/theme.css?1740487000" rel="stylesheet">
+    <link href="/eui/css/theme-dark.css?1740487000" rel="stylesheet" id="R-variant-style">
+    <link href="/eui/css/chroma-code.css?1740487000" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/eui/css/print.css?1740487000" rel="stylesheet" media="print">
+    <script src="/eui/js/variant.js?1740487000"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -74,6 +74,7 @@
     <li>
       <ul>
         <li><a href="#widget-options">Widget options</a></li>
+        <li><a href="#widget-handlers">Widget handlers</a></li>
       </ul>
     </li>
   </ul>
@@ -116,12 +117,12 @@
 <p>A simple button with text that can be set to a background color or image for each state and a callback to react to events.</p>
 <p><img alt="preview" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_pre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ccd97215e86d4b59425d7ae7974639b7" aria-controls="R-expandcontent-ccd97215e86d4b59425d7ae7974639b7">
-  <label class="expand-label" for="R-expand-ccd97215e86d4b59425d7ae7974639b7">
+  <input type="checkbox" id="R-expand-5666d13a068a3c7c69f0b33ba4c33c07" aria-controls="R-expandcontent-5666d13a068a3c7c69f0b33ba4c33c07">
+  <label class="expand-label" for="R-expand-5666d13a068a3c7c69f0b33ba4c33c07">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-ccd97215e86d4b59425d7ae7974639b7" class="expand-content">
+  <div id="R-expandcontent-5666d13a068a3c7c69f0b33ba4c33c07" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -285,34 +286,34 @@
 <h3 id="widget-options">Widget options</h3>
 <h6 id="text-padding">Text padding</h6>
 <p>Responsible for setting text offset from the center of the button.</p>
-<div class="tab-panel" data-tab-group="627d85d133892e8d4e93ee034af64d03">
+<div class="tab-panel" data-tab-group="0d061609f1947f50a7c1c51230b9e009">
   <div class="tab-nav">
     <div class="tab-nav-title">Padding:</div>
     <button
       data-tab-item="left"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('627d85d133892e8d4e93ee034af64d03','left')"
+      onclick="switchTab('0d061609f1947f50a7c1c51230b9e009','left')"
     >
       <span class="tab-nav-text">Left</span>
     </button>
     <button
       data-tab-item="right"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('627d85d133892e8d4e93ee034af64d03','right')"
+      onclick="switchTab('0d061609f1947f50a7c1c51230b9e009','right')"
     >
       <span class="tab-nav-text">Right</span>
     </button>
     <button
       data-tab-item="top"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('627d85d133892e8d4e93ee034af64d03','top')"
+      onclick="switchTab('0d061609f1947f50a7c1c51230b9e009','top')"
     >
       <span class="tab-nav-text">Top</span>
     </button>
     <button
       data-tab-item="bottom"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('627d85d133892e8d4e93ee034af64d03','bottom')"
+      onclick="switchTab('0d061609f1947f50a7c1c51230b9e009','bottom')"
     >
       <span class="tab-nav-text">Bottom</span>
     </button>
@@ -329,12 +330,12 @@
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="lef" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pad_lef.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-fd1cfa025b2d28d183383a1629659237" aria-controls="R-expandcontent-fd1cfa025b2d28d183383a1629659237">
-  <label class="expand-label" for="R-expand-fd1cfa025b2d28d183383a1629659237">
+  <input type="checkbox" id="R-expand-a9d63fc9b01c57842ba66f15a3455ece" aria-controls="R-expandcontent-a9d63fc9b01c57842ba66f15a3455ece">
+  <label class="expand-label" for="R-expand-a9d63fc9b01c57842ba66f15a3455ece">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-fd1cfa025b2d28d183383a1629659237" class="expand-content">
+  <div id="R-expandcontent-a9d63fc9b01c57842ba66f15a3455ece" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -513,12 +514,12 @@
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="rig" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pad_rig.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f9d40e4c5b85967fa8f3694686fd7ae9" aria-controls="R-expandcontent-f9d40e4c5b85967fa8f3694686fd7ae9">
-  <label class="expand-label" for="R-expand-f9d40e4c5b85967fa8f3694686fd7ae9">
+  <input type="checkbox" id="R-expand-5cc85260382d8480a6b342f70988a88c" aria-controls="R-expandcontent-5cc85260382d8480a6b342f70988a88c">
+  <label class="expand-label" for="R-expand-5cc85260382d8480a6b342f70988a88c">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-f9d40e4c5b85967fa8f3694686fd7ae9" class="expand-content">
+  <div id="R-expandcontent-5cc85260382d8480a6b342f70988a88c" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -695,12 +696,12 @@
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="top" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pad_top.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f24a8917cb2a993a2ea2b3295e986162" aria-controls="R-expandcontent-f24a8917cb2a993a2ea2b3295e986162">
-  <label class="expand-label" for="R-expand-f24a8917cb2a993a2ea2b3295e986162">
+  <input type="checkbox" id="R-expand-2b8adbb96c3bb261d67406d5a44ff19b" aria-controls="R-expandcontent-2b8adbb96c3bb261d67406d5a44ff19b">
+  <label class="expand-label" for="R-expand-2b8adbb96c3bb261d67406d5a44ff19b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-f24a8917cb2a993a2ea2b3295e986162" class="expand-content">
+  <div id="R-expandcontent-2b8adbb96c3bb261d67406d5a44ff19b" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -877,12 +878,12 @@
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="bot" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pad_bot.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7447f3cc53fad9775b8c99fcd3aa826e" aria-controls="R-expandcontent-7447f3cc53fad9775b8c99fcd3aa826e">
-  <label class="expand-label" for="R-expand-7447f3cc53fad9775b8c99fcd3aa826e">
+  <input type="checkbox" id="R-expand-e8f8cc6161788b05be5eafc9472a562e" aria-controls="R-expandcontent-e8f8cc6161788b05be5eafc9472a562e">
+  <label class="expand-label" for="R-expand-e8f8cc6161788b05be5eafc9472a562e">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-7447f3cc53fad9775b8c99fcd3aa826e" class="expand-content">
+  <div id="R-expandcontent-e8f8cc6161788b05be5eafc9472a562e" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1052,69 +1053,69 @@
 </div>
 <h6 id="text-position">Text position</h6>
 <p>Responsible for setting text aligment position.</p>
-<div class="tab-panel" data-tab-group="e7168d9349cbde04b42f70aeff3472dd">
+<div class="tab-panel" data-tab-group="4f8e52aec1a63ba21558a2e37d7f636e">
   <div class="tab-nav">
     <div class="tab-nav-title">Position:</div>
     <button
       data-tab-item="startxstart"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','startxstart')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','startxstart')"
     >
       <span class="tab-nav-text">StartxStart</span>
     </button>
     <button
       data-tab-item="centerxstart"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','centerxstart')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','centerxstart')"
     >
       <span class="tab-nav-text">CenterxStart</span>
     </button>
     <button
       data-tab-item="endxstart"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','endxstart')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','endxstart')"
     >
       <span class="tab-nav-text">EndxStart</span>
     </button>
     <button
       data-tab-item="startxcenter"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','startxcenter')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','startxcenter')"
     >
       <span class="tab-nav-text">StartxCenter</span>
     </button>
     <button
       data-tab-item="centerxcenter"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','centerxcenter')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','centerxcenter')"
     >
       <span class="tab-nav-text">CenterxCenter</span>
     </button>
     <button
       data-tab-item="endxcenter"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','endxcenter')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','endxcenter')"
     >
       <span class="tab-nav-text">EndxCenter</span>
     </button>
     <button
       data-tab-item="startxend"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','startxend')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','startxend')"
     >
       <span class="tab-nav-text">StartxEnd</span>
     </button>
     <button
       data-tab-item="centerxend"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','centerxend')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','centerxend')"
     >
       <span class="tab-nav-text">CenterxEnd</span>
     </button>
     <button
       data-tab-item="endxend"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('e7168d9349cbde04b42f70aeff3472dd','endxend')"
+      onclick="switchTab('4f8e52aec1a63ba21558a2e37d7f636e','endxend')"
     >
       <span class="tab-nav-text">EndxEnd</span>
     </button>
@@ -1132,12 +1133,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_staxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-0979d2fb2aeafa8e607ae3ed12c6af80" aria-controls="R-expandcontent-0979d2fb2aeafa8e607ae3ed12c6af80">
-  <label class="expand-label" for="R-expand-0979d2fb2aeafa8e607ae3ed12c6af80">
+  <input type="checkbox" id="R-expand-df11170e49dc9e5ce814cce6dd45e781" aria-controls="R-expandcontent-df11170e49dc9e5ce814cce6dd45e781">
+  <label class="expand-label" for="R-expand-df11170e49dc9e5ce814cce6dd45e781">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-0979d2fb2aeafa8e607ae3ed12c6af80" class="expand-content">
+  <div id="R-expandcontent-df11170e49dc9e5ce814cce6dd45e781" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1316,12 +1317,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_cenxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e1396a1f00f075e58e0aed8e5a670f66" aria-controls="R-expandcontent-e1396a1f00f075e58e0aed8e5a670f66">
-  <label class="expand-label" for="R-expand-e1396a1f00f075e58e0aed8e5a670f66">
+  <input type="checkbox" id="R-expand-37542a09a9f678c743e0f3d70c8e5cd9" aria-controls="R-expandcontent-37542a09a9f678c743e0f3d70c8e5cd9">
+  <label class="expand-label" for="R-expand-37542a09a9f678c743e0f3d70c8e5cd9">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-e1396a1f00f075e58e0aed8e5a670f66" class="expand-content">
+  <div id="R-expandcontent-37542a09a9f678c743e0f3d70c8e5cd9" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1500,12 +1501,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="hei" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_endxsta.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2eb33f0823b96a25248f18e4a9945a19" aria-controls="R-expandcontent-2eb33f0823b96a25248f18e4a9945a19">
-  <label class="expand-label" for="R-expand-2eb33f0823b96a25248f18e4a9945a19">
+  <input type="checkbox" id="R-expand-c9f8ce6ba79a67402e1203765cad5668" aria-controls="R-expandcontent-c9f8ce6ba79a67402e1203765cad5668">
+  <label class="expand-label" for="R-expand-c9f8ce6ba79a67402e1203765cad5668">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2eb33f0823b96a25248f18e4a9945a19" class="expand-content">
+  <div id="R-expandcontent-c9f8ce6ba79a67402e1203765cad5668" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1684,12 +1685,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_staxcen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2d266c7fd5d39c508afe15f1c7236d92" aria-controls="R-expandcontent-2d266c7fd5d39c508afe15f1c7236d92">
-  <label class="expand-label" for="R-expand-2d266c7fd5d39c508afe15f1c7236d92">
+  <input type="checkbox" id="R-expand-6218271d6caa90a894e7654fb8256125" aria-controls="R-expandcontent-6218271d6caa90a894e7654fb8256125">
+  <label class="expand-label" for="R-expand-6218271d6caa90a894e7654fb8256125">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2d266c7fd5d39c508afe15f1c7236d92" class="expand-content">
+  <div id="R-expandcontent-6218271d6caa90a894e7654fb8256125" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -1868,12 +1869,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_cenxcen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-1f4a3dc7e9412d0e847d447fe60684fb" aria-controls="R-expandcontent-1f4a3dc7e9412d0e847d447fe60684fb">
-  <label class="expand-label" for="R-expand-1f4a3dc7e9412d0e847d447fe60684fb">
+  <input type="checkbox" id="R-expand-61007240e345382c3c973020716b21d0" aria-controls="R-expandcontent-61007240e345382c3c973020716b21d0">
+  <label class="expand-label" for="R-expand-61007240e345382c3c973020716b21d0">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-1f4a3dc7e9412d0e847d447fe60684fb" class="expand-content">
+  <div id="R-expandcontent-61007240e345382c3c973020716b21d0" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2052,12 +2053,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_endxcen.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-fdd2daf82543037e80e0a20d4beb47cd" aria-controls="R-expandcontent-fdd2daf82543037e80e0a20d4beb47cd">
-  <label class="expand-label" for="R-expand-fdd2daf82543037e80e0a20d4beb47cd">
+  <input type="checkbox" id="R-expand-2a539edd1c95c7713db4c18e2fe80c47" aria-controls="R-expandcontent-2a539edd1c95c7713db4c18e2fe80c47">
+  <label class="expand-label" for="R-expand-2a539edd1c95c7713db4c18e2fe80c47">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-fdd2daf82543037e80e0a20d4beb47cd" class="expand-content">
+  <div id="R-expandcontent-2a539edd1c95c7713db4c18e2fe80c47" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2236,12 +2237,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_staxend.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-250c279c6a847193c8fd5f7ee98ef61c" aria-controls="R-expandcontent-250c279c6a847193c8fd5f7ee98ef61c">
-  <label class="expand-label" for="R-expand-250c279c6a847193c8fd5f7ee98ef61c">
+  <input type="checkbox" id="R-expand-d7e1fddf8145c2bef2a5221fdb1452be" aria-controls="R-expandcontent-d7e1fddf8145c2bef2a5221fdb1452be">
+  <label class="expand-label" for="R-expand-d7e1fddf8145c2bef2a5221fdb1452be">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-250c279c6a847193c8fd5f7ee98ef61c" class="expand-content">
+  <div id="R-expandcontent-d7e1fddf8145c2bef2a5221fdb1452be" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2420,12 +2421,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_cenxend.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-36571f53cdcbe8c9dc1e07f0a83a5f33" aria-controls="R-expandcontent-36571f53cdcbe8c9dc1e07f0a83a5f33">
-  <label class="expand-label" for="R-expand-36571f53cdcbe8c9dc1e07f0a83a5f33">
+  <input type="checkbox" id="R-expand-f97e2e5e2bfd0dd03bcfa8761ba7f4bf" aria-controls="R-expandcontent-f97e2e5e2bfd0dd03bcfa8761ba7f4bf">
+  <label class="expand-label" for="R-expand-f97e2e5e2bfd0dd03bcfa8761ba7f4bf">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-36571f53cdcbe8c9dc1e07f0a83a5f33" class="expand-content">
+  <div id="R-expandcontent-f97e2e5e2bfd0dd03bcfa8761ba7f4bf" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2604,12 +2605,12 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="wid" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_pos_endxend.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d3e90dbdcb4b03e3e7c8d96dc4630b7c" aria-controls="R-expandcontent-d3e90dbdcb4b03e3e7c8d96dc4630b7c">
-  <label class="expand-label" for="R-expand-d3e90dbdcb4b03e3e7c8d96dc4630b7c">
+  <input type="checkbox" id="R-expand-6f08d5c4329a37120a6c9d0a1ca2152d" aria-controls="R-expandcontent-6f08d5c4329a37120a6c9d0a1ca2152d">
+  <label class="expand-label" for="R-expand-6f08d5c4329a37120a6c9d0a1ca2152d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-d3e90dbdcb4b03e3e7c8d96dc4630b7c" class="expand-content">
+  <div id="R-expandcontent-6f08d5c4329a37120a6c9d0a1ca2152d" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2781,20 +2782,20 @@
 </div>
 <h6 id="text-label">Text Label</h6>
 <p>Responsible for setting multiline text on a button.</p>
-<div class="tab-panel" data-tab-group="c684c36f36f39c6ca4db0dc5c72580c7">
+<div class="tab-panel" data-tab-group="c4491b3dfd5e7063ff0bcdf69767fb68">
   <div class="tab-nav">
     <div class="tab-nav-title">Label:</div>
     <button
       data-tab-item="login"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('c684c36f36f39c6ca4db0dc5c72580c7','login')"
+      onclick="switchTab('c4491b3dfd5e7063ff0bcdf69767fb68','login')"
     >
       <span class="tab-nav-text">Login</span>
     </button>
     <button
       data-tab-item="signup"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('c684c36f36f39c6ca4db0dc5c72580c7','signup')"
+      onclick="switchTab('c4491b3dfd5e7063ff0bcdf69767fb68','signup')"
     >
       <span class="tab-nav-text">Signup</span>
     </button>
@@ -2809,12 +2810,12 @@
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="log" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_lab_log.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5fd731f0302d442b8717ef43b54a2f40" aria-controls="R-expandcontent-5fd731f0302d442b8717ef43b54a2f40">
-  <label class="expand-label" for="R-expand-5fd731f0302d442b8717ef43b54a2f40">
+  <input type="checkbox" id="R-expand-0a2943a03ebc0c8b8162fb47fc541831" aria-controls="R-expandcontent-0a2943a03ebc0c8b8162fb47fc541831">
+  <label class="expand-label" for="R-expand-0a2943a03ebc0c8b8162fb47fc541831">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-5fd731f0302d442b8717ef43b54a2f40" class="expand-content">
+  <div id="R-expandcontent-0a2943a03ebc0c8b8162fb47fc541831" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -2986,12 +2987,12 @@
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="horz" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_lab_sig.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d5115243e7b2ec8d4379d0c26b31c6c7" aria-controls="R-expandcontent-d5115243e7b2ec8d4379d0c26b31c6c7">
-  <label class="expand-label" for="R-expand-d5115243e7b2ec8d4379d0c26b31c6c7">
+  <input type="checkbox" id="R-expand-07ef602bc66127c81c9cac194cae4982" aria-controls="R-expandcontent-07ef602bc66127c81c9cac194cae4982">
+  <label class="expand-label" for="R-expand-07ef602bc66127c81c9cac194cae4982">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-d5115243e7b2ec8d4379d0c26b31c6c7" class="expand-content">
+  <div id="R-expandcontent-07ef602bc66127c81c9cac194cae4982" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3158,21 +3159,21 @@
 </div>
 <h6 id="text-process-bbcode">Text Process BBCode</h6>
 <p>Responsible for processing text with BBCode.</p>
-<p>The only tag currently supported is <code>[color=FFFFFF][/color]</code> (without the <code>#</code>).</p>
-<div class="tab-panel" data-tab-group="73042ebaa0c840ef86523655f0de5412">
+<p>The only tag currently supported is <code>[color=][/color]</code> (without the <code>#</code>).</p>
+<div class="tab-panel" data-tab-group="80ac1cdab81a1da7d04e9d2ea1d1d214">
   <div class="tab-nav">
     <div class="tab-nav-title">Enabled:</div>
     <button
       data-tab-item="true"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('73042ebaa0c840ef86523655f0de5412','true')"
+      onclick="switchTab('80ac1cdab81a1da7d04e9d2ea1d1d214','true')"
     >
       <span class="tab-nav-text">True</span>
     </button>
     <button
       data-tab-item="false"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('73042ebaa0c840ef86523655f0de5412','false')"
+      onclick="switchTab('80ac1cdab81a1da7d04e9d2ea1d1d214','false')"
     >
       <span class="tab-nav-text">False</span>
     </button>
@@ -3200,12 +3201,12 @@
 </span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="on" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_bbc_on.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-695cdaf52285958c5ce204853c17dfc5" aria-controls="R-expandcontent-695cdaf52285958c5ce204853c17dfc5">
-  <label class="expand-label" for="R-expand-695cdaf52285958c5ce204853c17dfc5">
+  <input type="checkbox" id="R-expand-e28074a3bad895f6be92827d9df738da" aria-controls="R-expandcontent-e28074a3bad895f6be92827d9df738da">
+  <label class="expand-label" for="R-expand-e28074a3bad895f6be92827d9df738da">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-695cdaf52285958c5ce204853c17dfc5" class="expand-content">
+  <div id="R-expandcontent-e28074a3bad895f6be92827d9df738da" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3390,12 +3391,12 @@
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_bbc_off.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-372408030492cd70084d19939700d318" aria-controls="R-expandcontent-372408030492cd70084d19939700d318">
-  <label class="expand-label" for="R-expand-372408030492cd70084d19939700d318">
+  <input type="checkbox" id="R-expand-baee33a5a18a8f5d0ead599cb0b0c4e0" aria-controls="R-expandcontent-baee33a5a18a8f5d0ead599cb0b0c4e0">
+  <label class="expand-label" for="R-expand-baee33a5a18a8f5d0ead599cb0b0c4e0">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-372408030492cd70084d19939700d318" class="expand-content">
+  <div id="R-expandcontent-baee33a5a18a8f5d0ead599cb0b0c4e0" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3562,20 +3563,20 @@
 </div>
 <h6 id="text-face">Text Face</h6>
 <p>Responsible for setting the font family and font size.</p>
-<div class="tab-panel" data-tab-group="b96e633c3aaba4ec088a3c7c6934316a">
+<div class="tab-panel" data-tab-group="43d347995aa0622b03bf8299c2af0fac">
   <div class="tab-nav">
     <div class="tab-nav-title">Font:</div>
     <button
       data-tab-item="basicfont-13"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('b96e633c3aaba4ec088a3c7c6934316a','basicfont-13')"
+      onclick="switchTab('43d347995aa0622b03bf8299c2af0fac','basicfont-13')"
     >
       <span class="tab-nav-text">Basicfont-13</span>
     </button>
     <button
       data-tab-item="inconsolata-16"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('b96e633c3aaba4ec088a3c7c6934316a','inconsolata-16')"
+      onclick="switchTab('43d347995aa0622b03bf8299c2af0fac','inconsolata-16')"
     >
       <span class="tab-nav-text">Inconsolata-16</span>
     </button>
@@ -3590,12 +3591,12 @@
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="b13" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_fon_b13.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b509ee17bf57ad8f44bc04238e0bcb33" aria-controls="R-expandcontent-b509ee17bf57ad8f44bc04238e0bcb33">
-  <label class="expand-label" for="R-expand-b509ee17bf57ad8f44bc04238e0bcb33">
+  <input type="checkbox" id="R-expand-ed4ab9c12d893feef6a154b1accdfa91" aria-controls="R-expandcontent-ed4ab9c12d893feef6a154b1accdfa91">
+  <label class="expand-label" for="R-expand-ed4ab9c12d893feef6a154b1accdfa91">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-b509ee17bf57ad8f44bc04238e0bcb33" class="expand-content">
+  <div id="R-expandcontent-ed4ab9c12d893feef6a154b1accdfa91" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3755,12 +3756,12 @@
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="i16" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_fon_i16.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-fd8fb4bee4b7b69e2661b57e2fd37172" aria-controls="R-expandcontent-fd8fb4bee4b7b69e2661b57e2fd37172">
-  <label class="expand-label" for="R-expand-fd8fb4bee4b7b69e2661b57e2fd37172">
+  <input type="checkbox" id="R-expand-8c4949cbce469ca335f192e2fcb68449" aria-controls="R-expandcontent-8c4949cbce469ca335f192e2fcb68449">
+  <label class="expand-label" for="R-expand-8c4949cbce469ca335f192e2fcb68449">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-fd8fb4bee4b7b69e2661b57e2fd37172" class="expand-content">
+  <div id="R-expandcontent-8c4949cbce469ca335f192e2fcb68449" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -3915,27 +3916,27 @@
 </div>
 <h6 id="text-color">Text Color</h6>
 <p>Responsible for setting the text color.</p>
-<div class="tab-panel" data-tab-group="439b6a62b9b8926dc75d3a28572c7966">
+<div class="tab-panel" data-tab-group="9531dc06d64883b0e97ce01927bb3af3">
   <div class="tab-nav">
     <div class="tab-nav-title">Color:</div>
     <button
       data-tab-item="idle"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('439b6a62b9b8926dc75d3a28572c7966','idle')"
+      onclick="switchTab('9531dc06d64883b0e97ce01927bb3af3','idle')"
     >
       <span class="tab-nav-text">Idle</span>
     </button>
     <button
       data-tab-item="hover"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('439b6a62b9b8926dc75d3a28572c7966','hover')"
+      onclick="switchTab('9531dc06d64883b0e97ce01927bb3af3','hover')"
     >
       <span class="tab-nav-text">Hover</span>
     </button>
     <button
       data-tab-item="pressed"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('439b6a62b9b8926dc75d3a28572c7966','pressed')"
+      onclick="switchTab('9531dc06d64883b0e97ce01927bb3af3','pressed')"
     >
       <span class="tab-nav-text">Pressed</span>
     </button>
@@ -3954,12 +3955,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="idle" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_col_idl.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-572c4cd15a45f4f544d7439f1ddf44d5" aria-controls="R-expandcontent-572c4cd15a45f4f544d7439f1ddf44d5">
-  <label class="expand-label" for="R-expand-572c4cd15a45f4f544d7439f1ddf44d5">
+  <input type="checkbox" id="R-expand-38b7149c4ba0bd97474e082f1bdce027" aria-controls="R-expandcontent-38b7149c4ba0bd97474e082f1bdce027">
+  <label class="expand-label" for="R-expand-38b7149c4ba0bd97474e082f1bdce027">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-572c4cd15a45f4f544d7439f1ddf44d5" class="expand-content">
+  <div id="R-expandcontent-38b7149c4ba0bd97474e082f1bdce027" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4117,12 +4118,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="hover" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_col_hov.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2250217f20e5a407fe6c4a307617b93f" aria-controls="R-expandcontent-2250217f20e5a407fe6c4a307617b93f">
-  <label class="expand-label" for="R-expand-2250217f20e5a407fe6c4a307617b93f">
+  <input type="checkbox" id="R-expand-2bf7a89ae5fea310c2d9df18200e2f63" aria-controls="R-expandcontent-2bf7a89ae5fea310c2d9df18200e2f63">
+  <label class="expand-label" for="R-expand-2bf7a89ae5fea310c2d9df18200e2f63">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2250217f20e5a407fe6c4a307617b93f" class="expand-content">
+  <div id="R-expandcontent-2bf7a89ae5fea310c2d9df18200e2f63" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4299,12 +4300,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="pressed" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_tex_col_pre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f8d644108e1ec97acfac498cfa4970ee" aria-controls="R-expandcontent-f8d644108e1ec97acfac498cfa4970ee">
-  <label class="expand-label" for="R-expand-f8d644108e1ec97acfac498cfa4970ee">
+  <input type="checkbox" id="R-expand-e19bb6d60d0f0d197ebc8cb777e444f0" aria-controls="R-expandcontent-e19bb6d60d0f0d197ebc8cb777e444f0">
+  <label class="expand-label" for="R-expand-e19bb6d60d0f0d197ebc8cb777e444f0">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-f8d644108e1ec97acfac498cfa4970ee" class="expand-content">
+  <div id="R-expandcontent-e19bb6d60d0f0d197ebc8cb777e444f0" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4473,69 +4474,69 @@
 </div>
 <h6 id="image">Image</h6>
 <p>Responsible for the background of the button; it can be filled with color or image tiles.</p>
-<div class="tab-panel" data-tab-group="1cdf89dfa0d421af06d371f13e4e0001">
+<div class="tab-panel" data-tab-group="eb7bd13cd295a5eefcd556d8ef4e353e">
   <div class="tab-nav">
     <div class="tab-nav-title">Image:</div>
     <button
       data-tab-item="pillxidle"
       class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','pillxidle')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','pillxidle')"
     >
       <span class="tab-nav-text">PillxIdle</span>
     </button>
     <button
       data-tab-item="pillxhover"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','pillxhover')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','pillxhover')"
     >
       <span class="tab-nav-text">PillxHover</span>
     </button>
     <button
       data-tab-item="pillxpressed"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','pillxpressed')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','pillxpressed')"
     >
       <span class="tab-nav-text">PillxPressed</span>
     </button>
     <button
       data-tab-item="gemxidle"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','gemxidle')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','gemxidle')"
     >
       <span class="tab-nav-text">GemxIdle</span>
     </button>
     <button
       data-tab-item="gemxhover"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','gemxhover')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','gemxhover')"
     >
       <span class="tab-nav-text">GemxHover</span>
     </button>
     <button
       data-tab-item="gemxpressed"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','gemxpressed')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','gemxpressed')"
     >
       <span class="tab-nav-text">GemxPressed</span>
     </button>
     <button
       data-tab-item="colxidle"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','colxidle')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','colxidle')"
     >
       <span class="tab-nav-text">ColxIdle</span>
     </button>
     <button
       data-tab-item="colxhover"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','colxhover')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','colxhover')"
     >
       <span class="tab-nav-text">ColxHover</span>
     </button>
     <button
       data-tab-item="colxpressed"
       class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
-      onclick="switchTab('1cdf89dfa0d421af06d371f13e4e0001','colxpressed')"
+      onclick="switchTab('eb7bd13cd295a5eefcd556d8ef4e353e','colxpressed')"
     >
       <span class="tab-nav-text">ColxPressed</span>
     </button>
@@ -4554,12 +4555,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="pillxidl" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_pillxidl.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-73153d8ad9efb2825fcc7f9578cd2b14" aria-controls="R-expandcontent-73153d8ad9efb2825fcc7f9578cd2b14">
-  <label class="expand-label" for="R-expand-73153d8ad9efb2825fcc7f9578cd2b14">
+  <input type="checkbox" id="R-expand-032cd5b6e05edb621162b90a9365b4c7" aria-controls="R-expandcontent-032cd5b6e05edb621162b90a9365b4c7">
+  <label class="expand-label" for="R-expand-032cd5b6e05edb621162b90a9365b4c7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-73153d8ad9efb2825fcc7f9578cd2b14" class="expand-content">
+  <div id="R-expandcontent-032cd5b6e05edb621162b90a9365b4c7" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4732,12 +4733,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="pillxhov" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_pillxhov.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-0580effb5911028755e4f53c4b42426b" aria-controls="R-expandcontent-0580effb5911028755e4f53c4b42426b">
-  <label class="expand-label" for="R-expand-0580effb5911028755e4f53c4b42426b">
+  <input type="checkbox" id="R-expand-c54bc5a91f57d8a29e8b763586aa0ee9" aria-controls="R-expandcontent-c54bc5a91f57d8a29e8b763586aa0ee9">
+  <label class="expand-label" for="R-expand-c54bc5a91f57d8a29e8b763586aa0ee9">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-0580effb5911028755e4f53c4b42426b" class="expand-content">
+  <div id="R-expandcontent-c54bc5a91f57d8a29e8b763586aa0ee9" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -4911,12 +4912,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="pillxpre" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_pillxpre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-56855a13cf01e6a9d09d0df39b560480" aria-controls="R-expandcontent-56855a13cf01e6a9d09d0df39b560480">
-  <label class="expand-label" for="R-expand-56855a13cf01e6a9d09d0df39b560480">
+  <input type="checkbox" id="R-expand-dee07beb3226aec9a91ade39ec9615b7" aria-controls="R-expandcontent-dee07beb3226aec9a91ade39ec9615b7">
+  <label class="expand-label" for="R-expand-dee07beb3226aec9a91ade39ec9615b7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-56855a13cf01e6a9d09d0df39b560480" class="expand-content">
+  <div id="R-expandcontent-dee07beb3226aec9a91ade39ec9615b7" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -5091,12 +5092,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="gemxidl" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_gemxidl.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e2be676ee04b365ac2e3567b514f4e0b" aria-controls="R-expandcontent-e2be676ee04b365ac2e3567b514f4e0b">
-  <label class="expand-label" for="R-expand-e2be676ee04b365ac2e3567b514f4e0b">
+  <input type="checkbox" id="R-expand-88689e142574213d6c85c626547421ae" aria-controls="R-expandcontent-88689e142574213d6c85c626547421ae">
+  <label class="expand-label" for="R-expand-88689e142574213d6c85c626547421ae">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-e2be676ee04b365ac2e3567b514f4e0b" class="expand-content">
+  <div id="R-expandcontent-88689e142574213d6c85c626547421ae" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -5255,12 +5256,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="gemxhov" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_gemxhov.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2207b3b43e29c7fd80d3eac25ed99854" aria-controls="R-expandcontent-2207b3b43e29c7fd80d3eac25ed99854">
-  <label class="expand-label" for="R-expand-2207b3b43e29c7fd80d3eac25ed99854">
+  <input type="checkbox" id="R-expand-b20f4fe26744041a07f9aee8814338f3" aria-controls="R-expandcontent-b20f4fe26744041a07f9aee8814338f3">
+  <label class="expand-label" for="R-expand-b20f4fe26744041a07f9aee8814338f3">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-2207b3b43e29c7fd80d3eac25ed99854" class="expand-content">
+  <div id="R-expandcontent-b20f4fe26744041a07f9aee8814338f3" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -5420,12 +5421,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="gemxpre" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_gemxpre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e7eeb52353d291270703a3e13b03c2d1" aria-controls="R-expandcontent-e7eeb52353d291270703a3e13b03c2d1">
-  <label class="expand-label" for="R-expand-e7eeb52353d291270703a3e13b03c2d1">
+  <input type="checkbox" id="R-expand-30349cf460d1d3b81aceb17d017ed0e3" aria-controls="R-expandcontent-30349cf460d1d3b81aceb17d017ed0e3">
+  <label class="expand-label" for="R-expand-30349cf460d1d3b81aceb17d017ed0e3">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-e7eeb52353d291270703a3e13b03c2d1" class="expand-content">
+  <div id="R-expandcontent-30349cf460d1d3b81aceb17d017ed0e3" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -5586,12 +5587,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="colxidl" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_colxidl.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c3747388b40ebca58db57d7dbcdcbd32" aria-controls="R-expandcontent-c3747388b40ebca58db57d7dbcdcbd32">
-  <label class="expand-label" for="R-expand-c3747388b40ebca58db57d7dbcdcbd32">
+  <input type="checkbox" id="R-expand-2bc492ee5781d85560451d69134bcb22" aria-controls="R-expandcontent-2bc492ee5781d85560451d69134bcb22">
+  <label class="expand-label" for="R-expand-2bc492ee5781d85560451d69134bcb22">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-c3747388b40ebca58db57d7dbcdcbd32" class="expand-content">
+  <div id="R-expandcontent-2bc492ee5781d85560451d69134bcb22" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -5712,12 +5713,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="colxhov" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_colxhov.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c7b62141b8ba19bb934c692c9e28931e" aria-controls="R-expandcontent-c7b62141b8ba19bb934c692c9e28931e">
-  <label class="expand-label" for="R-expand-c7b62141b8ba19bb934c692c9e28931e">
+  <input type="checkbox" id="R-expand-c9784dd8a80b9e72cc8c01be11488fb4" aria-controls="R-expandcontent-c9784dd8a80b9e72cc8c01be11488fb4">
+  <label class="expand-label" for="R-expand-c9784dd8a80b9e72cc8c01be11488fb4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-c7b62141b8ba19bb934c692c9e28931e" class="expand-content">
+  <div id="R-expandcontent-c9784dd8a80b9e72cc8c01be11488fb4" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -5839,12 +5840,12 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
 <p><img alt="colxpre" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_img_colxpre.png" style=" height: auto; width: auto;"></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-9f352fbc0564c16886ead6b307252cb4" aria-controls="R-expandcontent-9f352fbc0564c16886ead6b307252cb4">
-  <label class="expand-label" for="R-expand-9f352fbc0564c16886ead6b307252cb4">
+  <input type="checkbox" id="R-expand-5592baad0ca031e1556944c1b458d905" aria-controls="R-expandcontent-5592baad0ca031e1556944c1b458d905">
+  <label class="expand-label" for="R-expand-5592baad0ca031e1556944c1b458d905">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
   </label>
-  <div id="R-expandcontent-9f352fbc0564c16886ead6b307252cb4" class="expand-content">
+  <div id="R-expandcontent-5592baad0ca031e1556944c1b458d905" class="expand-content">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">
 </span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
@@ -5956,6 +5957,513 @@
     </div>
   </div>
 </div>
+<h6 id="ignore-transparent-pixels">Ignore Transparent Pixels</h6>
+<p>Responsible for ignoring transparent pixels when the button is clicked.</p>
+<div class="tab-panel" data-tab-group="25952732c7e62b43890189aebeba890d">
+  <div class="tab-nav">
+    <div class="tab-nav-title">Enabled:</div>
+    <button
+      data-tab-item="true"
+      class="tab-nav-button tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;" tabindex="-1"
+      onclick="switchTab('25952732c7e62b43890189aebeba890d','true')"
+    >
+      <span class="tab-nav-text">True</span>
+    </button>
+    <button
+      data-tab-item="false"
+      class="tab-nav-button tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;"
+      onclick="switchTab('25952732c7e62b43890189aebeba890d','false')"
+    >
+      <span class="tab-nav-text">False</span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="true"
+      class="tab-content tab-panel-style cstyle transparent active" style="--VARIABLE-BOX-color: #131a22ff;">
+      <div class="tab-content-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">IgnoreTransparentPixels</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">CursorEnteredHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">		<span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonHoverEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">			<span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Cursor Entered\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="on" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_ign_pix_on.png" style=" height: auto; width: auto;"></p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-4198320510eb1afb3ef185ff1bd49f57" aria-controls="R-expandcontent-4198320510eb1afb3ef185ff1bd49f57">
+  <label class="expand-label" for="R-expand-4198320510eb1afb3ef185ff1bd49f57">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
+  </label>
+  <div id="R-expandcontent-4198320510eb1afb3ef185ff1bd49f57" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl">
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl">	<span class="s">&#34;bytes&#34;</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">	<span class="s">&#34;image/color&#34;</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">	<span class="s">&#34;math&#34;</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">	<span class="s">&#34;strings&#34;</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2/text/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2/vector&#34;</span>
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl">	<span class="s">&#34;golang.org/x/image/font/gofont/goregular&#34;</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">	<span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">TextLabel</span><span class="p">(</span><span class="s">&#34;Button&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">TextFace</span><span class="p">(</span><span class="nf">DefaultFont</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">TextColor</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonTextColor</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">			<span class="nx">Idle</span><span class="p">:</span>    <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">			<span class="nx">Hover</span><span class="p">:</span>   <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">			<span class="nx">Pressed</span><span class="p">:</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Black</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">Image</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonImage</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">			<span class="nx">Idle</span><span class="p">:</span>         <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">			<span class="nx">Hover</span><span class="p">:</span>        <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">			<span class="nx">Disabled</span><span class="p">:</span>     <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">			<span class="nx">Pressed</span><span class="p">:</span>      <span class="nf">PressedNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Black</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">			<span class="nx">PressedHover</span><span class="p">:</span> <span class="nf">PressedNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Black</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">IgnoreTransparentPixels</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">CursorEnteredHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">			<span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonHoverEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">				<span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Cursor Entered\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">			<span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">				<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">48</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">	<span class="nx">button</span><span class="p">.</span><span class="nf">GetWidget</span><span class="p">().</span><span class="nx">CursorEnterEvent</span><span class="p">.</span><span class="nf">Fire</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetCursorEnterEventArgs</span><span class="p">{})</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl"><span class="kd">func</span> <span class="nf">DefaultFont</span><span class="p">()</span> <span class="nx">text</span><span class="p">.</span><span class="nx">Face</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">	<span class="nx">s</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">text</span><span class="p">.</span><span class="nf">NewGoTextFaceSource</span><span class="p">(</span><span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">goregular</span><span class="p">.</span><span class="nx">TTF</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">text</span><span class="p">.</span><span class="nx">GoTextFace</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">		<span class="nx">Source</span><span class="p">:</span> <span class="nx">s</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">		<span class="nx">Size</span><span class="p">:</span>   <span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl"><span class="kd">func</span> <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nx">base</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">)</span> <span class="o">*</span><span class="nx">image</span><span class="p">.</span><span class="nx">NineSlice</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">	<span class="kd">var</span> <span class="nx">size</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">64</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">	<span class="kd">var</span> <span class="nx">tiles</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">	<span class="kd">var</span> <span class="nx">radius</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">	<span class="nx">tile</span> <span class="o">:=</span> <span class="nx">size</span> <span class="o">/</span> <span class="nx">tiles</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">	<span class="nx">facet</span> <span class="o">:=</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl">
+</span></span><span class="line"><span class="ln">102</span><span class="cl">	<span class="nx">img</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">NewImage</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">103</span><span class="cl">	<span class="nx">path</span> <span class="o">:=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">tile</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">104</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">base</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">105</span><span class="cl">	<span class="nx">path</span> <span class="p">=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">tile</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">106</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">facet</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">107</span><span class="cl">	<span class="nx">path</span> <span class="p">=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="nx">tile</span><span class="p">,</span> <span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">108</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">base</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">109</span><span class="cl">
+</span></span><span class="line"><span class="ln">110</span><span class="cl">	<span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceBorder</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nx">tile</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">112</span><span class="cl">
+</span></span><span class="line"><span class="ln">113</span><span class="cl"><span class="kd">func</span> <span class="nf">PressedNineSlice</span><span class="p">(</span><span class="nx">base</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">)</span> <span class="o">*</span><span class="nx">image</span><span class="p">.</span><span class="nx">NineSlice</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">	<span class="kd">var</span> <span class="nx">size</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">64</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">	<span class="kd">var</span> <span class="nx">tiles</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">	<span class="kd">var</span> <span class="nx">radius</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">
+</span></span><span class="line"><span class="ln">118</span><span class="cl">	<span class="nx">tile</span> <span class="o">:=</span> <span class="nx">size</span> <span class="o">/</span> <span class="nx">tiles</span>
+</span></span><span class="line"><span class="ln">119</span><span class="cl">	<span class="nx">facet</span> <span class="o">:=</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">120</span><span class="cl">
+</span></span><span class="line"><span class="ln">121</span><span class="cl">	<span class="nx">img</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">NewImage</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">122</span><span class="cl">	<span class="nx">path</span> <span class="o">:=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">123</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">facet</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">124</span><span class="cl">	<span class="nx">path</span> <span class="p">=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="nx">tile</span><span class="p">,</span> <span class="nx">tile</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">125</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">base</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">126</span><span class="cl">
+</span></span><span class="line"><span class="ln">127</span><span class="cl">	<span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceBorder</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nx">tile</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">128</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">129</span><span class="cl">
+</span></span><span class="line"><span class="ln">130</span><span class="cl"><span class="kd">func</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">,</span> <span class="nx">percent</span> <span class="kt">float64</span><span class="p">)</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">131</span><span class="cl">	<span class="nx">rgba</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">)</span> <span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="kt">uint8</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">132</span><span class="cl">		<span class="nx">r16</span><span class="p">,</span> <span class="nx">g16</span><span class="p">,</span> <span class="nx">b16</span><span class="p">,</span> <span class="nx">a16</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">RGBA</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">133</span><span class="cl">		<span class="k">return</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">r16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">),</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">g16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">),</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">b16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">),</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">a16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">134</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">135</span><span class="cl">	<span class="nx">lerp</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">uint8</span><span class="p">)</span> <span class="kt">uint8</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">136</span><span class="cl">		<span class="k">return</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nf">Round</span><span class="p">(</span><span class="nb">float64</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">+</span> <span class="nx">percent</span><span class="o">*</span><span class="p">(</span><span class="nb">float64</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span><span class="o">-</span><span class="nb">float64</span><span class="p">(</span><span class="nx">x</span><span class="p">))))</span>
+</span></span><span class="line"><span class="ln">137</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">138</span><span class="cl">	<span class="nx">r1</span><span class="p">,</span> <span class="nx">g1</span><span class="p">,</span> <span class="nx">b1</span><span class="p">,</span> <span class="nx">a1</span> <span class="o">:=</span> <span class="nf">rgba</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">139</span><span class="cl">	<span class="nx">r2</span><span class="p">,</span> <span class="nx">g2</span><span class="p">,</span> <span class="nx">b2</span><span class="p">,</span> <span class="nx">a2</span> <span class="o">:=</span> <span class="nf">rgba</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">140</span><span class="cl">
+</span></span><span class="line"><span class="ln">141</span><span class="cl">	<span class="k">return</span> <span class="nx">color</span><span class="p">.</span><span class="nx">RGBA</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">142</span><span class="cl">		<span class="nx">R</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">r1</span><span class="p">,</span> <span class="nx">r2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">143</span><span class="cl">		<span class="nx">G</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">g1</span><span class="p">,</span> <span class="nx">g2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">144</span><span class="cl">		<span class="nx">B</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">b1</span><span class="p">,</span> <span class="nx">b2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">145</span><span class="cl">		<span class="nx">A</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">146</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">147</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">148</span><span class="cl">
+</span></span><span class="line"><span class="ln">149</span><span class="cl"><span class="kd">func</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span><span class="p">,</span> <span class="nx">tl</span><span class="p">,</span> <span class="nx">tr</span><span class="p">,</span> <span class="nx">br</span><span class="p">,</span> <span class="nx">bl</span> <span class="kt">float32</span><span class="p">)</span> <span class="o">*</span><span class="nx">vector</span><span class="p">.</span><span class="nx">Path</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">150</span><span class="cl">	<span class="nx">path</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">vector</span><span class="p">.</span><span class="nx">Path</span><span class="p">{}</span>
+</span></span><span class="line"><span class="ln">151</span><span class="cl">
+</span></span><span class="line"><span class="ln">152</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">w</span><span class="o">-</span><span class="nx">tr</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">tr</span><span class="p">,</span> <span class="nx">tr</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">153</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">LineTo</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">w</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="o">-</span><span class="nx">br</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">154</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">w</span><span class="o">-</span><span class="nx">br</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="o">-</span><span class="nx">br</span><span class="p">,</span> <span class="nx">br</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">155</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">LineTo</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">bl</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">156</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">bl</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="o">-</span><span class="nx">bl</span><span class="p">,</span> <span class="nx">bl</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">157</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">LineTo</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">tl</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">158</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">tl</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">tl</span><span class="p">,</span> <span class="nx">tl</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">159</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">160</span><span class="cl">
+</span></span><span class="line"><span class="ln">161</span><span class="cl">	<span class="k">return</span> <span class="nx">path</span>
+</span></span><span class="line"><span class="ln">162</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">163</span><span class="cl">
+</span></span><span class="line"><span class="ln">164</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">165</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">166</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">167</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">168</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">169</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">170</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div
+      data-tab-item="false"
+      class="tab-content tab-panel-style cstyle transparent" style="--VARIABLE-BOX-color: #131a22ff;">
+      <div class="tab-content-text">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">IgnoreTransparentPixels</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">	<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">CursorEnteredHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">		<span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonHoverEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">			<span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Cursor Entered\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">		<span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<p><img alt="off" class="noborder nolazy nolightbox noshadow figure-image" src="/eui/examples/wid_but_ign_pix_off.png" style=" height: auto; width: auto;"></p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-fec5e7904a7d28b902ddb5f78242c381" aria-controls="R-expandcontent-fec5e7904a7d28b902ddb5f78242c381">
+  <label class="expand-label" for="R-expand-fec5e7904a7d28b902ddb5f78242c381">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Full example
+  </label>
+  <div id="R-expandcontent-fec5e7904a7d28b902ddb5f78242c381" class="expand-content">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl">
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl">	<span class="s">&#34;bytes&#34;</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">	<span class="s">&#34;image/color&#34;</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">	<span class="s">&#34;math&#34;</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">	<span class="s">&#34;strings&#34;</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui&#34;</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/image&#34;</span>
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">	<span class="s">&#34;github.com/ebitenui/ebitenui/widget&#34;</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2/text/v2&#34;</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">	<span class="s">&#34;github.com/hajimehoshi/ebiten/v2/vector&#34;</span>
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl">	<span class="s">&#34;golang.org/x/image/font/gofont/goregular&#34;</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">	<span class="s">&#34;golang.org/x/image/colornames&#34;</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl"><span class="kd">type</span> <span class="nx">Game</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">	<span class="nx">ui</span> <span class="o">*</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl"><span class="kd">func</span> <span class="nf">NewGame</span><span class="p">()</span> <span class="o">*</span><span class="nx">Game</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">	<span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">TextLabel</span><span class="p">(</span><span class="s">&#34;Button&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">TextFace</span><span class="p">(</span><span class="nf">DefaultFont</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">TextColor</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonTextColor</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">			<span class="nx">Idle</span><span class="p">:</span>    <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">			<span class="nx">Hover</span><span class="p">:</span>   <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">			<span class="nx">Pressed</span><span class="p">:</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Black</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">Image</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonImage</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">			<span class="nx">Idle</span><span class="p">:</span>         <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">			<span class="nx">Hover</span><span class="p">:</span>        <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Mediumseagreen</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">			<span class="nx">Disabled</span><span class="p">:</span>     <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">			<span class="nx">Pressed</span><span class="p">:</span>      <span class="nf">PressedNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Black</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">			<span class="nx">PressedHover</span><span class="p">:</span> <span class="nf">PressedNineSlice</span><span class="p">(</span><span class="nf">Mix</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Darkslategray</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Black</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">		<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">IgnoreTransparentPixels</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">CursorEnteredHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">			<span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonHoverEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">				<span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Cursor Entered\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">			<span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">WidgetOpts</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">LayoutData</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutData</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">				<span class="nx">VerticalPosition</span><span class="p">:</span>   <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">				<span class="nx">HorizontalPosition</span><span class="p">:</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">AnchorLayoutPositionCenter</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">			<span class="p">}),</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">			<span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetOpts</span><span class="p">.</span><span class="nf">MinSize</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">48</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">	<span class="nx">button</span><span class="p">.</span><span class="nf">GetWidget</span><span class="p">().</span><span class="nx">CursorEnterEvent</span><span class="p">.</span><span class="nf">Fire</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">WidgetCursorEnterEventArgs</span><span class="p">{})</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">	<span class="nx">root</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">BackgroundImage</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">			<span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceColor</span><span class="p">(</span><span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">		<span class="p">),</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">		<span class="nx">widget</span><span class="p">.</span><span class="nx">ContainerOpts</span><span class="p">.</span><span class="nf">Layout</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nf">NewAnchorLayout</span><span class="p">()),</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">	<span class="nx">root</span><span class="p">.</span><span class="nf">AddChild</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Game</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">		<span class="nx">ui</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">ebitenui</span><span class="p">.</span><span class="nx">UI</span><span class="p">{</span><span class="nx">Container</span><span class="p">:</span> <span class="nx">root</span><span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span> <span class="o">*</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">	<span class="nx">g</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">Draw</span><span class="p">(</span><span class="nx">screen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">g</span> <span class="o">*</span><span class="nx">Game</span><span class="p">)</span> <span class="nf">Layout</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">	<span class="k">return</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl"><span class="kd">func</span> <span class="nf">DefaultFont</span><span class="p">()</span> <span class="nx">text</span><span class="p">.</span><span class="nx">Face</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">	<span class="nx">s</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">text</span><span class="p">.</span><span class="nf">NewGoTextFaceSource</span><span class="p">(</span><span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">goregular</span><span class="p">.</span><span class="nx">TTF</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">text</span><span class="p">.</span><span class="nx">GoTextFace</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">		<span class="nx">Source</span><span class="p">:</span> <span class="nx">s</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">		<span class="nx">Size</span><span class="p">:</span>   <span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl"><span class="kd">func</span> <span class="nf">DefaultNineSlice</span><span class="p">(</span><span class="nx">base</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">)</span> <span class="o">*</span><span class="nx">image</span><span class="p">.</span><span class="nx">NineSlice</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">	<span class="kd">var</span> <span class="nx">size</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">64</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">	<span class="kd">var</span> <span class="nx">tiles</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">	<span class="kd">var</span> <span class="nx">radius</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">	<span class="nx">tile</span> <span class="o">:=</span> <span class="nx">size</span> <span class="o">/</span> <span class="nx">tiles</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">	<span class="nx">facet</span> <span class="o">:=</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl">
+</span></span><span class="line"><span class="ln">102</span><span class="cl">	<span class="nx">img</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">NewImage</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">103</span><span class="cl">	<span class="nx">path</span> <span class="o">:=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">tile</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">104</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">base</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">105</span><span class="cl">	<span class="nx">path</span> <span class="p">=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">tile</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">106</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">facet</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">107</span><span class="cl">	<span class="nx">path</span> <span class="p">=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="nx">tile</span><span class="p">,</span> <span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">108</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">base</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">109</span><span class="cl">
+</span></span><span class="line"><span class="ln">110</span><span class="cl">	<span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceBorder</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nx">tile</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">112</span><span class="cl">
+</span></span><span class="line"><span class="ln">113</span><span class="cl"><span class="kd">func</span> <span class="nf">PressedNineSlice</span><span class="p">(</span><span class="nx">base</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">)</span> <span class="o">*</span><span class="nx">image</span><span class="p">.</span><span class="nx">NineSlice</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">	<span class="kd">var</span> <span class="nx">size</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">64</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">	<span class="kd">var</span> <span class="nx">tiles</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">	<span class="kd">var</span> <span class="nx">radius</span> <span class="kt">float32</span> <span class="p">=</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">
+</span></span><span class="line"><span class="ln">118</span><span class="cl">	<span class="nx">tile</span> <span class="o">:=</span> <span class="nx">size</span> <span class="o">/</span> <span class="nx">tiles</span>
+</span></span><span class="line"><span class="ln">119</span><span class="cl">	<span class="nx">facet</span> <span class="o">:=</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span> <span class="nx">colornames</span><span class="p">.</span><span class="nx">Gainsboro</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">120</span><span class="cl">
+</span></span><span class="line"><span class="ln">121</span><span class="cl">	<span class="nx">img</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">NewImage</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="nx">size</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">122</span><span class="cl">	<span class="nx">path</span> <span class="o">:=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">123</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">facet</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">124</span><span class="cl">	<span class="nx">path</span> <span class="p">=</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="nx">tile</span><span class="p">,</span> <span class="nx">tile</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="o">-</span><span class="nx">tile</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">125</span><span class="cl">	<span class="nx">vector</span><span class="p">.</span><span class="nf">DrawFilledPath</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">base</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">FillRuleEvenOdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">126</span><span class="cl">
+</span></span><span class="line"><span class="ln">127</span><span class="cl">	<span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nf">NewNineSliceBorder</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nx">tile</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">128</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">129</span><span class="cl">
+</span></span><span class="line"><span class="ln">130</span><span class="cl"><span class="kd">func</span> <span class="nf">Mix</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">,</span> <span class="nx">percent</span> <span class="kt">float64</span><span class="p">)</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">131</span><span class="cl">	<span class="nx">rgba</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="nx">color</span><span class="p">.</span><span class="nx">Color</span><span class="p">)</span> <span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="kt">uint8</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">132</span><span class="cl">		<span class="nx">r16</span><span class="p">,</span> <span class="nx">g16</span><span class="p">,</span> <span class="nx">b16</span><span class="p">,</span> <span class="nx">a16</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">RGBA</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">133</span><span class="cl">		<span class="k">return</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">r16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">),</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">g16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">),</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">b16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">),</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">a16</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">134</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">135</span><span class="cl">	<span class="nx">lerp</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">uint8</span><span class="p">)</span> <span class="kt">uint8</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">136</span><span class="cl">		<span class="k">return</span> <span class="nb">uint8</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nf">Round</span><span class="p">(</span><span class="nb">float64</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">+</span> <span class="nx">percent</span><span class="o">*</span><span class="p">(</span><span class="nb">float64</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span><span class="o">-</span><span class="nb">float64</span><span class="p">(</span><span class="nx">x</span><span class="p">))))</span>
+</span></span><span class="line"><span class="ln">137</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">138</span><span class="cl">	<span class="nx">r1</span><span class="p">,</span> <span class="nx">g1</span><span class="p">,</span> <span class="nx">b1</span><span class="p">,</span> <span class="nx">a1</span> <span class="o">:=</span> <span class="nf">rgba</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">139</span><span class="cl">	<span class="nx">r2</span><span class="p">,</span> <span class="nx">g2</span><span class="p">,</span> <span class="nx">b2</span><span class="p">,</span> <span class="nx">a2</span> <span class="o">:=</span> <span class="nf">rgba</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">140</span><span class="cl">
+</span></span><span class="line"><span class="ln">141</span><span class="cl">	<span class="k">return</span> <span class="nx">color</span><span class="p">.</span><span class="nx">RGBA</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">142</span><span class="cl">		<span class="nx">R</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">r1</span><span class="p">,</span> <span class="nx">r2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">143</span><span class="cl">		<span class="nx">G</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">g1</span><span class="p">,</span> <span class="nx">g2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">144</span><span class="cl">		<span class="nx">B</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">b1</span><span class="p">,</span> <span class="nx">b2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">145</span><span class="cl">		<span class="nx">A</span><span class="p">:</span> <span class="nf">lerp</span><span class="p">(</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">146</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">147</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">148</span><span class="cl">
+</span></span><span class="line"><span class="ln">149</span><span class="cl"><span class="kd">func</span> <span class="nf">RoundedRectPath</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span><span class="p">,</span> <span class="nx">tl</span><span class="p">,</span> <span class="nx">tr</span><span class="p">,</span> <span class="nx">br</span><span class="p">,</span> <span class="nx">bl</span> <span class="kt">float32</span><span class="p">)</span> <span class="o">*</span><span class="nx">vector</span><span class="p">.</span><span class="nx">Path</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">150</span><span class="cl">	<span class="nx">path</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">vector</span><span class="p">.</span><span class="nx">Path</span><span class="p">{}</span>
+</span></span><span class="line"><span class="ln">151</span><span class="cl">
+</span></span><span class="line"><span class="ln">152</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">w</span><span class="o">-</span><span class="nx">tr</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">tr</span><span class="p">,</span> <span class="nx">tr</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">153</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">LineTo</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">w</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="o">-</span><span class="nx">br</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">154</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">w</span><span class="o">-</span><span class="nx">br</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="o">-</span><span class="nx">br</span><span class="p">,</span> <span class="nx">br</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">155</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">LineTo</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">bl</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">156</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">bl</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">h</span><span class="o">-</span><span class="nx">bl</span><span class="p">,</span> <span class="nx">bl</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">157</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">LineTo</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">tl</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">158</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Arc</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">tl</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">tl</span><span class="p">,</span> <span class="nx">tl</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">vector</span><span class="p">.</span><span class="nx">Clockwise</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">159</span><span class="cl">	<span class="nx">path</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">160</span><span class="cl">
+</span></span><span class="line"><span class="ln">161</span><span class="cl">	<span class="k">return</span> <span class="nx">path</span>
+</span></span><span class="line"><span class="ln">162</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">163</span><span class="cl">
+</span></span><span class="line"><span class="ln">164</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">165</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowSize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">166</span><span class="cl">	<span class="nx">ebiten</span><span class="p">.</span><span class="nf">SetWindowResizingMode</span><span class="p">(</span><span class="nx">ebiten</span><span class="p">.</span><span class="nx">WindowResizingModeEnabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">167</span><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ebiten</span><span class="p">.</span><span class="nf">RunGame</span><span class="p">(</span><span class="nf">NewGame</span><span class="p">());</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">168</span><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">169</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">170</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 id="widget-handlers">Widget handlers</h3>
+<h6 id="clicked-handler">Clicked Handler</h6>
+<p>Triggered when a release is performed anywhere after a press, its the default in most cases.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">ClickedHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonClickedEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Button Clicked\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<h6 id="pressed-handler">Pressed Handler</h6>
+<p>Triggered when a press is performed inside a widget, useful for long presses with different timings.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">PressedHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonPressedEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Button Pressed\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<h6 id="released-handler">Released Handler</h6>
+<p>Triggered when a release is performed inside a widget, useful for drag-n-drop things from one widget to another.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">ReleasedHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonReleasedEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Button Released\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Inside: %v\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">Inside</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<h6 id="cursor-entered-handler">Cursor Entered Handler</h6>
+<p>Triggered when the cursor enters the button area.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">CursorEnteredHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonHoverEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Cursor Entered\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Diff: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">DiffX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">DiffY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<h6 id="cursor-moved-handler">Cursor Moved Handler</h6>
+<p>Triggered when the cursor moves within the button area between entered and exited events.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">CursorMovedHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonHoverEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Cursor Moved\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Diff: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">DiffX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">DiffY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<h6 id="cursor-exited-handler">Cursor Exited Handler</h6>
+<p>Triggered when the cursor exits the button area.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">CursorExitedHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonHoverEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Cursor Exited\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Diff: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">DiffX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">DiffY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+<h6 id="state-changed-handler">State Changed Handler</h6>
+<p>Triggered when the button&rsquo;s state changes like disabled, hovered, pressed, etc.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">button</span> <span class="o">:=</span> <span class="nx">widget</span><span class="p">.</span><span class="nf">NewButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonOpts</span><span class="p">.</span><span class="nf">StateChangedHandler</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kd">func</span><span class="p">(</span><span class="nx">args</span> <span class="o">*</span><span class="nx">widget</span><span class="p">.</span><span class="nx">ButtonChangedEventArgs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="kd">var</span> <span class="nx">b</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Builder</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;Button State Changed\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; State: %v\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">State</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">,</span> <span class="s">&#34;&gt; Offset: %d, %d\n&#34;</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetX</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">OffsetY</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
   <footer class="footline">
   </footer>
 </article>
@@ -5983,7 +6491,7 @@
 </svg>
         </div>
         <script>
-          window.index_js_url="/eui/searchindex.js?1739494540";
+          window.index_js_url="/eui/searchindex.js?1740487000";
         </script>
         <search><form action="/eui/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -5996,12 +6504,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/eui/js/auto-complete.js?1739494540" defer></script>
-        <script src="/eui/js/lunr/lunr.min.js?1739494540" defer></script>
-        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1739494540" defer></script>
-        <script src="/eui/js/lunr/lunr.multi.min.js?1739494540" defer></script>
-        <script src="/eui/js/lunr/lunr.en.min.js?1739494540" defer></script>
-        <script src="/eui/js/search.js?1739494540" defer></script>
+        <script src="/eui/js/auto-complete.js?1740487000" defer></script>
+        <script src="/eui/js/lunr/lunr.min.js?1740487000" defer></script>
+        <script src="/eui/js/lunr/lunr.stemmer.support.min.js?1740487000" defer></script>
+        <script src="/eui/js/lunr/lunr.multi.min.js?1740487000" defer></script>
+        <script src="/eui/js/lunr/lunr.en.min.js?1740487000" defer></script>
+        <script src="/eui/js/search.js?1740487000" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -6072,8 +6580,8 @@
         </div>
       </div>
     </aside>
-    <script src="/eui/js/clipboard.min.js?1739494540" defer></script>
-    <script src="/eui/js/perfect-scrollbar.min.js?1739494540" defer></script>
-    <script src="/eui/js/theme.js?1739494540" defer></script>
+    <script src="/eui/js/clipboard.min.js?1740487000" defer></script>
+    <script src="/eui/js/perfect-scrollbar.min.js?1740487000" defer></script>
+    <script src="/eui/js/theme.js?1740487000" defer></script>
   </body>
 </html>

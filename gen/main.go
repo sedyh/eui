@@ -86,6 +86,8 @@ import (
 	"gen/examples/lay_row_str_tru"
 	"gen/examples/wid_but_fon_b13"
 	"gen/examples/wid_but_fon_i16"
+	"gen/examples/wid_but_ign_pix_off"
+	"gen/examples/wid_but_ign_pix_on"
 	"gen/examples/wid_but_img_colxhov"
 	"gen/examples/wid_but_img_colxidl"
 	"gen/examples/wid_but_img_colxpre"
@@ -246,6 +248,12 @@ var Scenes = []Scene{
 	wid_but_img_colxpre.NewGame(),
 	wid_but_tex_bbc_on.NewGame(),
 	wid_but_tex_bbc_off.NewGame(),
+	wid_but_ign_pix_on.NewGame(),
+	wid_but_ign_pix_off.NewGame(),
+	// wid_but_han_cli.NewGame(),
+	// wid_but_kee_ext.NewGame(),
+	// wid_but_tog_mod.NewGame(),
+	// wid_but_dis_key.NewGame(),
 }
 
 type Tester struct {
